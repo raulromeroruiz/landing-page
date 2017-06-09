@@ -1,0 +1,194 @@
+extends ../layout/layout2.pug
+
+block content
+	- var base_url = 'http://www.ripley.com.pe/minisitios/campana/cyber-mama/'
+	if test=="dev"
+		- var base_url = '../'
+
+	#cyber(style='margin:0')
+		// DECOHOGAR
+		.slider-banner#slider-decohogar
+			span.slider-prev
+			span.slider-next
+			.banner
+
+				// Slide DECOHOGAR 1
+				.slide
+					img.logo-campaign.centerh(src!= base_url + 'assets/logo-campaign.png')
+					.calls
+						.column.izq.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+							//- .discount
+								.percent 40
+								.simbol
+									| %
+									span Dscto.
+							a.call-left(href='#')
+								.imagen
+									.bg-image.centervh
+									img.centerv(alt='', src!= base_url + 'productos/DECO_01.png')
+								.content
+									.wrapper.product
+										.table
+											span.aon
+											//- span.hasta.align-left.box-center Hasta
+											span.marca
+												img(alt='', src!= base_url + 'marcas/tramontina.png')
+											span.descripcion JUEGO DE OLLAS
+												.line VERSALHES Y 
+												.line CUCHILLOS - 9 PZAS
+											span.antes Precio Normal: S/ 264
+											span.cyber Precio Oferta
+											span.price
+												| S/  
+												span 159
+											//- span.pay-note.align-center
+												| Todo medio de pago
+						.column.der.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+							//- .discount
+								.percent 70
+								.simbol
+									| %
+									span Dscto.
+							a.call-right(href='#')
+								.content
+									.wrapper.product
+										.table
+											span.aon
+											//- span.hasta.align-left.box-center Hasta
+											span.marca
+												img(alt='', src!= base_url + 'marcas/ferrand.png')
+											span.descripcion SET DE 
+												.line 12 VASOS TRINITY
+											span.antes Precio Normal: S/ 100.90
+											span.cyber Precio Oferta
+											span.price
+												| S/  
+												span 59
+													span.centimos .90
+											//- span.pay-note.align-center
+												| Todo medio de pago
+								.imagen
+									.bg-image.centervh
+									img.centerv(alt='', src!= base_url + 'productos/DECO_02.png')
+
+				// Slide DECOHOGAR 2
+				.slide
+					img.logo-campaign.centerh(src!= base_url + 'assets/logo-campaign.png')
+					.calls
+						.column.izq.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+							//- .discount
+								.percent 40
+								.simbol
+									| %
+									span Dscto.
+							a.call-left(href='#')
+								.imagen
+									.bg-image.centervh
+									img.centerv(alt='', src!= base_url + 'productos/DECO_03.png')
+								.content
+									.wrapper.product
+										.table
+											span.aon
+											//- span.hasta.align-left.box-center Hasta
+											span.marca
+												img(alt='', src!= base_url + 'marcas/magico.png')
+											span.descripcion CILINDRO
+												.line PARRILLERO
+												.line MINI 12 GL
+											span.antes Precio Normal: S/ 330
+											span.cyber Precio Oferta
+											span.price
+												| S/  
+												span 279
+											//- span.pay-note.align-center
+												| Todo medio de pago
+						.column.der.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+							//- .discount
+								.percent 70
+								.simbol
+									| %
+									span Dscto.
+							a.call-right(href='#')
+								.content
+									.wrapper.product
+										.table
+											span.aon
+											//- span.hasta.align-left.box-center Hasta
+											span.marca
+												img(alt='', src!= base_url + 'marcas/magefesa.png')
+											span.descripcion OLLA A PRESIÓN
+												.line FAVORITE 8 L
+											span.antes Precio Normal: S/ 359
+											span.cyber Precio Oferta
+											span.price
+												| S/  
+												span 319
+								.imagen
+									.bg-image.centervh
+									img.centerv(alt='', src!= base_url + 'productos/DECO_04.png')
+
+				//- Slide DECOHOGAR 3
+				//- .slide
+					img.logo-campaign.centerh(src!= base_url + 'assets/logo-campaign.png')
+					.calls
+						.column.izq.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+							//- .discount
+								.percent 40
+								.simbol
+									| %
+									span Dscto.
+							a.call-left(href='#')
+								.imagen
+									img.centerv(alt='', src!= base_url + 'productos/59.png')
+								.content
+									.wrapper.until
+										.table
+											span.aon
+											span.hasta.align-left.box-center Hasta
+											//- span.marca
+											//- span.descripcion
+											//- span.antes
+											//- span.cyber.align-left.box-center &nbsp;
+											span.price.porcentual.box-center
+												span.number 50
+												span.percent %
+													.dscto Dscto.
+											span.note.align-center
+												| en 
+												//- span.bigger
+												| sets de vasos y copas
+											//- span.pay-note.align-center
+												| Todo medio de pago
+						.column.der.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+							//- .discount
+								.percent 70
+								.simbol
+									| %
+									span Dscto.
+							a.call-right(href='#')
+								.content
+									.wrapper.until
+										.table
+											span.aon
+											span.hasta.align-left.box-center Hasta
+											//- span.marca
+											//- span.descripcion
+											//- span.antes
+											//- span.cyber.align-left Hasta
+											span.price.porcentual.box-center
+												span.number 60
+												span.percent %
+													.dscto Dscto.
+											span.note.align-center
+												| en Muebles decorativos
+											//- span.pay-note.align-center
+												| Todo medio de pago
+											//- span.colores.align-center
+												img(src!= base_url + 'marcas/guess.png')
+												img(src!= base_url + 'marcas/casio.png')
+												img(src!= base_url + 'marcas/citizen.png')
+												img(src!= base_url + 'marcas/nautica.png')
+												img(src!= base_url + 'marcas/aerostar.png')
+								.imagen
+									img.centerv(alt='', src!= base_url + 'productos/60.png')
+

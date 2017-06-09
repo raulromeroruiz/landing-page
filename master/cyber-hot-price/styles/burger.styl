@@ -1,0 +1,100 @@
+
+@media screen and (max-width: 479px)
+	.menutrigger {
+		display: block;
+		position: fixed;
+		right: 10px;
+		top: 14px;
+		z-index: 1030;
+	}
+
+	.menutrigger .trigger {
+		cursor: pointer;
+		display: inline-block;
+		margin-right: 7px;
+		width: 24px;
+	}
+
+	.menutrigger .trigger span {
+		background: #fff;
+		border-radius: 20%;
+		display: block;
+		height: 3px;
+		margin: auto;
+		margin-top: 4px;
+		opacity: 1;
+		position: relative;
+		-webkit-transition: 0.2s;
+		-moz-transition: 0.2s;
+		-o-transition: 0.2s;
+		transition: 0.2s;
+	}
+
+	header .ripley_logo_home {
+		background: #000;
+		position: relative;
+		text-align: center;
+		width: 100%;
+		z-index: 100;
+		display: block;
+		height: 55px;
+		position: fixed;
+	}
+
+	header .menu-header.active, header.scrolled .menu-header.active {
+		display: block;
+		top: 50px;
+		position: fixed;
+	}
+
+	header .menu-header, header.scrolled .menu-header {
+		display: none;
+		position: absolute;
+		top: -300%;
+		width: 100%;
+		z-index: 90;
+		-webkit-transition: 0.45s ease;
+		-moz-transition: 0.45s ease;
+		-o-transition: 0.45s ease;
+		-ms-transition: 0.45s ease;
+		transition: 0.45s ease;
+	}
+
+	header .menu-header nav, header.scrolled .menu-header nav {
+		padding-top: 0;
+	}
+
+	header .menu-header nav ul, header.scrolled .menu-header nav ul {
+		height: auto;
+		width: 100%;
+	}
+
+	nav ul {
+		flex-direction: column;
+		height: 90%;
+		margin: 0 auto;
+		padding: 0;
+		width: 90%;
+		-webkit-flex-direction: column;
+	}
+
+	header .menu-header nav ul li, header.scrolled .menu-header nav ul li {
+		background: none;
+		background-color: #000;
+		border-top: 1px solid #fff;
+		height: auto;
+		padding: 1em;
+		width: 100%;
+	}
+
+	header .menu-header nav ul li a, header.scrolled .menu-header nav ul li a {
+		background: none;
+		color: #fff;
+		display: block;
+		height: auto;
+		text-align: center;
+		text-indent: 0;
+		width: 100% !important;
+		font-family: 'Open Sans';
+		text-decoration: none;
+	}

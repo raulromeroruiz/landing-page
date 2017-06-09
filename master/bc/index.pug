@@ -1,0 +1,137 @@
+extends ./layout/layout.pug
+
+block title
+	title CYBER - Ripley
+
+block content
+	- var base_url = 'http://simple.ripley.com.pe/minisitios/especial/cierra-puertas-'
+
+	include includes/mixins.pug
+
+	.container-fluid#header-banner
+		.row
+			.col-xs-12.col-sm-12.col-md-12.col-lg-12.col-xl-12
+				nav.nav-bar
+					//- figure#cintillo-superior
+						a(href='#')
+							img.cintillo-cyber.centervh(src='images/cintillo-top.png')
+							img.cintillo-top-mobile.centervh(src='images/cintillo-top-mobile.png')
+					.current-category.centervh.align-left
+						| Cierra Puertas Online
+					button#btn-mobile
+						span
+						span
+						span
+					ul#main-menu.menu
+						//- li
+							a.lnk-menu(href!= base_url +'regalos-top')
+								| Regalos Top
+								//- | Regalos TOP para mamá
+						li
+							a.lnk-menu(href!= base_url +'tv-y-videojuegos')
+								| TV y Videojuegos
+								//- | TV y Audio
+						li
+							a.lnk-menu(href!= base_url +'muebleria')
+								| Muebles
+						li
+							a.lnk-menu(href!= base_url +'laptops-y-tablets')
+								//- | Cómputo
+								| Laptops y Tablets
+						li
+							a.lnk-menu(href!= base_url +'calzado-y-zapatillas')
+								//- | Calzado
+								| Calzado y Zapatillas
+						li
+							a.lnk-menu(href!= base_url +'celulares-y-videojuegos')
+								//- | Celulares
+								| Celulares y Tecnología
+						li
+							a.lnk-menu(href!= base_url +'belleza-y-accesorios')
+								//- | Belleza y Accesorios
+								| Belleza y Cuidado personal
+						li
+							a.lnk-menu(href!= base_url +'moda')
+								| Moda y Accesorios
+								//- | Jueguetes y Bebés
+						li
+							a.lnk-menu(href!= base_url +'electrohogar')
+								| Electrohogar
+						li
+							a.lnk-menu(href!= base_url +'dormitorio')
+								| Dormitorio
+						li
+							a.lnk-menu(href!= base_url +'deco')
+								| Decohogar
+						li
+							a.lnk-menu(href!= base_url +'fitness')
+								| Fitness
+								//- | Máquinas y Bicicletas
+						li
+							a.lnk-menu(href!= base_url +'juguetes-y-bebes')
+								//- | Infantil
+								| Jueguetes y Bebés
+
+				#sponsor
+					include ./includes/banner-catalogo.pug
+
+		.row
+			.sector_filtros.control-bar.stickIt
+				.groupB
+					//- a#btn_ofertas.btn.filter.regalos-top.bloque(href!= base_url +'online', data-seccion='Regalos Top', target='_top')
+						span.iconress.gift
+						span.text
+							| Regalos Top
+					a#btn_tv_video.btn.filter.tv-y-videojuegos.bloque(href!= base_url +'tv-video', data-seccion='Tv y Video', target='_top')
+						span.iconress.video
+						span.text TV y Videojuegos
+					a#btn_muebleria.btn.filter.muebleria.bloque(href!= base_url +'muebleria', data-seccion='Muebles y Hogar', target='_top')
+						span.iconress.muebleria
+						span.text
+							| Muebles
+					a#btn_laptops.btn.filter.laptops-y-tablets.bloque(href!= base_url +'laptops-y-tablets', data-seccion='Laptops y Tablets', target='_top')
+						span.iconress.tecnologia
+						span.text
+							| Laptops y Tablets
+					a#btn_belleza.btn.filter.calzado-y-zapatillas.bloque(href!= base_url +'calzado-y-zapatillas', data-seccion='Calzado y Zapatillas', target='_top')
+						span.iconress.belleza
+						span.text
+							| Calzado y Zapatillas
+					a#btn_celulares.btn.filter.celulares-y-videojuegos.bloque(href!= base_url +'celulares-y-videojuegos', data-seccion='Celulares y Videojuegos', target='_top')
+						span.iconress.celulares
+						span.text.two
+							| Celulares y 
+							span Tecnología
+					a#btn_relojes.btn.filter.relojes-y-accesorios.bloque(href!= base_url +'belleza-y-accesorios', data-seccion='Relojes y Accesorios', target='_top')
+						span.iconress.relojes
+						span.text.two
+							| Belleza y
+							span Cuidado personal
+					a#btn_bebe.btn.filter.moda.bloque(href!= base_url +'moda', data-seccion='Moda', target='_top')
+						span.iconress.moda
+						span.text
+							| Moda y Accesorios
+					a#btn_electrohogar.btn.filter.electrohogar.bloque(href!= base_url +'electrohogar', data-seccion='Electrohogar', target='_top')
+						span.iconress.electrohogar
+						span.text Electrohogar
+					a#btn_dormitorio.btn.filter.dormitorio.bloque(href!= base_url +'dormitorio', data-seccion='Dormitorio', target='_top')
+						span.iconress.dormitorio
+						span.text Dormitorio
+					a#btn_decohogar.btn.filter.deco.bloque(href!= base_url +'deco', data-seccion='Decohogar', target='_top')
+						span.iconress.decohogar
+						span.text Decohogar
+					a#btn_deporte.btn.filter.fitness.bloque(href!= base_url +'fitness', data-seccion='Fitness', target='_top')
+						span.iconress.deporte
+						span.text
+							| Fitness
+							//- span Bicicletas
+					a#btn_bebe.btn.filter.juguetes-y-bebes.bloque(href!= base_url +'juguetes-y-bebes', data-seccion='Juguetes y Bebés', target='_top')
+						span.iconress.bebe
+						span.text.two
+							| Juguetes y Bebés
+							//- span Bebés
+					//- a#btn_bebe.btn.filter.moda.bloque(href!= base_url +'moda', data-seccion='moda', target='_top')
+						span.iconress.moda
+						span.text.two
+							| Moda
+	script(type='text/javascript', src!='js/main.js')

@@ -1,0 +1,125 @@
+doctype html
+html(lang='es')
+	head
+		include ../includes/styles.pug
+
+		// Google Tag Manager
+		script.
+			(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+			new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+			j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+			'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+			})(window,document,'script','dataLayer','GTM-NX7Q8B');
+		// End Google Tag Manager
+	body
+		// Google Tag Manager (noscript)
+		noscript
+			iframe(src='https://www.googletagmanager.com/ns.html?id=GTM-NX7Q8B', height='0', width='0', style='display:none;visibility:hidden')
+		// End Google Tag Manager (noscript)
+		block content
+
+		script(src!='../js/jquery-2.1.4.min.js')
+		script(src!='../js/jquery.bxslider.min.js')
+		script.
+			path = location.pathname.split('/');
+			console.log(path);
+			_ACTIVE_SLIDER = path[path.length - 1].split('.')[0];
+			//_ACTIVE_SLIDER = p
+
+			$('#slider-'+ _ACTIVE_SLIDER).fadeIn(1000);
+			console.log(_ACTIVE_SLIDER);
+			var slider = $('#slider-'+ _ACTIVE_SLIDER +' .banner').bxSlider({
+				mode: 'fade', 
+				auto: true, 
+				infiniteLoop: true,
+				//autoControls: true,
+				//autoControlsCombine: true,
+				nextSelector: '#slider-' + _ACTIVE_SLIDER + ' .slider-next',
+				prevSelector: '#slider-' + _ACTIVE_SLIDER + ' .slider-prev',
+				onSliderLoad: function() {
+					var btn = $('<span></span>')
+					.addClass('bx-pause');
+					var control = $('<div></div>')
+					.addClass('bx-control');
+					control.append(btn);
+					$('#slider-' + _ACTIVE_SLIDER + ' .bx-default-pager').append(control);
+				}
+			});
+
+			var restart = null;
+			var playing = true;
+			$('#slider-' + _ACTIVE_SLIDER + ' .bx-pager-item a').click(function(e){
+			  //current = slider.getCurrentSlide();
+			    var i = $('.bx-pager-item a').index(this);
+			    console.log(i);
+			    slider.goToSlide(i);
+			    slider.stopAuto();
+			    clearTimeout(restart);
+			    if (playing) {
+			      restart=setTimeout(function(){
+			        slider.goToSlide(i+1);
+			        slider.startAuto();
+			        console.log('Go pager item');
+			      }, 7500);
+			    }
+
+			    return false;
+			});
+
+			$('#slider-' + _ACTIVE_SLIDER + ' .slider-next a').click(function(event) {
+			    i = slider.getCurrentSlide(); console.log(i);
+			    slider.goToSlide(i);
+			    slider.stopAuto();
+			    clearTimeout(restart);
+			    if (playing) {
+			      restart=setTimeout(function(){
+			        slider.goToSlide(i+1);
+			        slider.startAuto();
+			        console.log('Go next');
+			      }, 7500);
+			    }
+
+			    return false;
+			});
+			$('#slider-' + _ACTIVE_SLIDER +  '.slider-prev a').click(function(event) {
+			    i = slider.getCurrentSlide(); console.log(i);
+			    slider.goToSlide(i);
+			    slider.stopAuto();
+			    clearTimeout(restart);
+			    if (playing) {
+			      restart=setTimeout(function(){
+			        slider.goToSlide(i+1);
+			        slider.startAuto();
+			        console.log('Go prev');
+			      }, 7500);
+			    }
+
+			    return false;
+			});
+
+			$(document).on('click', '#slider-' + _ACTIVE_SLIDER + ' .bx-control span', function(event) {
+			  //console.log(playing);
+			  if (playing) {
+			    $(this).addClass('bx-play');
+			    slider.stopAuto();
+			    playing = false;
+			  }
+			  else {
+			    $(this).removeClass('bx-play');
+			    slider.startAuto();
+			    playing = true;
+			  }
+			});
+
+			$(document).on('click', '#slider-' + _ACTIVE_SLIDER + ' .bx-controls-auto-item a', function(event) {
+			  event.preventDefault();
+			  console.log($(event.currentTarget).hasClass('bx-start'));
+			  if ($(this).hasClass('bx-start')) {
+			    playing = true;
+			  }
+			  else {
+			    playing = false;
+			  }
+			  /* Act on the event */
+			});
+		//- script(src='http://192.168.11.104:8080/target/target-script-min.js#anonymous')

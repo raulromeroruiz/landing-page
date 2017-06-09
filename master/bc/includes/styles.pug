@@ -1,0 +1,8 @@
+// Usar ruta absoluta: http://www.ripley.com.pe/minisitios/campana/cyber-mama/css/...
+- var base_path = 'http://www.ripley.com.pe/minisitios/campana/cyber-mama/'
+if dev=="dev"
+	- var base_path = '../'
+link(href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700', rel='stylesheet', type='text/css')
+link(href!= base_path + 'css/app_peru.css', rel='stylesheet', type='text/css')
+link(href!= base_path + 'css/jquery.bxslider.css', rel='stylesheet', type='text/css')
+link(href!= base_path + 'css/styles.css', rel='stylesheet', type='text/css')

@@ -1,0 +1,152 @@
+extends ../layout/layout2.pug
+
+block content
+	- var base_url = 'http://www.ripley.com.pe/minisitios/campana/cyber-mama-4/'
+	if test=="dev"
+		- var base_url = '../'
+
+	#cyber(style='margin:0')
+		// DORMITORIO
+		.slider-banner#slider-dormitorio
+			span.slider-prev
+			span.slider-next
+			.banner
+				// Slide DORMITORIO 1
+				.slide
+					img.logo-campaign.centerh(src!= base_url + 'assets/logo-dormitorio.jpg')
+					.calls
+						.column.izq.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+							//- .discount
+								.percent 40
+								.simbol
+									| %
+									span DSCTO.
+							a.call-left(href='#')
+								.imagen
+									img.centerv(alt='', src!= base_url + 'productos/31.jpg')
+								.content
+									.wrapper.product
+										.table
+											span.aon
+											span.marca
+												img(alt='', src!= base_url + 'marcas/rosen.jpg')
+											span.descripcion CAMA BEAT 2 PLZ
+												.line KIT CHARM
+											span.antes Precio Normal: S/ 1,596
+											span.cyber Precio Oferta
+											span.price
+												| S/ 
+												span 949
+											span.legal
+												| Incluye: Colchón + Box Tarima + Cabecera + 2 Veladores + Cómoda
+						.column.der.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+							//- .discount
+								.percent 70
+								.simbol
+									| %
+									span DSCTO.
+							a.call-right(href='#')
+								.content
+									.wrapper.product
+										.table
+											span.aon
+											span.hasta.align-left.box-center Hasta
+											//- span.marca
+											//- span.descripcion
+											//- span.antes
+											//- span.cyber.align-left.box-center &nbsp;
+											span.price.porcentual.box-center
+												span.number 30
+												span.percent %
+													.dscto DSCTO.
+											span.adicional
+												img(src!= base_url + 'assets/adicional10.jpg')
+											span.note.align-center
+												//- | en 
+												//- span.bigger 
+												| en Camas
+											span.pay-note.align-center
+												| *A partir de 2 plz
+								.imagen
+									img.centerv(alt='', src!= base_url + 'productos/32.jpg')
+
+				// Slide DORMITORIO 2
+				.slide
+					img.logo-campaign.centerh(src!= base_url + 'assets/logo-dormitorio.jpg')
+					.calls
+						.column.izq.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+							//- .discount
+								.percent 40
+								.simbol
+									| %
+									span DSCTO.
+							a.call-left(href='#')
+								.imagen
+									img.centerv(alt='', src!= base_url + 'productos/33.jpg')
+								.content
+									.wrapper.product
+										.table
+											span.aon
+											span.marca
+												img(alt='', src!= base_url + 'marcas/paraiso.jpg')
+											span.descripcion CAMA DIVÁN 1.5 PLZ
+												.line + CÓMODA CHARM
+											span.antes Precio Normal: S/ 1,598
+											span.cyber Precio Oferta
+											span.price
+												| S/ 
+												span 1,089
+											span.legal
+												| Incluye: Cama principal 1.5 plz + Cama auxiliar 1 plz + Cómoda
+						.column.der.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+							//- .discount
+								.percent 70
+								.simbol
+									| %
+									span DSCTO.
+							a.call-right(href='#')
+								.content
+									.wrapper.product
+										.table
+											span.aon
+											span.marca
+												img(alt='', src!= base_url + 'marcas/forli.jpg')
+											span.descripcion DORMITORIO 
+												.line 200 CESENA
+												.line 2 PLZ
+											span.antes Precio Normal: S/ 1,999
+											span.cyber PRECIO OFERTA
+											span.price
+												| S/ 
+												span 1,299
+											span.legal
+												| Incluye: Colchón + Box tarima + Cabecera + 2 Veladores
+								.imagen
+									img.centerv(alt='', src!= base_url + 'productos/34.jpg')
+
+				// Slide DORMITORIO 3
+				//- .slide
+					img.logo-campaign.centerh(src='http://www.ripley.com.pe/minisitios/campana/cyber-mama-4/images/logo-campaign.jpg')
+					.calls
+						.column.izq.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+							a#event_header6.call-right(href='http://simple.ripley.com.pe/minisitios/especial/servicio-cliente#bases-legales', data-seccion='regalos_top_slide3_2', target='_blank')
+								.fullimage
+									img.centervh(alt='', src='http://www.ripley.com.pe/minisitios/campana/cyber-mama-4/images/productos/100.jpg')
+						.column.der.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+							a#event_header28.call-right(href='http://simple.ripley.com.pe/ripley-home/descuentos/muebles', data-seccion='muebles_slide1_2', target='_top')
+								.content
+									.wrapper.product
+										.table
+											span.aon
+											// <span class="marca"><img alt="" src="http://www.ripley.com.pe/minisitios/campana/cyber-mama-4/images/outlet-decohogar.jpg"></span>
+											span.hasta.align-left.box-center Hasta
+											span.price.porcentual.box-center
+												span.number 40
+												span.percent
+													| %
+													.dscto DSCTO.
+											span.note.align-center en todo Maletas
+											span.iconos-colores.align-center
+												img(src='http://www.ripley.com.pe/minisitios/campana/cyber-mama-4/images/logos-maletas-2404.jpg')
+								.imagen
+									img.centerv(alt='', src='http://www.ripley.com.pe/minisitios/campana/cyber-mama-4/images/productos/101.jpg')

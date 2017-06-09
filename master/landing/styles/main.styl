@@ -1,0 +1,1541 @@
+$rojo = #cd1337
+$caki = #d3cbbf
+$ocre = #69544a
+$gree_o = #838148
+$yellow = #fcce01
+$gotham = 'Gotham-Medium'
+$buy_color = #fcf03f
+
+vendor(prop, args)
+	-webkit-{prop} args
+	-moz-{prop} args
+	{prop} args
+
+#tec-samsung
+	background-color white
+	color black
+	line-height 1.4
+	overflow hidden
+	margin -30px 0 -25px 0
+	width 100%
+	clear both
+	font-family 'Open Sans', sans-serif
+	.container-fluid
+		padding 0
+		height 100%
+	.container
+		padding 0
+		clear both
+		float left		
+	h2
+		padding 0
+		margin 0
+	.box-model
+		height auto
+		clear both
+		padding 0
+	.loader
+		background transparent url(../images/ring.svg) center no-repeat
+		background-size cover
+		-webkit-background-size cover
+		width 75px
+		height 75px
+
+	#container
+		width 100%
+		height auto
+		float left
+		overflow hidden
+		opacity 0
+		position relative
+		/* background-image url(../images/bg-page.jpg) */
+		background-position center top
+		background-repeat no-repeat
+
+	.contents
+		max-width 1170px
+		margin 0 auto
+		position relative
+		z-index 1
+		height 100%
+		clear both
+	.logos
+		position relative
+		z-index 1
+
+	.intro
+		width 100%
+		/* height calc(100vh - 114px) */
+		height 700px
+		margin 0 auto
+		clear both
+		overflow hidden
+		position relative
+		background-color white
+		background-image url(../images/header.jpg)
+		background-position center
+		.nav-bar
+			margin 20px auto 0
+			height 47px
+			z-index 100
+			display none
+		.logo-header
+			top 0
+	.video-intro
+		width 100%
+		height 100%
+		position absolute
+		top 0
+		left 0
+	#main-menu
+		height 46px
+		float right
+		font-size 0
+		left 0
+		background-color black
+		display none
+		vendor('transition', all 0.2s ease-in 0s)
+		li
+			position relative
+			display inline-block
+
+			a
+				position relative
+				display block
+				line-height 40px
+				text-align center
+				margin 0
+				padding 0px 20px
+				height 40px
+				font-size 14px
+				color #fff
+				text-transform uppercase
+				text-decoration none
+				.icon
+					margin-top 2px
+					margin-right 8px
+					display inline-block
+					float left
+				&:hover
+					color #000
+					background-color white
+					vendor('transition', all 0.2s ease-in 0s)
+					
+			.active
+				color black
+
+	.nav
+		width 100%
+		float left
+		position relative
+		z-index 101
+		.nav-bar
+			margin 0 auto
+
+	.nav-bar
+		width 1024px
+		height 15vh
+		z-index 6
+		vendor('transition', all 0.2s ease-in 0s)
+		position relative
+		z-index 100
+
+	#mainmenu
+		width 100%
+		margin 0 auto
+		position absolute
+		height 49px
+		background rgba(21,45,170,1)
+		z-index 10
+		transform translateZ(0)
+		-webkit-transform translateZ(0)
+		transform translate3d(0,0,0)
+		-webkit-transform translate3d(0,0,0)
+		.menu 
+			float right
+			height 49px
+			li
+				a
+					padding 0px 20px
+					&::after
+						content ''
+						width 1px
+						height 20px
+						position absolute
+						top 15px
+						right 0
+						background-color rgba(255,255,255,.25)
+				&:last-child
+					a
+						&::after
+							display none
+
+	.icono
+		height 113px
+		display block
+		transform skew(-10deg)
+		-webkit-transform skew(-10deg)
+		width 100%
+		position relative
+	.logo-mobile
+		display none
+	.logo-brand
+		float left
+		text-align right
+		position absolute
+		z-index 1000
+		top 0
+		left 15px
+		height 100%
+		display -ms-flexbox
+		display -webkit-flex
+		display flex
+		-ms-flex-align center
+		-webkit-align-items center
+		-webkit-box-align center
+		align-items center
+		justify-content center
+	
+	.menu
+		font-size 0
+		list-style-type none
+		text-align center
+		height 49px
+		z-index 100
+		transition all .3s ease-in-out
+		text-align left
+		vendor('transition', all 0.2s ease-in 0s)
+		li
+			width auto
+			float left
+			/* margin 0 1% */
+			height 100%
+			position relative
+			overflow hidden
+			/*
+			display -ms-flexbox
+			display -webkit-flex
+			display flex
+			-ms-flex-align center
+			-webkit-align-items center
+			-webkit-box-align center
+			align-items center
+			*/
+			a
+				width auto
+				position relative
+				display block
+				line-height 1
+				text-align center
+				height 100%
+				color #fff
+				text-decoration none
+				margin 0 auto
+				font-size 20px
+				display -ms-flexbox
+				display -webkit-flex
+				display flex
+				-ms-flex-align center
+				-webkit-align-items center
+				-webkit-box-align center
+				align-items center
+				strong
+					display block
+					font-weight 600
+				.icon
+					margin-bottom 2px
+					display block
+					margin 0 auto
+					float left
+					height 42px
+					position absolute
+				.text
+					display block
+					vertical-align middle
+					text-align center
+					position relative
+					line-height 1
+					padding 0
+					width 100%
+					font-size 20px
+				.elements
+					display block
+					text-align center
+					font-size 16px
+					font-weight bold
+					width 100%
+					line-height 1
+				&:hover
+					background-position center bottom !important
+					
+			.active
+				&::after
+					content ''
+					width 52px
+					height 2px
+					background-color #ffc800
+					position absolute
+					bottom 1%
+					left 50%
+					transform translate(-50%, 0)
+					-webkit-transform translate(-50%, 0)
+			&::after
+				content ''
+				width 1px
+				height 20px
+				background-color #7b7272
+				position absolute
+				bottom 10px
+				right 0
+				display none
+			&:last-child
+				&::after
+					display none
+
+	.submenu
+		width 100%
+		color #000
+		transition all .3s ease-in-out
+		display none
+		position absolute
+		background-color #fff
+		min-width 320px
+		box-shadow 0px 8px 16px 0px rgba(0,0,0,0.2)
+		padding 0% 0% 0%
+		transition all .3s ease-in-out
+		padding-bottom 4%
+		z-index 1
+		left 0
+		.orig 
+			color #0079c2
+			font-family 'adineuePRO-Regular', sans-serif
+			letter-spacing 1px
+
+	.lnk-submenu
+		height auto !important
+		text-align left !important
+		display inline !important
+		font-size 16px !important
+		line-height 1.4 !important
+
+	.call
+		height 100%
+		width 476px
+		position absolute
+		right 60%
+		top 0
+		height 100%
+		background-image url(../images/dots-home.png)
+		background-position center 98%
+		background-repeat no-repeat
+		z-index 1
+	.btn-know-w
+		text-indent -9999999px
+		width 226px
+		height 62px
+		display block
+		margin 0 auto
+	.texto-intro
+		width 476px
+		position relative
+		margin-top 50%
+		z-index 1
+		img
+			width 100%
+
+	.scroll
+		margin 40px auto 0
+		display block
+		position relative
+		width 25px
+		height 50px
+		clear both
+		vendor('transition', all 0.2s ease-in 0s)
+		z-index 99
+		animation scrolling 2s infinite
+		-webkit-animation-name scrolling
+		-webkit-animation-duration 2s
+		-webkit-animation-iteration-count infinite
+		&:hover
+			bottom 9px
+	.arrow-scroll
+		display block
+
+	/* SECTIONS */
+	section
+		width 100%
+		height 100vh
+		position relative
+		clear both
+		margin-bottom 70px
+		margin-bottom 0
+		&#tv
+			padding-top 0
+			padding-top 120px
+		&#linea-blanca
+			padding-top 0
+			padding-top 120px
+		&#tecnologiaa
+			padding-top 120px
+			margin-bottom 10px
+			.one
+				.features
+					bottom -175px
+				&:first-child
+					.features
+						bottom -150px
+				&:last-child
+					margin-right 0
+			.two
+				margin-right 13px
+			.aon
+				position absolute
+				left 65%
+				top 0
+			.colors
+				position absolute
+				right 11%
+				top 61px
+	
+	.bread
+		height 32px
+		margin-bottom 36px
+		.contents
+			width 1170px
+			&::after
+				content ''
+				position absolute
+				right calc(100% - 33px)
+				top 0
+				width 100%
+				height 32px
+				background-image url(../images/line-title.png)
+				background-repeat no-repeat
+				background-position center right
+			& *
+				display inline-block
+
+	.tv-header
+		height 353px
+		width 100%
+		padding 0
+		margin-bottom 13px
+		.cont-btn
+			height 100%
+			position absolute
+			top 0
+			left 0
+			display -ms-flexbox
+			display -webkit-flex
+			display flex
+			-webkit-flex-direction column
+			-ms-flex-direction column
+			flex-direction column
+			-webkit-flex-wrap nowrap
+			-ms-flex-wrap nowrap
+			flex-wrap nowrap
+			-webkit-justify-content flex-end
+			-ms-flex-pack end
+			justify-content flex-end
+			-webkit-align-content stretch
+			-ms-flex-line-pack stretch
+			align-content stretch
+			-webkit-align-items center
+			-ms-flex-align center
+			align-items center
+			.btn-buy
+				margin-bottom 64px
+				color white
+				border-color white
+
+	.tvs
+		width 680px
+		height 230px
+		float left
+		margin-right 14px
+		position relative
+		overflow hidden
+		.box-tv
+			&:last-child
+				width 326px
+				margin-right 0
+		&:hover
+			.foot-tvs
+				bottom 0
+	#slider-tv
+		width 100%
+		height 230px
+		margin 0 auto
+		.description
+			margin-top 100px
+			padding-left 100px
+		.slide
+			width 100%
+			height 100%
+			img
+				height 230px
+		.slick-prev
+			background-image url(../images/arrow-left.png)
+			width 14px
+			height 30px
+			left -7.5%
+			top 45%
+			&::before
+				content ''
+		.slick-next
+			background-image url(../images/arrow-right.png)
+			width 14px
+			height 30px
+			right -7.5%
+			top 45%
+			&::before
+				content ''
+		
+	.box-tv
+		width 343px
+		height 230px
+		float left
+		margin-right 11px
+		cursor pointer
+		position relative
+		overflow hidden
+		.features
+			padding-top 40px
+			top 100%
+			bottom auto
+			height 100%
+			padding-bottom 0
+			.btn-buy
+				display none
+		img
+			display block
+		&:hover
+			.features
+				top 0
+	.foot-tvs
+		background-color rgba(255,255,255, .8)
+		position absolute
+		height 45px
+		width 100%
+		z-index 100
+		bottom -45px
+		left 0
+		text-align center
+		display -ms-flexbox
+		display -webkit-flex
+		display flex
+		-webkit-flex-direction row
+		-ms-flex-direction row
+		flex-direction row
+		-webkit-flex-wrap nowrap
+		-ms-flex-wrap nowrap
+		flex-wrap nowrap
+		-webkit-justify-content center
+		-ms-flex-pack center
+		justify-content center
+		-webkit-align-content stretch
+		-ms-flex-line-pack stretch
+		align-content stretch
+		-webkit-align-items center
+		-ms-flex-align center
+		align-items center
+		vendor('transition', all 0.2s ease-in 0s)
+		.btn-buy
+			margin-left 12px
+	.complement
+		width 474px
+		height 230px
+		float left
+		position relative
+		overflow hidden
+		cursor pointer
+		.features
+			bottom -170px
+			height 100%
+		.note
+			font-size 15px
+			margin-bottom 15px
+		&:hover
+			.features
+				bottom 0
+	.one
+		width 412px
+		float left
+		margin-right 13px
+		padding 0
+		clear none !important
+		cursor pointer
+		overflow hidden
+		max-height 560px
+		&:hover
+			.features
+				bottom 0 !important
+				background-color rgba(255,255,255,.8)
+		.note
+			font-size 15px
+	.two
+		width 320px
+		float left
+		padding 0
+		clear none !important
+		max-height 560px
+		overflow hidden
+		.box-image
+			cursor pointer
+			&:last-child
+				height 280px
+				margin-bottom 0
+				.features
+					bottom -215px
+					
+		.features
+			bottom -208px
+			height 100%
+		.category
+			font-size 27px
+			line-height 2.333
+		.name
+			font-size 13px
+			margin-bottom 2px
+		.note
+			font-size 15px
+
+	.arrows
+		margin-right 10px
+	.title-section
+		font-size 40px
+		padding 0
+		position relative
+		color #000
+		font-weight 600
+		line-height 1
+		margin 0 15px 0 58px
+		font-family 'SamsungSharpSans-Bold', sans-serif
+		&::beforee
+			content ''
+			width 205px
+			height 1px
+			background-color #7eb61e
+			position absolute
+			top 0
+			left 0
+		&::afterr
+			content ''
+			width 80px
+			height 1px
+			background-color #7eb61e
+			position absolute
+			bottom 0
+			left 0
+	.title-detail
+		font-family 'SamsungSharpSans-Regular', sans-serif
+		font-weight normal
+		font-size 20px
+		margin-bottom 0
+		padding 0
+		line-height 1.2
+
+	.text-detail
+		font-size 13px
+		margin-bottom 9px
+		padding 0 10px
+		word-wrap break-word
+		line-height 1.4
+		overflow hidden
+		vendor('transition', all 0.2s ease-in 0s)
+	.box-text
+		font-size 20px
+		p
+			margin-bottom 28px
+	.box-image
+		margin-bottom 16px
+		width 320px
+		height 268px
+		overflow hidden
+		position relative
+		&:hover
+			.features
+				padding-bottom 0
+				bottom 0 !important
+				background-color rgba(255,255,255,.8)
+				display -ms-flexbox
+				display -webkit-flex
+				display flex
+				-webkit-flex-direction column
+				-ms-flex-direction column
+				flex-direction column
+				-webkit-flex-wrap nowrap
+				-ms-flex-wrap nowrap
+				flex-wrap nowrap
+				-webkit-justify-content center
+				-ms-flex-pack center
+				justify-content center
+				-webkit-align-content stretch
+				-ms-flex-line-pack stretch
+				align-content stretch
+				-webkit-align-items center
+				-ms-flex-align center
+				align-items center
+	.btn-buy
+		display inline-block
+		clear both
+		width 128px
+		height 35px
+		line-height 35px
+		font-size 15px
+		font-weight 600
+		background-color transparent
+		text-decoration none
+		text-align center
+		border-radius 2px
+		color black
+		border 1px solid #000
+		text-transform uppercase
+
+	.nav-section
+		height 81px
+		width 100%
+		position absolute
+		top 10px
+		left 0
+		z-index 100
+
+	.menu-section
+		font-size 0
+		list-style-type none
+		border-radius 20px
+		text-align center
+		width auto
+		float right
+		z-index 100
+		vendor('transition', all 0.2s ease-in 0s)
+		li
+			position relative
+			margin-bottom 12px
+			float left
+			margin 0 9px
+			a
+				position relative
+				color #fff
+				text-decoration none
+				font-size 20px
+				text-indent -20000px
+				display block
+				&:hover, .active
+					vendor('transition', all 0.2s ease-in 0s)
+			.active
+				color red
+	.nav-icons
+		width auto
+		height 130px
+		position absolute
+		left 100px
+		top 0
+		display -ms-flexbox
+		display -webkit-flex
+		display flex
+		-webkit-flex-direction column
+		-ms-flex-direction column
+		flex-direction column
+		-webkit-flex-wrap nowrap
+		-ms-flex-wrap nowrap
+		flex-wrap nowrap
+		-webkit-justify-content center
+		-ms-flex-pack center
+		justify-content center
+		-webkit-align-content stretch
+		-ms-flex-line-pack stretch
+		align-content stretch
+		-webkit-align-items center
+		-ms-flex-align center
+		align-items center
+		z-index 100
+		ul
+			li
+				width 83px
+				float left
+				a
+					display block
+					background-image url(../images/sprite-productos.png)
+					background-position center top
+					text-indent -200000px
+					&.active, &:hover
+						background-position center bottom
+	
+	.nav-slider
+		position absolute
+		left 0
+		top 0
+
+	.ventajas
+		background-color white
+		width 380px
+		height auto
+		position absolute
+		right 0
+		top 0
+		padding 25px 0 18px
+		border-radius 1px
+		.check
+			display inline-block
+			margin-right 10px
+		.title
+			width 100%
+			color black
+			font-size 23px
+			margin-bottom 30px
+			height 30px
+			line-height 1
+			position relative
+			font-family $gotham
+			text-transform uppercase
+			text-align center
+			img
+				height auto !important
+				margin 6px auto
+				display inline-block
+			&::before
+				content ''
+				width 58px
+				height 4px
+				position absolute
+				bottom -16px
+				left 50%
+				transform translate(-50%, 0)
+				-webkit-transform translate(-50%, 0)
+				background-color #ffc800
+		.lista
+			margin-left 38px
+			margin-bottom 30px
+			li
+				color black
+				padding-left 19px
+				position relative
+				font-size 16px
+				height auto
+				margin-bottom 12px
+				line-height 1.1
+				&::before
+					content ''
+					position absolute
+					background-color #ffc800
+					border-radius 5px
+					width 8px
+					height 8px
+					top 3px
+					left 0  
+		.ver-mas
+			margin 0 auto
+			text-indent -10000px
+			display block
+	#subcategorias
+		height 100vh
+		/* height auto */
+	.bg-subcategorias
+		padding-top 38px
+		background transparent url(../images/bg-subcategorias.jpg) center top no-repeat
+		background-size auto 100%
+		-webkit-background-size auto 100%
+		width 100%
+		height calc(100vh - 88px)
+	.title-subcategorias
+		background-color white
+		height 88px
+		margin 0
+		line-height 3
+		width 100%
+		&::after
+			bottom 25%
+	.wrap-subcategoria
+		padding 0
+	.subcategoria
+		border 2px solid white
+		padding 0
+		position relative
+		overflow hidden
+		img
+			width 100%
+			height auto
+			display block
+			vendor('transition', all 0.2s ease-in 0s)
+		.over
+			vendor('transition', all 0.2s ease-in 0s)
+			background-color rgba(255,255,255, 0)
+		&:hover
+			.overs
+				background-color rgba(255,255,255, .6)
+			.over-contents
+				padding-top 120px
+	.col-subcategoria
+		padding 0
+	.info-subcategoria
+		padding 20px 40px
+		text-align center
+		color white
+		clear both
+		font-size 14px
+	.over
+		width 100%
+		height 100%
+	.over-content
+		vendor('transition', all 0.5s ease-in 0s)
+		padding-top 330px
+		height 100%
+	.title-subcategoria
+		margin-bottom 48px
+		position relative
+		&::before
+			content ''
+			width 32px
+			height 2px
+			position absolute
+			bottom -24px
+			left 50%
+			transform translate(-50%, 0)
+			-webkit-transform translate(-50%, 0)
+			background-color #fdc700
+		img
+			width auto
+			display block
+			margin 0 auto
+	.lista-subcategoria
+		list-style-type none
+		li
+			text-align center
+			a
+				color black
+				text-decoration none
+				position relative
+				font-size 16px
+				&:hover
+					&::before
+						content ''
+						position absolute
+						background-image url(../images/arrow-subctg.png)
+						right 101%
+						top 30%
+						width 12px
+						height 10px
+
+	.more-info
+		padding-top 30px
+		width 810px
+		margin 0 auto
+		clear both
+		text-shadow 1px 1px 2px #3d3d3d
+
+	.lnk-product
+		border-radius 15px
+		background-color white
+		color black
+		width 130px
+		text-transform uppercase
+		font-size 11px
+		font-weight 600
+		line-height 2.7
+		height 30px
+		text-align center
+		text-decoration none
+		position absolute
+		bottom -30px
+		vendor('transition', all 0.2s ease-in 0s)
+
+	.overlay
+		width 100%
+		height 100%
+		background-color rgba(255,255,255,.5)
+		z-index 5
+		opacity 1
+		position fixed
+
+	.scrollme
+		bottom 22px
+		height auto
+		z-index 7
+
+	.text-scroll
+		color white
+		margin-bottom 8px
+		font-size 14px
+		text-align center
+
+	.scroller
+		margin 0 auto
+		text-indent -10000px
+		display block
+	
+	.modelos
+		width 1366px
+		margin 0 auto
+		height 100%
+		position relative
+		clear both
+	.column
+		height 100%
+		display table
+		display -ms-flexbox
+		display -webkit-flex
+		display flex
+		-webkit-flex-direction column
+		-ms-flex-direction column
+		flex-direction column
+		-webkit-flex-wrap nowrap
+		-ms-flex-wrap nowrap
+		flex-wrap nowrap
+		-webkit-justify-content center
+		-ms-flex-pack center
+		justify-content center
+		-webkit-align-content stretch
+		-ms-flex-line-pack stretch
+		align-content stretch
+		-webkit-align-items center
+		-ms-flex-align center
+		align-items center
+	.box-content
+		display block
+	
+	
+	.content
+		width 100%
+	.title
+		font-size 60px
+		font-weight normal
+		margin-bottom 28px
+		line-height 1
+		color #fcca18
+		text-align center
+	.img-products
+		position absolute
+		top 0
+		left 0
+	.imagen
+		width 360px
+		height 360px
+		border-radius 50%
+		overflow hidden
+		border 2px solid white
+		box-shadow 0 0 10px #ccc
+		margin 0 auto 20px
+		img
+			height 100%
+
+	.section-features
+		height 100vh
+		z-index 100
+		z-index 10
+		margin-top 81px
+		padding 0
+	.features
+		width 100%
+		display table-cell
+		vertical-align middle
+		/* display none */
+		bottom -210px
+		z-index 50
+		background-color rgba(255,255,255,.88)
+		text-align center
+		padding-bottom 20px
+		vendor('transition', all 0.5s ease-in 0s)
+
+	.category
+		font-family 'SamsungInterFace-Bold', sans-serif
+		font-size 30px
+		color #000
+		margin-bottom 0
+		font-weight 900
+		line-height 2
+		height 60px
+		span
+			font-weight normal
+	.name
+		font-size 16px
+		color #6a6a6a
+		font-weight 600
+		margin-bottom 5px
+		line-height 1.15
+	.hasta
+		font-size 13px
+		color #6a6a6a
+	.porcentaje
+		width 50px
+		margin 0 auto
+		font-size 50px
+		color #101010
+		line-height 0.75
+		display table
+		margin-bottom 10px
+		& +.btn-buy
+			margin-top 10px
+	.number
+		font-size 76px
+		/* display table-cell
+		vertical-align middle */
+		font-weight 300
+		letter-spacing -6px
+		margin-right 4px
+		color #6a6a6a
+	.percent
+		line-height 29px
+		font-size 57px
+		display table-cell
+		vertical-align bottom
+		color #6a6a6a
+	.dscto
+		font-size 13px
+		margin-top 0
+		vertical-align top
+		margin-bottom -10px
+	.antes
+		font-size 10px
+		color #6a6a6a
+		margin-bottom 5px
+		line-height 1
+	.cyber
+		color #df213b
+		font-size 14px
+		padding-bottom 2px
+		text-transform uppercase
+		font-weight bold
+		line-height 1
+		text-decoration none
+		/* border-bottom 1px solid #e02139 */
+		display inline-block
+	.price
+		color #df213b
+		font-size 29px
+		line-height 1
+		padding-bottom 0
+		margin-bottom 10px
+		font-weight 600
+		position relative
+		span
+			display inline-block
+			font-size 41px
+			line-height 0.875
+			padding-bottom 0
+	.note
+		font-size 10px
+		font-weight 700
+		color #6a6a6a
+		padding 0
+		margin-bottom 20px
+		line-height 1
+	.pay
+		font-size 10px
+		font-weight 700
+		color #6a6a6a
+		padding 0
+		margin-bottom 20px
+		line-height 1
+
+	.all-features
+		display table-cell
+		vertical-align middle
+		height 100%
+		line-height 1
+	.title-feature
+		font-size 29px
+		color #08a3de
+		font-weight bold
+		margin-bottom 20px
+
+	.list-features
+		list-style-type none
+		li
+			color #101010
+			margin-bottom 12px
+			font-size 15px
+			margin-left 28px
+			&::before
+				content ''
+				background-image url(sprite.png)
+				background-position -190px 0
+				width 23px
+				height 17px
+				position absolute
+				left 17px
+
+	.box-sliders
+		width 100%
+		height 100vh
+		/* float right */
+		position relative
+		clear both
+	#slider-home
+		height 460px
+		width 100%
+		margin-bottom 0
+	.slide
+		width auto
+		width 100%
+		height 460px
+		display block
+		outline none
+		float left
+		position relative
+	.img-slide
+		background-size auto 100%
+		-webkit-background-size auto 100%
+		height 460px
+		background-position center
+		position relative
+	.btn-link
+		bottom 60px
+		text-indent -1000000px
+	.text-slide
+		width 730px
+		margin 0 auto
+		height 78px
+		background-color transparent
+		text-align center
+		display table
+		bottom 0
+		span
+			display table-cell
+			vertical-align middle
+			max-width 1366px
+			width 100%
+			color white
+			font-size 15px
+			line-height 1.25
+			text-shadow 1px 1px 2px #3a3a3a
+
+	.slick-prev
+		background-color transparent
+		text-indent -10000px
+		position absolute
+		top 50%
+		background-image url(../images/arrow-left.png)
+		background-size contain
+		-webkit-background-size contain
+		background-repeat no-repeat
+		width 73px
+		height 72px
+		z-index 99
+		left 12.5%
+		&::before
+			content ''
+
+	.slick-next
+		background-color transparent
+		text-indent -10000px
+		position absolute
+		top 50%
+		background-image url(../images/arrow-right.png)
+		background-size contain
+		-webkit-background-size contain
+		background-repeat no-repeat
+		width 73px
+		height 72px
+		z-index 99
+		right 12.5%
+		&::before
+			content ''
+	.slick-dots
+		bottom 0
+		width 700px
+		li
+			width 13px
+			height 13px
+			margin 0 3px
+			button
+				background-color black
+				border none
+				border-radius 50%
+				width 9px
+				height 9px
+				/* padding 4px */
+				&::before
+					display none
+		.slick-active
+			button
+				background-color #fff
+				/* border 2px solid #ffc800 */
+
+			
+	.name-category, .name-media
+		display block
+		color black
+		text-align center
+		text-transform uppercase
+		font-size 17px
+		font-family 'adineuePROTT-Black', sans-serif
+	.col-media
+		height 320px
+		margin-bottom 15px
+		position relative
+		overflow hidden
+		iframe
+			width 100%
+			height 240px
+		&:hover
+			box-shadow 0 0 20px rgba(0,0,0,.2)
+	.name-media
+		float left
+		padding 2% 0
+	.feature
+		width 101%
+		z-index 1000
+	#btn-mobile
+		display none
+		padding 10px
+		width 40px
+		height 40px
+		top 10px
+		position absolute
+		right 10px
+		z-index 101
+		border-radius 50%
+		outline none
+		background black
+		span
+			display block
+			clear both
+			width 20px
+			margin 0 auto 5px
+			background #fff
+			border-radius 1px
+			display block
+			height 2px
+			vendor('transition', all 0.2s ease-in 0s)
+		&::before 
+			content "Ver categorías >"
+			display block
+			font-family "Open Sans", sans-serif
+			font-size 12px
+			left -100px
+			position absolute
+			top 12px
+			width 100px
+			text-shadow 0px 0px 2px #2e2e2e
+			-webkit-animation abefore 3s linear infinite
+			animation abefore 3s linear infinite
+
+	.collapse-movil
+		background-color black
+		.menu
+			margin-top 50px
+		#btn-mobile
+			span
+				&:nth-child(1)
+					-webkit-transform rotate(45deg) translateY(6px) translateX(5px)
+					transform rotate(45deg) translateY(5px) translateX(5px)
+				&:nth-child(3)
+					-webkit-transform rotate(-45deg) translateY(-6px) translateX(5px)
+					transform rotate(-45deg) translateY(-5px) translateX(5px)
+				&:nth-child(2)
+					opacity 0
+			&::before
+				content ''
+
+
+
+	/* Class AUX */
+	.navigate
+		position fixed
+		top 0
+		padding 0
+	.back
+		float right
+		margin-right 17px
+		padding-top 7px
+		font-size 12px
+		color #666
+		display block
+
+	.centerv
+		position absolute
+		top 50%
+		transform translate(0, -50%)
+		-webkit-transform translate(0, -50%)
+
+	.centerh
+		position absolute
+		left 50%
+		transform translate(-50%, 0)
+		-webkit-transform translate(-50%, 0)
+
+	.centervh
+		position absolute
+		left 50%
+		top 50%
+		transform translate(-50%, -50%)
+		-webkit-transform translate(-50%, -50%)
+
+	.bottom
+		position absolute
+		bottom 0
+	.videobottom
+		video
+			bottom 0
+
+	.block
+		width 100%
+		height 100vh
+
+	.align-left
+		text-align left
+	.align-center
+		text-align center
+	.align-right
+		text-align right
+
+	.left
+		float left
+	.right
+		float right
+
+	.pleft
+		left 5%
+	.pright
+		right 5%
+
+	.fixed
+		position fixed !important
+		width 100%
+		z-index 100
+		transform translateZ(0)
+		-webkit-transform translateZ(0)
+		transform translate3d(0,0,0)
+		-webkit-transform translate3d(0,0,0)
+		/* vendor('transition', all 1s ease 0.5s) */
+
+	.absolute
+		position absolute
+		width 196px
+		img
+			width 100%
+		.text-avance
+			display none
+
+	.g-scrolling-top
+		display none
+		width 50px
+		height 50px
+		background url(../images/scrolling-top.png) 0 0 no-repeat
+		text-indent -9999em
+		text-decoration none
+		position fixed
+		bottom 25px
+		right 25px
+		z-index 99
+		cursor pointer
+		animation scrolling 2s infinite
+		-webkit-animation-name scrolling
+		-webkit-animation-duration 2s
+		-webkit-animation-iteration-count infinite
+
+
+	.link-section
+		width 100%
+		position relative
+		bottom 10%
+		text-align center
+		height 10vh
+		float left
+		display table
+	.link
+		display table-cell
+		vertical-align middle
+		display block
+		padding 5px 0
+		text-align center
+		a
+			color #fcca18
+			text-transform uppercase
+			text-decoration underline
+		.arrow-link
+			display inline-block
+			margin-bottom -4px
+
+	.middle
+		display table-cell
+		vertical-align middle
+
+	.img-vertical
+		img
+			width auto
+			height 100%
+
+	.img-horizontal
+		img
+			width 100%
+			height auto
+	#col1
+		/* background-color rgba(100,250,20, .5) */
+		height auto
+		float left
+	#col2
+		/* background-color rgba(120,150,80, .5) */
+		height auto
+		float left
+	#col3
+		/* background-color rgba(10,20,2, .5) */
+		height auto
+		float left
+	#col4
+		/* background-color rgba(50,50,200, .5) */
+		height auto
+		float left
+	
+	.flex
+		display -ms-flexbox
+		display -webkit-flex
+		display flex
+	
+	.flex-center
+		display -ms-flexbox
+		display -webkit-flex
+		display flex
+		-webkit-flex-direction column
+		-ms-flex-direction column
+		flex-direction column
+		-webkit-flex-wrap nowrap
+		-ms-flex-wrap nowrap
+		flex-wrap nowrap
+		-webkit-justify-content center
+		-ms-flex-pack center
+		justify-content center
+		-webkit-align-content stretch
+		-ms-flex-line-pack stretch
+		align-content stretch
+		-webkit-align-items center
+		-ms-flex-align center
+		align-items center
+	
+	.flex-center-left
+		display -ms-flexbox
+		display -webkit-flex
+		display flex
+		-webkit-flex-direction row
+		-ms-flex-direction row
+		flex-direction row
+		-webkit-flex-wrap nowrap
+		-ms-flex-wrap nowrap
+		flex-wrap nowrap
+		-webkit-justify-content flex-start
+		-ms-flex-pack start
+		justify-content flex-start
+		-webkit-align-content stretch
+		-ms-flex-line-pack stretch
+		align-content stretch
+		-webkit-align-items center
+		-ms-flex-align center
+		align-items center
+	
+	.flex-end-v
+		-webkit-flex-direction column
+		-ms-flex-direction column
+		flex-direction column
+		-webkit-flex-wrap nowrap
+		-ms-flex-wrap nowrap
+		flex-wrap nowrap
+		-webkit-justify-content center
+		-ms-flex-pack center
+		justify-content center
+		-webkit-align-content stretch
+		-ms-flex-line-pack stretch
+		align-content stretch
+		-webkit-align-items flex-end
+		-ms-flex-align end
+		align-items flex-end

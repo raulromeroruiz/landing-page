@@ -1,0 +1,125 @@
+extends ../layout/layout2.pug
+
+block content
+	- var base_url = 'http://www.ripley.com.pe/minisitios/campana/cyber-mama/'
+	if test=="dev"
+		- var base_url = '../'
+
+	#cyber(style='margin:0')
+		// ELECTROHOGAR
+		.slider-banner#slider-electrohogar
+			span.slider-prev
+			span.slider-next
+			.banner
+				// Slide ELECTROHOGAR 1
+				.slide
+					img.logo-campaign.centerh(src!= base_url + 'assets/logo-campaign.png')
+					.calls
+						.column.izq.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+							//- .discount
+								.percent 40
+								.simbol
+									| %
+									span DSCTO.
+							a.call-left(href='#')
+								.imagen
+									.bg-image.centervh
+									img.centerv(alt='', src!= base_url + 'productos/ELCTRO_01.png')
+								.content
+									.wrapper.product
+										.table
+											span.aon
+											span.marca
+												img(alt='', src!= base_url + 'marcas/indurama.png')
+											span.descripcion COCINA A GAS
+												.line VIERA
+											span.antes Precio Normal: S/ 1,149
+											span.cyber Precio Oferta
+											span.price
+												| S/  
+												span 549
+											//- span.pay-note
+												| Todo medio de pago
+						.column.der.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+							//- .discount
+								.percent 70
+								.simbol
+									| %
+									span DSCTO.
+							a.call-right(href='#')
+								.content
+									.wrapper.product
+										.table
+											span.aon
+											//- span.hasta.align-left.box-center Hasta
+											span.marca
+												img(alt='', src!= base_url + 'marcas/lg.png')
+											span.descripcion REFRIGERADORA
+												.line NO FROST GT29WPP
+											span.antes Precio Normal: S/ 1,599
+											span.cyber Precio Oferta
+											span.price
+												| S/  
+												span 1,199
+											//- span.pay-note
+												| Todo medio de pago
+								.imagen
+									.bg-image.centervh
+									img.centerv(alt='', src!= base_url + 'productos/ELCTRO_02.png')
+
+				// Slide ELECTROHOGAR 2
+				.slide
+					img.logo-campaign.centerh(src!= base_url + 'assets/logo-campaign.png')
+					.calls
+						.column.izq.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+							//- .discount
+								.percent 40
+								.simbol
+									| %
+									span DSCTO.
+							a.call-left(href='#')
+								.imagen
+									.bg-image.centervh
+									img.centerv(alt='', src!= base_url + 'productos/ELCTRO_03.png')
+								.content
+									.wrapper.product
+										.table
+											span.aon
+											//- span.hasta.align-left.box-center Hasta
+											span.marca
+												img(alt='', src!= base_url + 'marcas/samsung.png')
+											span.descripcion LAVADORA
+												.line CARGA SUPERIOR
+												.line WA12F5L2UWW1
+											span.antes Precio Normal: S/ 1,149
+											span.cyber Precio Oferta
+											span.price
+												| S/  
+												span 799
+						.column.der.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+							//- .discount
+								.percent 70
+								.simbol
+									| %
+									span DSCTO.
+							a.call-right(href='#')
+								.content
+									.wrapper.product
+										.table
+											span.aon
+											//- span.hasta.align-left.box-center Hasta
+											span.marca
+												img(alt='', src!= base_url + 'marcas/samsung.png')
+											span.descripcion REFRIGERADORA
+												.line NO FROST
+												.line RT32K5730S8
+											span.antes Precio Normal: S/ 2,099
+											span.cyber Precio Oferta
+											span.price
+												| S/  
+												span 1,499
+											//- span.pay-note
+												| Todo medio de pago
+								.imagen
+									.bg-image.centervh
+									img.centerv(alt='', src!= base_url + 'productos/ELCTRO_04.png')

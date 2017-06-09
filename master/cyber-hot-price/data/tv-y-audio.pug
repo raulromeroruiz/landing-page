@@ -1,0 +1,121 @@
+extends ../layout/layout2.pug
+block content
+	- var base_url = 'http://www.ripley.com.pe/minisitios/campana/cyber-mama/'
+	if test=="dev"
+		- var base_url = '../'
+
+	#cyber(style='margin:0')
+		// TV Y AUDIO
+		.slider-banner#slider-tv-y-audio
+			span.slider-prev
+			span.slider-next
+			.banner
+				// Slide TV - AUDIO 1
+				.slide
+					img.logo-campaign.centerh(src!= base_url + 'assets/logo-campaign.png')
+					.calls
+						.column.izq.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+							//- .discount
+								.percent 40
+								.simbol
+									| %
+									span DSCTO.
+							a.call-left(href='#')
+								.imagen
+									.bg-image.centervh
+									img.centerv(alt='', src!= base_url + 'productos/TV-VIDEOJUEGO_01.png')
+								.content
+									.wrapper.product
+										.table
+											span.aon
+											span.marca
+												img(alt='', src!= base_url + 'marcas/samsung.png')
+											span.descripcion SMART TV
+												.line 49K6500 CURVO
+											span.antes Precio Normal: S/ 2,799
+											span.cyber Precio Oferta
+											span.price
+												| S/ 
+												span 1,799
+						.column.der.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+							//- .discount
+								.percent 70
+								.simbol
+									| %
+									span DSCTO.
+							a.call-right(href='#')
+								.content
+									.wrapper.product
+										.table
+											span.aon
+											span.marca
+												img(alt='', src!= base_url + 'marcas/lg.png')
+											span.descripcion SMART TV
+												.line 55UH6030
+											span.antes Precio Normal: S/ 4,199
+											span.cyber Precio Oferta
+											span.price
+												| S/ 
+												span 2,499
+								.imagen
+									.bg-image.centervh
+									img.centerv(alt='', src!= base_url + 'productos/TV-VIDEOJUEGO_02.png')
+
+				// Slide TV - AUDIO 2
+				.slide
+					img.logo-campaign.centerh(src!= base_url + 'assets/logo-campaign.png')
+					.calls
+						.column.izq.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+							//- .discount
+								.percent 40
+								.simbol
+									| %
+									span DSCTO.
+							a.call-left(href='#')
+								.imagen
+									.bg-image.centervh
+									img.centerv(alt='', src!= base_url + 'productos/TV-VIDEOJUEGO_03.png')
+								.content
+									.wrapper.product
+										.table
+											span.aon
+											span.marca
+												img(alt='', src!= base_url + 'marcas/sony.png')
+											span.descripcion SMART TV
+												.line DL-40W655D
+											span.antes Precio Normal: S/ 1,899
+											span.cyber Precio Oferta
+											span.price
+												| S/  
+												span 1,399
+											//- span.pay-note
+												| Todo medio de pago
+						.column.der.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+							//- .discount
+								.percent 70
+								.simbol
+									| %
+									span DSCTO.
+							a.call-right(href='#')
+								.content
+									.wrapper.product
+										.table
+											span.aon
+											//- span.hasta.align-left.box-center Hasta
+											span.marca
+												img(alt='', src!= base_url + 'marcas/playstation.png')
+											span.descripcion CONSOLA PS4
+												.line SLIM + PES 2017 +
+												.line CONTROL DUAL SHOCK 4
+											span.antes Precio Normal: S/ 2,875
+											span.cyber Precio Oferta
+											span.price
+												| S/  
+												span 1,699
+											//- span.pay-note
+												| Todo medio de pago
+								.imagen
+									.bg-image.centervh
+									img.centerv(alt='', src!= base_url + 'productos/TV-VIDEOJUEGO_04.png')
+
+				

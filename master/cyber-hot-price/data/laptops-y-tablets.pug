@@ -1,0 +1,176 @@
+extends ../layout/layout2.pug
+
+block content
+	- var base_url = 'http://www.ripley.com.pe/minisitios/campana/cyber-mama/'
+	if test=="dev"
+		- var base_url = '../'
+
+	#cyber(style='margin:0')
+		// LAPTOPS Y TABLETS
+		.slider-banner#slider-laptops-y-tablets
+			span.slider-prev
+			span.slider-next
+			.banner
+				// Slide LAPTOPS 1
+				.slide
+					img.logo-campaign.centerh(src!= base_url + 'assets/logo-campaign.png')
+					.calls
+						.column.izq.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+							a.call-left(href='#')
+								.imagen
+									.bg-image.centervh
+									img.centerv(alt='', src!= base_url + 'productos/LAPTOPS-TABLETS-01.png')
+								.content
+									.wrapper.product
+										.table
+											span.aon
+											span.marca
+												img(alt='', src!= base_url + 'marcas/hp.png')
+											span.descripcion LAPTOP CORE i5
+												.line 14-AMO12LA
+											span.antes Precio Normal: S/ 1,999
+											span.cyber Precio Oferta
+											span.price
+												| S/ 
+												span 1,699
+						.column.der.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+							a.call-right(href='#')
+								.content
+									.wrapper.product
+										.table
+											span.aon
+											span.marca
+												img(alt='', src!= base_url + 'marcas/lenovo.png')
+											span.descripcion LAPTOP IDEAPAD 310
+												.line INTEL CORE i3
+											span.antes Precio Normal: S/ 1,799
+											span.cyber Precio Oferta
+											span.price
+												| S/  
+												span 1,399
+								.imagen
+									.bg-image.centervh
+									img.centerv(alt='', src!= base_url + 'productos/LAPTOPS-TABLETS-02.png')
+
+				// Slide LAPTOPS 2
+				.slide
+					img.logo-campaign.centerh(src!= base_url + 'assets/logo-campaign.png')
+					.calls
+						.column.izq.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+							a.call-left(href='#')
+								.imagen
+									.bg-image.centervh
+									img.centerv(alt='', src!= base_url + 'productos/LAPTOPS-TABLETS-03.png')
+								.content
+									.wrapper.product
+										.table
+											span.aon
+											span.marca
+												img(alt='', src!= base_url + 'marcas/epson.png')
+											span.descripcion IMPRESORA
+												.line MULTIFUNCIONAL
+												.line XP-241 CON WIFI
+											span.antes Precio Normal: S/ 299
+											span.cyber Precio Oferta
+											span.price
+												| S/  
+												span 149
+													span.centimos .50
+						.column.der.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+							a.call-right(href='#')
+								.content
+									.wrapper.product
+										.table
+											span.aon
+											//- span.hasta.align-left.box-center Hasta
+											span.marca
+												img(alt='', src!= base_url + 'marcas/wacom.png')
+											span.descripcion BAMBOO SPARK
+												.line SLEEVE LIBRETA
+												.line DIGITALIZADORA
+											span.antes Precio Normal: S/ 499
+											span.cyber Precio Oferta
+											span.price
+												| S/  
+												span 299
+								.imagen
+									.bg-image.centervh
+									img.centerv(alt='', src!= base_url + 'productos/LAPTOPS-TABLETS-04.png')
+
+				//- Slide LAPTOPS 3
+				//- .slide
+					img.logo-campaign.centerh(src!= base_url + 'assets/logo-campaign.png')
+					.calls
+						.column.izq.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+							a.call-left(href='#')
+								.imagen
+									img.centerv(alt='', src!= base_url + 'productos/55.png')
+								.content
+									.wrapper
+										.table
+											span.aon
+											span.marca
+												img(alt='', src!= base_url + 'marcas/hp.png')
+											span.descripcion LAPTOP CORE i3
+												.line AY011
+											span.antes Precio Normal: S/ 1,699
+											span.cyber Precio Oferta
+											span.price
+												| S/  
+												span 1,099
+						.column.der.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+							a.call-right(href='#')
+								.content
+									.wrapper
+										.table
+											span.aon
+											span.marca
+												img(alt='', src!= base_url + 'marcas/hp.png')
+											span.descripcion LAPTOP CORE i7
+												.line 15-AY016
+											span.antes Precio Normal: S/ 3,399
+											span.cyber Precio Oferta
+											span.price
+												| S/  
+												span 2,099
+								.imagen
+									img.centerv(alt='', src!= base_url + 'productos/56.png')
+
+				//- Slide LAPTOPS 4
+				//- .slide
+					img.logo-campaign.centerh(src!= base_url + 'assets/logo-campaign.png')
+					.calls
+						.column.izq.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+							a.call-left(href='#')
+								.imagen
+									img.centerv(alt='', src!= base_url + 'productos/57.png')
+								.content
+									.wrapper
+										.table
+											span.aon
+											span.marca
+												img(alt='', src!= base_url + 'marcas/lenovo.png')
+											span.descripcion TABLET TAB2
+												.line A10-30
+											span.antes Precio Normal: S/ 699
+											span.cyber Precio Oferta
+											span.price
+												| S/  
+												span 399
+						.column.der.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+							a.call-right(href='#')
+								.content
+									.wrapper
+										.table
+											span.aon
+											span.marca
+												img(alt='', src!= base_url + 'marcas/advance.png')
+											span.descripcion LAPTOP NV6646 +
+												.line DISCO DURO 500GB
+											span.antes Precio Normal: S/ 999
+											span.cyber Precio Oferta
+											span.price
+												| S/  
+												span 599
+								.imagen
+									img.centerv(alt='', src!= base_url + 'productos/58.png')

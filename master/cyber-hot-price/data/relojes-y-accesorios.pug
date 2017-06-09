@@ -1,0 +1,174 @@
+extends ../layout/layout2.pug
+
+block content
+	- var base_url = 'http://www.ripley.com.pe/minisitios/campana/cyber-mama/'
+	if test=="dev"
+		- var base_url = '../'
+
+	#cyber(style='margin:0')
+		// RELOJES Y ZAPATILLAS
+		.slider-banner#slider-relojes-y-accesorios
+			span.slider-prev
+			span.slider-next
+			.banner
+				// Slide RELOJES 1
+				.slide
+					img.logo-campaign.centerh(src!= base_url + 'assets/logo-campaign.png')
+					.calls
+						.column.izq.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+							//- .discount
+								.percent 40
+								.simbol
+									| %
+									span DSCTO.
+							a.call-left(href='#')
+								.imagen
+									.bg-image.centervh
+									img.centerv(alt='', src!= base_url + 'productos/RELOJES_01.png')
+								.content
+									.wrapper.product
+										.table
+											span.aon
+											//- span.hasta.align-left.box-center Hasta
+											span.marca
+												img(alt='', src!= base_url + 'marcas/fossil.png')
+											span.descripcion RELOJ ES3737
+												.line PARA DAMA
+											span.antes Precio Normal: S/ 569
+											span.cyber Precio Oferta
+											span.price
+												| S/  
+												span 399
+						.column.der.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+							//- .discount
+								.percent 70
+								.simbol
+									| %
+									span DSCTO.
+							a.call-right(href='#')
+								.content
+									.wrapper.product
+										.table
+											span.aon
+											//- span.hasta.align-left.box-center Hasta
+											span.marca
+												img(alt='', src!= base_url + 'marcas/fossil.png')
+											span.descripcion RELOJ ES4185
+												.line PARA DAMA
+											span.antes Precio Normal: S/ 569
+											span.cyber Precio Oferta
+											span.price
+												| S/  
+												span 399
+								.imagen
+									.bg-image.centervh
+									img.centerv(alt='', src!= base_url + 'productos/RELOJES_02.png')
+
+				// Slide RELOJES 2
+				.slide
+					img.logo-campaign.centerh(src!= base_url + 'assets/logo-campaign.png')
+					.calls
+						.column.izq.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+							//- .discount
+								.percent 40
+								.simbol
+									| %
+									span DSCTO.
+							a.call-left(href='#')
+								.imagen
+									.bg-image.centervh
+									img.centerv(alt='', src!= base_url + 'productos/RELOJES_03.png')
+								.content
+									.wrapper.until
+										.table
+											span.aon
+											span.hasta.align-left &nbsp;
+											//- span.marca.align-left Hasta
+											//- span.descripcion
+											//- span.antes
+											//- span.cyber
+											span.price.porcentual
+												span.number 30
+												span.percent %
+													.dscto Dscto.
+											span.note.align-center
+												| en Relojes
+												span(style='display:block; font-weight:600;')
+													| FOSSIL
+												
+						.column.der.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+							//- .discount
+								.percent 70
+								.simbol
+									| %
+									span DSCTO.
+							a.call-right(href='#')
+								.content
+									.wrapper.until
+										.table
+											span.aon
+											span.hasta.align-left.box-center &nbsp;
+											//- span.marca.align-left Hasta
+											//- span.descripcion
+											//- span.antes
+											//- span.cyber
+											span.price.porcentual.box-center
+												span.number 30
+												span.percent %
+													.dscto Dscto.
+											span.note.align-center
+												| en Relojes
+												span(style='display:block; font-weight:600;')
+													| MICHAEL KORS
+								.imagen
+									.bg-image.centervh
+									img.centerv(alt='', src!= base_url + 'productos/RELOJES_04.png')
+
+				//- Slide RELOJES 3
+				//- .slide
+					img.logo-campaign.centerh(src!= base_url + 'assets/logo-campaign.png')
+					.calls
+						.column.izq.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+							//- .discount
+								.percent 40
+								.simbol
+									| %
+									span DSCTO.
+							a.call-left(href='#')
+								.imagen
+									img.centerv(alt='', src!= base_url + 'productos/47.png')
+								.content
+									.wrapper
+										.table
+											span.aon
+											span.marca
+												img(alt='', src!= base_url + 'marcas/asics.png')
+											span.descripcion RELOJ DIGITAL
+												.line CQAR08 UNISEX
+											span.antes Precio Normal: S/ 499
+											span.cyber Precio Oferta
+											span.price
+												| S/  
+												span 199
+						.column.der.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+							//- .discount
+								.percent 70
+								.simbol
+									| %
+									span DSCTO.
+							a.call-right(href='#')
+								.content
+									.wrapper
+										.table
+											span.aon
+											span.marca
+												img(alt='', src!= base_url + 'marcas/aerostar.png')
+											span.descripcion RELOJ 66234
+												.line PARA DAMA
+											span.antes Precio Normal: S/ 350
+											span.cyber Precio Oferta
+											span.price
+												| S/  
+												span 139
+								.imagen
+									img.centerv(alt='', src!= base_url + 'productos/48.png')

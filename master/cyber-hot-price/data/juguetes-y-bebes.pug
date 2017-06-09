@@ -1,0 +1,117 @@
+extends ../layout/layout2.pug
+
+block content
+	- var base_url = 'http://www.ripley.com.pe/minisitios/campana/cyber-mama/'
+	if test=="dev"
+		- var base_url = '../'
+
+	#cyber(style='margin:0')
+		// JUGUETES Y BEBES
+		.slider-banner#slider-juguetes-y-bebes
+			span.slider-prev
+			span.slider-next
+			.banner
+				// Slide JUGUETES 1
+				.slide
+					img.logo-campaign.centerh(src!= base_url + 'assets/logo-campaign.png')
+					.calls
+						.column.izq.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+							//- .discount
+								.percent 40
+								.simbol
+									| %
+									span DSCTO.
+							a.call-left(href='#')
+								.imagen
+									.bg-image.centervh
+									img.centerv(alt='', src!= base_url + 'productos/INFANTIL_01.png')
+								.content
+									.wrapper.product
+										.table
+											span.aon
+											//- span.hasta.align-left.box-center Hasta
+											span.marca
+												img(alt='', src!= base_url + 'marcas/infanti.png')
+											span.descripcion SILLA NIDO MUSICAL
+												.line Y VIBRADORA
+											span.antes Precio Normal: S/ 249
+											span.cyber Precio Oferta
+											span.price
+												| S/  
+												span 199
+						.column.der.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+							//- .discount
+								.percent 70
+								.simbol
+									| %
+									span DSCTO.
+							a.call-right(href='#')
+								.content
+									.wrapper.product
+										.table
+											span.aon
+											span.marca
+												img(alt='', src!= base_url + 'marcas/graco.png')
+											span.descripcion CORRAL PACK
+												.line NAPPER MANOR
+											span.antes Precio Normal: S/ 1,189.90
+											span.cyber Precio Oferta
+											span.price
+												| S/  
+												span 869
+								.imagen
+									.bg-image.centervh
+									img.centerv(alt='', src!= base_url + 'productos/INFANTIL_02.png')
+
+				// Slide JUGUETES 2
+				.slide
+					img.logo-campaign.centerh(src!= base_url + 'assets/logo-campaign.png')
+					.calls
+						.column.izq.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+							//- .discount
+								.percent 40
+								.simbol
+									| %
+									span DSCTO.
+							a.call-left(href='#')
+								.imagen
+									.bg-image.centervh
+									img.centerv(alt='', src!= base_url + 'productos/INFANTIL_03.png')
+								.content
+									.wrapper.product
+										.table
+											span.aon
+											span.marca
+												img(alt='', src!= base_url + 'marcas/little.png')
+											span.descripcion BUGGY PIRATAS
+												.line UNISEX
+											span.antes Precio Normal: S/ 359
+											span.cyber Precio Oferta
+											span.price
+												| S/  
+												span 143
+													span.centimos .60
+						.column.der.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+							//- .discount
+								.percent 70
+								.simbol
+									| %
+									span DSCTO.
+							a.call-right(href='#')
+								.content
+									.wrapper.product
+										.table
+											span.aon
+											span.marca
+												img(alt='', src!= base_url + 'marcas/little.png')
+											span.descripcion COCINA COOK
+												.line STORE UNISEX
+											span.antes Precio Normal: S/ 599
+											span.cyber Precio Oferta
+											span.price
+												| S/  
+												span 240
+								.imagen
+									.bg-image.centervh
+									img.centerv(alt='', src!= base_url + 'productos/INFANTIL_04.png')
+

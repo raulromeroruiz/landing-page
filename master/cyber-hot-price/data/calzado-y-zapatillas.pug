@@ -1,0 +1,155 @@
+extends ../layout/layout2.pug
+
+block content
+	- var base_url = 'http://www.ripley.com.pe/minisitios/campana/cyber-mama-4/'
+	if test=="dev"
+		- var base_url = '../'
+
+	#cyber.cyber-container
+		// CALZDO Y ZAPATILLAS
+		.slider-banner#slider-calzado-y-zapatillas
+			span.slider-prev
+			span.slider-next
+			.banner
+				// Slide CALZADO 1
+				.slide
+					img.logo-campaign.centerh(src!= base_url + 'assets/logo-campaign.png')
+					.calls
+						.column.izq.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+							//- .discount
+								.percent 40
+								.simbol
+									| %
+									span Dscto.
+							a.call-left(href='#')
+								.imagen
+									.bg-image.centervh
+									img.centerv(alt='', src!= base_url + 'productos/CALZADO_01.png')
+								.content
+									.wrapper.until
+										.table
+											span.aon
+											span.hasta.align-center.box-center Hasta
+											//- span.marca
+											//- span.descripcion
+											//- span.antes
+											//- span.cyber.align-left.box-center &nbsp;
+											span.price.porcentual
+												span.number 40
+												span.percent %
+													.dscto Dscto.
+											//- span.adicional
+												img(src!= base_url + 'assets/adicional20.png')
+											span.note.align-center
+												| en Zapatillas urbanas para mujer
+						.column.der.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+							//- .discount
+								.percent 70
+								.simbol
+									| %
+									span Dscto.
+							a.call-right(href='#')
+								.content
+									.wrapper.until
+										.table
+											span.aon
+											span.hasta.align-center.box-center Hasta
+											//- span.marca
+											//- span.descripcion
+											//- span.antes
+											//- span.cyber.align-left.box-center Hasta
+											span.price.porcentual
+												span.number 40
+												span.percent %
+													.dscto Dscto.
+											//- span.adicional
+												img(src!= base_url + 'assets/adicional10.png')
+											span.note.align-center(style='line-height:1.2;')
+												//- | en 
+												//- span.bigger 
+												| en Zapatillas urbanas para hombre
+											//- span.note.f-size9
+												| *No incluye Adidas Stan Smith y Superstar
+											//- span.colores.align-center
+												img(src!= base_url + 'marcas/guess.png')
+												img(src!= base_url + 'marcas/casio.png')
+												img(src!= base_url + 'marcas/citizen.png')
+												img(src!= base_url + 'marcas/nautica.png')
+												img(src!= base_url + 'marcas/aerostar.png')
+								.imagen
+									.bg-image.centervh
+									img.centerv(alt='', src!= base_url + 'productos/CALZADO_02.png')
+
+				// Slide CALZADO 2
+				.slide
+					img.logo-campaign.centerh(src!= base_url + 'assets/logo-campaign.png')
+					.calls
+						.column.izq.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+							//- .discount
+								.percent 40
+								.simbol
+									| %
+									span Dscto.
+							a.call-left(href='#')
+								.imagen
+									.bg-image.centervh
+									img.centerv(alt='', src!= base_url + 'productos/CALZADO_03.png')
+								.content
+									.wrapper.until
+										.table
+											span.aon
+											span.hasta.align-center.box-center Hasta
+											//- span.marca
+											//- span.descripcion
+											//- span.antes
+											//- span.cyber.align-left.box-center &nbsp;
+											span.price.porcentual
+												span.number 30
+												span.percent %
+													.dscto Dscto.
+											//- span.adicional
+												img(src!= base_url + 'assets/adicional10.png')
+											span.note.align-center
+												//- | en todo 
+												//- span.bigger
+												| en Botas y Botines para mujer
+											//- span.note.f-size9
+												| *No incluye Adidas Stan Smith y Superstar
+						.column.der.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+							//- .discount
+								.percent 70
+								.simbol
+									| %
+									span Dscto.
+							a.call-right(href='#')
+								.content
+									.wrapper.until
+										.table
+											span.aon
+											span.hasta.align-center.box-center Hasta
+											//- span.marca
+											//- span.descripcion
+											//- span.antes
+											//- span.cyber.align-left.box-center &nbsp;
+											span.price.porcentual
+												span.number 20
+												span.percent %
+													.dscto Dscto.
+											//- span.adicional
+												img(src!= base_url + 'assets/adicional10.png')
+											span.note.align-center
+												//- | en 
+												//- span.bigger 
+												| en miles de Zapatillas deportivas
+											//- span.colores.align-center
+												img(src!= base_url + 'marcas/guess.png')
+												img(src!= base_url + 'marcas/casio.png')
+												img(src!= base_url + 'marcas/citizen.png')
+												img(src!= base_url + 'marcas/nautica.png')
+												img(src!= base_url + 'marcas/aerostar.png')
+								.imagen
+									.bg-image.centervh
+									img.centerv(alt='', src!= base_url + 'productos/CALZADO_04.png')
+					//- .slide-note
+						| * No incluye Adidas, Stan, Smith y Superstar
+

@@ -1,0 +1,133 @@
+extends ../layout/layout2.pug
+
+block content
+	- var base_url = 'http://www.ripley.com.pe/minisitios/campana/cyber-mama/'
+	if test=="dev"
+		- var base_url = '../'
+
+
+	#cyber(style='margin:0')
+		// MUEBLES
+		.slider-banner#slider-muebles
+			span.slider-prev
+			span.slider-next
+			.banner
+				// Slide MUEBLES 1
+				.slide
+					img.logo-campaign.centerh(src!= base_url + 'assets/logo-muebles.jpg')
+					.calls
+						.column.izq.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+							//- .discount
+								.percent 40
+								.simbol
+									| %
+									span DSCTO.
+							a.call-left(href='#')
+								.imagen
+									img.centerv(alt='', src!= base_url + 'productos/27.jpg')
+								.content
+									.wrapper.until
+										.table
+											span.aon
+											span.marca
+												img.centerh(alt='', src!= base_url + 'marcas/outlet-decohogar.jpg')
+											span.hasta.align-left.box-center Hasta
+											//- span.descripcion
+											//- span.antes
+											//- span.cyber
+											span.price.porcentual.box-center
+												span.number 80
+												span.percent %
+													.dscto DSCTO.
+											span.note.align-center
+												| en miles de productos
+											//- span.pay-note.align-center
+												| Todo medio de pago
+						.column.der.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+							//- .discount
+								.percent 70
+								.simbol
+									| %
+									span DSCTO.
+							a.call-right(href='#')
+								.content
+									.wrapper.until
+										.table
+											span.aon
+											span.marca
+												img(alt='', src!= base_url + 'marcas/home.jpg')
+											span.descripcion RECLINABLE MAX
+												.line BICOLOR - 1 CUERPO
+											span.antes Precio Normal: S/ 1,699
+											span.cyber Precio Oferta
+											span.price
+												| S/ 
+												span 679
+													//- span.centimos .60
+											//- span.pay-note
+												| Todo medio de pago
+								.imagen
+									img.centerv(alt='', src!= base_url + 'productos/28.jpg')
+
+				// Slide MUEBLES 2
+				.slide
+					img.logo-campaign.centerh(src!= base_url + 'assets/logo-muebles.jpg')
+					.calls
+						.column.izq.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+							//- .discount
+								.percent 40
+								.simbol
+									| %
+									span DSCTO.
+							a.call-left(href='#')
+								.imagen
+									img.centerv(alt='', src!= base_url + 'productos/29.jpg')
+								.content
+									.wrapper.until
+										.table
+											span.aon
+											span.hasta.align-left.box-center Hasta
+											//- span.marca
+												img(alt='', src!= base_url + 'marcas/home.jpg')
+											//- span.descripcion
+											//- span.antes
+											//- span.cyber
+											span.price.porcentual.box-center
+												span.number 70
+												span.percent %
+													.dscto DSCTO.
+											span.note.align-center
+												| en Centros de TV + regalo
+											//- span.colores
+												| Colores disponibles
+											//- span.iconos-colores
+												img(src!= base_url + 'marcas/gris-oscuro.png')
+												img(src!= base_url + 'marcas/plata.png')
+						.column.der.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+							//- .discount
+								.percent 70
+								.simbol
+									| %
+									span DSCTO.
+							a.call-right(href='#')
+								.content
+									.wrapper.until
+										.table
+											span.aon
+											span.hasta.align-left.box-center Hasta
+											//- span.marca
+												img(alt='', src!= base_url + 'marcas/home.jpg')
+											//- span.descripcion
+											//- span.antes
+											//- span.cyber
+											span.price.porcentual.box-center
+												span.number 70
+												span.percent %
+													.dscto DSCTO.
+											span.note.align-center
+												| en Muebles de Dormitorio
+											//- span.colores.align-center
+												img(src!= base_url + 'marcas/monark.png')
+								.imagen
+									img.centerv(alt='', src!= base_url + 'productos/30.jpg')
+

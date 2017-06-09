@@ -1,0 +1,2421 @@
+header.ripley-header
+	.message-area
+		.message-area-content
+	.marketing-ribbon
+		.marketing-ribbon-fixed
+			style.
+				.cintcentro1 {
+				display: none;
+				}
+				.cintdesktop, .cintmobile {
+				display: block;
+				}
+				.marketing-ribbon-fixed, .marketing-ribbon {
+				height: 56px !important;/* 0 */
+				}
+				@media (max-width: 767px){
+				.marketing-ribbon-fixed, .marketing-ribbon {
+				height: 48px  !important;/* 0 */
+				}
+				}
+				@media (min-width: 768px) and (max-width: 1024px) {
+				.cintdesktop {
+				display: none;
+				}
+				.cintcentro1 {
+				display: block;
+				}
+				}
+			// Desktop
+			a#cintillo1.hidden-sm-down.cintdesktop.__web-inspector-hide-shortcut__(href='http://simple.ripley.com.pe/minisitios/especial/cierra-puertas-online', data-seccion='Cintillo1', target='_top', style='height: 56px;background: url(http://www.ripley.com.pe/minisitios/home/cintillo/17/05/15/cintillo-desktop-2.jpg) white no-repeat center top')
+			// Mobile
+			a#cintillo2.hidden-md-up.cintmobile(href='http://simple.ripley.com.pe/minisitios/especial/cierra-puertas-online', data-seccion='Cintillo1', target='_top', style='height: 48px;background: url(http://www.ripley.com.pe/minisitios/home/cintillo/17/05/15/cintillo-mobile-2.jpg) white no-repeat center top')
+			// 1024px
+			a#cintillo3.cintcentro1(href='http://simple.ripley.com.pe/minisitios/especial/cierra-puertas-online', data-seccion='Cintillo1', target='_top', style='height: 56px;background: url(http://www.ripley.com.pe/minisitios/home/cintillo/17/05/15/cintillo-tablet-2.jpg) white no-repeat center top')
+
+	section.main-header
+		.container
+			.row
+				.col-lg-2.col-md-2.col-sm-3.col-xs-4
+					a.logo(href='/')
+						svg(role='img', title='ripley_com')
+							use(xlink:href='#ripley_com')
+				.col-lg-7.col-md-6.hidden-sm-down
+					section.search-bar
+						form(action='/search')
+							.row
+								.col-xl-3.col-lg-4.hidden-md-down
+									.search-category-list
+										select.search-category-select(name='categoryId')
+											option(value='') Todas Las Categorias
+											option(value='11978') Tv y Video
+											option(value='11979') Cómputo
+											option(value='11980') Celulares
+											option(value='559161') Entretenimiento
+											option(value='11981') Electrohogar
+											option(value='448651') Ripley Home
+											option(value='505151') Muebles
+											option(value='11984') Dormitorio
+											option(value='11985') Deporte
+											option(value='11986') Infantil
+											option(value='11987') Belleza y Accesorios
+											option(value='523169') Calzado
+											option(value='245651') Más
+										.search-category-selected
+											span Todas las Categorias
+										ul
+											li.is-selected(data-category-name='all-products') Todas Las Categorias
+											li(data-category-id='11978', data-category-name='tv_video_ic') Tv y Video
+											li(data-category-id='11979', data-category-name='computo_ic') Cómputo
+											li(data-category-id='11980', data-category-name='celulares_ic') Celulares
+											li(data-category-id='559161', data-category-name='entretenimiento_ic') Entretenimiento
+											li(data-category-id='11981', data-category-name='electroh_ic') Electrohogar
+											li(data-category-id='448651', data-category-name='home_ic') Ripley Home
+											li(data-category-id='505151', data-category-name='muebles') Muebles
+											li(data-category-id='11984', data-category-name='dormitorio_ic') Dormitorio
+											li(data-category-id='11985', data-category-name='deporte_ic') Deporte
+											li(data-category-id='11986', data-category-name='infantil_ic') Infantil
+											li(data-category-id='11987', data-category-name='acc_bell_ic') Belleza y Accesorios
+											li(data-category-id='523169', data-category-name='calzado_accesorios_ic') Calzado
+											li(data-category-id='245651', data-category-name='mas') Más
+										.arrow-select
+											svg(role='img', title='arrow_menu')
+												use(xlink:href='#arrow_menu')
+								.col-xl-9.col-lg-8.col-md-12
+									input.js-search-bar(name='searchTerm', placeholder='¿Qué estas buscando?', value='')
+									.search-icon
+										button
+											svg(role='img', title='buscador')
+												use(xlink:href='#buscador')
+				.col-lg-3.col-md-4.col-sm-9.col-xs-8
+					nav.main-header-menu
+						a.my-account(href='https://www.ripley.com.pe/webapp/wcs/stores/servlet/AjaxLogonForm?catalogId=10101&langId=-24&myAcctMain=1&storeId=10751')
+							span.hidden-xs
+								| Mi Cuenta
+								svg(role='img', title='arrow_menu')
+									use(xlink:href='#arrow_menu')
+							span.hidden-md-up
+								svg(role='img', title='mi-cuenta')
+									use(xlink:href='#mi-cuenta')
+						a.shopping-cart(href='https://www.ripley.com.pe/webapp/wcs/stores/servlet/AjaxOrderItemDisplayView?catalogId=10101&langId=-24&storeId=10751')
+							svg(role='img', title='bolsa_compras')
+								use(xlink:href='#bolsa_compras')
+			.row
+				.col-xs-12.hidden-md-up
+					section.search-bar
+						form(action='/search')
+							.row
+								.col-xl-3.col-lg-4.hidden-md-down
+								.col-xl-9.col-lg-8.col-md-12
+									input.js-search-bar(name='searchTerm', placeholder='¿Qué estas buscando?', value='')
+									.search-icon
+										button
+											svg(role='img', title='buscador')
+												use(xlink:href='#buscador')
+	section.category-header
+		.container
+			.row
+				nav.col-sm-12
+					.category-header-items
+						.category-menu.category-header-item
+							.category-header-button.category-header-image-button
+								.table
+									.table-cell
+										.hidden-sm-down
+											svg.burger-menu(role='img', title='menu_categorias')
+												use(xlink:href='#menu_categorias')
+											.categories-menu-title
+												span Menú de 
+												span Categorías
+										.hidden-md-up
+											img(src='images/menu_categoria.svg', alt='Menu de Categoria')
+							button.categories-nav-close.hidden-md-up
+								svg(role='img', title='cerrar')
+									use(xlink:href='#cerrar')
+								|                        Cerrar
+							nav.categories-nav.category-header-item__inner-menu
+								ul.main-categories
+									li.main-category.first-column.main-category-tv_video_ic
+										a.main-category-name.is-hover(href='/tv-y-video')
+											span.main-category-arrow
+												span.hidden-md Volver
+												svg.arrow-menu(role='img', title='arrow_menu')
+													use(xlink:href='#arrow_menu')
+											span.main-category-image-container
+												span.main-category-image-wrapper
+													svg(role='img', title='tv-y-video')
+														use(xlink:href='#tv-y-video')
+											span.main-category-active-text(data-default-text='Tv y Video') Tv y Video
+										ul.child-categories.second-column.is-hover
+											li.child-category
+												a.child-category-name.is-hover(href='/tv-y-video/televisores')
+													svg.arrow-menu(role='img', title='arrow_menu')
+														use(xlink:href='#arrow_menu')
+													|                               Televisores
+												ul.child-categories.third-column.is-hover
+													li.child-category
+														a.child-category-name(href='/tv-y-video/televisores/ver-todo-tv') Ver Todo TV
+													li.child-category
+														a.child-category-name(href='/tv-y-video/televisores/smart-tv') Smart TV
+													li.child-category
+														a.child-category-name(href='/tv-y-video/televisores/smart-3d-tv') Smart 3D TV
+													li.child-category
+														a.child-category-name(href='/tv-y-video/televisores/oled-tv') OLED TV
+													li.child-category
+														a.child-category-name(href='/tv-y-video/televisores/curvo-tv') Curvo TV
+													li.child-category
+														a.child-category-name(href='/tv-y-video/televisores/full-hd-hd') Full HD - HD
+													li.child-category
+														a.child-category-name(href='/tv-y-video/televisores/uhd-4k') UHD - 4K
+													li.child-category
+														a.child-category-name(href='/tv-y-video/televisores/suhd') SUHD
+											li.child-category
+												a.child-category-name(href='/tv-y-video/video-y-accesorios')
+													svg.arrow-menu(role='img', title='arrow_menu')
+														use(xlink:href='#arrow_menu')
+													|                               Video y Accesorios
+												ul.child-categories.third-column
+													li.child-category
+														a.child-category-name(href='/tv-y-video/video-y-accesorios/ver-todo-reproductores') Ver Todo Reproductores
+													li.child-category
+														a.child-category-name(href='/tv-y-video/video-y-accesorios/blu-ray') Blu-ray
+													li.child-category
+														a.child-category-name(href='/tv-y-video/video-y-accesorios/dvd') DVD
+													li.child-category
+														a.child-category-name(href='/tv-y-video/video-y-accesorios/accesorios-de-tv') Accesorios de Tv
+													li.child-category
+														a.child-category-name(href='/tv-y-video/video-y-accesorios/complementos-de-tv') Complementos de Tv
+											li.child-category
+												a.child-category-name(href='/tv-y-video/audio')
+													svg.arrow-menu(role='img', title='arrow_menu')
+														use(xlink:href='#arrow_menu')
+													|                               Audio
+												ul.child-categories.third-column
+													li.child-category
+														a.child-category-name(href='/tv-y-video/audio/ver-todo-audio') Ver todo Audio
+													li.child-category
+														a.child-category-name(href='/tv-y-video/audio/home-theaters') Home Theaters
+													li.child-category
+														a.child-category-name(href='/tv-y-video/audio/sound-bar') Sound Bar
+											li.child-category
+												a.child-category-name(href='/tv-y-video/equipo-de-sonido')
+													svg.arrow-menu(role='img', title='arrow_menu')
+														use(xlink:href='#arrow_menu')
+													|                               Equipo de Sonido
+												ul.child-categories.third-column
+													li.child-category
+														a.child-category-name(href='/tv-y-video/equipo-de-sonido/ver-todo-equipo-de-sonido') Ver todo Equipo de Sonido
+													li.child-category
+														a.child-category-name(href='/tv-y-video/equipo-de-sonido/minicomponentes') Minicomponentes
+													li.child-category
+														a.child-category-name(href='/tv-y-video/equipo-de-sonido/microcomponentes') Microcomponentes
+													li.child-category
+														a.child-category-name(href='/tv-y-video/equipo-de-sonido/mezcladores-dj-and-amplificadores') Mezcladores DJ & Amplificadores
+											li.child-category
+												a.child-category-name(href='/tv-y-video/car-audio')
+													svg.arrow-menu(role='img', title='arrow_menu')
+														use(xlink:href='#arrow_menu')
+													|                               Car Audio
+												ul.child-categories.third-column
+													li.child-category
+														a.child-category-name(href='/tv-y-video/car-audio/ver-todo-car-audio') Ver Todo Car Audio
+													li.child-category
+														a.child-category-name(href='/tv-y-video/car-audio/autoradios') Autoradios
+													li.child-category
+														a.child-category-name(href='/tv-y-video/car-audio/parlantes-y-sub-woofer') Parlantes y Sub Woofer
+													li.child-category
+														a.child-category-name(href='/tv-y-video/car-audio/accesorio-auto') Accesorio Auto
+											li.child-category
+												a.child-category-name(href='/tv-y-video/audio-portatil')
+													svg.arrow-menu(role='img', title='arrow_menu')
+														use(xlink:href='#arrow_menu')
+													|                               Audio Portatil
+												ul.child-categories.third-column
+													li.child-category
+														a.child-category-name(href='/tv-y-video/audio-portatil/ver-todo-audio-portatil') Ver todo Audio Portatil
+													li.child-category
+														a.child-category-name(href='/tv-y-video/audio-portatil/audifonos') Audifonos
+													li.child-category
+														a.child-category-name(href='/tv-y-video/audio-portatil/parlantes-and-dockings') Parlantes & Dockings
+													li.child-category
+														a.child-category-name(href='/tv-y-video/audio-portatil/mp3-mp4-y-ipods') MP3 / MP4 y iPods
+											li.child-category
+												a.child-category-name(href='/tv-y-video/marcas')
+													svg.arrow-menu(role='img', title='arrow_menu')
+														use(xlink:href='#arrow_menu')
+													|                               Marcas
+												ul.child-categories.third-column
+													li.child-category
+														a.child-category-name(href='/tv-y-video/marcas/samsung') Samsung
+													li.child-category
+														a.child-category-name(href='/tv-y-video/marcas/lg') LG
+													li.child-category
+														a.child-category-name(href='/tv-y-video/marcas/sony') Sony
+													li.child-category
+														a.child-category-name(href='/tv-y-video/marcas/haier') Haier
+													li.child-category
+														a.child-category-name(href='/tv-y-video/marcas/aoc') AOC
+													li.child-category
+														a.child-category-name(href='/tv-y-video/marcas/panasonic') Panasonic
+											li.child-category.category-espots.child-category-espots
+												span.espot-header Conoce más de nuestras marcas
+										ul.child-categories.category-espots.hidden-sm
+											li
+												span.espot-header Conoce más de nuestras marcas
+									li.main-category.first-column.main-category-computo_ic
+										a.main-category-name(href='/computo')
+											span.main-category-arrow
+												span.hidden-md Volver
+												svg.arrow-menu(role='img', title='arrow_menu')
+													use(xlink:href='#arrow_menu')
+											span.main-category-image-container
+												span.main-category-image-wrapper
+													svg(role='img', title='computo')
+														use(xlink:href='#computo')
+											span.main-category-active-text(data-default-text='Cómputo') Cómputo
+										ul.child-categories.second-column
+											li.child-category
+												a.child-category-name.is-hover(href='/computo/laptops')
+													svg.arrow-menu(role='img', title='arrow_menu')
+														use(xlink:href='#arrow_menu')
+													|                               Laptops
+												ul.child-categories.third-column.is-hover
+													li.child-category
+														a.child-category-name(href='/computo/laptops/todas-las-laptops') Todas las laptops
+													li.child-category
+														a.child-category-name(href='/computo/laptops/esenciales') Esenciales
+													li.child-category
+														a.child-category-name(href='/computo/laptops/hogar-y-oficina') Hogar y Oficina
+													li.child-category
+														a.child-category-name(href='/computo/laptops/alto-desempeno') Alto desempeño
+											li.child-category
+												a.child-category-name(href='/computo/2-en-1-convertibles')
+													svg.arrow-menu(role='img', title='arrow_menu')
+														use(xlink:href='#arrow_menu')
+													|                               2 en 1 Convertibles
+												ul.child-categories.third-column
+													li.child-category
+														a.child-category-name(href='/computo/2-en-1-convertibles/laptops-2-en-1') Laptops 2 en 1
+											li.child-category
+												a.child-category-name(href='/computo/computadoras')
+													svg.arrow-menu(role='img', title='arrow_menu')
+														use(xlink:href='#arrow_menu')
+													|                               Computadoras
+												ul.child-categories.third-column
+													li.child-category
+														a.child-category-name(href='/computo/computadoras/pc-all-in-one') Pc - All in one
+											li.child-category
+												a.child-category-name(href='/computo/zona-gamer')
+													svg.arrow-menu(role='img', title='arrow_menu')
+														use(xlink:href='#arrow_menu')
+													|                               Zona Gamer
+												ul.child-categories.third-column
+													li.child-category
+														a.child-category-name(href='/computo/zona-gamer/todo-zona-gamer') Todo Zona Gamer
+													li.child-category
+														a.child-category-name(href='/computo/zona-gamer/laptops-gamer') Laptops Gamer
+													li.child-category
+														a.child-category-name(href='/computo/zona-gamer/accesorios-gamer') Accesorios Gamer
+											li.child-category
+												a.child-category-name(href='/computo/tablets-y-accesorios')
+													svg.arrow-menu(role='img', title='arrow_menu')
+														use(xlink:href='#arrow_menu')
+													|                               Tablets y Accesorios
+												ul.child-categories.third-column
+													li.child-category
+														a.child-category-name(href='/computo/tablets-y-accesorios/todo-tablets') Todo tablets
+													li.child-category
+														a.child-category-name(href='/computo/tablets-y-accesorios/tablets') Tablets
+													li.child-category
+														a.child-category-name(href='/computo/tablets-y-accesorios/estuches-y-fundas') Estuches y fundas
+											li.child-category
+												a.child-category-name(href='/computo/impresoras-y-tintas')
+													svg.arrow-menu(role='img', title='arrow_menu')
+														use(xlink:href='#arrow_menu')
+													|                               Impresoras y Tintas
+												ul.child-categories.third-column
+													li.child-category
+														a.child-category-name(href='/computo/impresoras-y-tintas/todo-impresoras') Todo impresoras
+													li.child-category
+														a.child-category-name(href='/computo/impresoras-y-tintas/multifuncionales') Multifuncionales
+													li.child-category
+														a.child-category-name(href='/computo/impresoras-y-tintas/toners-y-tintas') Toners y tintas
+											li.child-category
+												a.child-category-name(href='/computo/accesorios-y-software')
+													svg.arrow-menu(role='img', title='arrow_menu')
+														use(xlink:href='#arrow_menu')
+													|                               Accesorios y Software
+												ul.child-categories.third-column
+													li.child-category
+														a.child-category-name(href='/computo/accesorios-y-software/todo-accesorios-y-software') Todo accesorios y software
+													li.child-category
+														a.child-category-name(href='/computo/accesorios-y-software/mouse-teclados-y-parlantes') Mouse, Teclados y Parlantes
+													li.child-category
+														a.child-category-name(href='/computo/accesorios-y-software/estuches-y-maletines') Estuches y maletines
+													li.child-category
+														a.child-category-name(href='/computo/accesorios-y-software/cargadores-cables-y-otros') Cargadores, Cables y Otros
+													li.child-category
+														a.child-category-name(href='/computo/accesorios-y-software/software-y-antivirus') Software y antivirus
+											li.child-category
+												a.child-category-name(href='/computo/almacenamiento')
+													svg.arrow-menu(role='img', title='arrow_menu')
+														use(xlink:href='#arrow_menu')
+													|                               Almacenamiento
+												ul.child-categories.third-column
+													li.child-category
+														a.child-category-name(href='/computo/almacenamiento/todo-almacenamiento') Todo almacenamiento
+													li.child-category
+														a.child-category-name(href='/computo/almacenamiento/memorias-usb') Memorias USB
+													li.child-category
+														a.child-category-name(href='/computo/almacenamiento/discos-duros') Discos duros
+											li.child-category
+												a.child-category-name(href='/computo/proyectores-y-monitores')
+													svg.arrow-menu(role='img', title='arrow_menu')
+														use(xlink:href='#arrow_menu')
+													|                               Proyectores y Monitores
+												ul.child-categories.third-column
+													li.child-category
+														a.child-category-name(href='/computo/proyectores-y-monitores/todo-proyectores-monitores') Todo proyectores monitores
+													li.child-category
+														a.child-category-name(href='/computo/proyectores-y-monitores/proyectores') Proyectores
+													li.child-category
+														a.child-category-name(href='/computo/proyectores-y-monitores/monitores') Monitores
+											li.child-category
+												a.child-category-name(href='/computo/marcas')
+													svg.arrow-menu(role='img', title='arrow_menu')
+														use(xlink:href='#arrow_menu')
+													|                               Marcas
+												ul.child-categories.third-column
+													li.child-category
+														a.child-category-name(href='/computo/marcas/acer') Acer
+													li.child-category
+														a.child-category-name(href='/computo/marcas/hp') HP
+													li.child-category
+														a.child-category-name(href='/computo/marcas/lenovo') Lenovo
+													li.child-category
+														a.child-category-name(href='/computo/marcas/toshiba') Toshiba
+													li.child-category
+														a.child-category-name(href='/computo/marcas/asus') Asus
+													li.child-category
+														a.child-category-name(href='/computo/marcas/samsung') Samsung
+													li.child-category
+														a.child-category-name(href='/computo/marcas/dell') Dell
+													li.child-category
+														a.child-category-name(href='/computo/marcas/microsoft') Microsoft
+													li.child-category
+														a.child-category-name(href='/computo/marcas/msi') MSI
+													li.child-category
+														a.child-category-name(href='/computo/marcas/advance') Advance
+													li.child-category
+														a.child-category-name(href='/computo/marcas/huawei') Huawei
+													li.child-category
+														a.child-category-name(href='/computo/marcas/aoc') AOC
+													li.child-category
+														a.child-category-name(href='/computo/marcas/epson') Epson
+											li.child-category.category-espots.child-category-espots
+												span.espot-header Conoce más de nuestras marcas
+										ul.child-categories.category-espots.hidden-sm
+											li
+												span.espot-header Conoce más de nuestras marcas
+									li.main-category.first-column.main-category-celulares_ic
+										a.main-category-name(href='/celulares')
+											span.main-category-arrow
+												span.hidden-md Volver
+												svg.arrow-menu(role='img', title='arrow_menu')
+													use(xlink:href='#arrow_menu')
+											span.main-category-image-container
+												span.main-category-image-wrapper
+													svg(role='img', title='celulares')
+														use(xlink:href='#celulares')
+											span.main-category-active-text(data-default-text='Celulares') Celulares
+										ul.child-categories.second-column
+											li.child-category
+												a.child-category-name.is-hover(href='/celulares/smartphones')
+													svg.arrow-menu(role='img', title='arrow_menu')
+														use(xlink:href='#arrow_menu')
+													|                               Smartphones
+												ul.child-categories.third-column.is-hover
+													li.child-category
+														a.child-category-name(href='/celulares/smartphones/todo-celulares-y-telefonia') Todo Celulares y Telefonia
+													li.child-category
+														a.child-category-name(href='/celulares/smartphones/smartphones-single-chip') Smartphones Single Chip
+													li.child-category
+														a.child-category-name(href='/celulares/smartphones/smartphone-doble-chip') Smartphone Doble Chip
+											li.child-category
+												a.child-category-name(href='/celulares/operadores-moviles')
+													svg.arrow-menu(role='img', title='arrow_menu')
+														use(xlink:href='#arrow_menu')
+													|                               Operadores Moviles
+												ul.child-categories.third-column
+													li.child-category
+														a.child-category-name(href='/celulares/operadores-moviles/virgin') Virgin
+											li.child-category
+												a.child-category-name(href='/celulares/smartwatchs-y-gadgets')
+													svg.arrow-menu(role='img', title='arrow_menu')
+														use(xlink:href='#arrow_menu')
+													|                               Smartwatchs y gadgets
+												ul.child-categories.third-column
+													li.child-category
+														a.child-category-name(href='/celulares/smartwatchs-y-gadgets/todo-gadgets') Todo Gadgets
+													li.child-category
+														a.child-category-name(href='/celulares/smartwatchs-y-gadgets/smartwatch') Smartwatch
+													li.child-category
+														a.child-category-name(href='/celulares/smartwatchs-y-gadgets/parlantes-y-dockings') Parlantes y Dockings
+													li.child-category
+														a.child-category-name(href='/celulares/smartwatchs-y-gadgets/calculadoras') Calculadoras
+													li.child-category
+														a.child-category-name(href='/celulares/smartwatchs-y-gadgets/lentes-de-realidad-virtual') Lentes de Realidad Virtual
+											li.child-category
+												a.child-category-name(href='/celulares/marcas')
+													svg.arrow-menu(role='img', title='arrow_menu')
+														use(xlink:href='#arrow_menu')
+													|                               Marcas
+												ul.child-categories.third-column
+													li.child-category
+														a.child-category-name(href='/celulares/marcas/asus') Asus
+													li.child-category
+														a.child-category-name(href='/celulares/marcas/motorola') Motorola
+													li.child-category
+														a.child-category-name(href='/celulares/marcas/samsung') Samsung
+													li.child-category
+														a.child-category-name(href='/celulares/marcas/huawei') Huawei
+													li.child-category
+														a.child-category-name(href='/celulares/marcas/sony') Sony
+													li.child-category
+														a.child-category-name(href='/celulares/marcas/lg') LG
+													li.child-category
+														a.child-category-name(href='/celulares/marcas/apple') Apple
+													li.child-category
+														a.child-category-name(href='/celulares/marcas/lenovo') Lenovo
+													li.child-category
+														a.child-category-name(href='/celulares/marcas/leotec') Leotec
+													li.child-category
+														a.child-category-name(href='/celulares/marcas/alcatel') Alcatel
+											li.child-category
+												a.child-category-name(href='/celulares/accesorios-de-celulares')
+													svg.arrow-menu(role='img', title='arrow_menu')
+														use(xlink:href='#arrow_menu')
+													|                               Accesorios de Celulares
+												ul.child-categories.third-column
+													li.child-category
+														a.child-category-name(href='/celulares/accesorios-de-celulares/todo-accesorios-de-celulares') Todo Accesorios de Celulares
+													li.child-category
+														a.child-category-name(href='/celulares/accesorios-de-celulares/carcasas-y-selfsticks') Carcasas y selfsticks
+													li.child-category
+														a.child-category-name(href='/celulares/accesorios-de-celulares/cargadores-y-cables') Cargadores y cables
+													li.child-category
+														a.child-category-name(href='/celulares/accesorios-de-celulares/memorias') Memorias
+													li.child-category
+														a.child-category-name(href='/celulares/accesorios-de-celulares/audifonos-y-handsfree') Audífonos y handsfree
+													li.child-category
+														a.child-category-name(href='/celulares/accesorios-de-celulares/baterias-portatiles') Baterias Portatiles
+													li.child-category
+														a.child-category-name(href='/celulares/accesorios-de-celulares/estuche-y-mochilas') Estuche y Mochilas
+											li.child-category.category-espots.child-category-espots
+												span.espot-header Conoce más de nuestras marcas
+										ul.child-categories.category-espots.hidden-sm
+											li
+												span.espot-header Conoce más de nuestras marcas
+									li.main-category.first-column.main-category-entretenimiento_ic
+										a.main-category-name(href='/entretenimiento')
+											span.main-category-arrow
+												span.hidden-md Volver
+												svg.arrow-menu(role='img', title='arrow_menu')
+													use(xlink:href='#arrow_menu')
+											span.main-category-image-container
+												span.main-category-image-wrapper
+													svg(role='img', title='entretenimiento')
+														use(xlink:href='#entretenimiento')
+											span.main-category-active-text(data-default-text='Entretenimiento') Entretenimiento
+										ul.child-categories.second-column
+											li.child-category
+												a.child-category-name.is-hover(href='/entretenimiento/videojuegos')
+													svg.arrow-menu(role='img', title='arrow_menu')
+														use(xlink:href='#arrow_menu')
+													|                               Videojuegos
+												ul.child-categories.third-column.is-hover
+													li.child-category
+														a.child-category-name(href='/entretenimiento/videojuegos/todo-videojuegos') Todo Videojuegos
+													li.child-category
+														a.child-category-name(href='/entretenimiento/videojuegos/consolas') Consolas
+													li.child-category
+														a.child-category-name(href='/entretenimiento/videojuegos/juegos') Juegos
+													li.child-category
+														a.child-category-name(href='/entretenimiento/videojuegos/accesorios') Accesorios
+													li.child-category
+														a.child-category-name(href='/entretenimiento/videojuegos/figuras-interactivas') Figuras Interactivas
+													li.child-category
+														a.child-category-name(href='/entretenimiento/videojuegos/trading-card') Trading Card
+													li.child-category
+														a.child-category-name(href='/entretenimiento/videojuegos/laptops-gamer') Laptops Gamer
+													li.child-category
+														a.child-category-name(href='/entretenimiento/videojuegos/oferta-a-99') Oferta a 99
+											li.child-category
+												a.child-category-name(href='/entretenimiento/fotografia')
+													svg.arrow-menu(role='img', title='arrow_menu')
+														use(xlink:href='#arrow_menu')
+													|                               Fotografia
+												ul.child-categories.third-column
+													li.child-category
+														a.child-category-name(href='/entretenimiento/fotografia/todo-fotografia') Todo Fotografía
+													li.child-category
+														a.child-category-name(href='/entretenimiento/fotografia/camaras-compactas') Cámaras compactas
+													li.child-category
+														a.child-category-name(href='/entretenimiento/fotografia/camaras-bridge') Cámaras Bridge
+													li.child-category
+														a.child-category-name(href='/entretenimiento/fotografia/camaras-mirrorless') Cámaras Mirrorless
+													li.child-category
+														a.child-category-name(href='/entretenimiento/fotografia/camaras-reflex-y-pro') Cámaras Réflex y Pro
+													li.child-category
+														a.child-category-name(href='/entretenimiento/fotografia/camaras-outdoor-y-accion') Cámaras Outdoor y Acción
+													li.child-category
+														a.child-category-name(href='/entretenimiento/fotografia/camaras-instantaneas') Cámaras Instantáneas
+													li.child-category
+														a.child-category-name(href='/entretenimiento/fotografia/videocamaras') Videocámaras
+													li.child-category
+														a.child-category-name(href='/entretenimiento/fotografia/accesorios') Accesorios 
+													li.child-category
+														a.child-category-name(href='/entretenimiento/fotografia/binoculares') Binoculares
+											li.child-category
+												a.child-category-name(href='/entretenimiento/instrumentos-musicales')
+													svg.arrow-menu(role='img', title='arrow_menu')
+														use(xlink:href='#arrow_menu')
+													|                               Instrumentos Musicales
+												ul.child-categories.third-column
+													li.child-category
+														a.child-category-name(href='/entretenimiento/instrumentos-musicales/instrumentos-de-cuerda') Instrumentos de Cuerda
+													li.child-category
+														a.child-category-name(href='/entretenimiento/instrumentos-musicales/instrumentos-de-percusion') Instrumentos de Percusión
+													li.child-category
+														a.child-category-name(href='/entretenimiento/instrumentos-musicales/teclados') Teclados
+													li.child-category
+														a.child-category-name(href='/entretenimiento/instrumentos-musicales/amplificadores') Amplificadores
+													li.child-category
+														a.child-category-name(href='/entretenimiento/instrumentos-musicales/accesorios-musicales') Accesorios Musicales
+													li.child-category
+														a.child-category-name(href='/entretenimiento/instrumentos-musicales/auriculares-profesionales') Auriculares profesionales
+											li.child-category
+												a.child-category-name(href='/entretenimiento/outdoor-y-juegos-de-exterior')
+													svg.arrow-menu(role='img', title='arrow_menu')
+														use(xlink:href='#arrow_menu')
+													|                               Outdoor y juegos de exterior
+												ul.child-categories.third-column
+													li.child-category
+														a.child-category-name(href='/deporte/outdoors/carpas') Carpas
+													li.child-category
+														a.child-category-name(href='/deporte/outdoors/accesorios-de-camping') Accesorios de camping
+													li.child-category
+														a.child-category-name(href='/deporte/outdoors/mochilas-y-bolsos') Mochilas y bolsos
+													li.child-category
+														a.child-category-name(href='/infantil/juegos-de-exterior/camas-saltarinas') Camas saltarinas
+													li.child-category
+														a.child-category-name(href='/infantil/juegos-de-exterior/autos-a-bateria') Autos a batería
+													li.child-category
+														a.child-category-name(href='/infantil/juegos-de-exterior/casas-de-juegos') Casas de juegos
+													li.child-category
+														a.child-category-name(href='/infantil/juegos-de-exterior/triciclos-y-scooters') Triciclos y scooters
+													li.child-category
+														a.child-category-name(href='/deporte/bicicletas/todo-bicicletas') Todo bicicletas
+													li.child-category
+														a.child-category-name(href='/infantil/juegos-de-exterior/correpasillos') Correpasillos
+													li.child-category
+														a.child-category-name(href='/infantil/juegos-de-exterior/cocinas-y-mesa') Cocinas y mesa
+													li.child-category
+														a.child-category-name(href='/infantil/juegos-de-exterior/columpios-y-resbaladeras') Columpios y resbaladeras
+											li.child-category
+												a.child-category-name(href='/entretenimiento/marcas')
+													svg.arrow-menu(role='img', title='arrow_menu')
+														use(xlink:href='#arrow_menu')
+													|                               Marcas
+												ul.child-categories.third-column
+													li.child-category
+														a.child-category-name(href='/entretenimiento/marcas/playstation') Playstation
+													li.child-category
+														a.child-category-name(href='/entretenimiento/marcas/nintendo') Nintendo
+													li.child-category
+														a.child-category-name(href='/entretenimiento/marcas/sony') Sony
+													li.child-category
+														a.child-category-name(href='/entretenimiento/marcas/nikon') Nikon
+													li.child-category
+														a.child-category-name(href='/entretenimiento/marcas/canon') Canon
+													li.child-category
+														a.child-category-name(href='/entretenimiento/marcas/fujifilm') Fujifilm
+													li.child-category
+														a.child-category-name(href='/entretenimiento/marcas/polaroid') Polaroid
+											li.child-category.category-espots.child-category-espots
+												span.espot-header Conoce más de nuestras marcas
+										ul.child-categories.category-espots.hidden-sm
+											li
+												span.espot-header Conoce más de nuestras marcas
+									li.main-category.first-column.main-category-electroh_ic
+										a.main-category-name(href='/electrohogar')
+											span.main-category-arrow
+												span.hidden-md Volver
+												svg.arrow-menu(role='img', title='arrow_menu')
+													use(xlink:href='#arrow_menu')
+											span.main-category-image-container
+												span.main-category-image-wrapper
+													svg(role='img', title='electrohogar')
+														use(xlink:href='#electrohogar')
+											span.main-category-active-text(data-default-text='Electrohogar') Electrohogar
+										ul.child-categories.second-column
+											li.child-category
+												a.child-category-name.is-hover(href='/electrohogar/lavado-y-secado')
+													svg.arrow-menu(role='img', title='arrow_menu')
+														use(xlink:href='#arrow_menu')
+													|                               Lavado y secado
+												ul.child-categories.third-column.is-hover
+													li.child-category
+														a.child-category-name(href='/electrohogar/lavado-y-secado/todo-lavado') Todo Lavado
+													li.child-category
+														a.child-category-name(href='/electrohogar/lavado-y-secado/lavadoras') Lavadoras
+													li.child-category
+														a.child-category-name(href='/electrohogar/lavado-y-secado/secadoras') Secadoras
+													li.child-category
+														a.child-category-name(href='/electrohogar/lavado-y-secado/lavasecas') Lavasecas
+													li.child-category
+														a.child-category-name(href='/electrohogar/lavado-y-secado/centros-de-lavado') Centros de lavado
+													li.child-category
+														a.child-category-name(href='/electrohogar/lavado-y-secado/lavavajillas') Lavavajillas
+											li.child-category
+												a.child-category-name(href='/electrohogar/refrigeracion')
+													svg.arrow-menu(role='img', title='arrow_menu')
+														use(xlink:href='#arrow_menu')
+													|                               Refrigeración
+												ul.child-categories.third-column
+													li.child-category
+														a.child-category-name(href='/electrohogar/refrigeracion/todo-refrigeracion') Todo Refrigeración
+													li.child-category
+														a.child-category-name(href='/electrohogar/refrigeracion/refrigeradoras') Refrigeradoras
+													li.child-category
+														a.child-category-name(href='/electrohogar/refrigeracion/frigobares') Frigobares
+													li.child-category
+														a.child-category-name(href='/electrohogar/refrigeracion/vineras-y-cavas') Vineras y cavas
+													li.child-category
+														a.child-category-name(href='/electrohogar/refrigeracion/congeladoras') Congeladoras
+													li.child-category
+														a.child-category-name(href='/electrohogar/refrigeracion/dispensadores-de-agua') Dispensadores de agua
+											li.child-category
+												a.child-category-name(href='/electrohogar/cocinas-y-hornos')
+													svg.arrow-menu(role='img', title='arrow_menu')
+														use(xlink:href='#arrow_menu')
+													|                               Cocinas y hornos
+												ul.child-categories.third-column
+													li.child-category
+														a.child-category-name(href='/electrohogar/cocinas-y-hornos/todo-cocinas') Todo Cocinas
+													li.child-category
+														a.child-category-name(href='/electrohogar/cocinas-y-hornos/cocinas') Cocinas
+													li.child-category
+														a.child-category-name(href='/electrohogar/cocinas-y-hornos/empotrables') Empotrables
+													li.child-category
+														a.child-category-name(href='/electrohogar/cocinas-y-hornos/campanas') Campanas
+													li.child-category
+														a.child-category-name(href='/electrohogar/cocinas-y-hornos/cocinas-campanas') Cocinas + Campanas
+											li.child-category
+												a.child-category-name(href='/electrohogar/electrodomesticos')
+													svg.arrow-menu(role='img', title='arrow_menu')
+														use(xlink:href='#arrow_menu')
+													|                               Electrodomésticos
+												ul.child-categories.third-column
+													li.child-category
+														a.child-category-name(href='/electrohogar/electrodomesticos/todos-los-electrodomesticos') Todos los electrodomésticos
+													li.child-category
+														a.child-category-name(href='/electrohogar/electrodomesticos/licuadoras') Licuadoras
+													li.child-category
+														a.child-category-name(href='/electrohogar/electrodomesticos/hornos-microondas') Hornos microondas
+													li.child-category
+														a.child-category-name(href='/electrohogar/electrodomesticos/ollas-arroceras') Ollas arroceras
+													li.child-category
+														a.child-category-name(href='/electrohogar/electrodomesticos/aspiradoras') Aspiradoras
+													li.child-category
+														a.child-category-name(href='/electrohogar/electrodomesticos/hidrolavadoras') Hidrolavadoras
+													li.child-category
+														a.child-category-name(href='/electrohogar/electrodomesticos/planchas') Planchas
+													li.child-category
+														a.child-category-name(href='/electrohogar/electrodomesticos/batidoras') Batidoras
+													li.child-category
+														a.child-category-name(href='/electrohogar/electrodomesticos/hervidores') Hervidores
+													li.child-category
+														a.child-category-name(href='/electrohogar/electrodomesticos/hornos-electricos') Hornos eléctricos
+													li.child-category
+														a.child-category-name(href='/electrohogar/electrodomesticos/cafeteras') Cafeteras
+													li.child-category
+														a.child-category-name(href='/electrohogar/electrodomesticos/tostadoras-y-grill') Tostadoras y grill
+													li.child-category
+														a.child-category-name(href='/electrohogar/electrodomesticos/extractores-y-exprimidores') Extractores y exprimidores
+											li.child-category
+												a.child-category-name(href='/electrohogar/climatizacion-y-bano')
+													svg.arrow-menu(role='img', title='arrow_menu')
+														use(xlink:href='#arrow_menu')
+													|                               Climatización y baño
+												ul.child-categories.third-column
+													li.child-category
+														a.child-category-name(href='/electrohogar/climatizacion-y-bano/todo-climatizacion-y-bano') Todo Climatización y Baño
+													li.child-category
+														a.child-category-name(href='/electrohogar/climatizacion-y-bano/ventiladores') Ventiladores
+													li.child-category
+														a.child-category-name(href='/electrohogar/climatizacion-y-bano/aire-acondicionado') Aire acondicionado
+													li.child-category
+														a.child-category-name(href='/electrohogar/climatizacion-y-bano/deshumedecedores') Deshumedecedores
+													li.child-category
+														a.child-category-name(href='/electrohogar/climatizacion-y-bano/estufas') Estufas
+													li.child-category
+														a.child-category-name(href='/electrohogar/climatizacion-y-bano/termas-y-duchas') Termas y duchas
+											li.child-category
+												a.child-category-name(href='/electrohogar/cuidado-personal')
+													svg.arrow-menu(role='img', title='arrow_menu')
+														use(xlink:href='#arrow_menu')
+													|                               Cuidado personal
+												ul.child-categories.third-column
+													li.child-category
+														a.child-category-name(href='/electrohogar/cuidado-personal/todo-cuidado-personal') Todo cuidado personal
+													li.child-category
+														a.child-category-name(href='/electrohogar/cuidado-personal/secadoras-de-cabello') Secadoras de cabello
+													li.child-category
+														a.child-category-name(href='/belleza-y-accesorios/cuidado-personal/alisadoras-y-rizadores') Alisadoras y rizadores
+													li.child-category
+														a.child-category-name(href='/belleza-y-accesorios/cuidado-personal/afeitadoras-y-cortadoras') Afeitadoras y cortadoras
+													li.child-category
+														a.child-category-name(href='/electrohogar/cuidado-personal/depiladoras') Depiladoras
+													li.child-category
+														a.child-category-name(href='/belleza-y-accesorios/cuidado-personal/combos') Combos
+											li.child-category
+												a.child-category-name(href='/electrohogar/marcas')
+													svg.arrow-menu(role='img', title='arrow_menu')
+														use(xlink:href='#arrow_menu')
+													|                               Marcas
+												ul.child-categories.third-column
+													li.child-category
+														a.child-category-name(href='/electrohogar/marcas/indurama') Indurama
+													li.child-category
+														a.child-category-name(href='/electrohogar/marcas/lg') LG
+													li.child-category
+														a.child-category-name(href='/electrohogar/marcas/samsung') Samsung
+													li.child-category
+														a.child-category-name(href='/electrohogar/marcas/bosch') Bosch
+													li.child-category
+														a.child-category-name(href='/electrohogar/marcas/oster') Oster
+													li.child-category
+														a.child-category-name(href='/electrohogar/marcas/philips') Philips
+													li.child-category
+														a.child-category-name(href='/electrohogar/marcas/daewoo') Daewoo
+													li.child-category
+														a.child-category-name(href='/electrohogar/marcas/mabe') Mabe
+													li.child-category
+														a.child-category-name(href='/electrohogar/marcas/karcher') Karcher
+											li.child-category
+												a.child-category-name(href='/electrohogar/mas-electrodomesticos')
+													svg.arrow-menu(role='img', title='arrow_menu')
+														use(xlink:href='#arrow_menu')
+													|                               Más Electrodomésticos
+												ul.child-categories.third-column
+													li.child-category
+														a.child-category-name(href='/electrohogar/mas-electrodomesticos/combos') Combos
+													li.child-category
+														a.child-category-name(href='/electrohogar/mas-electrodomesticos/accesorios-electrodomesticos') Accesorios Electrodomésticos
+													li.child-category
+														a.child-category-name(href='/electrohogar/mas-electrodomesticos/otros') Otros
+											li.child-category.category-espots.child-category-espots
+												span.espot-header Conoce más de nuestras marcas
+										ul.child-categories.category-espots.hidden-sm
+											li
+												span.espot-header Conoce más de nuestras marcas
+									li.main-category.first-column.main-category-home_ic
+										a.main-category-name(href='/ripley-home')
+											span.main-category-arrow
+												span.hidden-md Volver
+												svg.arrow-menu(role='img', title='arrow_menu')
+													use(xlink:href='#arrow_menu')
+											span.main-category-image-container
+												span.main-category-image-wrapper
+													svg(role='img', title='ripley-home')
+														use(xlink:href='#ripley-home')
+											span.main-category-active-text(data-default-text='Ripley Home') Ripley Home
+										ul.child-categories.second-column
+											li.child-category
+												a.child-category-name.is-hover(href='/ripley-home/muebles')
+													svg.arrow-menu(role='img', title='arrow_menu')
+														use(xlink:href='#arrow_menu')
+													|                               Muebles
+												ul.child-categories.third-column.is-hover
+													li.child-category
+														a.child-category-name(href='/ripley-home/muebles/ver-todo-muebles') Ver todo muebles
+													li.child-category
+														a.child-category-name(href='/ripley-home/muebles/sofas-y-juegos-de-sala') Sofás y juegos de sala
+													li.child-category
+														a.child-category-name(href='/ripley-home/muebles/seccionales') Seccionales
+													li.child-category
+														a.child-category-name(href='/ripley-home/muebles/sitiales-y-banquetas') Sitiales y Banquetas
+													li.child-category
+														a.child-category-name(href='/ripley-home/muebles/reclinables-y-futones') Reclinables y futones
+													li.child-category
+														a.child-category-name(href='/ripley-home/muebles/mesas-varias') Mesas varias
+													li.child-category
+														a.child-category-name(href='/ripley-home/muebles/comedores-y-bar') Comedores y bar
+													li.child-category
+														a.child-category-name(href='/ripley-home/muebles/organizacion') Organización
+													li.child-category
+														a.child-category-name(href='/ripley-home/muebles/muebles-de-dormitorio') Muebles de dormitorio
+											li.child-category
+												a.child-category-name(href='/ripley-home/terraza-y-bbq')
+													svg.arrow-menu(role='img', title='arrow_menu')
+														use(xlink:href='#arrow_menu')
+													|                               Terraza y BBQ
+												ul.child-categories.third-column
+													li.child-category
+														a.child-category-name(href='/ripley-home/terraza-y-bbq/ver-todo-terraza-y-bbq') Ver todo terraza y BBQ
+													li.child-category
+														a.child-category-name(href='/ripley-home/terraza-y-bbq/sofas-y-sillones') Sofás y sillones
+													li.child-category
+														a.child-category-name(href='/ripley-home/terraza-y-bbq/seccionales') Seccionales
+													li.child-category
+														a.child-category-name(href='/ripley-home/terraza-y-bbq/mesas-centro-y-auxiliares') Mesas centro y auxiliares
+													li.child-category
+														a.child-category-name(href='/ripley-home/terraza-y-bbq/mesas-de-comedor') Mesas de comedor
+													li.child-category
+														a.child-category-name(href='/ripley-home/terraza-y-bbq/sillas-comedor') Sillas comedor
+													li.child-category
+														a.child-category-name(href='/ripley-home/terraza-y-bbq/juegos-de-comedor') Juegos de comedor
+													li.child-category
+														a.child-category-name(href='/ripley-home/terraza-y-bbq/quitasoles-y-pergola') Quitasoles y pergola
+													li.child-category
+														a.child-category-name(href='/ripley-home/terraza-y-bbq/otros-accesorios') Otros accesorios
+													li.child-category
+														a.child-category-name(href='/ripley-home/terraza-y-bbq/bbq') BBQ
+											li.child-category
+												a.child-category-name(href='/ripley-home/alfombras-y-decoracion')
+													svg.arrow-menu(role='img', title='arrow_menu')
+														use(xlink:href='#arrow_menu')
+													|                               Alfombras y Decoración
+												ul.child-categories.third-column
+													li.child-category
+														a.child-category-name(href='/ripley-home/alfombras-y-decoracion/ver-todo-decoracion') Ver Todo Decoración
+													li.child-category
+														a.child-category-name(href='/ripley-home/alfombras-y-decoracion/floreros-y-flores') Floreros y Flores
+													li.child-category
+														a.child-category-name(href='/ripley-home/alfombras-y-decoracion/alfombras') Alfombras
+													li.child-category
+														a.child-category-name(href='/ripley-home/alfombras-y-decoracion/lamparas') Lámparas
+													li.child-category
+														a.child-category-name(href='/ripley-home/alfombras-y-decoracion/cuadros-y-espejos') Cuadros y Espejos
+													li.child-category
+														a.child-category-name(href='/ripley-home/alfombras-y-decoracion/cojines-decorativos') Cojines Decorativos
+													li.child-category
+														a.child-category-name(href='/ripley-home/alfombras-y-decoracion/portavelas-y-velas') Portavelas y Velas
+													li.child-category
+														a.child-category-name(href='/ripley-home/alfombras-y-decoracion/canastos') Canastos
+													li.child-category
+														a.child-category-name(href='/ripley-home/alfombras-y-decoracion/adornos-decorativos') Adornos Decorativos
+													li.child-category
+														a.child-category-name(href='/ripley-home/alfombras-y-decoracion/muebles-decorativos') Muebles Decorativos
+											li.child-category
+												a.child-category-name(href='/ripley-home/mesa')
+													svg.arrow-menu(role='img', title='arrow_menu')
+														use(xlink:href='#arrow_menu')
+													|                               Mesa
+												ul.child-categories.third-column
+													li.child-category
+														a.child-category-name(href='/ripley-home/mesa/ver-todo-mesa') Ver todo mesa
+													li.child-category
+														a.child-category-name(href='/ripley-home/mesa/cubiertos') Cubiertos
+													li.child-category
+														a.child-category-name(href='/ripley-home/mesa/vajillas') Vajillas
+													li.child-category
+														a.child-category-name(href='/ripley-home/mesa/accesorios-de-mesa') Accesorios de mesa
+													li.child-category
+														a.child-category-name(href='/ripley-home/mesa/manteleria-y-accesorios') Mantelería y accesorios
+													li.child-category
+														a.child-category-name(href='/ripley-home/mesa/vasos-y-copas') Vasos y copas
+													li.child-category
+														a.child-category-name(href='/ripley-home/mesa/bar-y-aperitivo') Bar y aperitivo
+											li.child-category
+												a.child-category-name(href='/ripley-home/cocina')
+													svg.arrow-menu(role='img', title='arrow_menu')
+														use(xlink:href='#arrow_menu')
+													|                               Cocina
+												ul.child-categories.third-column
+													li.child-category
+														a.child-category-name(href='/ripley-home/cocina/ver-todo-cocina') Ver Todo Cocina
+													li.child-category
+														a.child-category-name(href='/ripley-home/cocina/juegos-de-ollas') Juegos de Ollas
+													li.child-category
+														a.child-category-name(href='/ripley-home/cocina/ollas-y-sartenes') Ollas y Sartenes
+													li.child-category
+														a.child-category-name(href='/ripley-home/cocina/horno') Horno
+													li.child-category
+														a.child-category-name(href='/ripley-home/cocina/utensilios-y-preparacion') Utensilios y Preparación
+													li.child-category
+														a.child-category-name(href='/ripley-home/cocina/cuchilleria-de-cocina') Cuchilleria de Cocina
+													li.child-category
+														a.child-category-name(href='/ripley-home/cocina/termos-e-infusiones') Termos e Infusiones
+													li.child-category
+														a.child-category-name(href='/ripley-home/cocina/bbq') BBQ
+											li.child-category
+												a.child-category-name(href='/ripley-home/dormitorio-y-bano')
+													svg.arrow-menu(role='img', title='arrow_menu')
+														use(xlink:href='#arrow_menu')
+													|                               Dormitorio y Baño
+												ul.child-categories.third-column
+													li.child-category
+														a.child-category-name(href='/ripley-home/dormitorio-y-bano/ver-todo-dormitorio-y-bano') Ver Todo Dormitorio y Baño
+													li.child-category
+														a.child-category-name(href='/ripley-home/dormitorio-y-bano/colchones') Colchones
+													li.child-category
+														a.child-category-name(href='/ripley-home/dormitorio-y-bano/cama-americana-y-box-spring') Cama Americana y Box Spring
+													li.child-category
+														a.child-category-name(href='/ripley-home/dormitorio-y-bano/muebles-de-dormitorio') Muebles de Dormitorio
+													li.child-category
+														a.child-category-name(href='/ripley-home/dormitorio-y-bano/almohadas') Almohadas
+													li.child-category
+														a.child-category-name(href='/ripley-home/dormitorio-y-bano/sabanas') Sábanas
+													li.child-category
+														a.child-category-name(href='/ripley-home/dormitorio-y-bano/cubrecamas') Cubrecamas
+													li.child-category
+														a.child-category-name(href='/ripley-home/dormitorio-y-bano/edredones-y-sets-de-cama') Edredones y Sets de Cama
+													li.child-category
+														a.child-category-name(href='/ripley-home/dormitorio-y-bano/cubreplumones') Cubreplumones
+													li.child-category
+														a.child-category-name(href='/ripley-home/dormitorio-y-bano/cojines-y-complementos') Cojines y Complementos
+													li.child-category
+														a.child-category-name(href='/ripley-home/dormitorio-y-bano/toallas-de-bano') Toallas de Baño
+													li.child-category
+														a.child-category-name(href='/ripley-home/dormitorio-y-bano/toallas-de-playa') Toallas de Playa
+											li.child-category
+												a.child-category-name(href='/ripley-home/organizacion')
+													svg.arrow-menu(role='img', title='arrow_menu')
+														use(xlink:href='#arrow_menu')
+													|                               Organización
+												ul.child-categories.third-column
+													li.child-category
+														a.child-category-name(href='/ripley-home/organizacion/ver-todo-organizacion') Ver todo organización
+													li.child-category
+														a.child-category-name(href='/ripley-home/organizacion/centros-de-entretenimiento') Centros de entretenimiento
+													li.child-category
+														a.child-category-name(href='/ripley-home/organizacion/libreros-y-estantes') Libreros y estantes
+													li.child-category
+														a.child-category-name(href='/ripley-home/organizacion/roperos-y-comodas') Roperos y comodas
+													li.child-category
+														a.child-category-name(href='/ripley-home/organizacion/zapateras-y-joyeros') Zapateras y joyeros
+													li.child-category
+														a.child-category-name(href='/ripley-home/organizacion/cocina-y-servicio') Cocina y servicio
+													li.child-category
+														a.child-category-name(href='/muebles/organizacion/cocina') Cocina
+													li.child-category
+														a.child-category-name(href='/muebles/organizacion/bano') Baño
+											li.child-category
+												a.child-category-name(href='/ripley-home/maletas')
+													svg.arrow-menu(role='img', title='arrow_menu')
+														use(xlink:href='#arrow_menu')
+													|                               Maletas
+												ul.child-categories.third-column
+													li.child-category
+														a.child-category-name(href='/ripley-home/maletas/ver-todo-maletas') Ver todo maletas
+													li.child-category
+														a.child-category-name(href='/ripley-home/maletas/maletas') Maletas
+													li.child-category
+														a.child-category-name(href='/ripley-home/maletas/maletines-y-mochilas') Maletines y mochilas
+													li.child-category
+														a.child-category-name(href='/ripley-home/maletas/accesorios-de-viaje') Accesorios de viaje
+											li.child-category.category-espots.child-category-espots
+												span.espot-header Conoce más de nuestras marcas
+										ul.child-categories.category-espots.hidden-sm
+											li
+												span.espot-header Conoce más de nuestras marcas
+									li.main-category.first-column.main-category-muebles
+										a.main-category-name(href='/muebles')
+											span.main-category-arrow
+												span.hidden-md Volver
+												svg.arrow-menu(role='img', title='arrow_menu')
+													use(xlink:href='#arrow_menu')
+											span.main-category-image-container
+												span.main-category-image-wrapper
+													svg(role='img', title='muebles')
+														use(xlink:href='#muebles')
+											span.main-category-active-text(data-default-text='Muebles') Muebles
+										ul.child-categories.second-column
+											li.child-category
+												a.child-category-name.is-hover(href='/muebles/sofas-y-juegos-de-sala')
+													svg.arrow-menu(role='img', title='arrow_menu')
+														use(xlink:href='#arrow_menu')
+													|                               Sofas y juegos de sala
+												ul.child-categories.third-column.is-hover
+													li.child-category
+														a.child-category-name(href='/muebles/sofas-y-juegos-de-sala/ver-todo-sofas-y-juegos-de-sala') Ver todo sofás y juegos de sala
+													li.child-category
+														a.child-category-name(href='/muebles/sofas-y-juegos-de-sala/3-cuerpos') 3 cuerpos
+													li.child-category
+														a.child-category-name(href='/muebles/sofas-y-juegos-de-sala/2-cuerpos') 2 cuerpos
+													li.child-category
+														a.child-category-name(href='/muebles/sofas-y-juegos-de-sala/sillon') Sillón
+													li.child-category
+														a.child-category-name(href='/muebles/sofas-y-juegos-de-sala/juegos-de-sala') Juegos de sala
+											li.child-category
+												a.child-category-name(href='/muebles/seccionales')
+													svg.arrow-menu(role='img', title='arrow_menu')
+														use(xlink:href='#arrow_menu')
+													|                               Seccionales
+												ul.child-categories.third-column
+													li.child-category
+														a.child-category-name(href='/muebles/seccionales/ver-todo-seccionales') Ver todo seccionales
+													li.child-category
+														a.child-category-name(href='/muebles/seccionales/chaise-derecho') Chaise derecho
+													li.child-category
+														a.child-category-name(href='/muebles/seccionales/chaise-izquierdo') Chaise izquierdo
+											li.child-category
+												a.child-category-name(href='/muebles/colecciones-de-sofas')
+													svg.arrow-menu(role='img', title='arrow_menu')
+														use(xlink:href='#arrow_menu')
+													|                               Colecciones de sofás
+												ul.child-categories.third-column
+													li.child-category
+														a.child-category-name(href='/muebles/colecciones-de-sofas/ver-todo-colecciones') Ver todo colecciones
+													li.child-category
+														a.child-category-name(href='/muebles/colecciones-de-sofas/las-clasicas') Las clasicas
+													li.child-category
+														a.child-category-name(href='/muebles/colecciones-de-sofas/las-contemporaneas') Las contemporaneas
+													li.child-category
+														a.child-category-name(href='/muebles/colecciones-de-sofas/las-modernas') Las modernas
+											li.child-category
+												a.child-category-name(href='/muebles/sitiales-y-banquetas')
+													svg.arrow-menu(role='img', title='arrow_menu')
+														use(xlink:href='#arrow_menu')
+													|                               Sitiales y Banquetas
+												ul.child-categories.third-column
+													li.child-category
+														a.child-category-name(href='/muebles/sitiales-y-banquetas/ver-todo-sitiales-y-banquetas') Ver todo sitiales y banquetas
+													li.child-category
+														a.child-category-name(href='/muebles/sitiales-y-banquetas/sitiales') Sitiales
+													li.child-category
+														a.child-category-name(href='/muebles/sitiales-y-banquetas/banquetas') Banquetas
+													li.child-category
+														a.child-category-name(href='/muebles/sitiales-y-banquetas/puffs') Puffs
+											li.child-category
+												a.child-category-name(href='/muebles/reclinables-y-futones')
+													svg.arrow-menu(role='img', title='arrow_menu')
+														use(xlink:href='#arrow_menu')
+													|                               Reclinables y futones
+												ul.child-categories.third-column
+													li.child-category
+														a.child-category-name(href='/muebles/reclinables-y-futones/ver-todo-reclinables-y-futones') Ver todo reclinables y futones
+													li.child-category
+														a.child-category-name(href='/muebles/reclinables-y-futones/reclinables-1-cuerpo') Reclinables 1 cuerpo
+													li.child-category
+														a.child-category-name(href='/muebles/reclinables-y-futones/sofas-reclinables') Sofás reclinables
+													li.child-category
+														a.child-category-name(href='/muebles/reclinables-y-futones/futones') Futones
+													li.child-category
+														a.child-category-name(href='/muebles/reclinables-y-futones/sofas-cama') Sofás cama
+											li.child-category
+												a.child-category-name(href='/muebles/mesas-varias')
+													svg.arrow-menu(role='img', title='arrow_menu')
+														use(xlink:href='#arrow_menu')
+													|                               Mesas varias
+												ul.child-categories.third-column
+													li.child-category
+														a.child-category-name(href='/muebles/mesas-varias/ver-todo-mesas-varias') Ver todo mesas varias
+													li.child-category
+														a.child-category-name(href='/muebles/mesas-varias/mesas-de-centro') Mesas de centro
+													li.child-category
+														a.child-category-name(href='/muebles/mesas-varias/mesas-laterales-y-auxiliares') Mesas laterales y auxiliares
+													li.child-category
+														a.child-category-name(href='/muebles/mesas-varias/consolas') Consolas
+											li.child-category
+												a.child-category-name(href='/muebles/comedor-y-bar')
+													svg.arrow-menu(role='img', title='arrow_menu')
+														use(xlink:href='#arrow_menu')
+													|                               Comedor y bar
+												ul.child-categories.third-column
+													li.child-category
+														a.child-category-name(href='/muebles/comedor-y-bar/ver-todo-comedor-y-bar') Ver todo comedor y bar
+													li.child-category
+														a.child-category-name(href='/muebles/comedor-y-bar/comedores-de-diario') Comedores de diario
+													li.child-category
+														a.child-category-name(href='/muebles/comedor-y-bar/juegos-de-comedor') Juegos de comedor
+													li.child-category
+														a.child-category-name(href='/muebles/comedor-y-bar/mesas-de-comedor') Mesas de comedor
+													li.child-category
+														a.child-category-name(href='/muebles/comedor-y-bar/sillas-de-comedor') Sillas de comedor
+													li.child-category
+														a.child-category-name(href='/muebles/comedor-y-bar/aparadores-y-vitrinas') Aparadores y vitrinas
+													li.child-category
+														a.child-category-name(href='/muebles/comedor-y-bar/muebles-bar') Muebles bar
+											li.child-category
+												a.child-category-name(href='/muebles/organizacion')
+													svg.arrow-menu(role='img', title='arrow_menu')
+														use(xlink:href='#arrow_menu')
+													|                               Organización
+												ul.child-categories.third-column
+													li.child-category
+														a.child-category-name(href='/muebles/organizacion/ver-todo-organizacion') Ver todo organización
+													li.child-category
+														a.child-category-name(href='/muebles/organizacion/centro-de-entretenimiento') Centro de entretenimiento
+													li.child-category
+														a.child-category-name(href='/muebles/organizacion/libreros-y-estantes') Libreros y estantes
+													li.child-category
+														a.child-category-name(href='/muebles/organizacion/roperos-y-comodas') Roperos y comodas
+													li.child-category
+														a.child-category-name(href='/muebles/organizacion/zapateras-y-joyeros') Zapateras y joyeros
+													li.child-category
+														a.child-category-name(href='/muebles/organizacion/cocina-y-servicio') Cocina y servicio
+													li.child-category
+														a.child-category-name(href='/muebles/organizacion/bano') Baño
+													li.child-category
+														a.child-category-name(href='/muebles/organizacion/cocina') Cocina
+											li.child-category
+												a.child-category-name(href='/muebles/muebles-de-dormitorio')
+													svg.arrow-menu(role='img', title='arrow_menu')
+														use(xlink:href='#arrow_menu')
+													|                               Muebles de dormitorio
+												ul.child-categories.third-column
+													li.child-category
+														a.child-category-name(href='/muebles/muebles-de-dormitorio/ver-todo-muebles-de-dormitorio') Ver todo muebles de dormitorio
+													li.child-category
+														a.child-category-name(href='/muebles/muebles-de-dormitorio/camas') Camas
+													li.child-category
+														a.child-category-name(href='/muebles/muebles-de-dormitorio/cabeceras') Cabeceras
+													li.child-category
+														a.child-category-name(href='/muebles/muebles-de-dormitorio/veladores') Veladores
+													li.child-category
+														a.child-category-name(href='/muebles/muebles-de-dormitorio/roperos-y-comodas') Roperos y comodas
+													li.child-category
+														a.child-category-name(href='/muebles/muebles-de-dormitorio/zapateras-y-joyeros') Zapateras y joyeros
+											li.child-category
+												a.child-category-name(href='/muebles/terraza')
+													svg.arrow-menu(role='img', title='arrow_menu')
+														use(xlink:href='#arrow_menu')
+													|                               Terraza
+												ul.child-categories.third-column
+													li.child-category
+														a.child-category-name(href='/muebles/terraza/ver-todo-terraza') Ver todo terraza
+													li.child-category
+														a.child-category-name(href='/muebles/terraza/sofas-y-sillones') Sofas y sillones
+													li.child-category
+														a.child-category-name(href='/muebles/terraza/seccionales') Seccionales
+													li.child-category
+														a.child-category-name(href='/muebles/terraza/mesas-de-centro-y-auxiliares') Mesas de centro y auxiliares
+													li.child-category
+														a.child-category-name(href='/muebles/terraza/mesas-comedor') Mesas comedor
+													li.child-category
+														a.child-category-name(href='/muebles/terraza/sillas-comedor') Sillas comedor
+													li.child-category
+														a.child-category-name(href='/muebles/terraza/juegos-de-comedor') Juegos de comedor
+													li.child-category
+														a.child-category-name(href='/muebles/terraza/quitasoles-y-pergola') Quitasoles y pergola
+													li.child-category
+														a.child-category-name(href='/muebles/terraza/otros-accesorios') Otros accesorios
+											li.child-category.category-espots.child-category-espots
+												span.espot-header Conoce más de nuestras marcas
+										ul.child-categories.category-espots.hidden-sm
+											li
+												span.espot-header Conoce más de nuestras marcas
+									li.main-category.first-column.main-category-dormitorio_ic
+										a.main-category-name(href='/dormitorio')
+											span.main-category-arrow
+												span.hidden-md Volver
+												svg.arrow-menu(role='img', title='arrow_menu')
+													use(xlink:href='#arrow_menu')
+											span.main-category-image-container
+												span.main-category-image-wrapper
+													svg(role='img', title='dormitorio')
+														use(xlink:href='#dormitorio')
+											span.main-category-active-text(data-default-text='Dormitorio') Dormitorio
+										ul.child-categories.second-column
+											li.child-category
+												a.child-category-name.is-hover(href='/dormitorio/marcas')
+													svg.arrow-menu(role='img', title='arrow_menu')
+														use(xlink:href='#arrow_menu')
+													|                               Marcas
+												ul.child-categories.third-column.is-hover
+													li.child-category
+														a.child-category-name(href='/dormitorio/marcas/drimer') Drimer
+													li.child-category
+														a.child-category-name(href='/dormitorio/marcas/forli') Forli
+													li.child-category
+														a.child-category-name(href='/dormitorio/marcas/vive') Vive
+													li.child-category
+														a.child-category-name(href='/dormitorio/marcas/tempur') Tempur
+													li.child-category
+														a.child-category-name(href='/dormitorio/marcas/komfort') Komfort
+													li.child-category
+														a.child-category-name(href='/dormitorio/marcas/rosen') Rosen
+													li.child-category
+														a.child-category-name(href='/dormitorio/marcas/el-cisne') El Cisne
+													li.child-category
+														a.child-category-name(href='/dormitorio/marcas/paraiso') Paraiso
+											li.child-category
+												a.child-category-name(href='/dormitorio/colchones')
+													svg.arrow-menu(role='img', title='arrow_menu')
+														use(xlink:href='#arrow_menu')
+													|                               Colchones
+												ul.child-categories.third-column
+													li.child-category
+														a.child-category-name(href='/dormitorio/colchones/ver-todo-colchones') Ver Todo Colchones
+													li.child-category
+														a.child-category-name(href='/dormitorio/colchones/1-plaza') 1 Plaza
+													li.child-category
+														a.child-category-name(href='/dormitorio/colchones/15-plazas') 1 Plazas
+													li.child-category
+														a.child-category-name(href='/dormitorio/colchones/2-plazas') 2 Plazas
+													li.child-category
+														a.child-category-name(href='/dormitorio/colchones/queen') Queen
+													li.child-category
+														a.child-category-name(href='/dormitorio/colchones/king') King
+											li.child-category
+												a.child-category-name(href='/dormitorio/cama-americana')
+													svg.arrow-menu(role='img', title='arrow_menu')
+														use(xlink:href='#arrow_menu')
+													|                               Cama Americana
+												ul.child-categories.third-column
+													li.child-category
+														a.child-category-name(href='/dormitorio/cama-americana/ver-todo-cama-americana') Ver Todo Cama Americana
+													li.child-category
+														a.child-category-name(href='/dormitorio/cama-americana/15-plazas') 1 Plazas
+													li.child-category
+														a.child-category-name(href='/dormitorio/cama-americana/2-plazas') 2 Plazas
+													li.child-category
+														a.child-category-name(href='/dormitorio/cama-americana/queen') Queen
+													li.child-category
+														a.child-category-name(href='/dormitorio/cama-americana/king') King
+											li.child-category
+												a.child-category-name(href='/dormitorio/box-spring')
+													svg.arrow-menu(role='img', title='arrow_menu')
+														use(xlink:href='#arrow_menu')
+													|                               Box Spring
+												ul.child-categories.third-column
+													li.child-category
+														a.child-category-name(href='/dormitorio/box-spring/ver-todo-box-spring') Ver Todo Box Spring
+													li.child-category
+														a.child-category-name(href='/dormitorio/box-spring/15-plazas') 1 Plazas
+													li.child-category
+														a.child-category-name(href='/dormitorio/box-spring/2-plazas') 2 Plazas
+													li.child-category
+														a.child-category-name(href='/dormitorio/box-spring/queen') Queen
+													li.child-category
+														a.child-category-name(href='/dormitorio/box-spring/king') King
+											li.child-category
+												a.child-category-name(href='/dormitorio/sets-de-dormitorio')
+													svg.arrow-menu(role='img', title='arrow_menu')
+														use(xlink:href='#arrow_menu')
+													|                               Sets de Dormitorio
+												ul.child-categories.third-column
+													li.child-category
+														a.child-category-name(href='/dormitorio/sets-de-dormitorio/ver-todo-sets-de-dormitorio') Ver Todo Sets de Dormitorio
+													li.child-category
+														a.child-category-name(href='/dormitorio/sets-de-dormitorio/15-plaza') 1 Plaza
+													li.child-category
+														a.child-category-name(href='/dormitorio/sets-de-dormitorio/2-plazas') 2 Plazas
+													li.child-category
+														a.child-category-name(href='/dormitorio/sets-de-dormitorio/queen') Queen
+													li.child-category
+														a.child-category-name(href='/dormitorio/sets-de-dormitorio/king') King
+											li.child-category
+												a.child-category-name(href='/dormitorio/camas-funcionales')
+													svg.arrow-menu(role='img', title='arrow_menu')
+														use(xlink:href='#arrow_menu')
+													|                               Camas Funcionales
+												ul.child-categories.third-column
+													li.child-category
+														a.child-category-name(href='/dormitorio/camas-funcionales/ver-todo-camas-funcionales') Ver Todo Camas Funcionales
+													li.child-category
+														a.child-category-name(href='/dormitorio/camas-funcionales/camarotes') Camarotes
+													li.child-category
+														a.child-category-name(href='/dormitorio/camas-funcionales/divanes') Divanes
+													li.child-category
+														a.child-category-name(href='/dormitorio/camas-funcionales/cama-espacio') Cama Espacio
+											li.child-category
+												a.child-category-name(href='/dormitorio/muebles-de-dormitorio')
+													svg.arrow-menu(role='img', title='arrow_menu')
+														use(xlink:href='#arrow_menu')
+													|                               Muebles de Dormitorio
+												ul.child-categories.third-column
+													li.child-category
+														a.child-category-name(href='/dormitorio/muebles-de-dormitorio/ver-todo-muebles-de-dormitorio') Ver Todo Muebles de Dormitorio
+													li.child-category
+														a.child-category-name(href='/dormitorio/muebles-de-dormitorio/camas') Camas
+													li.child-category
+														a.child-category-name(href='/dormitorio/muebles-de-dormitorio/cabeceras') Cabeceras
+													li.child-category
+														a.child-category-name(href='/dormitorio/muebles-de-dormitorio/veladores') Veladores
+													li.child-category
+														a.child-category-name(href='/dormitorio/muebles-de-dormitorio/roperos-y-comodas') Roperos y Cómodas
+													li.child-category
+														a.child-category-name(href='/dormitorio/muebles-de-dormitorio/zapateras-y-joyeros') Zapateras y Joyeros
+											li.child-category
+												a.child-category-name(href='/dormitorio/almohadas-y-edredones')
+													svg.arrow-menu(role='img', title='arrow_menu')
+														use(xlink:href='#arrow_menu')
+													|                               Almohadas y Edredones
+												ul.child-categories.third-column
+													li.child-category
+														a.child-category-name(href='/dormitorio/almohadas-y-edredones/ver-todo-almohadas-y-edredones') Ver Todo Almohadas y Edredones
+													li.child-category
+														a.child-category-name(href='/dormitorio/almohadas-y-edredones/almohadas') Almohadas
+													li.child-category
+														a.child-category-name(href='/dormitorio/almohadas-y-edredones/edredones-blancos') Edredones Blancos
+													li.child-category
+														a.child-category-name(href='/dormitorio/almohadas-y-edredones/protector-de-colchon') Protector de Colchón
+											li.child-category
+												a.child-category-name(href='/dormitorio/ropa-de-cama')
+													svg.arrow-menu(role='img', title='arrow_menu')
+														use(xlink:href='#arrow_menu')
+													|                               Ropa de Cama
+												ul.child-categories.third-column
+													li.child-category
+														a.child-category-name(href='/dormitorio/ropa-de-cama/ver-todo-ropa-de-cama') Ver Todo Ropa de Cama
+													li.child-category
+														a.child-category-name(href='/dormitorio/ropa-de-cama/sabanas') Sábanas
+													li.child-category
+														a.child-category-name(href='/dormitorio/ropa-de-cama/cubrecamas') Cubrecamas
+													li.child-category
+														a.child-category-name(href='/dormitorio/ropa-de-cama/edredones') Edredones
+													li.child-category
+														a.child-category-name(href='/dormitorio/ropa-de-cama/sets-de-cama') Sets de Cama
+													li.child-category
+														a.child-category-name(href='/dormitorio/ropa-de-cama/cubreplumones') Cubreplumones
+													li.child-category
+														a.child-category-name(href='/dormitorio/ropa-de-cama/cojines-y-complementos') Cojines y Complementos
+											li.child-category
+												a.child-category-name(href='/dormitorio/infantil')
+													svg.arrow-menu(role='img', title='arrow_menu')
+														use(xlink:href='#arrow_menu')
+													|                               Infantil
+												ul.child-categories.third-column
+													li.child-category
+														a.child-category-name(href='/dormitorio/infantil/ver-todo-dormitorio-infantil') Ver Todo Dormitorio Infantil
+													li.child-category
+														a.child-category-name(href='/dormitorio/infantil/colchones-de-cuna') Colchones de Cuna
+													li.child-category
+														a.child-category-name(href='/dormitorio/infantil/cunas-y-camas') Cunas y Camas
+													li.child-category
+														a.child-category-name(href='/dormitorio/infantil/ropa-de-cama') Ropa de Cama
+											li.child-category
+												a.child-category-name(href='/dormitorio/toallas-y-accesorios')
+													svg.arrow-menu(role='img', title='arrow_menu')
+														use(xlink:href='#arrow_menu')
+													|                               Toallas y Accesorios
+												ul.child-categories.third-column0
+													li.child-category
+														a.child-category-name(href='/dormitorio/toallas-y-accesorios/ver-todo-toallas-y-accesorios') Ver Todo Toallas y Accesorios
+													li.child-category
+														a.child-category-name(href='/dormitorio/toallas-y-accesorios/de-bano') De Baño
+													li.child-category
+														a.child-category-name(href='/dormitorio/toallas-y-accesorios/de-playa') De Playa
+													li.child-category
+														a.child-category-name(href='/dormitorio/toallas-y-accesorios/accesorios') Accesorios
+											li.child-category.category-espots.child-category-espots
+												span.espot-header Conoce más de nuestras marcas
+										ul.child-categories.category-espots.hidden-sm
+											li
+												span.espot-header Conoce más de nuestras marcas
+									li.main-category.first-column.main-category-deporte_ic
+										a.main-category-name(href='/deporte')
+											span.main-category-arrow
+												span.hidden-md Volver
+												svg.arrow-menu(role='img', title='arrow_menu')
+													use(xlink:href='#arrow_menu')
+											span.main-category-image-container
+												span.main-category-image-wrapper
+													svg(role='img', title='deporte')
+														use(xlink:href='#deporte')
+											span.main-category-active-text(data-default-text='Deporte') Deporte
+										ul.child-categories.second-column
+											li.child-category
+												a.child-category-name.is-hover(href='/deporte/maquinas')
+													svg.arrow-menu(role='img', title='arrow_menu')
+														use(xlink:href='#arrow_menu')
+													|                               Máquinas
+												ul.child-categories.third-column.is-hover
+													li.child-category
+														a.child-category-name(href='/deporte/maquinas/todo-maquinas') Todo maquinas
+													li.child-category
+														a.child-category-name(href='/deporte/maquinas/trotadoras') Trotadoras
+													li.child-category
+														a.child-category-name(href='/deporte/maquinas/elipticas') Elípticas
+													li.child-category
+														a.child-category-name(href='/deporte/maquinas/spinning') Spinning
+													li.child-category
+														a.child-category-name(href='/deporte/maquinas/gimnasios-caseros') Gimnasios caseros
+													li.child-category
+														a.child-category-name(href='/deporte/maquinas/bancas-y-abdominales') Bancas y abdominales
+													li.child-category
+														a.child-category-name(href='/deporte/maquinas/accesorios') Accesorios
+											li.child-category
+												a.child-category-name(href='/deporte/bicicletas')
+													svg.arrow-menu(role='img', title='arrow_menu')
+														use(xlink:href='#arrow_menu')
+													|                               Bicicletas
+												ul.child-categories.third-column
+													li.child-category
+														a.child-category-name(href='/deporte/bicicletas/todo-bicicletas') Todo bicicletas
+													li.child-category
+														a.child-category-name(href='/deporte/bicicletas/infantiles') Infantiles
+													li.child-category
+														a.child-category-name(href='/deporte/bicicletas/paseo') Paseo
+													li.child-category
+														a.child-category-name(href='/deporte/bicicletas/montaneras') Montañeras
+													li.child-category
+														a.child-category-name(href='/deporte/bicicletas/plegables') Plegables
+													li.child-category
+														a.child-category-name(href='/deporte/bicicletas/bmx') BMX
+													li.child-category
+														a.child-category-name(href='/deporte/bicicletas/electricas') Eléctricas
+													li.child-category
+														a.child-category-name(href='/deporte/bicicletas/accesorios') Accesorios
+											li.child-category
+												a.child-category-name(href='/deporte/outdoors')
+													svg.arrow-menu(role='img', title='arrow_menu')
+														use(xlink:href='#arrow_menu')
+													|                               Outdoors
+												ul.child-categories.third-column
+													li.child-category
+														a.child-category-name(href='/deporte/outdoors/todo-outdoors') Todo outdoors
+													li.child-category
+														a.child-category-name(href='/deporte/outdoors/carpas') Carpas
+													li.child-category
+														a.child-category-name(href='/deporte/outdoors/bolsas-de-dormir') Bolsas de dormir
+													li.child-category
+														a.child-category-name(href='/deporte/outdoors/colchones') Colchones
+													li.child-category
+														a.child-category-name(href='/deporte/outdoors/mochilas-y-bolsos') Mochilas y bolsos
+													li.child-category
+														a.child-category-name(href='/deporte/outdoors/binoculares') Binoculares
+													li.child-category
+														a.child-category-name(href='/deporte/outdoors/piscinas-e-inflables') Piscinas e inflables
+													li.child-category
+														a.child-category-name(href='/deporte/outdoors/accesorios-de-camping') Accesorios de camping
+											li.child-category
+												a.child-category-name(href='/deporte/skates-scooters-y-patines')
+													svg.arrow-menu(role='img', title='arrow_menu')
+														use(xlink:href='#arrow_menu')
+													|                               Skates scooters y patines
+												ul.child-categories.third-column
+													li.child-category
+														a.child-category-name(href='/deporte/skates-scooters-y-patines/todo-skates-y-scooters') Todo skates y scooters
+													li.child-category
+														a.child-category-name(href='/deporte/skates-scooters-y-patines/electronicos') Electronicos
+													li.child-category
+														a.child-category-name(href='/deporte/skates-scooters-y-patines/foot-scooters') Foot Scooters
+													li.child-category
+														a.child-category-name(href='/deporte/skates-scooters-y-patines/scooters') Scooters
+													li.child-category
+														a.child-category-name(href='/deporte/skates-scooters-y-patines/skates') Skates
+													li.child-category
+														a.child-category-name(href='/deporte/skates-scooters-y-patines/patines') Patines
+											li.child-category
+												a.child-category-name(href='/deporte/otros-deportes')
+													svg.arrow-menu(role='img', title='arrow_menu')
+														use(xlink:href='#arrow_menu')
+													|                               Otros deportes
+												ul.child-categories.third-column
+													li.child-category
+														a.child-category-name(href='/deporte/otros-deportes/todo-otros-deporte') Todo otros deporte
+													li.child-category
+														a.child-category-name(href='/deporte/otros-deportes/entrenamiento-funcional') Entrenamiento funcional
+													li.child-category
+														a.child-category-name(href='/deporte/otros-deportes/yoga-y-pilates') Yoga y pilates
+													li.child-category
+														a.child-category-name(href='/deporte/otros-deportes/futbol') Fútbol
+													li.child-category
+														a.child-category-name(href='/deporte/otros-deportes/box') Box
+											li.child-category
+												a.child-category-name(href='/calzado/zapatillas-deportivas')
+													svg.arrow-menu(role='img', title='arrow_menu')
+														use(xlink:href='#arrow_menu')
+													|                               Zapatillas Deportivas
+												ul.child-categories.third-column
+													li.child-category
+														a.child-category-name(href='/calzado/zapatillas-deportivas/todo-zapatillas') Todo Zapatillas
+													li.child-category
+														a.child-category-name(href='/calzado/zapatillas-deportivas/zapatillas-deportivas-mujer') Zapatillas Deportivas Mujer
+													li.child-category
+														a.child-category-name(href='/calzado/zapatillas-deportivas/zapatillas-deportivas-hombre') Zapatillas Deportivas Hombre
+													li.child-category
+														a.child-category-name(href='/calzado/zapatillas-deportivas/zapatillas-deportivas-infantil') Zapatillas Deportivas Infantil
+											li.child-category
+												a.child-category-name(href='/deporte/ropa-y-accesorios')
+													svg.arrow-menu(role='img', title='arrow_menu')
+														use(xlink:href='#arrow_menu')
+													|                               Ropa y accesorios
+												ul.child-categories.third-column
+													li.child-category
+														a.child-category-name(href='/deporte/ropa-y-accesorios/accesorios-deportivos') Accesorios Deportivos
+													li.child-category
+														a.child-category-name(href='/deporte/ropa-y-accesorios/tops') Tops
+													li.child-category
+														a.child-category-name(href='/deporte/ropa-y-accesorios/polos') Polos
+													li.child-category
+														a.child-category-name(href='/deporte/ropa-y-accesorios/camisetas') Camisetas
+													li.child-category
+														a.child-category-name(href='/deporte/ropa-y-accesorios/poleras') Poleras
+													li.child-category
+														a.child-category-name(href='/deporte/ropa-y-accesorios/casacas') Casacas
+													li.child-category
+														a.child-category-name(href='/deporte/ropa-y-accesorios/shorts') Shorts
+													li.child-category
+														a.child-category-name(href='/deporte/ropa-y-accesorios/mallas') Mallas
+													li.child-category
+														a.child-category-name(href='/deporte/ropa-y-accesorios/pantalones') Pantalones
+													li.child-category
+														a.child-category-name(href='/deporte/ropa-y-accesorios/buzos') Buzos
+											li.child-category
+												a.child-category-name(href='/deporte/marcas')
+													svg.arrow-menu(role='img', title='arrow_menu')
+														use(xlink:href='#arrow_menu')
+													|                               Marcas
+												ul.child-categories.third-column
+													li.child-category
+														a.child-category-name(href='/deporte/marcas/gym-source') Gym source
+													li.child-category
+														a.child-category-name(href='/deporte/marcas/besatti') Besatti
+													li.child-category
+														a.child-category-name(href='/deporte/marcas/nordictrack') Nordictrack
+													li.child-category
+														a.child-category-name(href='/deporte/marcas/best') Best
+													li.child-category
+														a.child-category-name(href='/deporte/marcas/oxford') Oxford
+													li.child-category
+														a.child-category-name(href='/deporte/marcas/monark') Monark
+													li.child-category
+														a.child-category-name(href='/deporte/marcas/jafi') Jafi
+											li.child-category.category-espots.child-category-espots
+												span.espot-header Conoce más de nuestras marcas
+										ul.child-categories.category-espots.hidden-sm
+											li
+												span.espot-header Conoce más de nuestras marcas
+									li.main-category.first-column.main-category-infantil_ic
+										a.main-category-name(href='/infantil')
+											span.main-category-arrow
+												span.hidden-md Volver
+												svg.arrow-menu(role='img', title='arrow_menu')
+													use(xlink:href='#arrow_menu')
+											span.main-category-image-container
+												span.main-category-image-wrapper
+													svg(role='img', title='infantil')
+														use(xlink:href='#infantil')
+											span.main-category-active-text(data-default-text='Infantil') Infantil
+										ul.child-categories.second-column
+											li.child-category
+												a.child-category-name.is-hover(href='/infantil/paseo')
+													svg.arrow-menu(role='img', title='arrow_menu')
+														use(xlink:href='#arrow_menu')
+													|                               Paseo
+												ul.child-categories.third-column.is-hover
+													li.child-category
+														a.child-category-name(href='/infantil/paseo/coches') Coches
+													li.child-category
+														a.child-category-name(href='/infantil/paseo/sillas-de-auto') Sillas de auto
+													li.child-category
+														a.child-category-name(href='/infantil/paseo/porta-bebes') Porta bebés
+													li.child-category
+														a.child-category-name(href='/infantil/paseo/bolsos-y-cambiadores') Bolsos y cambiadores
+											li.child-category
+												a.child-category-name(href='/infantil/bebes')
+													svg.arrow-menu(role='img', title='arrow_menu')
+														use(xlink:href='#arrow_menu')
+													|                               Bebés
+												ul.child-categories.third-column
+													li.child-category
+														a.child-category-name(href='/infantil/bebes/todo-bebe') Todo Bebe
+													li.child-category
+														a.child-category-name(href='/infantil/bebes/cunas-y-corrales') Cunas y corrales
+													li.child-category
+														a.child-category-name(href='/infantil/bebes/sillas-de-comer') Sillas de comer
+													li.child-category
+														a.child-category-name(href='/infantil/bebes/bouncer') Bouncer
+													li.child-category
+														a.child-category-name(href='/infantil/bebes/bano') Baño
+													li.child-category
+														a.child-category-name(href='/infantil/bebes/biberones-y-chupones') Biberones y chupones
+											li.child-category
+												a.child-category-name(href='/infantil/actividad')
+													svg.arrow-menu(role='img', title='arrow_menu')
+														use(xlink:href='#arrow_menu')
+													|                               Actividad
+												ul.child-categories.third-column
+													li.child-category
+														a.child-category-name(href='/infantil/actividad/todo-actividad') Todo Actividad
+													li.child-category
+														a.child-category-name(href='/infantil/actividad/centros-de-actividad-y-gimnasios') Centros de actividad y gimnasios
+													li.child-category
+														a.child-category-name(href='/infantil/actividad/andadores') Andadores
+													li.child-category
+														a.child-category-name(href='/infantil/actividad/caminadores') Caminadores
+													li.child-category
+														a.child-category-name(href='/infantil/actividad/estimulacion') Estimulación
+													li.child-category
+														a.child-category-name(href='/infantil/actividad/juguetes-para-bebe') Juguetes para bebé
+											li.child-category
+												a.child-category-name(href='/infantil/accesorios')
+													svg.arrow-menu(role='img', title='arrow_menu')
+														use(xlink:href='#arrow_menu')
+													|                               Accesorios
+												ul.child-categories.third-column
+													li.child-category
+														a.child-category-name(href='/infantil/accesorios/todo-accesorios') Todo Accesorios
+													li.child-category
+														a.child-category-name(href='/infantil/accesorios/lactancia') Lactancia
+													li.child-category
+														a.child-category-name(href='/infantil/accesorios/alimentacion') Alimentación
+													li.child-category
+														a.child-category-name(href='/infantil/accesorios/seguridad') Seguridad
+													li.child-category
+														a.child-category-name(href='/infantil/accesorios/colchones-para-cuna') Colchones para cuna
+											li.child-category
+												a.child-category-name(href='/infantil/jugueteria')
+													svg.arrow-menu(role='img', title='arrow_menu')
+														use(xlink:href='#arrow_menu')
+													|                               Jugueteria
+												ul.child-categories.third-column
+													li.child-category
+														a.child-category-name(href='/infantil/jugueteria/todo-juguetes') Todo Juguetes
+													li.child-category
+														a.child-category-name(href='/infantil/jugueteria/preescolares-y-bebes') Preescolares y bebés
+													li.child-category
+														a.child-category-name(href='/infantil/jugueteria/juguetes-para-ninas') Juguetes para niñas
+													li.child-category
+														a.child-category-name(href='/infantil/jugueteria/juguetes-para-ninos') Juguetes para niños
+													li.child-category
+														a.child-category-name(href='/infantil/jugueteria/juegos-de-mesa') Juegos de mesa
+													li.child-category
+														a.child-category-name(href='/infantil/jugueteria/armables') Armables
+													li.child-category
+														a.child-category-name(href='/infantil/jugueteria/didacticos') Didácticos
+													li.child-category
+														a.child-category-name(href='/infantil/jugueteria/juguetes-interactivos') Juguetes Interactivos
+													li.child-category
+														a.child-category-name(href='/infantil/jugueteria/peluches') Peluches
+													li.child-category
+														a.child-category-name(href='/infantil/jugueteria/artes-y-pintura') Artes y pintura
+													li.child-category
+														a.child-category-name(href='/infantil/jugueteria/vehiculos') Vehículos
+											li.child-category
+												a.child-category-name(href='/infantil/juegos-de-exterior')
+													svg.arrow-menu(role='img', title='arrow_menu')
+														use(xlink:href='#arrow_menu')
+													|                               Juegos de exterior
+												ul.child-categories.third-column
+													li.child-category
+														a.child-category-name(href='/infantil/juegos-de-exterior/todo-juegos-de-exterior') Todo juegos de exterior
+													li.child-category
+														a.child-category-name(href='/infantil/juegos-de-exterior/autos-a-bateria') Autos a batería
+													li.child-category
+														a.child-category-name(href='/infantil/juegos-de-exterior/camas-saltarinas') Camas saltarinas
+													li.child-category
+														a.child-category-name(href='/infantil/juegos-de-exterior/casas-de-juegos') Casas de juegos
+													li.child-category
+														a.child-category-name(href='/infantil/juegos-de-exterior/cocinas-y-mesa') Cocinas y mesa
+													li.child-category
+														a.child-category-name(href='/infantil/juegos-de-exterior/correpasillos') Correpasillos
+													li.child-category
+														a.child-category-name(href='/infantil/juegos-de-exterior/columpios-y-resbaladeras') Columpios y resbaladeras
+													li.child-category
+														a.child-category-name(href='/infantil/juegos-de-exterior/triciclos-y-scooters') Triciclos y scooters
+													li.child-category
+														a.child-category-name(href='/infantil/juegos-de-exterior/piscinas-e-inflables') Piscinas e Inflables
+											li.child-category
+												a.child-category-name(href='/infantil/moda-infantil')
+													svg.arrow-menu(role='img', title='arrow_menu')
+														use(xlink:href='#arrow_menu')
+													|                               Moda infantil
+												ul.child-categories.third-column
+													li.child-category
+														a.child-category-name(href='/infantil/moda-infantil/todo-moda-infantil') Todo moda infantil
+													li.child-category
+														a.child-category-name(href='/infantil/moda-infantil/ninas') Niñas
+													li.child-category
+														a.child-category-name(href='/infantil/moda-infantil/accesorios') Accesorios
+											li.child-category
+												a.child-category-name(href='/infantil/disney')
+													svg.arrow-menu(role='img', title='arrow_menu')
+														use(xlink:href='#arrow_menu')
+													|                               Disney
+												ul.child-categories.third-column
+													li.child-category
+														a.child-category-name(href='/infantil/disney/todo-disney') Todo Disney
+											li.child-category
+												a.child-category-name(href='/infantil/marcas-ninas')
+													svg.arrow-menu(role='img', title='arrow_menu')
+														use(xlink:href='#arrow_menu')
+													|                               Marcas niñas
+												ul.child-categories.third-column
+													li.child-category
+														a.child-category-name(href='/infantil/marcas-ninas/barbie') Barbie
+													li.child-category
+														a.child-category-name(href='/infantil/marcas-ninas/club-petz') Club petz
+													li.child-category
+														a.child-category-name(href='/infantil/marcas-ninas/princesas') Princesas
+													li.child-category
+														a.child-category-name(href='/infantil/marcas-ninas/furreal-friends') Furreal friends
+													li.child-category
+														a.child-category-name(href='/infantil/marcas-ninas/little-mommy') Little mommy
+													li.child-category
+														a.child-category-name(href='/infantil/marcas-ninas/baby-alive') Baby alive
+													li.child-category
+														a.child-category-name(href='/infantil/marcas-ninas/peppa-pig') Peppa pig
+													li.child-category
+														a.child-category-name(href='/infantil/marcas-ninas/my-little-pony') My little pony
+													li.child-category
+														a.child-category-name(href='/infantil/marcas-ninas/baby-bubble') Baby bubble
+													li.child-category
+														a.child-category-name(href='/infantil/marcas-ninas/peek-a-boo') Peek a boo
+													li.child-category
+														a.child-category-name(href='/infantil/marcas-ninas/otros') Otros
+											li.child-category
+												a.child-category-name(href='/infantil/marcas-ninos')
+													svg.arrow-menu(role='img', title='arrow_menu')
+														use(xlink:href='#arrow_menu')
+													|                               Marcas niños
+												ul.child-categories.third-column
+													li.child-category
+														a.child-category-name(href='/infantil/marcas-ninos/avengers') Avengers
+													li.child-category
+														a.child-category-name(href='/infantil/marcas-ninos/hot-wheels') Hot wheels
+													li.child-category
+														a.child-category-name(href='/infantil/marcas-ninos/max-steel') Max steel
+													li.child-category
+														a.child-category-name(href='/infantil/marcas-ninos/nerf') Nerf
+													li.child-category
+														a.child-category-name(href='/infantil/marcas-ninos/star-wars') Star wars
+													li.child-category
+														a.child-category-name(href='/infantil/marcas-ninos/spiderman') Spiderman
+													li.child-category
+														a.child-category-name(href='/infantil/marcas-ninos/transformes') Transformes
+													li.child-category
+														a.child-category-name(href='/infantil/marcas-ninos/boomco') Boomco
+													li.child-category
+														a.child-category-name(href='/infantil/marcas-ninos/cat') Cat
+													li.child-category
+														a.child-category-name(href='/infantil/marcas-ninos/minions') Minions
+													li.child-category
+														a.child-category-name(href='/infantil/marcas-ninos/super-wings') Super wings
+													li.child-category
+														a.child-category-name(href='/infantil/marcas-ninos/cars') Cars
+													li.child-category
+														a.child-category-name(href='/infantil/marcas-ninos/otros') Otros
+											li.child-category
+												a.child-category-name(href='/infantil/marcas-bebes')
+													svg.arrow-menu(role='img', title='arrow_menu')
+														use(xlink:href='#arrow_menu')
+													|                               Marcas bebes
+												ul.child-categories.third-column0
+													li.child-category
+														a.child-category-name(href='/infantil/marcas-bebes/little-tikes') Little Tikes
+													li.child-category
+														a.child-category-name(href='/infantil/marcas-bebes/fisher-price') Fisher Price
+													li.child-category
+														a.child-category-name(href='/infantil/marcas-bebes/mega-bloks') Mega bloks
+													li.child-category
+														a.child-category-name(href='/infantil/marcas-bebes/play-doh') Play doh
+													li.child-category
+														a.child-category-name(href='/infantil/marcas-bebes/play-skool') Play skool
+													li.child-category
+														a.child-category-name(href='/infantil/marcas-bebes/vtech') Vtech
+													li.child-category
+														a.child-category-name(href='/infantil/marcas-bebes/thomas-y-friends') Thomas y friends
+													li.child-category
+														a.child-category-name(href='/infantil/marcas-bebes/imaginext') Imaginext
+													li.child-category
+														a.child-category-name(href='/infantil/marcas-bebes/paw-patrol') Paw patrol
+											li.child-category
+												a.child-category-name(href='/infantil/otras-marcas')
+													svg.arrow-menu(role='img', title='arrow_menu')
+														use(xlink:href='#arrow_menu')
+													|                               Otras marcas
+												ul.child-categories.third-column1
+													li.child-category
+														a.child-category-name(href='/infantil/otras-marcas/hasbro-gaming') Hasbro gaming
+													li.child-category
+														a.child-category-name(href='/infantil/otras-marcas/mattel-gaming') Mattel gaming
+													li.child-category
+														a.child-category-name(href='/infantil/otras-marcas/lego') Lego
+													li.child-category
+														a.child-category-name(href='/infantil/otras-marcas/baby-kits') Baby kits
+													li.child-category
+														a.child-category-name(href='/infantil/otras-marcas/crayolas') Crayolas
+													li.child-category
+														a.child-category-name(href='/infantil/otras-marcas/happy-kid') Happy kid
+											li.child-category.category-espots.child-category-espots
+												span.espot-header Conoce más de nuestras marcas
+										ul.child-categories.category-espots.hidden-sm
+											li
+												span.espot-header Conoce más de nuestras marcas
+									li.main-category.first-column.main-category-acc_bell_ic
+										a.main-category-name(href='/belleza-y-accesorios')
+											span.main-category-arrow
+												span.hidden-md Volver
+												svg.arrow-menu(role='img', title='arrow_menu')
+													use(xlink:href='#arrow_menu')
+											span.main-category-image-container
+												span.main-category-image-wrapper
+													svg(role='img', title='belleza-y-accesorios')
+														use(xlink:href='#belleza-y-accesorios')
+											span.main-category-active-text(data-default-text='Belleza y Accesorios') Belleza y Accesorios
+										ul.child-categories.second-column
+											li.child-category
+												a.child-category-name.is-hover(href='/belleza-y-accesorios/relojes')
+													svg.arrow-menu(role='img', title='arrow_menu')
+														use(xlink:href='#arrow_menu')
+													|                               Relojes
+												ul.child-categories.third-column0.is-hover
+													li.child-category
+														a.child-category-name(href='/belleza-y-accesorios/relojes/todo-los-relojes') Todo los relojes
+													li.child-category
+														a.child-category-name(href='/belleza-y-accesorios/relojes/relojes-mujer') Relojes Mujer
+													li.child-category
+														a.child-category-name(href='/belleza-y-accesorios/relojes/relojes-hombre') Relojes Hombre
+											li.child-category
+												a.child-category-name(href='/belleza-y-accesorios/carteras-y-accesorios')
+													svg.arrow-menu(role='img', title='arrow_menu')
+														use(xlink:href='#arrow_menu')
+													|                               Carteras y Accesorios
+												ul.child-categories.third-column0
+													li.child-category
+														a.child-category-name(href='/belleza-y-accesorios/carteras-y-accesorios/todo-accesorios') Todo Accesorios
+													li.child-category
+														a.child-category-name(href='/belleza-y-accesorios/carteras-y-accesorios/carteras') Carteras
+													li.child-category
+														a.child-category-name(href='/belleza-y-accesorios/carteras-y-accesorios/mochilas') Mochilas
+													li.child-category
+														a.child-category-name(href='/belleza-y-accesorios/carteras-y-accesorios/bijouterie') Bijouterie
+													li.child-category
+														a.child-category-name(href='/belleza-y-accesorios/carteras-y-accesorios/billeteras') Billeteras
+													li.child-category
+														a.child-category-name(href='/belleza-y-accesorios/carteras-y-accesorios/lentes') Lentes
+													li.child-category
+														a.child-category-name(href='/belleza-y-accesorios/carteras-y-accesorios/correas') Correas
+													li.child-category
+														a.child-category-name(href='/belleza-y-accesorios/carteras-y-accesorios/carteras-tendencias') Carteras Tendencias
+											li.child-category
+												a.child-category-name(href='/belleza-y-accesorios/perfumeria')
+													svg.arrow-menu(role='img', title='arrow_menu')
+														use(xlink:href='#arrow_menu')
+													|                               Perfumería
+												ul.child-categories.third-column0
+													li.child-category
+														a.child-category-name(href='/belleza-y-accesorios/perfumeria/todos-los-perfumes') Todos los perfumes
+													li.child-category
+														a.child-category-name(href='/belleza-y-accesorios/perfumeria/mujer') Mujer
+													li.child-category
+														a.child-category-name(href='/belleza-y-accesorios/perfumeria/hombre') Hombre
+											li.child-category
+												a.child-category-name(href='/belleza-y-accesorios/maquillaje')
+													svg.arrow-menu(role='img', title='arrow_menu')
+														use(xlink:href='#arrow_menu')
+													|                               Maquillaje
+												ul.child-categories.third-column0
+													li.child-category
+														a.child-category-name(href='/belleza-y-accesorios/maquillaje/todo-maquillaje') Todo Maquillaje
+													li.child-category
+														a.child-category-name(href='/belleza-y-accesorios/maquillaje/ojos') Ojos
+													li.child-category
+														a.child-category-name(href='/belleza-y-accesorios/maquillaje/labios') Labios
+													li.child-category
+														a.child-category-name(href='/belleza-y-accesorios/maquillaje/rostro') Rostro
+													li.child-category
+														a.child-category-name(href='/belleza-y-accesorios/maquillaje/unas') Uñas
+											li.child-category
+												a.child-category-name(href='/belleza-y-accesorios/cuidado-de-la-piel')
+													svg.arrow-menu(role='img', title='arrow_menu')
+														use(xlink:href='#arrow_menu')
+													|                               Cuidado de la piel
+												ul.child-categories.third-column0
+													li.child-category
+														a.child-category-name(href='/belleza-y-accesorios/cuidado-de-la-piel/todo-cuidado-de-la-piel') Todo Cuidado de la Piel
+													li.child-category
+														a.child-category-name(href='/belleza-y-accesorios/cuidado-de-la-piel/ojos') Ojos
+													li.child-category
+														a.child-category-name(href='/belleza-y-accesorios/cuidado-de-la-piel/rostro') Rostro
+													li.child-category
+														a.child-category-name(href='/belleza-y-accesorios/cuidado-de-la-piel/cuerpo') Cuerpo
+											li.child-category
+												a.child-category-name(href='/belleza-y-accesorios/cuidado-personal')
+													svg.arrow-menu(role='img', title='arrow_menu')
+														use(xlink:href='#arrow_menu')
+													|                               Cuidado personal
+												ul.child-categories.third-column0
+													li.child-category
+														a.child-category-name(href='/belleza-y-accesorios/cuidado-personal/combos') Combos
+													li.child-category
+														a.child-category-name(href='/belleza-y-accesorios/cuidado-personal/secadoras-de-cabello') Secadoras de cabello
+													li.child-category
+														a.child-category-name(href='/belleza-y-accesorios/cuidado-personal/alisadoras-y-rizadores') Alisadoras y rizadores
+													li.child-category
+														a.child-category-name(href='/belleza-y-accesorios/cuidado-personal/afeitadoras-y-cortadoras') Afeitadoras y cortadoras
+													li.child-category
+														a.child-category-name(href='/belleza-y-accesorios/cuidado-personal/depiladoras') Depiladoras
+											li.child-category
+												a.child-category-name(href='/belleza-y-accesorios/marcas')
+													svg.arrow-menu(role='img', title='arrow_menu')
+														use(xlink:href='#arrow_menu')
+													|                               Marcas
+												ul.child-categories.third-column0
+													li.child-category
+														a.child-category-name(href='/belleza-y-accesorios/marcas/ralph') Ralph
+													li.child-category
+														a.child-category-name(href='/belleza-y-accesorios/marcas/aziz') Aziz
+													li.child-category
+														a.child-category-name(href='/belleza-y-accesorios/marcas/save-my-bag') Save my Bag
+													li.child-category
+														a.child-category-name(href='/belleza-y-accesorios/marcas/estee-lauder') Estee Lauder
+													li.child-category
+														a.child-category-name(href='/belleza-y-accesorios/marcas/clinique') Clinique
+													li.child-category
+														a.child-category-name(href='/belleza-y-accesorios/marcas/carolina-herrera') Carolina Herrera
+													li.child-category
+														a.child-category-name(href='/belleza-y-accesorios/marcas/calvin-klein') Calvin Klein
+													li.child-category
+														a.child-category-name(href='/belleza-y-accesorios/marcas/ziol-y-zaky') ziol y zaky
+													li.child-category
+														a.child-category-name(href='/belleza-y-accesorios/marcas/guess') Guess
+													li.child-category
+														a.child-category-name(href='/belleza-y-accesorios/marcas/casio') Casio
+													li.child-category
+														a.child-category-name(href='/belleza-y-accesorios/marcas/crepier') Crepier
+													li.child-category
+														a.child-category-name(href='/belleza-y-accesorios/marcas/marquis') Marquis
+													li.child-category
+														a.child-category-name(href='/belleza-y-accesorios/marcas/tommy-hilfiger') Tommy Hilfiger
+													li.child-category
+														a.child-category-name(href='/belleza-y-accesorios/marcas/aerostar') Aerostar
+													li.child-category
+														a.child-category-name(href='/belleza-y-accesorios/marcas/bulova') Bulova
+													li.child-category
+														a.child-category-name(href='/belleza-y-accesorios/marcas/festina') Festina
+											li.child-category.category-espots.child-category-espots
+												span.espot-header Conoce más de nuestras marcas
+										ul.child-categories.category-espots.hidden-sm
+											li
+												span.espot-header Conoce más de nuestras marcas
+									li.main-category.first-column.main-category-calzado_accesorios_ic
+										a.main-category-name(href='/calzado')
+											span.main-category-arrow
+												span.hidden-md Volver
+												svg.arrow-menu(role='img', title='arrow_menu')
+													use(xlink:href='#arrow_menu')
+											span.main-category-image-container
+												span.main-category-image-wrapper
+													svg(role='img', title='zapatos-y-bolsos')
+														use(xlink:href='#zapatos-y-bolsos')
+											span.main-category-active-text(data-default-text='Calzado') Calzado
+										ul.child-categories.second-column
+											li.child-category
+												a.child-category-name.is-hover(href='/calzado/calzado-mujer')
+													svg.arrow-menu(role='img', title='arrow_menu')
+														use(xlink:href='#arrow_menu')
+													|                               Calzado Mujer
+												ul.child-categories.third-column1.is-hover
+													li.child-category
+														a.child-category-name(href='/calzado/calzado-mujer/todo-calzado-mujer') Todo Calzado Mujer
+													li.child-category
+														a.child-category-name(href='/calzado/calzado-mujer/sandalias') Sandalias
+													li.child-category
+														a.child-category-name(href='/calzado/calzado-mujer/ballerinas') Ballerinas
+													li.child-category
+														a.child-category-name(href='/calzado/calzado-mujer/zapatos-de-vestir') Zapatos de Vestir
+													li.child-category
+														a.child-category-name(href='/calzado/calzado-mujer/alpargatas') Alpargatas
+													li.child-category
+														a.child-category-name(href='/calzado/zapatillas-urbanas/urbanas-mujer') Urbanas Mujer
+													li.child-category
+														a.child-category-name(href='/calzado/zapatillas-deportivas/zapatillas-deportivas-mujer') Zapatillas Deportivas Mujer
+													li.child-category
+														a.child-category-name(href='/calzado/calzado-infantil/zapatos-nina') Zapatos Niña
+											li.child-category
+												a.child-category-name(href='/calzado/calzado-hombre')
+													svg.arrow-menu(role='img', title='arrow_menu')
+														use(xlink:href='#arrow_menu')
+													|                               Calzado Hombre
+												ul.child-categories.third-column1
+													li.child-category
+														a.child-category-name(href='/calzado/calzado-hombre/alpargata-hombre') Alpargata Hombre
+													li.child-category
+														a.child-category-name(href='/calzado/calzado-hombre/todo-calzado-hombre') Todo Calzado Hombre
+													li.child-category
+														a.child-category-name(href='/calzado/calzado-hombre/sandalias-hombre') Sandalias Hombre
+													li.child-category
+														a.child-category-name(href='/calzado/calzado-hombre/zapatos-sport') Zapatos Sport
+													li.child-category
+														a.child-category-name(href='/calzado/calzado-hombre/zapatos-de-vestir') Zapatos de Vestir
+													li.child-category
+														a.child-category-name(href='/calzado/zapatillas-urbanas/urbanas-hombre') Urbanas Hombre
+													li.child-category
+														a.child-category-name(href='/calzado/zapatillas-deportivas/zapatillas-deportivas-hombre') Zapatillas Deportivas Hombre
+													li.child-category
+														a.child-category-name(href='/calzado/calzado-infantil/zapatos-nino') Zapatos Niño
+											li.child-category
+												a.child-category-name(href='/calzado/calzado-infantil')
+													svg.arrow-menu(role='img', title='arrow_menu')
+														use(xlink:href='#arrow_menu')
+													|                               Calzado Infantil
+												ul.child-categories.third-column1
+													li.child-category
+														a.child-category-name(href='/calzado/calzado-infantil/todo-calzado-infantil') Todo Calzado Infantil
+													li.child-category
+														a.child-category-name(href='/calzado/calzado-infantil/sandalias-nino') Sandalias Niño
+													li.child-category
+														a.child-category-name(href='/calzado/calzado-infantil/sandalias-nina') Sandalias Niña
+													li.child-category
+														a.child-category-name(href='/calzado/calzado-infantil/zapatos-nina') Zapatos Niña
+													li.child-category
+														a.child-category-name(href='/calzado/calzado-infantil/zapatos-nino') Zapatos Niño
+													li.child-category
+														a.child-category-name(href='/calzado/calzado-infantil/zapatillas-nina') Zapatillas Niña
+													li.child-category
+														a.child-category-name(href='/calzado/calzado-infantil/zapatillas-nino') Zapatillas Niño
+											li.child-category
+												a.child-category-name(href='/calzado/zapatillas-urbanas')
+													svg.arrow-menu(role='img', title='arrow_menu')
+														use(xlink:href='#arrow_menu')
+													|                               Zapatillas Urbanas
+												ul.child-categories.third-column1
+													li.child-category
+														a.child-category-name(href='/calzado/zapatillas-urbanas/todo-urbanas') Todo Urbanas
+													li.child-category
+														a.child-category-name(href='/calzado/zapatillas-urbanas/urbanas-mujer') Urbanas Mujer
+													li.child-category
+														a.child-category-name(href='/calzado/zapatillas-urbanas/urbanas-hombre') Urbanas Hombre
+											li.child-category
+												a.child-category-name(href='/calzado/zapatillas-deportivas')
+													svg.arrow-menu(role='img', title='arrow_menu')
+														use(xlink:href='#arrow_menu')
+													|                               Zapatillas Deportivas
+												ul.child-categories.third-column1
+													li.child-category
+														a.child-category-name(href='/calzado/zapatillas-deportivas/todo-zapatillas') Todo Zapatillas
+													li.child-category
+														a.child-category-name(href='/calzado/zapatillas-deportivas/zapatillas-deportivas-mujer') Zapatillas Deportivas Mujer
+													li.child-category
+														a.child-category-name(href='/calzado/zapatillas-deportivas/zapatillas-deportivas-hombre') Zapatillas Deportivas Hombre
+													li.child-category
+														a.child-category-name(href='/calzado/zapatillas-deportivas/zapatillas-deportivas-infantil') Zapatillas Deportivas Infantil
+											li.child-category
+												a.child-category-name(href='/calzado/tendencias')
+													svg.arrow-menu(role='img', title='arrow_menu')
+														use(xlink:href='#arrow_menu')
+													|                               Tendencias
+												ul.child-categories.third-column1
+													li.child-category
+														a.child-category-name(href='/calzado/tendencias/parches') Parches
+													li.child-category
+														a.child-category-name(href='/calzado/tendencias/metalizados') Metalizados
+													li.child-category
+														a.child-category-name(href='/calzado/tendencias/planaformas') Planaformas
+													li.child-category
+														a.child-category-name(href='/calzado/tendencias/zuecos') Zuecos
+													li.child-category
+														a.child-category-name(href='/calzado/tendencias/pumps') Pumps
+													li.child-category
+														a.child-category-name(href='/calzado/tendencias/zapatillas-blancas') Zapatillas Blancas
+											li.child-category
+												a.child-category-name(href='/calzado/marcas')
+													svg.arrow-menu(role='img', title='arrow_menu')
+														use(xlink:href='#arrow_menu')
+													|                               Marcas
+												ul.child-categories.third-column1
+													li.child-category
+														a.child-category-name(href='/calzado/marcas/mazzarri') Mazzarri
+													li.child-category
+														a.child-category-name(href='/calzado/marcas/adidas') Adidas
+													li.child-category
+														a.child-category-name(href='/calzado/marcas/guess') Guess
+													li.child-category
+														a.child-category-name(href='/calzado/marcas/jeffrey-campbell') Jeffrey Campbell
+													li.child-category
+														a.child-category-name(href='/calzado/marcas/puma') Puma
+													li.child-category
+														a.child-category-name(href='/calzado/marcas/steve-madden') Steve Madden
+													li.child-category
+														a.child-category-name(href='/calzado/marcas/marquis') Marquis
+													li.child-category
+														a.child-category-name(href='/calzado/marcas/index') Index
+													li.child-category
+														a.child-category-name(href='/calzado/marcas/foresta') Foresta
+													li.child-category
+														a.child-category-name(href='/calzado/marcas/cole-haan') Cole Haan
+													li.child-category
+														a.child-category-name(href='/calzado/marcas/nike') Nike
+													li.child-category
+														a.child-category-name(href='/calzado/marcas/converse') Converse
+													li.child-category
+														a.child-category-name(href='/calzado/marcas/vans') Vans
+													li.child-category
+														a.child-category-name(href='/calzado/marcas/caterpillar') Caterpillar
+													li.child-category
+														a.child-category-name(href='/calzado/marcas/merrell') Merrell
+													li.child-category
+														a.child-category-name(href='/calzado/marcas/reebok') Reebok
+													li.child-category
+														a.child-category-name(href='/calzado/marcas/navigata') Navigata
+													li.child-category
+														a.child-category-name(href='/calzado/marcas/barbados') Barbados
+													li.child-category
+														a.child-category-name(href='/calzado/marcas/skechers') Skechers
+													li.child-category
+														a.child-category-name(href='/calzado/marcas/arezzo') Arezzo
+													li.child-category
+														a.child-category-name(href='/calzado/marcas/a2') A2
+													li.child-category
+														a.child-category-name(href='/calzado/marcas/aerosoles') Aerosoles
+													li.child-category
+														a.child-category-name(href='/calzado/marcas/brigitte-naux') Brigitte Naux
+													li.child-category
+														a.child-category-name(href='/calzado/marcas/dauss') Dauss
+													li.child-category
+														a.child-category-name(href='/calzado/marcas/flexi-bath') Flexi Bath
+													li.child-category
+														a.child-category-name(href='/calzado/marcas/guante') Guante
+													li.child-category
+														a.child-category-name(href='/calzado/marcas/harvest') Harvest
+													li.child-category
+														a.child-category-name(href='/calzado/marcas/hush-puppies') Hush Puppies
+													li.child-category
+														a.child-category-name(href='/calzado/marcas/time-chopper') Time Chopper
+													li.child-category
+														a.child-category-name(href='/calzado/marcas/rider') Rider
+													li.child-category
+														a.child-category-name(href='/calzado/marcas/naturalizer') Naturalizer
+													li.child-category
+														a.child-category-name(href='/calzado/marcas/marie-claire') Marie Claire
+													li.child-category
+														a.child-category-name(href='/calzado/marcas/kenneth-stevens') Kenneth Stevens
+													li.child-category
+														a.child-category-name(href='/calzado/marcas/quiksilver') Quiksilver
+													li.child-category
+														a.child-category-name(href='/calzado/marcas/pierre-cardin') Pierre Cardin
+											li.child-category.category-espots.child-category-espots
+												span.espot-header Conoce más de nuestras marcas
+										ul.child-categories.category-espots.hidden-sm
+											li
+												span.espot-header Conoce más de nuestras marcas
+									li.main-category.first-column.main-category-mas
+										a.main-category-name(href='/mas')
+											span.main-category-arrow
+												span.hidden-md Volver
+												svg.arrow-menu(role='img', title='arrow_menu')
+													use(xlink:href='#arrow_menu')
+											span.main-category-image-container
+												span.main-category-image-wrapper
+													svg(role='img', title='mas')
+														use(xlink:href='#mas')
+											span.main-category-active-text(data-default-text='Más') Más
+										ul.child-categories.second-column
+											li.child-category
+												a.child-category-name.is-hover(href='/mas/cartucheras-y-utiles')
+													svg.arrow-menu(role='img', title='arrow_menu')
+														use(xlink:href='#arrow_menu')
+													|                               Cartucheras y Útiles
+												ul.child-categories.third-column2.is-hover
+													li.child-category
+														a.child-category-name(href='/mas/cartucheras-y-utiles/cartucheras') Cartucheras
+													li.child-category
+														a.child-category-name(href='/mas/cartucheras-y-utiles/utiles') Útiles
+											li.child-category
+												a.child-category-name(href='/mas/mochilas-y-loncheras')
+													svg.arrow-menu(role='img', title='arrow_menu')
+														use(xlink:href='#arrow_menu')
+													|                               Mochilas y Loncheras
+												ul.child-categories.third-column2
+													li.child-category
+														a.child-category-name(href='/mas/mochilas-y-loncheras/mochilas') Mochilas
+													li.child-category
+														a.child-category-name(href='/mas/mochilas-y-loncheras/loncheras') Loncheras
+											li.child-category
+												a.child-category-name(href='/mas/tomatodo-y-accesorios')
+													svg.arrow-menu(role='img', title='arrow_menu')
+														use(xlink:href='#arrow_menu')
+													|                               Tomatodo y Accesorios
+												ul.child-categories.third-column2
+													li.child-category
+														a.child-category-name(href='/mas/tomatodo-y-accesorios/tomatodo') Tomatodo
+													li.child-category
+														a.child-category-name(href='/mas/tomatodo-y-accesorios/accesorios') Accesorios
+											li.child-category
+												a.child-category-name(href='/mas/marcas')
+													svg.arrow-menu(role='img', title='arrow_menu')
+														use(xlink:href='#arrow_menu')
+													|                               Marcas
+												ul.child-categories.third-column2
+													li.child-category
+														a.child-category-name(href='/mas/marcas/licencias') Licencias
+													li.child-category
+														a.child-category-name(href='/mas/marcas/cloudbreak') Cloudbreak
+													li.child-category
+														a.child-category-name(href='/mas/marcas/crepier') Crepier
+													li.child-category
+														a.child-category-name(href='/mas/marcas/dunkelvolk') Dunkelvolk
+													li.child-category
+														a.child-category-name(href='/mas/marcas/harvest') Harvest
+													li.child-category
+														a.child-category-name(href='/mas/marcas/index') Index
+													li.child-category
+														a.child-category-name(href='/mas/marcas/porta') Porta
+													li.child-category
+														a.child-category-name(href='/mas/marcas/samsonite') Samsonite
+													li.child-category
+														a.child-category-name(href='/mas/marcas/skullcandy') Skullcandy
+													li.child-category
+														a.child-category-name(href='/mas/marcas/thermos') Thermos
+													li.child-category
+														a.child-category-name(href='/mas/marcas/xtrem') Xtrem
+											li.child-category
+												a.child-category-name(href='/mas/calzado')
+													svg.arrow-menu(role='img', title='arrow_menu')
+														use(xlink:href='#arrow_menu')
+													|                               Calzado
+												ul.child-categories.third-column2
+													li.child-category
+														a.child-category-name(href='/mas/calzado/reebok') Reebok
+													li.child-category
+														a.child-category-name(href='/mas/calzado/puma') Puma
+													li.child-category
+														a.child-category-name(href='/mas/calzado/nike') Nike
+													li.child-category
+														a.child-category-name(href='/mas/calzado/cloudbreak') Cloudbreak
+													li.child-category
+														a.child-category-name(href='/mas/calzado/harvest') HARVEST
+													li.child-category
+														a.child-category-name(href='/mas/calzado/flexi') flexi
+													li.child-category
+														a.child-category-name(href='/mas/calzado/bata') Bata
+											li.child-category
+												a.child-category-name(href='/mas/computo')
+													svg.arrow-menu(role='img', title='arrow_menu')
+														use(xlink:href='#arrow_menu')
+													|                               Computo
+												ul.child-categories.third-column2
+													li.child-category
+														a.child-category-name(href='/mas/computo/laptops') laptops
+													li.child-category
+														a.child-category-name(href='/mas/computo/all-in-one') All in one
+													li.child-category
+														a.child-category-name(href='/mas/computo/tablets') Tablets
+													li.child-category
+														a.child-category-name(href='/mas/computo/impresoras') Impresoras
+													li.child-category
+														a.child-category-name(href='/mas/computo/proyectores-y-monitores') Proyectores y Monitores
+													li.child-category
+														a.child-category-name(href='/mas/computo/accesorios-computo') Accesorios computo
+											li.child-category
+												a.child-category-name(href='/mas/mascotas')
+													svg.arrow-menu(role='img', title='arrow_menu')
+														use(xlink:href='#arrow_menu')
+													|                               Mascotas
+												ul.child-categories.third-column2
+													li.child-category
+														a.child-category-name(href='/mas/mascotas/camas') Camas
+													li.child-category
+														a.child-category-name(href='/mas/mascotas/ropa') Ropa
+													li.child-category
+														a.child-category-name(href='/mas/mascotas/accesorios') Accesorios
+													li.child-category
+														a.child-category-name(href='/mas/mascotas/todo-mascotas') Todo mascotas
+											li.child-category
+												a.child-category-name(href='/mas/bigbox')
+													svg.arrow-menu(role='img', title='arrow_menu')
+														use(xlink:href='#arrow_menu')
+													|                               Bigbox
+												ul.child-categories.third-column2
+													li.child-category
+														a.child-category-name(href='/mas/bigbox/gastronomia') Gastronomía
+													li.child-category
+														a.child-category-name(href='/mas/bigbox/bienestar') Bienestar
+													li.child-category
+														a.child-category-name(href='/mas/bigbox/aventura') Aventura
+													li.child-category
+														a.child-category-name(href='/mas/bigbox/estadias') Estadías
+											li.child-category.category-espots.child-category-espots
+												span.espot-header Conoce más de nuestras marcas
+										ul.child-categories.category-espots.hidden-sm
+											li
+												span.espot-header Conoce más de nuestras marcas
+						.category-header-item.hidden-sm
+							.category-header-image-button
+								a(href='/ripley-home')
+									.table
+										.table-cell
+											img(src='images/ripley-home.svg', alt='Ripley Home')
+						.category-header-item.category-header-phones-menu.peru-sell-phone.hidden-md-up
+							.category-header-button.category-header-image-button
+								.table
+									.table-cell
+										img(src='images/fono-compras.svg', alt='Fono Compras')
+							.category-header-item__inner-menu
+								ul.phone-numbers.peru-phone-numbers.clearfix
+									li
+										svg(role='img', title='ventas_telefonicas')
+											use(xlink:href='#ventas_telefonicas')
+										span
+											h5 Fono compras
+											a(href='tel:+5116115959') 611-5959
+									li.hidden-xs
+										a(href='http://www.ripley.com.pe/evento/ecommerce-award/', target='_blank')
+											img(src='images/sello_awwardx2.png')
+											span
+												h5 Ganador
+												h5 eCommerce
+												h5 Award 2016
+									li.hidden-xs
+										a(href='http://simple.ripley.com.pe/minisitios/especial/servicio-cliente#libro-reclamaciones', target='_blank')
+											img.reclaim-img(src='images/libro_reclamacionesx2.png')
+											span
+												h5 Libro de
+												h5 Reclamaciones
+						.category-header-item.hidden-sm
+							.category-header-image-button
+								.table
+									.table-cell
+										a(href='http://simple.ripley.com.pe/minisitios/especial/seguimiento/', target='_blank')
+											img(src='images/seguimiento_despacho.svg', alt='Seguimiento despacho')
+						ul.category-pearls.hidden-sm-down
+							li.category-pearl.category-tv_video_ic-pearl(data-category-identifier='tv_video_ic')
+								a(href='/tv-y-video', data-toggle='tooltip', data-placement='bottom', title='Tv y Video')
+									svg(role='img', title='tv-y-video')
+										use(xlink:href='#tv-y-video')
+							li.category-pearl.category-computo_ic-pearl(data-category-identifier='computo_ic')
+								a(href='/computo', data-toggle='tooltip', data-placement='bottom', title='Cómputo')
+									svg(role='img', title='computo')
+										use(xlink:href='#computo')
+							li.category-pearl.category-celulares_ic-pearl(data-category-identifier='celulares_ic')
+								a(href='/celulares', data-toggle='tooltip', data-placement='bottom', title='Celulares')
+									svg(role='img', title='celulares')
+										use(xlink:href='#celulares')
+							li.category-pearl.category-entretenimiento_ic-pearl(data-category-identifier='entretenimiento_ic')
+								a(href='/entretenimiento', data-toggle='tooltip', data-placement='bottom', title='Entretenimiento')
+									svg(role='img', title='entretenimiento')
+										use(xlink:href='#entretenimiento')
+							li.category-pearl.category-electroh_ic-pearl(data-category-identifier='electroh_ic')
+								a(href='/electrohogar', data-toggle='tooltip', data-placement='bottom', title='Electrohogar')
+									svg(role='img', title='electrohogar')
+										use(xlink:href='#electrohogar')
+							li.category-pearl.category-home_ic-pearl(data-category-identifier='home_ic')
+								a(href='/ripley-home', data-toggle='tooltip', data-placement='bottom', title='Ripley Home')
+									svg(role='img', title='ripley-home')
+										use(xlink:href='#ripley-home')
+							li.category-pearl.category-muebles-pearl(data-category-identifier='muebles')
+								a(href='/muebles', data-toggle='tooltip', data-placement='bottom', title='Muebles')
+									svg(role='img', title='muebles')
+										use(xlink:href='#muebles')
+							li.category-pearl.category-dormitorio_ic-pearl(data-category-identifier='dormitorio_ic')
+								a(href='/dormitorio', data-toggle='tooltip', data-placement='bottom', title='Dormitorio')
+									svg(role='img', title='dormitorio')
+										use(xlink:href='#dormitorio')
+							li.category-pearl.category-deporte_ic-pearl(data-category-identifier='deporte_ic')
+								a(href='/deporte', data-toggle='tooltip', data-placement='bottom', title='Deporte')
+									svg(role='img', title='deporte')
+										use(xlink:href='#deporte')
+							li.category-pearl.category-infantil_ic-pearl(data-category-identifier='infantil_ic')
+								a(href='/infantil', data-toggle='tooltip', data-placement='bottom', title='Infantil')
+									svg(role='img', title='infantil')
+										use(xlink:href='#infantil')
+							li.category-pearl.category-acc_bell_ic-pearl(data-category-identifier='acc_bell_ic')
+								a(href='/belleza-y-accesorios', data-toggle='tooltip', data-placement='bottom', title='Belleza y Accesorios')
+									svg(role='img', title='belleza-y-accesorios')
+										use(xlink:href='#belleza-y-accesorios')
+							li.category-pearl.category-calzado_accesorios_ic-pearl(data-category-identifier='calzado_accesorios_ic')
+								a(href='/calzado', data-toggle='tooltip', data-placement='bottom', title='Calzado')
+									svg(role='img', title='zapatos-y-bolsos')
+										use(xlink:href='#zapatos-y-bolsos')
+							li.category-pearl.category-mas-pearl(data-category-identifier='mas')
+								a(href='/mas', data-toggle='tooltip', data-placement='bottom', title='Más')
+									svg(role='img', title='mas')
+										use(xlink:href='#mas')

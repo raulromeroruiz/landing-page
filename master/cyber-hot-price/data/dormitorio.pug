@@ -1,0 +1,124 @@
+extends ../layout/layout2.pug
+
+block content
+	- var base_url = 'http://www.ripley.com.pe/minisitios/campana/cyber-mama-4/'
+	if test=="dev"
+		- var base_url = '../'
+
+	#cyber(style='margin:0')
+		// DORMITORIO
+		.slider-banner#slider-dormitorio
+			span.slider-prev
+			span.slider-next
+			.banner
+				// Slide DORMITORIO 1
+				.slide
+					img.logo-campaign.centerh(src!= base_url + 'assets/logo-campaign.png')
+					.calls
+						.column.izq.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+							//- .discount
+								.percent 40
+								.simbol
+									| %
+									span DSCTO.
+							a.call-left(href='#')
+								.imagen
+									.bg-image.centervh
+									img.centerv(alt='', src!= base_url + 'productos/DORMITORIO_03.png')
+								.content
+									.wrapper.product
+										.table
+											span.aon
+											span.marca
+												img(alt='', src!= base_url + 'marcas/rizzoli.png')
+											span.descripcion CAMA DIVÁN
+												.line TIVOLI 1.5 PLZ
+											span.antes Precio Normal: S/ 1,199
+											span.cyber Precio Oferta
+											span.price
+												| S/  
+												span 999
+											span.legal
+												| Incluye: Cama principal 1.5 plz + cama auxiliar 1 plz
+						.column.der.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+							//- .discount
+								.percent 70
+								.simbol
+									| %
+									span DSCTO.
+							a.call-right(href='#')
+								.content
+									.wrapper.product
+										.table
+											span.aon
+											span.marca
+												img(alt='', src!= base_url + 'marcas/paraiso.png')
+											span.descripcion COLCHÓN POCKET
+												.line STAR 2 PLZ
+											span.antes S/ 849 
+											span.cyber Precio Oferta
+											span.price
+												| S/  
+												span 699
+											span.legal
+												//- | Incluye: Colchón + Box Tarima + Cabecera + 2 Veladores + Cómoda
+								.imagen
+									.bg-image.centervh
+									img.centerv(alt='', src!= base_url + 'productos/DORMITORIO_04.png')
+
+				// Slide DORMITORIO 2
+				.slide
+					img.logo-campaign.centerh(src!= base_url + 'assets/logo-campaign.png')
+					.calls
+						.column.izq.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+							//- .discount
+								.percent 40
+								.simbol
+									| %
+									span DSCTO.
+							a.call-left(href='#')
+								.imagen
+									.bg-image.centervh
+									img.centerv(alt='', src!= base_url + 'productos/DORMITORIO_01.png')
+								.content
+									.wrapper.product
+										.table
+											span.aon
+											span.marca
+												img(alt='', src!= base_url + 'marcas/cisne.png')
+											span.descripcion CAMA AMERICANA
+												.line KAYSERI 2 PLZ
+											span.antes Precio Normal: S/ 1,599
+											span.cyber Precio Oferta
+											span.price
+												| S/  
+												span 1,449
+											span.legal
+												| Incluye: Colchón + box tarima
+						.column.der.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+							//- .discount
+								.percent 70
+								.simbol
+									| %
+									span DSCTO.
+							a.call-right(href='#')
+								.content
+									.wrapper.product
+										.table
+											span.aon
+											span.marca
+												img(alt='', src!= base_url + 'marcas/rosen.png')
+											span.descripcion SET DE DORMITORIO 
+												.line ERGO T - 2 PLZ
+											span.antes Precio Normal: S/ 1,849
+											span.cyber PRECIO OFERTA
+											span.price
+												| S/  
+												span 1,499
+											span.legal
+												| Incluye: Colchón + box tarima + 1 cabecera + 2 veladores
+											
+								.imagen
+									.bg-image.centervh
+									img.centerv(alt='', src!= base_url + 'productos/DORMITORIO_02.png')
+

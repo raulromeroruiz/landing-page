@@ -1,0 +1,73 @@
+- var sections = [{name:"Los Clasicos de cuero", hash:"#clasicos-cuero"}, {name:"Los Clasicos tapizados", hash:"#clasicos-tapizados"}, {name:"Seccionales", hash:"#seccionales"}, {name:"Mesas de centro", hash:"#mesas-centro"}, {name:"Jazzmin", hash:"#jazzmin"}, {name:"Tony", hash:"#tony"}, {name:"Barry", hash:"#barry"}]
+.logos-family
+	a.logo-ripley-home(href='http://www.ripley.com.pe/', target='_blank')
+		img(src='images/logo-ripley.png')
+	a.logo-desktop(href='./')
+		img(src='images/logo-ripley-home-interna.png')
+		//- img.logo-mobile(src='images/logo-ripley.png')
+
+	//- #title-family= title_category
+			span
+	//- console.log('CATEGORIA ', title_category)
+	#menu
+		#cont-menu
+			span.view-category
+				| Ver por Categoría
+			#title-family.text= title_category
+				span
+			.cont-burger
+				.burger
+					span
+					span
+					span
+				ul#list-categories
+					li
+						if (terraza_active == "active")
+							a(href='terraza.html', class='active')
+								| Terraza
+						else
+							a(href='terraza.html')
+								| Terraza
+					li
+						if (sala_active == "active")
+							a(href='sala.html', class='active')
+								| Sala
+						else
+							a(href='sala.html')
+								| Sala
+					li
+						if (decoracion_active == "active")
+							a(href='decoracion.html', class='active')
+								| Decoración
+						else
+							a(href='decoracion.html')
+								| Decoración
+					li
+						if (comedor_active == "active")
+							a(href='comedor.html', class='active')
+								| Comedor
+						else
+							a(href='comedor.html')
+								| Comedor
+					li
+						if (dormitorio_active == "active")
+							a(href='dormitorio.html', class='active')
+								| Dormitorio
+						else
+							a(href='dormitorio.html')
+								| Dormitorio
+			//- .cont-burger
+		//- #title-family= title_category
+			span
+	//- +submenu(sections)
+	//- console.log("SECCIONES ", sections)
+	.submenu
+		ul#submenu
+			each item in sections
+				li
+					a(href=item.hash)= item.name
+
+.burger#menu-mobile
+	span
+	span
+	span

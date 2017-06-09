@@ -1,0 +1,319 @@
+extends ./layout/layout.pug
+
+block title
+	title Días Tec Samsung - Ripley
+
+block content
+	- var title_category = "sala"
+	- var env =' #{dev}'
+	- var sala_active = "active"
+	- var sections = [{name:"Los Clasicos de cuero", hash:"#clasicos-cuero"}, {name:"Los Clasicos tapizados", hash:"#clasicos-tapizados"}, {name:"Seccionales", hash:"#seccionales"}, {name:"Mesas de centro", hash:"#mesas-centro"}, {name:"Jazzmin", hash:"#jazzmin"}, {name:"Tony", hash:"#tony"}, {name:"Barry", hash:"#barry"}]
+
+	include includes/mixins.pug
+
+	//- #fb-root
+		script.
+			(function(d, s, id) {
+			var js, fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id)) return;
+			js = d.createElement(s); js.id = id;
+			js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.6";
+			fjs.parentNode.insertBefore(js, fjs);
+			}(document, 'script', 'facebook-jssdk'));
+
+	#container
+		.container-fluid
+			.row
+				.col-xs-12.col-sm-12.col-md-12.col-lg-12.col-xl-12
+					header#home.intro
+						.call
+							.texto-intro
+								a(href="#")
+									img(src='images/texto.png')
+							a.sprite.btn-know-w(href='#')
+								| Conocer más
+							.scroll
+								a.sprite.arrow-scroll(href='#tv')
+						nav.nav-bar
+							button#btn-mobile
+								span
+								span
+								span
+							ul#main-menu.menu
+								li
+									a.lnk-menu(href='#tv')
+										| Tv
+								li
+									a.lnk-menu(href='#linea-blanca')
+										| Línea Blanca
+								li
+									a.lnk-menu(href='#tecnologiaa')
+										| Tecnología
+						#mainmenu.hidden-xs
+							.contents
+								.logo-brand
+									img(src='images/logo-brand.png')
+								ul.menu
+									li
+										a.lnk-menu(href='#tv')
+											//- span.icon.sprite.icon-tv
+											span.text
+												| Tv
+									li
+										a.lnk-menu(href='#linea-blanca')
+											//- span.icon.sprite.icon-blanca
+											span.text
+												| Línea Blanca
+									li
+										a.lnk-menu(href='#tecnologiaa')
+											//- span.icon.sprite.icon-tecnologia
+											span.text
+												| Tecnología
+
+					section#tv
+						.bread
+							.contents.flex-center-left
+								.title-section
+									| Tv
+								.sprite.arrows
+								.title-detail
+									| Calidad que supera la realidad
+						.contents
+							.tv-header.box-model.col-xs-12.col-sm-12.col-md-12.col-lg-12.col-xl-12
+								img(src='images/tv-main.jpg').hidden-xs
+								img(src='images/tv-main-m.jpg').hidden-sm.hidden-md.hidden-lg.hidden-xl
+								.cont-btn.col-xs-6.col-sm-6.col-md-4.col-lg-4.col-xl-4
+									a.btn-buy(href='')
+										| Ver más
+							.box-model.col-xs-12.col-sm-12.col-md-12.col-lg-12.col-xl-12
+								.tvs
+									.foot-tvs
+										.category
+											| Televisores UHD
+										a.btn-buy(href="#")
+											| Las Quiero
+									#slider-tv
+										.box-tv
+											img(src='images/tv1.jpg')
+											.features.centerh
+												.name
+													| Smart TV UHD<br>49KU6400
+												.antes
+													| Precio Normal: S/ 3,799
+												.cyber
+													| Precio Oferta
+												.price
+													| S/ 
+													span
+														| 1,999
+												a.btn-buy(href="#")
+													| La Quiero
+										.box-tv
+											img(src='images/tv2.jpg')
+											.features.centerh
+												.name
+													| Smart TV UHD<br>55KU6400
+												.antes
+													| Precio Normal: S/ 4,999
+												.cyber
+													| Precio Oferta
+												.price
+													| S/ 
+													span
+														| 2,899
+												//- .note
+													| Todo medio de pago
+												a.btn-buy(href="#")
+													| La Quiero
+
+								.complement
+									img(src='images/tv-complemento.jpg').hidden-xs
+									img(src='images/tv-complemento-m.jpg').hidden-sm.hidden-md.hidden-lg.hidden-xl
+									.features.centerh
+										.category
+											| Complementos para TV
+										.hasta
+											| HASTA
+										.porcentaje
+											.number
+												| 30
+											.percent
+												| %
+												.dscto
+													| DSCTO.
+										.note
+											| en Soundbars y Blu-rays
+										a.btn-buy(href="#")
+											| Ver Ofertas
+
+					section#linea-blanca
+						.bread
+							.contents.flex-center-left
+								.title-section
+									| Línea Blanca
+								.sprite.arrows
+								.title-detail
+									| Tu día a día, simplificado
+
+						.contents
+							.box-model.one.col-xs-12.col-sm-12.col-md-4.col-lg-4.col-xl-4
+								img.img-product(src='images/refrigeradora-d.jpg').hidden-xs
+								img.img-product(src='images/refrigeradora-m.jpg').hidden-sm.hidden-md.hidden-lg.hidden-xl
+								.features.centerh
+									.category
+										| Refrigeradoras
+									.name
+										| Refrigeradora no frost<br>RT29K5030S8 300L
+									.antes
+										| Precio Normal: S/ 1,599
+									.cyber
+										| Precio Oferta
+									.price
+										| S/ 
+										span
+											| 1,299
+									.pay
+										| Todo medio de pago
+									a.btn-buy(href="#")
+										| La Quiero
+
+							.box-model.one.col-xs-12.col-sm-12.col-md-4.col-lg-4.col-xl-4
+								img.img-product(src='images/lavadora-d.jpg').hidden-xs
+								img.img-product(src='images/lavadora-m.jpg').hidden-sm.hidden-md.hidden-lg.hidden-xl
+								.features.centerh
+									.category
+										| Lavadoras
+									.name
+										| Lavadora 13 KG<br>WA13J5730LS Silver 
+									.antes
+										| Precio Normal: S/ 1,249
+									.cyber
+										| Precio Oferta
+									.price
+										| S/ 
+										span
+											| 1,199
+									.pay
+										| Todo medio de pago
+									a.btn-buy(href="#")
+										| La Quiero
+
+							.box-model.two.col-xs-12.col-sm-12.col-md-4.col-lg-4.col-xl-4
+								.box-image
+									img(src='images/microondas-d.jpg').hidden-xs
+									img(src='images/microondas-m.jpg').hidden-sm.hidden-md.hidden-lg.hidden-xl
+									.features.centerh
+										.category
+											| Microondas
+										.hasta
+											| HASTA
+										.porcentaje
+											.number
+												| 20
+											.percent
+												| %
+												.dscto
+													| DSCTO.
+										//- .note
+											| en Microondas
+										a.btn-buy(href="#")
+											| Ver Ofertas
+								.box-image
+									img(src='images/aire-acond-d.jpg').hidden-xs
+									img(src='images/aire-acond-m.jpg').hidden-sm.hidden-md.hidden-lg.hidden-xl
+									.features.centerh
+										.category
+											| Aire Acondicionado
+										.note
+											| Que tu ambiente<br>esté siempre fresco
+										a.btn-buy(href="#")
+											| Ver Ofertas
+
+					section#tecnologiaa
+						.bread
+							.contents.flex-center-left
+								.title-section
+									| Tecnología
+								.sprite.arrows
+								.title-detail
+									| Ser práctico es estar conectado
+
+						.contents
+							.box-model.one.col-xs-12.col-sm-12.col-md-4.col-lg-4.col-xl-4
+								img.img-product(src='images/tablets-d.jpg').hidden-xs
+								img.img-product(src='images/tablets-m.jpg').hidden-sm.hidden-md.hidden-lg.hidden-xl
+								.features.centerh
+									.category
+										| Tablets
+									.hasta
+										| HASTA
+									.porcentaje
+										.number
+											| 30
+										.percent
+											| %
+											.dscto
+												| DSCTO.
+									//- .note
+										| en Tablets
+									a.btn-buy(href="#")
+										| La Quiero
+
+							.box-model.two.col-xs-12.col-sm-12.col-md-4.col-lg-4.col-xl-4
+								.box-image.box-accesorios
+									img(src='images/accesorios-d.jpg').hidden-xs
+									img(src='images/accesorios-m.jpg').hidden-sm.hidden-md.hidden-lg.hidden-xl
+									.features.centerh
+										.category
+											| Accesorios
+										.hasta
+											| HASTA
+										.porcentaje
+											.number
+												| 60
+											.percent
+												| %
+												.dscto
+													| DSCTO.
+										.note
+											| en Miles de productos
+										a.btn-buy(href="#")
+											| Ver Ofertas
+								.box-image.box-monitores
+									img(src='images/monitores-d.jpg').hidden-xs
+									img(src='images/monitores-m.jpg').hidden-sm.hidden-md.hidden-lg.hidden-xl
+									.features.centerh
+										.category
+											| Monitores
+										.note(style='margin-bottom:10px;')
+											| Una experiencia<br>más brillante e intensa
+										.cyber
+											| DESDE
+										.price(style='margin-bottom:20px;')
+											| S/ 
+											span
+												| 319
+										a.btn-buy(href="#")
+											| Ver Ofertas
+
+							.box-model.one.col-xs-12.col-sm-12.col-md-4.col-lg-4.col-xl-4
+								img.img-product(src='images/celulares-d.jpg').hidden-xs
+								img.img-product(src='images/celulares-m.jpg').hidden-sm.hidden-md.hidden-lg.hidden-xl
+								.features.centerh
+									img.colors(src='images/colores.png').hidden-xs
+									.category
+										| Celulares
+									.name
+										| Smartphone<br>J7 5.5" 13 MP
+									.antes
+										| Precio Normal: S/ 1,699
+									.cyber
+										| Precio Oferta
+									.price
+										| S/ 
+										span
+											| 799
+										img.aon(src='images/aon.png').hidden-xs
+									img.colors-m(src='images/colores-m.png').hidden-sm.hidden-md.hidden-lg.hidden-xl(style='margin-bottom:10px;')
+									a.btn-buy(href="#")
+										| La Quiero

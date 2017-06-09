@@ -1,0 +1,472 @@
+extends ../layout/layout2.pug
+
+block content
+	- var base_url = 'http://www.ripley.com.pe/minisitios/campana/cyber-mama-4/'
+	if test=="dev"
+		- var base_url = '../'
+
+	#cyber.cyber-container
+		// OFERTAS DESTACADAS
+		.slider-banner#slider-ofertas-hot
+			span.slider-prev
+			span.slider-next
+			.banner
+				// Slide PRUEBA
+				.slide
+					img.logo-campaign.centerh(src!= base_url + 'assets/logo-campaign.png')
+					.calls
+						.column.izq.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6.one
+							//- .discount
+								.percent 40
+								.simbol
+									| %
+									span Dscto.
+							a.call-left(href='#')
+								img(src!= base_url + 'assets/LLAMDO-01.png')
+						.column.der.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6.one
+							//- .discount
+								.percent 70
+								.simbol
+									| %
+									span Dscto.
+							//- a.call-right(href='#')
+								.fullimage
+									img.product(alt='', src!= base_url + 'productos/100-41.png')
+							a.call-right(href='#')
+								img(src!= base_url + 'assets/LLAMDO-03.png')
+				// Slide OFERTAS DESTACADAS 1
+				.slide
+					img.logo-campaign.centerh(src!= base_url + 'assets/logo-campaign.png')
+					.calls
+						.column.izq.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+							//- .discount
+								.percent 40
+								.simbol
+									| %
+									span Dscto.
+							a.call-left(href='#')
+								.imagen
+									.bg-image.centervh
+									img.centerv(alt='', src!= base_url + 'productos/DESTACADOS_01.png')
+								.content
+									.wrapper.product
+										.table
+											span.aon
+											span.marca
+												img(alt='', src!= base_url + 'marcas/samsung.png')
+											span.descripcion SMART TV
+												.line 49K6500 CURVO
+											span.antes Precio Normal: S/ 2,799
+											span.cyber Precio Oferta
+											span.price
+												| S/ 
+												span 1,799
+						.column.der.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+							//- .discount
+								.percent 70
+								.simbol
+									| %
+									span Dscto.
+							//- a.call-right(href='#')
+								.fullimage
+									img.product(alt='', src!= base_url + 'productos/100-41.png')
+							a.call-right(href='#')
+								.content
+									.wrapper.product
+										.table
+											span.aon
+											span.marca
+												img(alt='', src!= base_url + 'marcas/home.png')
+											span.descripcion RECLINABLE
+												.line MECTA MARRON
+											span.antes Precio Normal: S/ 1,499
+											span.cyber Precio Oferta
+											span.price
+												| S/  
+												span 599
+													//- span.centimos .60
+								.imagen
+									.bg-image.centervh
+									img.centerv(alt='', src!= base_url + 'productos/DESTACADOS_02.png')
+
+				// Slide OFERTAS DESTACADAS 2
+				.slide
+					img.logo-campaign.centerh(src!= base_url + 'assets/logo-campaign.png')
+					.calls
+						.column.izq.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+							//- .discount
+								.percent 40
+								.simbol
+									| %
+									span Dscto.
+							a.call-left(href='#')
+								.imagen
+									.bg-image.centervh
+									img.centerv(alt='', src!= base_url + 'productos/DESTACADOS_03.png')
+								.content
+									.wrapper.product
+										.table
+											span.aon
+											span.marca
+												img(alt='', src!= base_url + 'marcas/rosen.png')
+											span.descripcion SET DE DORMITORIO
+												.line ERGO T - 2 PLZ
+											span.antes Precio Normal: S/ 1,849
+											span.cyber Precio Oferta
+											span.price
+												| S/ 
+												span 1,499
+											span.legal
+												| Incluye: Colchón + box tarima + 1 cabecera + 2 veladores
+						.column.der.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+							//- .discount
+								.percent 70
+								.simbol
+									| %
+									span Dscto.
+							a.call-right(href='#')
+								.content
+									.wrapper.product
+										.table
+											span.aon
+											span.marca
+												img(alt='', src!= base_url + 'marcas/hp.png')
+											span.descripcion LAPTOP CORE i5
+												.line 14-AMO12LA
+											span.antes Precio Normal: S/ 1,999
+											span.cyber Precio Oferta
+											span.price
+												| S/ 
+												span 1,699
+											span.legal
+								.imagen
+									.bg-image.centervh
+									img.centerv(alt='', src!= base_url + 'productos/DESTACADOS_04.png')
+
+				// Slide OFERTAS DESTACADAS 3
+				.slide
+					img.logo-campaign.centerh(src!= base_url + 'assets/logo-campaign.png')
+					.calls
+						.column.izq.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+							//- .discount
+								.percent 40
+								.simbol
+									| %
+									span Dscto.
+							a.call-left(href='#')
+								.imagen
+									.bg-image.centervh
+									img.centerv(alt='', src!= base_url + 'productos/DESTACADOS_05.png')
+								.content
+									.wrapper.product
+										.table
+											span.aon
+											span.marca
+												img(alt='', src!= base_url + 'marcas/asus.png')
+											span.descripcion ZENFONE 3 MAX
+												.line 4G
+											span.antes Precio Normal: S/ 1,699
+											span.cyber Precio Oferta
+											span.price
+												| S/ 
+												span 649
+						.column.der.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+							//- .discount
+								.percent 70
+								.simbol
+									| %
+									span Dscto.
+							a.call-right(href='#')
+								.content
+									.wrapper.product
+										.table
+											span.aon
+											span.marca
+												img(alt='', src!= base_url + 'marcas/monark.png')
+											span.descripcion TROTADORA
+												.line ELÉCTRICA TI04
+											span.antes Precio Normal: S/ 1,799
+											span.cyber Precio Oferta
+											span.price
+												| S/ 
+												span 1,439
+								.imagen
+									.bg-image.centervh
+									img.centerv(alt='', src!= base_url + 'productos/DESTACADOS_06.png')
+							//- a.call-right(href='#')
+								.fullimage
+									img.centervh(alt='', src!= base_url + 'productos/20170421_CM_CASHBACK_05.png')
+
+				// Slide OFERTAS DESTACADAS 4
+				.slide
+					img.logo-campaign.centerh(src!= base_url + 'assets/logo-campaign.png')
+					.calls
+						.column.izq.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+							//- .discount
+								.percent 40
+								.simbol
+									| %
+									span Dscto.
+							a.call-left(href='#')
+								.imagen
+									.bg-image.centervh
+									img.centerv(alt='', src!= base_url + 'productos/DESTACADOS_07.png')
+								.content
+									.wrapper.product
+										.table
+											span.aon
+											//- span.hasta.align-left.box-center Hasta
+											span.marca
+												img(alt='', src!= base_url + 'marcas/tramontina.png')
+											span.descripcion JUEGO DE OLLAS
+												.line VERSALHES Y
+												.line CUCHILLOS - 9 PZAS
+											span.antes Precio Normal: S/ 264
+											span.cyber Precio Oferta
+											span.price
+												| S/  
+												span 159
+						.column.der.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+							//- .discount
+								.percent 70
+								.simbol
+									| %
+									span Dscto.
+							a.call-right(href='#')
+								.content
+									.wrapper.product
+										.table
+											span.aon
+											//- span.hasta.align-left.box-center Hasta
+											span.marca
+												img(alt='', src!= base_url + 'marcas/samsung.png')
+											span.descripcion LAVADORA
+												.line CARGA SUPERIOR
+												.line WA12F5L2UWW1
+											span.antes Precio Normal: S/ 1,149
+											span.cyber Precio Oferta
+											span.price
+												| S/  
+												span 799
+								.imagen
+									.bg-image.centervh
+									img.centerv(alt='', src!= base_url + 'productos/DESTACADOS_08.png')
+
+				// Slide OFERTAS DESTACADAS 5
+				.slide
+					img.logo-campaign.centerh(src!= base_url + 'assets/logo-campaign.png')
+					.calls
+						.column.izq.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+							//- .discount
+								.percent 40
+								.simbol
+									| %
+									span Dscto.
+							a.call-left(href='#')
+								.imagen
+									.bg-image.centervh
+									img.centerv(alt='', src!= base_url + 'productos/DESTACADOS_09.png')
+								.content
+									.wrapper.product
+										.table
+											span.aon
+											//- span.hasta.align-left.box-center Hasta
+											span.marca
+												img(alt='', src!= base_url + 'marcas/playstation.png')
+											span.descripcion CONSOLA PS4
+												.line SLIM + PES 2017 +
+												.line CONTROL DUAL SHOCK 4
+											span.antes Precio Normal: S/ 2,875
+											span.cyber Precio Oferta
+											span.price
+												| S/  
+												span 1,699
+						.column.der.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+							//- .discount
+								.percent 70
+								.simbol
+									| %
+									span Dscto.
+							a.call-right(href='#')
+								.content
+									.wrapper.product
+										.table
+											span.aon
+											//- span.hasta.align-left.box-center Hasta
+											span.marca
+												img(alt='', src!= base_url + 'marcas/fossil.png')
+											span.descripcion RELOJ ES3737
+												.line PARA DAMA
+											span.antes Precio Normal: S/ 569
+											span.cyber Precio Oferta
+											span.price
+												| S/  
+												span 399
+								.imagen
+									.bg-image.centervh
+									img.centerv(alt='', src!= base_url + 'productos/DESTACADOS_10.png')
+
+				// Slide OFERTAS DESTACADAS 6
+				.slide
+					img.logo-campaign.centerh(src!= base_url + 'assets/logo-campaign.png')
+					.calls
+						.column.izq.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+							//- .discount
+								.percent 40
+								.simbol
+									| %
+									span Dscto.
+							a.call-left(href='#')
+								.imagen
+									.bg-image.centervh
+									img.centerv(alt='', src!= base_url + 'productos/DESTACADOS_11.png')
+								.content
+									.wrapper.until
+										.table
+											span.aon
+											//- span.hasta.align-left.box-center Hasta
+											span.hasta.align-center.box-center Hasta
+											//- span.marca
+											//- span.descripcion
+											//- span.antes
+											//- span.cyber.align-left.box-center &nbsp;
+											span.price.porcentual
+												span.number 40
+												span.percent %
+													.dscto Dscto.
+											//- span.adicional
+												img(src!= base_url + 'assets/adicional20.png')
+											span.note.align-center
+												| en Zapatillas Urbanas para mujer
+						.column.der.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+							//- .discount
+								.percent 70
+								.simbol
+									| %
+									span Dscto.
+							a.call-right(href='#')
+								.content
+									.wrapper.product
+										.table
+											span.aon
+											//- span.hasta.align-left.box-center Hasta
+											span.marca
+												img(alt='', src!= base_url + 'marcas/lg.png')
+											span.descripcion SMART TV
+												.line 55uh6030
+											span.antes Precio Normal: S/ 4,199
+											span.cyber Precio Oferta
+											span.price
+												| S/  
+												span 2,499
+								.imagen
+									.bg-image.centervh
+									img.centerv(alt='', src!= base_url + 'productos/DESTACADOS_12.png')
+
+				// Slide OFERTAS DESTACADAS 7
+				.slide
+					img.logo-campaign.centerh(src!= base_url + 'assets/logo-campaign.png')
+					.calls
+						.column.izq.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+							//- .discount
+								.percent 40
+								.simbol
+									| %
+									span Dscto.
+							a.call-left(href='#')
+								.imagen
+									.bg-image.centervh
+									img.centerv(alt='', src!= base_url + 'productos/DESTACADOS_13.png')
+								.content
+									.wrapper.product
+										.table
+											span.aon
+											//- span.hasta.align-left.box-center Hasta
+											span.marca
+												img(alt='', src!= base_url + 'marcas/wacom.png')
+											span.descripcion BAMBOO SPARK
+												.line SLEEVE LIBRETA
+												.line DIGITALIZADORA
+											span.antes Precio Normal: S/ 499
+											span.cyber Precio Oferta
+											span.price
+												| S/  
+												span 299
+						.column.der.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+							//- .discount
+								.percent 70
+								.simbol
+									| %
+									span Dscto.
+							a.call-right(href='#')
+								.content
+									.wrapper.product
+										.table
+											span.aon
+											//- span.hasta.align-left.box-center Hasta
+											span.marca
+												img(alt='', src!= base_url + 'marcas/infanti.png')
+											span.descripcion SILLA NIDO MUSICAL
+												.line Y VIBRADORA
+											span.antes Precio Normal: S/ 249
+											span.cyber Precio Oferta
+											span.price
+												| S/  
+												span 199
+								.imagen
+									.bg-image.centervh
+									img.centerv(alt='', src!= base_url + 'productos/DESTACADOS_14.png')
+
+				// Slide OFERTAS DESTACADAS 8
+				.slide
+					img.logo-campaign.centerh(src!= base_url + 'assets/logo-campaign.png')
+					.calls
+						.column.izq.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+							//- .discount
+								.percent 40
+								.simbol
+									| %
+									span Dscto.
+							a.call-left(href='#')
+								.imagen
+									.bg-image.centervh
+									img.centerv(alt='', src!= base_url + 'productos/DESTACADOS_15.png')
+								.content
+									.wrapper.product
+										.table
+											span.aon
+											//- span.hasta.align-left.box-center Hasta
+											span.marca
+												img(alt='', src!= base_url + 'marcas/home.png')
+											span.descripcion JUEGO DE
+												.line COMEDOR STARTER
+												.line MESA + 4 SILLAS
+											span.antes Precio Normal: S/ 1,299
+											span.cyber Precio Oferta
+											span.price
+												| S/  
+												span 599
+						.column.der.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+							//- .discount
+								.percent 70
+								.simbol
+									| %
+									span Dscto.
+							a.call-right(href='#')
+								.content
+									.wrapper.product
+										.table
+											span.aon
+											//- span.hasta.align-left.box-center Hasta
+											span.marca
+												img(alt='', src!= base_url + 'marcas/lg.png')
+											span.descripcion REFRIGERADORA
+												.line NO FROST GT29WPP
+											span.antes Precio Normal: S/ 1,599
+											span.cyber Precio Oferta
+											span.price
+												| S/  
+												span 1,199
+								.imagen
+									.bg-image.centervh
+									img.centerv(alt='', src!= base_url + 'productos/DESTACADOS_16.png')

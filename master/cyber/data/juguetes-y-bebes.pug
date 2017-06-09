@@ -1,0 +1,111 @@
+extends ../layout/layout2.pug
+
+block content
+	- var base_url = 'http://www.ripley.com.pe/minisitios/campana/cyber-mama/'
+	if test=="dev"
+		- var base_url = '../'
+
+	#cyber(style='margin:0')
+		// JUGUETES Y BEBES
+		.slider-banner#slider-juguetes-y-bebes
+			span.slider-prev
+			span.slider-next
+			.banner
+				// Slide JUGUETES 1
+				.slide
+					img.logo-campaign.centerh(src!= base_url + 'assets/logo-juguetes.jpg')
+					.calls
+						.column.izq.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+							//- .discount
+								.percent 40
+								.simbol
+									| %
+									span DSCTO.
+							a.call-left(href='#')
+								.imagen
+									img.centerv(alt='', src!= base_url + 'productos/39.jpg')
+								.content
+									.wrapper.product
+										.table
+											span.aon
+											span.marca
+												img(alt='', src!= base_url + 'marcas/baby-kits.jpg')
+											span.descripcion COCHE BASTÓN
+												.line CLAP - GRIS
+											span.antes Precio Normal: S/ 299
+											span.cyber Precio Oferta
+											span.price
+												| S/ 
+												span 239
+						.column.der.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+							//- .discount
+								.percent 70
+								.simbol
+									| %
+									span DSCTO.
+							a.call-right(href='#')
+								.content
+									.wrapper.product
+										.table
+											span.aon
+											span.marca
+												img(alt='', src!= base_url + 'marcas/baby-kits.jpg')
+											span.descripcion ASIENTO PARA
+												.line AUTO ALFA - GRIS
+											span.antes Precio Normal: S/ 289
+											span.cyber Precio Oferta
+											span.price
+												| S/ 
+												span 231
+								.imagen
+									img.centerv(alt='', src!= base_url + 'productos/40.jpg')
+
+				// Slide JUGUETES 2
+				.slide
+					img.logo-campaign.centerh(src!= base_url + 'assets/logo-juguetes.jpg')
+					.calls
+						.column.izq.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+							//- .discount
+								.percent 40
+								.simbol
+									| %
+									span DSCTO.
+							a.call-left(href='#')
+								.imagen
+									img.centerv(alt='', src!= base_url + 'productos/41.jpg')
+								.content
+									.wrapper.product
+										.table
+											span.aon
+											span.marca
+												img(alt='', src!= base_url + 'marcas/baby-kits.jpg')
+											span.descripcion SILLA DE COMER
+												.line AZUL
+											span.antes Precio Normal: S/ 179
+											span.cyber Precio Oferta
+											span.price
+												| S/ 
+												span 143
+						.column.der.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+							//- .discount
+								.percent 70
+								.simbol
+									| %
+									span DSCTO.
+							a.call-right(href='#')
+								.content
+									.wrapper.product
+										.table
+											span.aon
+											span.marca
+												img(alt='', src!= base_url + 'marcas/little.jpg')
+											span.descripcion PICNIC ON THE
+												.line PATIO PLAYHOUSE
+											span.antes Precio Normal: S/ 2,999
+											span.cyber Precio Oferta
+											span.price
+												| S/ 
+												span 1,200
+								.imagen
+									img.centerv(alt='', src!= base_url + 'productos/42.jpg')
+

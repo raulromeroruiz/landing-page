@@ -1,0 +1,124 @@
+extends ../layout/layout2.pug
+
+block content
+	- var base_url = 'http://www.ripley.com.pe/minisitios/campana/cyber-mama/'
+	if test=="dev"
+		- var base_url = '../'
+
+
+	#cyber(style='margin:0')
+		// MUEBLES
+		.slider-banner#slider-muebles
+			span.slider-prev
+			span.slider-next
+			.banner
+				// Slide MUEBLES 1
+				.slide
+					img.logo-campaign.centerh(src!= base_url + 'assets/logo-campaign.png')
+					.calls
+						.column.izq.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+							//- .discount
+								.percent 40
+								.simbol
+									| %
+									span DSCTO.
+							a.call-left(href='#')
+								.imagen
+									.bg-image.centervh
+									img.centerv(alt='', src!= base_url + 'productos/MUEBLES_01.png')
+								.content
+									.wrapper.product
+										.table
+											span.aon
+											span.marca
+												img(alt='', src!= base_url + 'marcas/home.png')
+											span.descripcion RECLINABLE
+												.line MECTA MARRON
+											span.antes Precio Normal: S/ 1,499
+											span.cyber Precio Oferta
+											span.price
+												| S/  
+												span 599
+											//- span.pay-note.align-center
+												| Todo medio de pago
+						.column.der.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+							//- .discount
+								.percent 70
+								.simbol
+									| %
+									span DSCTO.
+							a.call-right(href='#')
+								.content
+									.wrapper.product
+										.table
+											span.aon
+											span.marca
+												img(alt='', src!= base_url + 'marcas/home.png')
+											span.descripcion SECCIONAL
+												.line VILLA
+											span.antes Precio Normal: S/ 4,499
+											span.cyber Precio Oferta
+											span.price
+												| S/  
+												span 1,999
+											//- span.pay-note
+												| Todo medio de pago
+								.imagen
+									.bg-image.centervh
+									img.centerv(alt='', src!= base_url + 'productos/MUEBLES_02.png')
+
+				// Slide MUEBLES 2
+				.slide
+					img.logo-campaign.centerh(src!= base_url + 'assets/logo-campaign.png')
+					.calls
+						.column.izq.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+							//- .discount
+								.percent 40
+								.simbol
+									| %
+									span DSCTO.
+							a.call-left(href='#')
+								.imagen
+									.bg-image.centervh
+									img.centerv(alt='', src!= base_url + 'productos/MUEBLES_03.png')
+								.content
+									.wrapper.product
+										.table
+											span.aon
+											//- span.hasta.align-left.box-center Hasta
+											span.marca
+												img(alt='', src!= base_url + 'marcas/home.png')
+											span.descripcion JUEGO DE
+												.line COMEDOR STARTER
+												.line MESA + 4 SILLAS
+											span.antes Precio Normal: S/ 1,299
+											span.cyber Precio Oferta
+											span.price
+												| S/  
+												span 599
+						.column.der.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+							//- .discount
+								.percent 70
+								.simbol
+									| %
+									span DSCTO.
+							a.call-right(href='#')
+								.content
+									.wrapper.product
+										.table
+											span.aon
+											//- span.hasta.align-left.box-center Hasta
+											span.marca
+												img(alt='', src!= base_url + 'marcas/home.png')
+											span.descripcion JUEGO DE
+												.line SALA BIANCA
+												.line 3+2 CUERPOS
+											span.antes Precio Normal: S/ 4,398
+											span.cyber Precio Oferta
+											span.price
+												| S/  
+												span 1,699
+								.imagen
+									.bg-image.centervh
+									img.centerv(alt='', src!= base_url + 'productos/MUEBLES_04.png')
+

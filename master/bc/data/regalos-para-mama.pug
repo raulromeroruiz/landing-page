@@ -1,0 +1,300 @@
+extends ../layout/layout2.pug
+
+block content
+	- var base_url = 'http://www.ripley.com.pe/minisitios/campana/cyber-mama-4/'
+	if test=="dev"
+		- var base_url = '../'
+
+	#cyber.cyber-container
+		// REGALOS PARA MAMÁ
+		.slider-banner#slider-regalos-para-mama
+			span.slider-prev
+			span.slider-next
+			.banner
+				// Slide REGALOS PARA MAMÁ 1
+				.slide
+					img.logo-campaign.centerh(src!= base_url + 'assets/logo-campaign.jpg')
+					.calls
+						.column.izq.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+							//- .discount
+								.percent 40
+								.simbol
+									| %
+									span DSCTO.
+							a.call-left(href='#')
+								.imagen
+									img.centerv(alt='', src!= base_url + 'productos/1.jpg')
+								.content
+									.wrapper.product
+										.table
+											span.aon
+											span.marca
+												img(alt='', src!= base_url + 'marcas/lg.jpg')
+											span.descripcion SMART TV
+												.line 55UH6030
+											span.antes Precio Normal: S/ 4,199
+											span.cyber Precio Oferta
+											span.price
+												| S/
+												span 1,999
+						.column.der.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+							//- .discount
+								.percent 70
+								.simbol
+									| %
+									span DSCTO.
+							//- a.call-right(href='#')
+								.fullimage
+									img.product(alt='', src!= base_url + 'productos/100-41.jpg')
+							a.call-right(href='#')
+								.content
+									.wrapper.product
+										.table
+											span.aon
+											span.marca
+												img(alt='', src!= base_url + 'marcas/home.jpg')
+											span.descripcion JUEGO DE
+												.line COMEDOR DINA
+												.line MESA + 6 SILLAS
+											span.antes Precio Normal: S/ 1,499
+											span.cyber Precio Oferta
+											span.price
+												| S/ 
+												span 599
+													span.centimos .60
+								.imagen
+									img.centerv(alt='', src!= base_url + 'productos/2.jpg')
+
+				// Slide REGALOS PARA MAMÁ 2
+				.slide
+					img.logo-campaign.centerh(src!= base_url + 'assets/logo-campaign.jpg')
+					.calls
+						.column.izq.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+							//- .discount
+								.percent 40
+								.simbol
+									| %
+									span DSCTO.
+							a.call-left(href='#')
+								.imagen
+									img.centerv(alt='', src!= base_url + 'productos/3.jpg')
+								.content
+									.wrapper.until
+										.table
+											span.aon
+											span.hasta.align-left.box-center &nbsp;
+											//- span.marca
+											//- span.descripcion
+											//- span.antes
+											//- span.cyber.align-left.box-center &nbsp;
+											span.price.porcentual.box-center
+												span.number 15
+												span.percent %
+													.dscto DSCTO.
+											span.adicional
+												img(src!= base_url + 'assets/exclusivotr.jpg')
+											span.note.align-center
+												| en Laptops
+											//- span.note.align-center
+												//- | en 
+												//- span.bigger 
+												| en Camas
+											//- span.legal
+												| *A partir de 2 plz
+						.column.der.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+							//- .discount
+								.percent 70
+								.simbol
+									| %
+									span DSCTO.
+							a.call-right(href='#')
+								.content
+									.wrapper.until
+										.table
+											span.aon
+											span.hasta.align-left.box-center Hasta
+											//- span.marca
+											//- span.descripcion
+											//- span.antes
+											//- span.cyber.align-left.box-center &nbsp;
+											span.price.porcentual.box-center
+												span.number 30
+												span.percent %
+													.dscto DSCTO.
+											span.adicional
+												img(src!= base_url + 'assets/adicional10.jpg')
+											span.note.align-center
+												//- | en 
+												//- span.bigger 
+												| en Camas
+											span.pay-note.align-center
+												| *A partir de 2 plz
+								.imagen
+									img.centerv(alt='', src!= base_url + 'productos/4.jpg')
+
+				// Slide REGALOS PARA MAMÁ 3
+				.slide
+					img.logo-campaign.centerh(src!= base_url + 'assets/logo-campaign.jpg')
+					.calls
+						.column.izq.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+							//- .discount
+								.percent 40
+								.simbol
+									| %
+									span DSCTO.
+							a.call-left(href='#')
+								.imagen
+									img.centerv(alt='', src!= base_url + 'productos/5.jpg')
+								.content
+									.wrapper
+										.table
+											span.aon
+											span.marca
+												img(alt='', src!= base_url + 'marcas/huawei.jpg')
+											span.descripcion P9 LITE
+												.line 16GB / 13MP
+											span.antes Precio Normal: S/ 1,699
+											span.cyber PRECIO OFERTA
+											span.price
+												| S/ 
+												span 949
+						.column.der.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+							//- .discount
+								.percent 70
+								.simbol
+									| %
+									span DSCTO.
+							a.call-right(href='#')
+								.content
+									.wrapper
+										.table
+											span.aon
+											span.hasta.align-left.box-center Hasta
+											//- span.marca
+												img(alt='', src!= base_url + 'marcas/home.jpg')
+											//- span.descripcion
+											//- span.antes
+											//- span.cyber
+											span.price.porcentual.box-center
+												span.number 70
+												span.percent %
+													.dscto DSCTO.
+											span.note.align-center
+												| en Cuidado personal
+								.imagen
+									img.centerv(alt='', src!= base_url + 'productos/6.jpg')
+							//- a.call-right(href='#')
+								.fullimage
+									img.centervh(alt='', src!= base_url + 'productos/20170421_CM_CASHBACK_05.jpg')
+
+				// Slide REGALOS PARA MAMÁ 4
+				.slide
+					img.logo-campaign.centerh(src!= base_url + 'assets/logo-campaign.jpg')
+					.calls
+						.column.izq.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+							//- .discount
+								.percent 40
+								.simbol
+									| %
+									span DSCTO.
+							a.call-left(href='#')
+								.imagen
+									img.centerv(alt='', src!= base_url + 'productos/7.jpg')
+								.content
+									.wrapper.until
+										.table
+											span.aon
+											span.hasta.align-left.box-center Hasta
+											//- span.marca
+											//- span.descripcion
+											//- span.antes
+											//- span.cyber.align-left.box-center &nbsp;
+											span.price.porcentual.box-center
+												span.number 40
+												span.percent %
+													.dscto DSCTO.
+											//- span.adicional
+												img(src!= base_url + 'assets/adicional20.jpg')
+											span.note.align-center
+												| en miles de Zapatillas Deportivas
+						.column.der.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+							//- .discount
+								.percent 70
+								.simbol
+									| %
+									span DSCTO.
+							a.call-right(href='#')
+								.content
+									.wrapper.until
+										.table
+											span.aon
+											span.hasta.align-left.box-center Hasta
+											//- span.marca.align-left Hasta
+											//- span.descripcion
+											//- span.antes
+											//- span.cyber
+											span.price.porcentual.box-center
+												span.number 50
+												span.percent %
+													.dscto DSCTO.
+											//- span.adicional
+												img(src!= base_url + 'assets/adicional15.jpg')
+											span.note.align-center
+												| en Máquinas
+								.imagen
+									img.centerv(alt='', src!= base_url + 'productos/8.jpg')
+
+				// Slide REGALOS PARA MAMÁ 5
+				.slide
+					img.logo-campaign.centerh(src!= base_url + 'assets/logo-campaign.jpg')
+					.calls
+						.column.izq.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+							//- .discount
+								.percent 40
+								.simbol
+									| %
+									span DSCTO.
+							a.call-left(href='#')
+								.imagen
+									img.centerv(alt='', src!= base_url + 'productos/9.jpg')
+								.content
+									.wrapper.until
+										.table
+											span.aon
+											span.hasta.align-left.box-center Hasta
+											//- span.marca.align-left Hasta
+											//- span.descripcion
+											//- span.antes
+											//- span.cyber
+											span.price.porcentual.box-center
+												span.number 60
+												span.percent %
+													.dscto DSCTO.
+											span.note.align-center
+												| en Juguetes
+						.column.der.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+							//- .discount
+								.percent 70
+								.simbol
+									| %
+									span DSCTO.
+							a.call-right(href='#')
+								.content
+									.wrapper.until
+										.table
+											span.aon
+											span.hasta.align-left.box-center Hasta
+											//- span.marca
+											//- span.descripcion
+											//- span.antes
+											//- span.cyber
+											span.price.porcentual.box-center
+												span.number 40
+												span.percent %
+													.dscto DSCTO.
+											span.note.align-center
+												| en Relojes
+											span.iconos-colores.align-center
+												img(src!= base_url + 'assets/guess-michael-kors.jpg')
+								.imagen
+									img.centerv(alt='', src!= base_url + 'productos/10.jpg')

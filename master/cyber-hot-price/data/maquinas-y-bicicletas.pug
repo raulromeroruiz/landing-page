@@ -1,0 +1,126 @@
+extends ../layout/layout2.pug
+
+block content
+	- var base_url = 'http://www.ripley.com.pe/minisitios/campana/cyber-mama/'
+	if test=="dev"
+		- var base_url = '../'
+
+	#cyber(style='margin:0')
+		// MAQUINAS Y BICICLETAS
+		.slider-banner#slider-maquinas-y-bicicletas
+			span.slider-prev
+			span.slider-next
+			.banner
+				// Slide DEPORTE 1
+				.slide
+					img.logo-campaign.centerh(src!= base_url + 'assets/logo-campaign.png')
+					.calls
+						.column.izq.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+							//- .discount
+								.percent 40
+								.simbol
+									| %
+									span Dscto.
+							a.call-left(href='#')
+								.imagen
+									.bg-image.centervh
+									img.centerv(alt='', src!= base_url + 'productos/DEPO_01.png')
+								.content
+									.wrapper.until
+										.table
+											span.aon
+											span.hasta.align-center.box-center Hasta
+											//- span.marca
+											//- span.descripcion
+											//- span.antes
+											//- span.cyber.align-left.box-center &nbsp;
+											span.price.porcentual
+												span.number 40
+												span.percent %
+													.dscto Dscto.
+											span.note.align-center
+												| en Fitness
+												span(style='display:block; font-weight:600;')
+													| + Accesorio de regalo
+						.column.der.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+							//- .discount
+								.percent 70
+								.simbol
+									| %
+									span Dscto.
+							a.call-right(href='#')
+								.content
+									.wrapper.until
+										.table
+											span.aon
+											span.hasta.align-center.box-center Hasta
+											//- span.marca
+											//- span.descripcion
+											//- span.antes
+											//- span.cyber.align-left.box-center &nbsp;
+											span.price.porcentual
+												span.number 30
+												span.percent %
+													.dscto Dscto.
+											span.note.align-center
+												| en Bicicletas
+												span(style='display:block; font-weight:600;')
+													| + Accesorio de regalo
+								.imagen
+									.bg-image.centervh
+									img.centerv(alt='', src!= base_url + 'productos/DEPO_02.png')
+													
+				// Slide MAQUINAS 2
+				.slide
+					img.logo-campaign.centerh(src!= base_url + 'assets/logo-campaign.png')
+					.calls
+						.column.izq.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+							//- .discount
+								.percent 40
+								.simbol
+									| %
+									span Dscto.
+							a.call-left(href='#')
+								.imagen
+									.bg-image.centervh
+									img.centerv(alt='', src!= base_url + 'productos/DEPO_03.png')
+								.content
+									.wrapper.until
+										.table
+											span.aon
+											span.hasta.align-center.box-center Hasta
+											//- span.marca
+											//- span.descripcion
+											//- span.antes
+											//- span.cyber.align-left.box-center &nbsp;
+											span.price.porcentual
+												span.number 40
+												span.percent %
+													.dscto Dscto.
+											span.note.align-center
+												| en Accesorios Fitness
+						.column.der.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+							//- .discount
+								.percent 70
+								.simbol
+									| %
+									span Dscto.
+							a.call-right(href='#')
+								.content
+									.wrapper.until
+										.table
+											span.aon
+											//- span.marca
+												img(alt='', src!= base_url + 'marcas/sole.png')
+											span.descripcion ELÍPTICA
+											//- span.antes Desde
+											span.cyber Desde
+											span.price
+												| S/  
+												span 399
+											span.colores.align-right.f-size9(style='margin-top:5px;')
+												//- img(src!= base_url + 'marcas/monark.png')
+												| * ACCESORIO DE REGALO
+								.imagen
+									.bg-image.centervh
+									img.centerv(alt='', src!= base_url + 'productos/DEPO_04.png')
