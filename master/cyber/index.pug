@@ -1,82 +1,52 @@
 extends ./layout/layout.pug
 
 block title
-	title CYBER - Ripley
+	title #{title} - Ripley
 
 block content
-	- var base_url = 'http://simple.ripley.com.pe/cyber-papa/'
+	- var base_url = 'http://beta.ripley.com.pe/cyber/'
+
+	- var menu = [{name:'Cyber Ofertas', hash:'#faccion-exigencia', href:'cyber-ofertas/ver-todo', icon:'gift'}, {name:'TV y Videojuegos', hash:'#faccion-exigencia', href:'tv-y-videojuegos/ver-todo', icon:'video'}, {name:'Cómputo', hash:'#faccion-exigencia', href:'computo/ver-todo', icon:'tecnologia'}, {name:'Celulares y Tecnología', hash:'#faccion-exigencia', href:'celulares-y-tecnologia/ver-todo', icon:'celulares'}, {name:'Línea Blanca', hash:'#faccion-exigencia', href:'linena-blanca/ver-todo', icon:'electrohogar'}, {name:'Muebles', hash:'#faccion-exigencia', href:'muebles/ver-todo', icon:'muebleria'}, {name:'Dormitorio', hash:'#faccion-exigencia', href:'dormitorio/ver-todo', icon:'dormitorio'}, {name:'Hogar', hash:'#faccion-exigencia', href:'hogar/ver-todo', icon:'decohogar'}, {name:'Deporte', hash:'#faccion-exigencia', href:'deporte/ver-todo', icon:'deporte'}, {name:'Juguetes y Bebés', hash:'#faccion-exigencia', href:'juguetes-y-bebes/ver-todo', icon:'bebe'}, {name:'Calzado y Zapatillas', hash:'#faccion-exigencia', href:'calzado-y-zapatillas/ver-todo', icon:'belleza'}, {name:'Accesorios y Belleza', hash:'#faccion-exigencia', href:'accesorios-y-belleza/ver-todo', icon:'relojes'}, {name:'Moda', hash:'#faccion-exigencia', href:'moda', icon:'moda'}]
 
 	include includes/mixins.pug
 
-	.container-fluid#header-banner
+	.container-fluid
+		nav.nav-bar
+			//- figure#cintillo-superior
+				a(href='#')
+					img.cintillo-cyber.centervh(src='images/cintillo-top.png')
+					img.cintillo-top-mobile.centervh(src='images/cintillo-top-mobile.png')
+			.current-category.centervh.align-left
+				| #SOYCYBER
+			button.btn-mobile#btn-mobile
+				span
+				span
+				span
+			ul#main-menu.menu
+				//- li
+					a.lnk-menu(href!= base_url +'regalos-top')
+						| Regalos Top
+						//- | Regalos TOP para mamá
+				each item in menu
+					li
+						a.lnk-menu(href!= base_url + item.href, data-seccion!= item.name)
+							span.iconress(class!= item.icon)
+							span.text
+								//- | Cyber Ofertas
+								= item.name
+			//- ul#main-menu.menu
+				li
+					a.lnk-menu(href!= base_url +'tv-y-video')
+						| TV y Video
+				li
+					a.lnk-menu(href!= base_url +'muebleria')
+						| Muebles y Hogar
 		.row
 			.col-xs-12.col-sm-12.col-md-12.col-lg-12.col-xl-12
-				nav.nav-bar
-					//- figure#cintillo-superior
-						a(href='#')
-							img.cintillo-cyber.centervh(src='images/cintillo-top.png')
-							img.cintillo-top-mobile.centervh(src='images/cintillo-top-mobile.png')
-					.current-category.centervh.align-left
-					button#btn-mobile
-						span
-						span
-						span
-					ul#main-menu.menu
-						li
-							a.lnk-menu(href!= base_url +'regalos-top')
-								| Regalos Top
-								//- | Regalos TOP para mamá
-						li
-							a.lnk-menu(href!= base_url +'celulares-y-videojuegos')
-								//- | Celulares
-								| Celulares y Tecnología
-						li
-							a.lnk-menu(href!= base_url +'muebleria')
-								| Muebles y Hogar
-						li
-							a.lnk-menu(href!= base_url +'tv-y-video')
-								| TV y Video
-								//- | TV y Audio
-						li
-							a.lnk-menu(href!= base_url +'belleza-y-accesorios')
-								//- | Belleza y Accesorios
-								| Relojes y Accesorios
-						li
-							a.lnk-menu(href!= base_url +'laptops-y-tablets')
-								//- | Cómputo
-								| Laptops y Tablets
-						li
-							a.lnk-menu(href!= base_url +'dormitorio')
-								| Dormitorio
-						li
-							a.lnk-menu(href!= base_url +'electrohogar')
-								| Electrohogar
-						//- li
-							a.lnk-menu(href!= base_url +'deco')
-								| Ripley Home
-						li
-							a.lnk-menu(href!= base_url +'moda')
-								| Moda
-								//- | Jueguetes y Bebés
-						li
-							a.lnk-menu(href!= base_url +'fitness')
-								| Fitness
-								//- | Máquinas y Bicicletas
-						li
-							a.lnk-menu(href!= base_url +'calzado-y-zapatillas')
-								//- | Calzado
-								| Calzado y Zapatillas
-						li
-							a.lnk-menu(href!= base_url +'regalos-a-menos-de-200')
-								//- | Calzado
-								| Regalos a menos de S/ 200
-						//- li
-							a.lnk-menu(href!= base_url +'infantil')
-								| Infantil
-								//- | Jueguetes y Bebés
+				#header-banner
+					#sponsor
+						include ./includes/banner-catalogo.pug
 
-				#sponsor
-					include ./includes/banner-catalogo.pug
 					//- iframe#sliders(frameborder="none", with="100%", height="100%")
 				//- #sponsor
 					//- img.logo-campaign.centerh(src='assets/logo-campaign.png')

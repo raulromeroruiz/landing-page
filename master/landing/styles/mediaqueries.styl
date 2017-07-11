@@ -280,22 +280,23 @@
 			width 95%
 		.nav
 			width 100%
-		.menu
-			padding 0
-			width auto
-			li
-				a
-					.text
-						font-size 2vw
-					.elements
-						font-size 1.75vw
-				&::after
-					display none
-				.active
+		#mainmenu
+			.menu
+				padding 0
+				width auto
+				li
+					a
+						.text
+							font-size 2vw
+						.elements
+							font-size 1.75vw
 					&::after
 						display none
-			&::after
-				display none
+					.active
+						&::after
+							display none
+				&::after
+					display none
 
 		#slider-prev
 			top 50%
@@ -484,42 +485,40 @@
 				font-size 95%
 		.nav
 			display none
-		#main-menu
+		.menu-mobile
 			height auto
 			display block
 			padding-left 0
 			padding-right 0
+			width 100%
+			background-color black
+			box-shadow none
+			border-radius 0
+			height auto
 			li
 				margin-bottom 0
 				height 41px
+				border-bottom 1px solid #fff
+				width 100%
 				.active
 					color white
 				a
 					width 100%
+					display block
+					color white
+					height 30px
 		.logo-mobile
 			width 15%
 			display block
 		.menu
-			width 100%
 			clear both
 			overflow hidden
-			background-color black
-			box-shadow none
-			overflow hidden
-			border-radius 0
-			height auto
-			display none
+			// display none
 			bottom auto
-			margin-top -250px
 			li
 				float left
 				clear both
-				border-bottom 1px solid #fff
-				width 100%
 				a
-					display block
-					color white
-					height 30px
 					.icon
 						display none
 				.active

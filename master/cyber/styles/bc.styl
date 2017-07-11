@@ -47,8 +47,6 @@
 		clear both
 		width 1110px
 		margin 0 auto
-		-webkit-transition all 0.25s ease 0s
-		-moz-transition all 0.25s ease 0s
 		transition all 0.25s ease 0s
 	.menu 
 		width 100%
@@ -104,13 +102,13 @@
 		display block
 		line-height 40px
 		text-decoration none
-		display -ms-flexbox
-		display -webkit-flex
+		// display -ms-flexbox
+		// display -webkit-flex
 		display flex
-		-ms-flex-align center
-		-webkit-align-items center
-		-webkit-box-align center
-		-moz-box-align center
+		// -ms-flex-align center
+		// -webkit-align-items center
+		// -webkit-box-align center
+		// -moz-box-align center
 		align-items center
 		justify-content center
 		span 
@@ -144,15 +142,7 @@
 
 	#btn-videojuegos .category::after, .active::after 
 		display none
-	.active 
-		.text 
-			&:after 
-				border-color white
-	.category:hover, .active 
-		background-color #cd5e5d
-		color white
-	.category:hover span, .active span 
-		color white
+
 	#btn-tv-video 
 		.category 
 			.icon 
@@ -232,7 +222,7 @@
 			top 12px
 			width 100px
 			color black
-			-webkit-animation abefore 3s linear infinite
+			// -webkit-animation abefore 3s linear infinite
 			animation abefore 3s linear infinite
 			text-shadow 0 1px 1px #fff
 		span 
@@ -245,8 +235,8 @@
 			display block
 			height 3px
 			position relative
-			-webkit-transition all 0.25s ease 0s
-			-moz-transition all 0.25s ease 0s
+			// -webkit-transition all 0.25s ease 0s
+			// moz-transition all 0.25s ease 0s
 			transition all 0.25s ease 0s
 
 	.collapse-movil 
@@ -257,10 +247,10 @@
 		#btn-mobile 
 			span 
 				&:nth-child(1) 
-					-webkit-transform rotate(45deg) translateY(6px) translateX(4px)
+					// -webkit-transform rotate(45deg) translateY(6px) translateX(4px)
 					transform rotate(45deg) translateY(6px) translateX(4px)
 				&:nth-child(3) 
-					-webkit-transform rotate(-45deg) translateY(-6px) translateX(4px)
+					// -webkit-transform rotate(-45deg) translateY(-6px) translateX(4px)
 					transform rotate(-45deg) translateY(-6px) translateX(4px)
 				&:nth-child(2) 
 					opacity 0
@@ -395,7 +385,7 @@
 			top 50%
 			right 0
 			transform translate(0, -50%)
-			-webkit-transform translate(0, -50%)
+			// -webkit-transform translate(0, -50%)
 		.call-image 
 			margin 25px auto 40px
 		#btn-mobile 
@@ -426,10 +416,8 @@
 		.item 
 			/* height 500px */
 			img 
-				/*
-				width auto
-				height 100%
-				*/
+				// width auto
+				// height 100%
 				display block
 				margin 0 auto
 		.call 
@@ -439,7 +427,6 @@
 			right auto
 			left 50%
 			transform translate(-50%,0)
-			-webkit-transform translate(-50%,0)
 			margin-top -1px
 		.category 
 			background-color white
@@ -481,7 +468,7 @@
 		#area2 
 			right auto
 
-@media only screen and (max-width: 600px)
+@media only screen and (max-width: 640px)
 	#cyber
 		.call-image 
 			margin 20px auto 30px
@@ -494,6 +481,9 @@
 			width 25%
 			margin-left 2.5%
 			margin-top 25px
+		#slider-bc 
+			.slick-dots
+				bottom 0
 		
 @media only screen and (max-width: 480px) 
 	#cyber
@@ -502,8 +492,8 @@
 		.banner-slider
 			width 100%
 			height 100%
-			-webkit-align-items flex-end
-			-ms-flex-align end
+			// -webkit-align-items flex-end
+			// -ms-flex-align end
 			align-items flex-end
 		#slider-bc 
 			width 100%

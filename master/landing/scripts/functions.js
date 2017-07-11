@@ -84,6 +84,14 @@ var app = {
 					.removeClass('fixed')
 					.removeAttr('style');
 				}
+
+				var indice = $('.section').map(function(index, elem) {
+					if (fromTop > $(this).offset().top - $('#mainmenu').innerHeight()) {
+						return index;
+					}
+				});
+				$('#mainmenu .menu li a').removeClass('active');
+				$('#mainmenu .menu li a').eq(indice[indice.length-1]).addClass('active');
 			});
 
 			_top_nav = $('.nav-bar').offset().top;

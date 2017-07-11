@@ -26,20 +26,27 @@ gulp.task('pug', function(){
     dirOutput = process.argv[4];
     console.log("Week --> ",dir);
     console.log("Saving into --> ",dirOutput);
+
+    params = {
+        str: process.argv[4]
+    }
+    page_title = capitalize(params);
+    
     return gulp.src('./templates/'+dirOutput+'/**/*.pug')
     .pipe(pug({
         pretty:true,
         data: {
-            title: dirOutput + (Math.random()*1000), 
+            title: page_title, 
             dev: (process.argv[3]=="--dev") ? "dev":"prod",
             test: (process.argv[5]=="--dev") ? "dev":"prod",
         }
     }).on('error', function(e){
+        // console.log(e);
         console.log(["Message -> ", e.message]);
         console.log(["Plugin ->", e.plugin]);
     }).on('end', function(e){
         console.log('Ending');
-        console.log(e);
+        // console.log(e);
     }))
     .pipe(gulp.dest(dir+dirOutput));
 });
@@ -54,8 +61,12 @@ gulp.task('stylus', function () {
     dirOutput = process.argv[4];
     return gulp.src('./templates/'+dirOutput+'/styles/styles.styl')
     .pipe(stylus(
-        // {use: [autoprefixer('last 2 versions')]}
+        {use: [autoprefixer('last 2 versions')]}
         ))
+    .on('error', function(err){
+        console.log(["Message -> ", err.message]);
+        console.log(["Plugin ->", err.plugin]);
+    })
     .pipe(gulp.dest(dir+dirOutput+'/css'));
 });
 
@@ -198,3 +209,6 @@ function getWeekNumber(d) {
     return [d.getFullYear(), weekNo];
 }
 
+function capitalize(_params) {
+    return _params.str.charAt(0).toUpperCase() + _params.str.slice(1).replace(/\-/g," ");
+}

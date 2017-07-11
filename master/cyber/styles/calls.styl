@@ -5,201 +5,268 @@ $color_calls = #fff
 	height auto
 	margin 10px auto 0
 	width 235px
+	width 100%
 	list-style none
-	margin-top 20px
+	margin-top 0
 	border none
 	overflow hidden
 	.fixed
-		vendor('transition', all 0.25s ease 0s)
 		position fixed !important
-		/* top 130px !important */
+		// top 130px !important
 		z-index 10
 		padding-top 4px
 		transform translateZ(0)
-		-webkit-transform translateZ(0)
 		transform translate3d(0,0,0)
-		-webkit-transform translate3d(0,0,0)
-		vendor('transition', all 1s ease 0.5s)
+		vendor('transition', all 0.1s ease 0.5s)
 
 	.left 
 		width 235px
+		width 100%
 		float left
 		line-height 1em
 		text-align right
-		vendor('transition', all 0.5s ease 0.25s)
+		transform translateZ(0)
+		transform translate3d(0,0,0)
+		// vendor('transition', all 0.5s ease 0.25s)
 		a 
 			display block
 			text-decoration none
-			margin-bottom 2px
+			margin-bottom 3px
+		&.fixed
+			width 17.5%
 	.producto_desc
 		height 70px
 		display table
 		width 100%
 
-	li 
-		.descuento 
-			border none
-			background $bg_calls
-			list-style none
-			/* margin 0 0px 2px auto */
-			moz-transition all 0.4s
-			ms-transition all 0.4s
-			o-transition all 0.4s
-			padding 0
-			webkit-transition all 0.4s
-			width 100%
-			font-size 0.8em
-			text-align center
-			position relative
-			display table
-			height 70px
-			border-radius 4px
-			.descuento_contenido
-				display table-cell
-				vertical-align middle
-				display -ms-flexbox
-				display -webkit-flex
-				display flex
-				-ms-flex-align center
-				-webkit-align-items center
-				-webkit-box-align center
-				align-items center
-				flex-direction column
-				justify-content center
-				width 112px
-				float left
-				text-align center
-				height 70px
-				font-family 'Open Sans'
-				color $color_calls
-				&.precio 
-					padding-top 0
-			p 
-				&.describe_legal 
-					text-transform uppercase
-					font-size 11px
-					font-weight 400
-					padding 0
-					text-align right
-					position relative
-					display inline-block
-					margin 0 0 2px
-			h2 
-				font-size 34px
-				letter-spacing -2px
-				line-height 30px
-				span 
-					font-size 60px
-				&.numero 
-					font-size 44px
-					line-height 0.7
-					margin 0 auto
-					text-align center
-					display block
-					vertical-align middle
-					width 94px
-					text-align left
-					position relative
-					letter-spacing -2px
-					span 
-						font-size 9px
-						vertical-align text-top
-						padding 0
-						margin-left 3px
-						font-weight 500
-						letter-spacing 0px
-						width 33px
-						float left
-						em 
-							font-size 38px
-							font-style normal
-							clear both
-							float left
-							margin-bottom 5px
-					.porcentaje 
-						font-size 50px
-						display block
-						vertical-align middle
-						float left
-						text-align left
-						position relative
-						margin-right 2px
-					&.precio_fijo 
-						font-size 27px
-						width 100%
-						.porcentaje 
-							font-size 32px
-							width 100%
-							text-align center
+	.descuento 
+		border none
+		background $bg_calls
+		list-style none
+		// margin 0 0px 2px auto
+		// transition all 0.4s
+		padding 0
+		width 100%
+		font-size 0.8em
+		text-align center
+		position relative
+		// display table
+		height 70px
+		border-radius 4px
+		&.horizontal
+			display table-cell
+			vertical-align middle
+			height auto
 			.descuento_descripcion 
-				width 116px
-				float left
-				text-align left
-				height 70px
-				color $color_calls
-				position relative
-				display table
+				width 100%
+				// height 30px
+				height auto
+				// padding 0px 5px !important
 			p 
 				&.describe_descuento 
-					font-size 11px
-					font-weight normal
-					text-transform uppercase
-					overflow hidden
-					width 95%
-					line-height 1.2
-					text-align center
-					margin 0
-					display table-cell
-					vertical-align middle
-			&.horizontal
-				display table-cell
-				vertical-align middle
+					vertical-align top
+					font-size 10.5px
+				&.describe_legal 
+					margin-top 0px !important
+					font-size 14px
+			.descuento_contenido 
+				width 100%
+				height 35px
 				height auto
-				.descuento_descripcion 
-					width 100%
-					height 30px
-					height auto
-					padding 0px 5px !important
-				p 
-					&.describe_descuento 
-						vertical-align top
-						font-size 10.5px
-					&.describe_legal 
-						margin-top 0px !important
-						font-size 14px
-				.descuento_contenido 
-					width 100%
-					height 35px
-					height auto
-					padding-top 0px !important
-					line-height 1
-					display table
-					padding-bottom 4px
-					h2
-						display table-cell
-						vertical-align bottom
-						font-size 25px
-					.porcentaje
-						font-size 17px !important
-						margin-right 0
-						letter-spacing 0.25px
-						line-height 0.95
+				padding-top 0px !important
+				line-height 1
+				display table
+				padding-bottom 4px
+				h2
+					display table-cell
+					vertical-align bottom
+					font-size 25px
+				.porcentaje
+					// font-size 17px !important
+					// margin-right 0
+					// letter-spacing 0.25px
+					// line-height 0.95
+					
+					.line
+						display block
+						width 100%
+						text-align center
+						margin-top 2.5px
 						.number
-							font-size 22px
-							margin auto
-							display inline-block
-							float none
+							font-size 11px
 							font-weight 600
-							letter-spacing -0.75px
-							width auto
-						.line
-							display block
-							width 100%
-							text-align center
-							margin-top 2.5px
-							.number
-								font-size 11px
-								font-weight 600
+	.descuento_contenido
+		// display table-cell
+		vertical-align middle
+		display flex
+		align-items center
+		justify-content center
+		// flex-direction column
+		width 112px
+		float left
+		text-align center
+		height 70px
+		font-family 'Open Sans', sans-serif
+		color $color_calls
+		
+		width 100%
+		height 57.5%
+		&.precio 
+			padding-top 0
+		h2 
+			font-size 34px
+			letter-spacing -1px
+			// line-height 30px
+			span 
+				// font-size 60px
+	.currency
+		font-size 20px
+		vertical-align text-top
+		padding 0
+		margin-right 3px
+		font-weight 500
+		letter-spacing 0px
+		width 33px
+		float left
+		display flex
+		justify-content center
+		height 100%
+		width auto
+		line-height 1
+	.tarjeta
+		width 30px
+		font-size 10px
+		text-align center
+		display flex
+		flex-direction column
+		align-items center
+		margin-left 6px
+		letter-spacing 0
+		img
+			width 100%
+			height 20px
+			display block
+			clear both
+			margin-top 2px
+	.numero 
+		font-size 40px
+		line-height 0.95
+		margin 0 auto
+		text-align center
+		display block
+		vertical-align middle
+		width 94px
+		text-align left
+		position relative
+		letter-spacing -2px
+
+		margin 0
+		display flex
+		justify-content center
+		align-items center
+		width auto
+
+		.porcentaje 
+			font-size 20px
+			display block
+			vertical-align middle
+			float left
+			text-align left
+			position relative
+			display flex
+			align-items center
+			// margin-right 2px
+			&.text
+				letter-spacing 1px
+		&.precio_fijo 
+			font-size 27px
+			// width 100%
+			.porcentaje 
+				font-size 40px
+				width 100%
+				text-align center
+		&.porcentaje-fijo
+			.percent
+				font-size 8px
+	.number
+		font-size 40px
+		margin 0 1px
+		display inline-block
+		float left
+		// font-weight 600
+		letter-spacing -0.75px
+		width auto
+		&.adicional
+			font-size 22px
+	.percent 
+		font-size 7.5px
+		vertical-align text-top
+		padding 0
+		margin 0 1.5px
+		font-weight 500
+		letter-spacing 0px
+		width 33px
+		float left
+		display flex
+		justify-content center
+		align-items center
+		flex-direction column
+		height 100%
+		width auto
+		font-style normal
+		em 
+			font-style normal
+			font-size 20px
+			// clear both
+			// float left
+			margin-bottom 1px
+	.describe_titulo
+		font-size 16px
+		text-align center
+		line-height 1.1
+		font-weight 600
+	.describe_legal 
+		text-transform uppercase
+		font-size 11px
+		// font-weight 600
+		padding 0
+		text-align right
+		position relative
+		display inline-block
+		margin-right 2px
+		line-height 0.95
+
+	.descuento_descripcion 
+		width 116px
+		float left
+		text-align left
+		height 70px
+		color $color_calls
+		position relative
+		display table
+		font-family 'Open Sans', sans-serif
+
+		width 100%
+		height 42.5%
+		padding 0 15px
+	.describe_descuento 
+		font-size 11px
+		font-weight normal
+		text-transform uppercase
+		overflow hidden
+		width 100%
+		line-height 1.1
+		text-align center
+		margin 0
+		display table-cell
+		vertical-align middle
+	.note
+		display block
+		clear both
+		text-transform initial
+	
+	.f-size7
+		font-size 7px !important
 	.f-size8
 		font-size 8px !important
 	.f-size9
@@ -226,80 +293,33 @@ $color_calls = #fff
 		font-size 19px !important
 	.f-size20
 		font-size 20px !important
-.col
-	p 
-		&.describe_legal 
-			text-transform uppercase
-			font-size 11px
-			font-weight 400
-			padding 0
-			text-align right
-			position relative
-			display inline-block
-			margin 7px 0 2px
-	h2 
-		font-size 34px
-		letter-spacing -2px
-		line-height 30px
-		span 
-			font-size 60px
-		&.numero 
-			font-size 44px
-			line-height 0.7
-			margin 0 auto
-			text-align center
-			display block
-			vertical-align middle
-			width 94px
-			text-align left
-			position relative
-			letter-spacing -2px
-			span 
-				font-size 9px
-				vertical-align text-top
-				padding 0
-				margin-left 3px
-				font-weight 500
-				letter-spacing 0px
-				width 33px
-				float left
-				em 
-					font-size 38px
-					font-style normal
-					clear both
-					float left
-					margin-bottom 5px
-			.porcentaje 
-				font-size 50px
-				display block
-				vertical-align middle
-				float left
-				text-align left
-				position relative
-				margin-right 2px
-	
+
 .large 
 	letter-spacing -0.25px
 .producto_desc 
 	list-style none
 
+@media screen and (max-width:1400px)
+	#sector_productos 
+		.left 
+			&.fixed
+				width 19%
 @media screen and (max-width:1024px)
 	#sector_productos 
 		overflow hidden
 		clear both
+		width 110%
+		.left 
+			width 100%	
+			&.fixed
+				width 22.5%
 
 @media screen and (max-width:992px)
 	#sector_productos 
 		width 100%
 		margin 0 auto 10px
-		-webkit-box-align center
-		-ms-flex-align center
 		align-items center
-		display -webkit-box
-		display -ms-flexbox
 		display flex
-		-webkit-box-pack justify
-		-ms-flex-pack justify
 		justify-content space-between
 		.left 
 			width 210px
@@ -312,150 +332,175 @@ $color_calls = #fff
 				display inline-block
 				margin 1px 0
 				width 100%
-		li 
-			.descuento 
-				.descuento_contenido 
-					width 50%
-				.descuento_descripcion 
-					width 50%
-					padding 0 2px
-				h2 
-					&.numero 
-						&.precio_fijo 
-							.porcentaje 
-								font-size 30px
+			&.fixed
+				width 210px
+		.descuento_contenido 
+			// width 50%
+		.numero 
+			&.precio_fijo 
+				.porcentaje 
+					font-size 40px
+		.descuento_descripcion 
+			// width 50%
+			// padding 0 2px
+		.large
+			padding 0 5px
+			p
+				font-size 1.2vw
 
 @media screen and (max-width:767px)
 	#sector_productos 
-		margin-top 0
+		margin-top 10px
 		.left 
 			width 100%
 			a 
 				width 50%
-				width 240px
-				padding 0 2px
-		li 
-			.descuento
-				vertical-align middle
-				display -ms-flexbox
-				display -webkit-flex
-				display flex
-				-ms-flex-align center
-				-webkit-align-items center
-				-webkit-box-align center
-				align-items center
-				justify-content center
-				.descuento_contenido 
-					&.precio 
-						padding-top 5px
-				&.horizontal
-					.descuento_contenido
-						.porcentaje
-							font-size 4.75vh !important
-							padding 0 2.5px
-							line-height 1
+				// width 240px
+				// width 33%
+				padding 1px 0
+				display none
+				float left
+				&:nth-child(1)
+					display block
+				&:nth-child(2)
+					display block
+				&:nth-child(3)
+					display block
+				&:nth-child(4)
+					display block
+				&:nth-child(even)
+					padding 1px 0 1px 2px
+				&:nth-child(odd)
+					padding 1px 2px 1px 0
+		.descuento
+			vertical-align middle
+			display block
+			// display flex
+			// align-items center
+			// justify-content center
+			&.horizontal
+				.descuento_contenido
+					.porcentaje
+						font-size 4.75vh !important
+						padding 0 2.5px
+						line-height 1
+		.descuento_contenido 
+			&.precio 
+				// padding-top 5px
+		.describe_descuento
+			font-size 10px
+		
+		.large
+			p
+				font-size 10px
 
 @media screen and (max-width:640px)
 	#sector_productos 
-		li 
-			.descuento 
-				&.horizontal
-					.descuento_contenido
-						.porcentaje
-							font-size 5.5vh !important
+		.descuento 
+			&.horizontal
+				.descuento_contenido
+					.porcentaje
+						font-size 5.5vh !important
 
 @media screen and (max-width:480px)
 	#sector_productos 
 		padding 0
+		margin-top 0
 		.left 
 			width 100%
 			a 
-				width 50%
-				margin 0
-				padding 2px
-				float left
-			li 
-				&.producto_desc 
-					.descuento 
-						.describe_descuento 
-							font-size 2.6vw !important
-							&.large
-								font-size 2.1vw !important
-		li 
-			.descuento 
+				// min-width 290px
 				width 100%
 				margin 0
-				padding 0
-				height 70px
+				margin 0 auto
+				padding 2px 0 !important
+				float left
+				float none
+				display none
+				&:nth-child(1)
+					display block
+				&:nth-child(2)
+					display block
+				&:nth-child(3)
+					display block
+				&:nth-child(4)
+					display none
+		.describe_descuento 
+			font-size 2.8vw
+			&.large
+				font-size 2.1vw !important
+
+		.describe_legal
+			font-size 3vw
+
+		.descuento 
+			width 100%
+			margin 0
+			padding 0
+			height 70px
+			&.horizontal 
 				.descuento_contenido 
-					padding 0 2px
-				h2 
-					&.numero
-						&.precio_fijo
-							.porcentaje 
-								font-size 3.33vh
-						.porcentaje 
-							font-size 6vh
-						span 
-							font-size 1.25vh
-							em 
-								font-size 4.5vh
-				&.horizontal 
-					.descuento_contenido 
-						width 100%
-						padding 0px 2px 4px !important
-						line-height 1
-						.porcentaje
-							font-size 2vh !important
-							.number
-								font-size 4.6vw
-								vertical-align baseline
-							.line
-								font-size 2vw
-								margin-top 1px
-	
+					width 100%
+					padding 0px 2px 4px !important
+					line-height 1
+					.porcentaje
+						font-size 2vh !important
+						.number
+							font-size 4.6vw
+							vertical-align baseline
+						.line
+							font-size 2vw
+							margin-top 1px
+		.descuento_contenido 
+			padding 0 2px
+		.numero
+			&.precio_fijo
+				.porcentaje 
+					font-size 6vh
+			.porcentaje 
+				font-size 6vh
+		.percent 
+			// font-size 6vw
+			em 
+				font-size 6vw
+		.large
+			padding 0 20px
 
 @media screen and (max-width:320px)
 	#sector_productos 
-		.left 
-			li 
-				&.producto_desc 
-					.descuento 
-						.describe_descuento 
-							font-size 2.6vw !important
-							&.large
-								font-size 2.1vw !important
-		li 
-			.descuento 
-				.descuento_contenido
-					height 100%
-					width 45%
-				.descuento_descripcion
-					height 100%
-					width 55%
-				p 
-					&.describe_legal
-						font-size 10px
-						margin 0
-				h2 
-					&.numero
-						width 100%
-						line-height 1
-						.porcentaje 
-							font-size 8vw
-						span 
-							font-size 2vw
-							width 25px
-							em
-								width 100%
-								font-size 6vw
-								margin-bottom 0
-				&.horizontal 
-					.descuento_contenido 
-						.porcentaje
-							.line
-								font-size 2.5vw
-								.number
-									font-size 11px
+		.describe_descuento 
+			font-size 3vw
+			&.large
+				font-size 2.1vw !important
+		.descuento 
+			&.horizontal 
+				.descuento_contenido 
+					.porcentaje
+						.line
+							font-size 2.5vw
+							.number
+								font-size 11px
+		.descuento_contenido
+			// height 100%
+			// width 45%
+		.numero
+			// width 100%
+			line-height 1
+			.porcentaje 
+				font-size 11vw
+		.percent 
+			// font-size 2vw
+			// width 25px
+			em
+				width 100%
+				font-size 6vw
+				margin-bottom 0
+		.descuento_descripcion
+			// height 100%
+			// width 55%
+		.describe_legal
+			// font-size 10px
+			margin 0
+
 	.large
 		font-size 2.1vw !important

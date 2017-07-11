@@ -27,6 +27,8 @@ bgimg(uri)
 	clear both
 	.container-fluid
 		padding 0
+		.row .col-xs-12, .row .col-sm-12, .row .col-md-12, .row .col-lg-12, .row .col-xl-12 
+			padding 0
 
 	.loader
 		background transparent url(../images/ring.svg) center no-repeat
@@ -37,11 +39,11 @@ bgimg(uri)
 	#container
 		width 100%
 		height auto
-		/* float left*/
-		overflow hidden
+		// float left
+		overflow visible
 		opacity 0
 		position relative
-		/* background-image url(../images/bg-page.jpg) */
+		// background-image url(../images/bg-page.jpg)
 		background-position center top
 		background-repeat no-repeat
 
@@ -72,6 +74,7 @@ bgimg(uri)
 				color #fff
 				text-transform uppercase
 				text-decoration none
+				font-family "Open Sans", sans-serif
 				.icon
 					margin-top 2px
 					margin-right 8px
@@ -95,9 +98,7 @@ bgimg(uri)
 		background black
 		display none
 		transform translateZ(0)
-		-webkit-transform translateZ(0)
 		transform translate3d(0,0,0)
-		-webkit-transform translate3d(0,0,0)
 		vendor('transition', none !important)
 	.current-category
 		width 100%
@@ -114,7 +115,6 @@ bgimg(uri)
 		position absolute
 		z-index 100
 		vendor('transition', all 0.2s ease-in 0s)
-		// vendor('transform', translate(0, -50%))
 		li
 			position relative
 			margin-bottom 12px;
@@ -127,12 +127,7 @@ bgimg(uri)
 				color white
 				text-decoration none
 				font-size 11.5px
-				display -ms-flexbox
-				display -webkit-flex
 				display flex
-				-ms-flex-align center
-				-webkit-align-items center
-				-webkit-box-align center
 				align-items center
 				.icon
 					margin-bottom 2px
@@ -141,21 +136,13 @@ bgimg(uri)
 					float left
 					height 42px
 					position absolute
-				.icon-modelos
-					&:hover
-						background-position: -433px 0
-				.icon-tintas
-					&:hover
-						background-position: -553px 0
-				.icon-video
-					&:hover
-						background-position: -673px 0
+
 				.text
-					font-size 11px
-					color #fff
+					// font-size 11px
+					// color #fff
 					text-align center
 					float left
-					margin-left 48px
+					// margin-left 48px
 					position relative
 				&:hover, .active
 					vendor('transition', all 0.2s ease-in 0s)
@@ -168,23 +155,17 @@ bgimg(uri)
 		padding 0
 		position relative
 		overflow hidden
-
-	#header-banner 
+		// background-image url(../images/sponsor.jpg)
+		background-color transparent
+		background-position center top
+		background-repeat no-repeat
+		bgcolor(#3e1774)
 		.row 
 			width 100%
 			margin 0
 
 	#header-banner .row .col-xs-12, #header-banner .row .col-sm-12, #header-banner .row .col-md-12, #header-banner .row .col-lg-12, #header-banner .row .col-xl-12 
 		padding 0
-
-	#cintillo-superior 
-		width 100%
-		height 60px
-		/* background-image url(../images/cintillo.gif) */
-		background-position center
-		background-repeat no-repeat
-		margin 0 auto
-		position relative
 
 	#sponsor 
 		padding 0
@@ -223,7 +204,6 @@ bgimg(uri)
 			left -40px
 			top 50%
 			transform translate(-50%, 0)
-			-webkit-transform translate(-50%, 0)
 			z-index 10
 			background url(../images/left.png) no-repeat center
 			height 32px
@@ -238,7 +218,6 @@ bgimg(uri)
 			right -70px
 			top 50%
 			transform translate(-50%, 0)
-			-webkit-transform translate(-50%, 0)
 			z-index 10
 			background url(../images/right.png) no-repeat center
 			height 36px
@@ -253,7 +232,6 @@ bgimg(uri)
 		left -40px
 		top 50%
 		transform translate(-50%, 0)
-		-webkit-transform translate(-50%, 0)
 		z-index 10
 		background url(../images/left.png) no-repeat center
 		height 32px
@@ -268,7 +246,6 @@ bgimg(uri)
 		right -70px
 		top 50%
 		transform translate(-50%, 0)
-		-webkit-transform translate(-50%, 0)
 		z-index 10
 		background url(../images/right.png) no-repeat center
 		height 36px
@@ -290,7 +267,7 @@ bgimg(uri)
 		margin 0 auto
 		position relative
 		display none
-		/* border 8px solid $color_active */
+		// border 8px solid $color_active
 		bgcolor(white)
 		&::before
 			content ''
@@ -393,12 +370,7 @@ bgimg(uri)
 				width 100%
 				height 290px
 				padding-top 72.5%
-				display -ms-flexbox
-				display -webkit-flex
 				display flex
-				-ms-flex-align center
-				-webkit-align-items center
-				-webkit-box-align center
 				align-items center
 				flex-direction column
 				justify-content center
@@ -424,9 +396,7 @@ bgimg(uri)
 				vertical-align middle
 			span 
 				display block
-				/*
-				font-weight 600
-				*/
+				// font-weight 600
 				position relative
 				/* padding-bottom 2px */
 				line-height 1.1
@@ -441,12 +411,7 @@ bgimg(uri)
 					font-weight bold
 					height 15px
 					position relative
-					display -ms-flexbox
-					display -webkit-flex
 					display flex
-					-ms-flex-align end
-					-webkit-align-items flex-end
-					-webkit-box-align end
 					align-items flex-end
 				&.marca
 					height 15px
@@ -472,7 +437,6 @@ bgimg(uri)
 					font-size 12px
 					padding-bottom 2px
 					font-weight bold
-					/**/
 					text-transform uppercase 
 					line-height 1
 					z-index 1
@@ -481,12 +445,7 @@ bgimg(uri)
 					font-size 114%
 					clear both
 					line-height 1
-					display -ms-flexbox
-					display -webkit-flex
 					display flex
-					-ms-flex-align center
-					-webkit-align-items center
-					-webkit-box-align center
 					align-items center
 					justify-content center
 					.bigger
@@ -584,12 +543,7 @@ bgimg(uri)
 			width 510px
 			height 294px
 			margin 0 auto
-			display -ms-flexbox
-			display -webkit-flex
 			display flex
-			-ms-flex-align center
-			-webkit-align-items center
-			-webkit-box-align center
 			align-items center
 			justify-content center
 			flex-direction column
@@ -604,7 +558,7 @@ bgimg(uri)
 		height 86px
 		position absolute
 		display table
-		font-family "Open Sans"
+		font-family "Open Sans", sans-serif
 		color #fff
 	.percent 
 		font-size 28px
@@ -732,7 +686,6 @@ bgimg(uri)
 			width 110px
 			display block
 			text-align right
-			-webkit-animation abefore 3s linear infinite 
 			animation abefore 3s linear infinite
 
 	.collapse-movil
@@ -740,11 +693,11 @@ bgimg(uri)
 		#btn-mobile
 			span
 				&:nth-child(1)
-					-webkit-transform rotate(45deg) translateY(6px) translateX(5px)
+					// -webkit-transform rotate(45deg) translateY(6px) translateX(5px)
 					transform rotate(45deg) translateY(5px) translateX(4px)
 					width 22px
 				&:nth-child(3)
-					-webkit-transform rotate(-45deg) translateY(-6px) translateX(5px)
+					// -webkit-transform rotate(-45deg) translateY(-6px) translateX(5px)
 					transform rotate(-45deg) translateY(-6px) translateX(5px)
 					width 22px
 				&:nth-child(2)
@@ -757,13 +710,8 @@ bgimg(uri)
 		overflow hidden
 		background $bg_sticky
 		transform translateZ(0)
-		-webkit-transform translateZ(0)
 		transform translate3d(0,0,0)
-		-webkit-transform translate3d(0,0,0)
-		transform-origin 50% 50% 
-		transform-origin 50% 50% 
-		-ms-transform-origin 50% 50% 
-		-webkit-transform-origin 50% 50% 
+		// transform-origin 50% 50% 
 		// vendor('transition', all 0.5s ease 0.25s)
 		.groupB 
 			//- display table
@@ -783,12 +731,7 @@ bgimg(uri)
 					text-align center !important
 					top auto !important
 					line-height 1.2 !important
-					display -ms-flexbox
-					display -webkit-flex
 					display flex
-					-ms-flex-align center
-					-webkit-align-items center
-					-webkit-box-align center
 					align-items center
 					justify-content center
 					flex-direction column
@@ -882,12 +825,7 @@ bgimg(uri)
 						span 
 							display block
 			.menos200
-				display -ms-flexbox
-				display -webkit-flex
 				display flex
-				-ms-flex-align center
-				-webkit-align-items center
-				-webkit-box-align center
 				align-items center
 				justify-content center
 				flex-direction column
@@ -922,20 +860,12 @@ bgimg(uri)
 			img
 				opacity 0
 				transform translateZ(0)
-				-webkit-transform translateZ(0)
 				transform scale(0.25)
-				-ms-transform scale(0.25)
-				-webkit-transform scale(0.25)
 				transform-origin 50% 50% 
-				transform-origin 50% 50% 
-				-ms-transform-origin 50% 50% 
-				-webkit-transform-origin 50% 50% 
 			&.scale
 				img
 					opacity 1
 					transform scale(1)
-					-ms-transform scale(1)
-					-webkit-transform scale(1)
 					vendor('transition', all 2s ease 0.5s)
 	/* Class AUX */
 	.navigate
@@ -955,20 +885,17 @@ bgimg(uri)
 		position absolute
 		top 50% !important
 		transform translate(0, -50%) !important
-		-webkit-transform translate(0, -50%) !important
 
 	.centerh
 		position absolute
 		left 50% !important
 		transform translate(-50%, 0) !important
-		-webkit-transform translate(-50%, 0) !important
 
 	.centervh
 		position absolute
 		left 50% !important
 		top 50% !important
 		transform translate(-50%, -50%) !important
-		-webkit-transform translate(-50%, -50%) !important
 
 	.bottom
 		position absolute
@@ -1041,9 +968,7 @@ bgimg(uri)
 		width 100%
 		z-index 100
 		transform translateZ(0)
-		-webkit-transform translateZ(0)
 		transform translate3d(0,0,0)
-		-webkit-transform translate3d(0,0,0)
 		// vendor('transition', all 1s ease 0.5s)
 		/* width auto */
 
@@ -1068,9 +993,6 @@ bgimg(uri)
 		z-index 99
 		cursor pointer
 		animation scrolling 2s infinite
-		-webkit-animation-name scrolling
-		-webkit-animation-duration 2s
-		-webkit-animation-iteration-count infinite
 
 	.link-section
 		width 100%

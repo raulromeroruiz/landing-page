@@ -87,7 +87,7 @@ vendor(prop, args)
 		position absolute
 		top 0
 		left 0
-	#main-menu
+	.menu-mobile
 		height 46px
 		float right
 		font-size 0
@@ -95,6 +95,7 @@ vendor(prop, args)
 		background-color black
 		display none
 		vendor('transition', all 0.2s ease-in 0s)
+		margin-top -250px
 		li
 			position relative
 			display inline-block
@@ -154,9 +155,29 @@ vendor(prop, args)
 		.menu 
 			float right
 			height 49px
+			transition all .3s ease-in-out
+			text-align left
+			vendor('transition', all 0.2s ease-in 0s)
 			li
 				a
 					padding 0px 20px
+					width auto
+					position relative
+					display block
+					line-height 1
+					text-align center
+					height 100%
+					color #fff
+					text-decoration none
+					margin 0 auto
+					font-size 20px
+					// display -ms-flexbox
+					// display -webkit-flex
+					display flex
+					// -ms-flex-align center
+					// -webkit-align-items center
+					// -webkit-box-align center
+					align-items center
 					&::after
 						content ''
 						width 1px
@@ -165,6 +186,58 @@ vendor(prop, args)
 						top 15px
 						right 0
 						background-color rgba(255,255,255,.25)
+					strong
+						display block
+						font-weight 600
+					.icon
+						margin-bottom 2px
+						display block
+						margin 0 auto
+						float left
+						height 42px
+						position absolute
+					.text
+						display block
+						vertical-align middle
+						text-align center
+						position relative
+						line-height 1
+						padding 0
+						width 100%
+						font-size 20px
+					.elements
+						display block
+						text-align center
+						font-size 16px
+						font-weight bold
+						width 100%
+						line-height 1
+					&:hover
+						background-position center bottom !important
+						
+				.active
+					&::after
+						content ''
+						width 52px
+						height 2px
+						background-color #ffc800
+						position absolute
+						bottom 1%
+						left 50%
+						transform translate(-50%, 0)
+						-webkit-transform translate(-50%, 0)
+				&::after
+					content ''
+					width 1px
+					height 20px
+					background-color #7b7272
+					position absolute
+					bottom 10px
+					right 0
+					display none
+				&:last-child
+					&::after
+						display none
 				&:last-child
 					a
 						&::after
@@ -174,7 +247,7 @@ vendor(prop, args)
 		height 113px
 		display block
 		transform skew(-10deg)
-		-webkit-transform skew(-10deg)
+		// -webkit-transform skew(-10deg)
 		width 100%
 		position relative
 	.logo-mobile
@@ -187,110 +260,28 @@ vendor(prop, args)
 		top 0
 		left 15px
 		height 100%
-		display -ms-flexbox
-		display -webkit-flex
+		// display -ms-flexbox
+		// display -webkit-flex
 		display flex
-		-ms-flex-align center
-		-webkit-align-items center
-		-webkit-box-align center
+		// -ms-flex-align center
+		// -webkit-align-items center
+		// -webkit-box-align center
 		align-items center
 		justify-content center
 	
 	.menu
 		font-size 0
 		list-style-type none
-		text-align center
-		height 49px
 		z-index 100
-		transition all .3s ease-in-out
-		text-align left
-		vendor('transition', all 0.2s ease-in 0s)
 		li
 			width auto
 			float left
-			/* margin 0 1% */
+			// margin 0 1%
 			height 100%
 			position relative
 			overflow hidden
-			/*
-			display -ms-flexbox
-			display -webkit-flex
-			display flex
-			-ms-flex-align center
-			-webkit-align-items center
-			-webkit-box-align center
-			align-items center
-			*/
-			a
-				width auto
-				position relative
-				display block
-				line-height 1
-				text-align center
-				height 100%
-				color #fff
-				text-decoration none
-				margin 0 auto
-				font-size 20px
-				display -ms-flexbox
-				display -webkit-flex
-				display flex
-				-ms-flex-align center
-				-webkit-align-items center
-				-webkit-box-align center
-				align-items center
-				strong
-					display block
-					font-weight 600
-				.icon
-					margin-bottom 2px
-					display block
-					margin 0 auto
-					float left
-					height 42px
-					position absolute
-				.text
-					display block
-					vertical-align middle
-					text-align center
-					position relative
-					line-height 1
-					padding 0
-					width 100%
-					font-size 20px
-				.elements
-					display block
-					text-align center
-					font-size 16px
-					font-weight bold
-					width 100%
-					line-height 1
-				&:hover
-					background-position center bottom !important
-					
-			.active
-				&::after
-					content ''
-					width 52px
-					height 2px
-					background-color #ffc800
-					position absolute
-					bottom 1%
-					left 50%
-					transform translate(-50%, 0)
-					-webkit-transform translate(-50%, 0)
-			&::after
-				content ''
-				width 1px
-				height 20px
-				background-color #7b7272
-				position absolute
-				bottom 10px
-				right 0
-				display none
-			&:last-child
-				&::after
-					display none
+			// display flex
+			// align-items center
 
 	.submenu
 		width 100%
@@ -353,9 +344,9 @@ vendor(prop, args)
 		vendor('transition', all 0.2s ease-in 0s)
 		z-index 99
 		animation scrolling 2s infinite
-		-webkit-animation-name scrolling
-		-webkit-animation-duration 2s
-		-webkit-animation-iteration-count infinite
+		// -webkit-animation-name scrolling
+		// -webkit-animation-duration 2s
+		// -webkit-animation-iteration-count infinite
 		&:hover
 			bottom 9px
 	.arrow-scroll
@@ -1313,8 +1304,8 @@ vendor(prop, args)
 
 	.collapse-movil
 		background-color black
-		.menu
-			margin-top 50px
+		.menu-mobile
+			margin-top 50px !important
 		#btn-mobile
 			span
 				&:nth-child(1)
@@ -1327,8 +1318,6 @@ vendor(prop, args)
 					opacity 0
 			&::before
 				content ''
-
-
 
 	/* Class AUX */
 	.navigate
