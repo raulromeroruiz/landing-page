@@ -1,0 +1,2875 @@
+extends ./layout/layout.pug
+
+block title
+	title #{title} - Ripley
+
+block content
+	- var base_url = 'http://simple.ripley.com.pe/campaign/ofertas/cierrapuertas-'
+
+	- var menu = [{name:'TV y Videojuegos', hash:'tv-y-video', href:'tv-video', icon:'video'}, {name:'Cómputo', hash:'computo', href:'computo', icon:'tecnologia'}, {name:'Celulares y Tecnología', hash:'celulares', href:'celulares-y-tecnologia', icon:'celulares'}, {name:'Línea Blanca', hash:'electrohogar', href:'electrohogar', icon:'electrohogar'}, {name:'Muebles', hash:'muebles', href:'muebles', icon:'muebleria'}, {name:'Dormitorio', hash:'dormitorio', href:'dormitorio', icon:'dormitorio'}, {name:'Hogar', hash:'ripley-home', href:'deco', icon:'decohogar'}, {name:'Deporte', hash:'deporte', href:'deporte', icon:'deporte'}, {name:'Accesorios y Belleza', hash:'belleza-y-accesorios', href:'belleza-y-accesorios', icon:'relojes'}, {name:'Calzado', hash:'calzado', href:'calzado', icon:'belleza'}, {name:'Juguetes y Bebés', hash:'infantil', href:'infantil', icon:'bebe'}, {name:'Moda', hash:'moda', href:'moda', icon:'moda'}]
+
+	include includes/mixins.pug
+
+	.container-fluid
+		nav.nav-bar
+			.current-category.centervh.align-left
+				| Cierrapuertas Online
+			button#btn-mobile
+				span
+				span
+				span
+			ul#main-menu.menu
+				//- li
+					a.lnk-menu(href!= base_url +'online')
+						| Mejores descuentos
+						//- | Regalos TOP para mamá
+				each item in menu
+					li
+						a.lnk-menu(href!= base_url.replace('campaign', item.hash) + item.href, data-seccion!= item.name, target='_top')
+							//- span.iconress(class!= item.icon)
+							//- span.text
+							= item.name
+			//- ul#main-menu.menu
+				li
+					a.lnk-menu(href!= base_url +'online')
+						| Mejores descuentos
+						//- | Regalos TOP para mamá
+				li
+					a.lnk-menu(href!= base_url +'tv-video')
+						| TV y Video
+						//- | TV y Audio
+				li
+					a.lnk-menu(href!= base_url +'computo')
+						| Cómputo
+						//- | Laptops y Tablets
+				li
+					a.lnk-menu(href!= base_url +'celulares-y-entretenimiento')
+						| Celulares
+						//- | Celulares y Videojuegos
+				li
+					a.lnk-menu(href!= base_url +'electrohogar')
+						| Electrohogar
+				li
+					a.lnk-menu(href!= base_url +'muebleria')
+						| Muebles
+				li
+					a.lnk-menu(href!= base_url +'dormitorio')
+						| Dormitorio
+				li
+					a.lnk-menu(href!= base_url +'deco')
+						| Ripley Home
+				li
+					a.lnk-menu(href!= base_url +'deporte')
+						| Deporte
+						//- | Máquinas y Bicicletas
+				li
+					a.lnk-menu(href!= base_url +'belleza-y-accesorios')
+						| Belleza y Accesorios
+						//- | Relojes y Accesorios
+				li
+					a.lnk-menu(href!= base_url +'calzado')
+						| Calzado
+						//- | Calzado y Zapatillas
+				li
+					a.lnk-menu(href!= base_url +'infantil')
+						| Infantil
+						//- | Jueguetes y Bebés
+				li
+					a.lnk-menu(href!= base_url +'moda')
+						| Moda
+						//- | Jueguetes y Bebés
+		.row
+			.col-xs-12.col-sm-12.col-md-12.col-lg-12.col-xl-12
+
+				#header-banner
+					#sponsor
+						include ./includes/banner-catalogo.pug
+					//- iframe#sliders(frameborder="none", with="100%", height="100%")
+				//- #sponsor
+					//- img.logo-campaign.centerh(src='assets/logo-campaign.png')
+
+					// LAPTOPS Y TABLETS
+					//-  .slider-banner#slider-000
+					.slider-banner#slider-laptops-y-tablets
+						span.slider-prev
+						span.slider-next
+						.banner
+							// Slide LAPTOPS 1
+							.slide
+								img.logo-campaign.centerh(src='assets/logo-laptops.jpg')
+								.calls
+									.column.izq.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+										//- .discount
+											.percent 40
+											.simbol
+												| %
+												span DSCTO.
+										a.call-left(href='#')
+											.imagen
+												img.centerv(alt='', src='productos/1.jpg')
+											.content
+												.wrapper
+													.table
+														span.aon
+														span.marca
+															img(alt='', src='marcas/hp.jpg')
+														span.descripcion LAPTOP CORE i3
+															.line AY011
+															.line &nbsp;
+														span.antes Precio Normal: S/ 1,499
+														span.cyber Precio Oferta
+														span.price
+															| S/ 
+															span 1,699
+									.column.der.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+										//- .discount
+											.percent 70
+											.simbol
+												| %
+												span DSCTO.
+										a.call-right(href='#')
+											.content
+												.wrapper
+													.table
+														span.aon
+														span.marca
+															img(alt='', src='marcas/lenovo.jpg')
+														span.descripcion LAPTOP CORE i5
+															.line IDEAPAD 310 CON
+															.line TARJETA DE VIDEO 2GB
+														span.antes Precio Normal: S/ 2,599
+														span.cyber Precio Oferta
+														span.price
+															| S/ 
+															span 1,899
+											.imagen
+												img.centerv(alt='', src='productos/2.jpg')
+
+							// Slide LAPTOPS 2
+							.slide
+								img.logo-campaign.centerh(src='assets/logo-laptops.jpg')
+								.calls
+									.column.izq.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+										//- .discount
+											.percent 40
+											.simbol
+												| %
+												span DSCTO.
+										a.call-left(href='#')
+											.imagen
+												img.centerv(alt='', src='productos/3.jpg')
+											.content
+												.wrapper
+													.table
+														span.aon
+														span.marca
+															img(alt='', src='marcas/asus.jpg')
+														span.descripcion LAPTOP CORE i7
+															.line X555LA
+															.line &nbsp;
+														span.antes Precio Normal: S/ 2,999
+														span.cyber Precio Oferta
+														span.price
+															| S/ 
+															span 2,099
+									.column.der.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+										//- .discount
+											.percent 70
+											.simbol
+												| %
+												span DSCTO.
+										a.call-right(href='#')
+											.content
+												.wrapper
+													.table
+														span.aon
+														span.marca
+															img(alt='', src='marcas/dell.jpg')
+														span.descripcion LAPTOP CORE i5
+															.line I3459 CON TARJETA
+															.line DE VIDEO 2GB
+														span.antes Precio Normal: S/ 2,399
+														span.cyber Precio Oferta
+														span.price
+															| S/ 
+															span 1,699
+											.imagen
+												img.centerv(alt='', src='productos/4.jpg')
+
+					// TV Y AUDIO
+					.slider-banner#slider-tv-y-audio
+						span.slider-prev
+						span.slider-next
+						.banner
+							// Slide TV - AUDIO 1
+							.slide
+								img.logo-campaign.centerh(src='assets/logo-tv-audio.jpg')
+								.calls
+									.column.izq.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+										//- .discount
+											.percent 40
+											.simbol
+												| %
+												span DSCTO.
+										a.call-left(href='#')
+											.imagen
+												img.centerv(alt='', src='productos/5.jpg')
+											.content
+												.wrapper
+													.table
+														span.aon
+														span.marca
+															img(alt='', src='marcas/lg.jpg')
+														span.descripcion SMART TV
+															.line 49UH6500
+														span.antes Precio Normal: S/ 3,599
+														span.cyber Precio Oferta
+														span.price
+															| S/
+															span 1,899
+									.column.der.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+										//- .discount
+											.percent 70
+											.simbol
+												| %
+												span DSCTO.
+										a.call-right(href='#')
+											.content
+												.wrapper
+													.table
+														span.aon
+														span.marca
+															img(alt='', src='marcas/samsung.jpg')
+														span.descripcion Smart TV
+															.line 40KU6000
+														span.antes Precio Normal: S/ 2,499
+														span.cyber Precio Oferta
+														span.price
+															| S/ 
+															span 1,399
+											.imagen
+												img.centerv(alt='', src='productos/6.jpg')
+
+							// Slide TV - AUDIO 2
+							.slide
+								img.logo-campaign.centerh(src='assets/logo-tv-audio.jpg')
+								.calls
+									.column.izq.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+										//- .discount
+											.percent 40
+											.simbol
+												| %
+												span DSCTO.
+										a.call-left(href='#')
+											.imagen
+												img.centerv(alt='', src='productos/7.jpg')
+											.content
+												.wrapper
+													.table
+														span.aon
+														span.marca
+															img(alt='', src='marcas/lg.jpg')
+														span.descripcion MINI COMPONENTE
+															.line CM4360
+														span.antes Precio Normal: S/ 399
+														span.cyber Precio Oferta
+														span.price
+															| S/ 
+															span 199
+									.column.der.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+										//- .discount
+											.percent 70
+											.simbol
+												| %
+												span DSCTO.
+										a.call-right(href='#')
+											.content
+												.wrapper
+													.table
+														span.aon
+														span.marca
+															img(alt='', src='marcas/lg.jpg')
+														span.descripcion BARRA DE 
+															.line SONIDO SH2
+														span.antes Precio Normal: S/ 399
+														span.cyber Precio Oferta
+														span.price
+															| S/ 
+															span 199
+											.imagen
+												img.centerv(alt='', src='productos/8.jpg')
+
+					// CELULARES Y VIDEOJUEGOS
+					.slider-banner#slider-celulares-y-videojuegos
+						span.slider-prev
+						span.slider-next
+						.banner
+							// Slide CELULARES 1
+							.slide
+								img.logo-campaign.centerh(src='assets/logo-celulares.jpg')
+								.calls
+									.column.izq.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+										//- .discount
+											.percent 40
+											.simbol
+												| %
+												span DSCTO.
+										a.call-left(href='#')
+											.imagen
+												img.centerv(alt='', src='productos/9.jpg')
+											.content
+												.wrapper
+													.table
+														span.aon
+														span.marca
+															img(alt='', src='marcas/motog4-play.jpg')
+														span.descripcion 8MP DOBLE CHIP
+															//- .line de cuero
+														span.antes Precio Normal: S/ 999
+														span.cyber PRECIO OFERTA
+														span.price
+															| S/ 
+															span 429
+														//- span.note.f-size9
+															| *Disponible en 1 y 3 cuerpos
+														//- span.colores
+															| Colores disponibles
+														//- span.iconos-colores
+															img(src='images/color-negro.png')
+															img(src='images/color-blanco.png')
+									.column.der.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+										//- .discount
+											.percent 70
+											.simbol
+												| %
+												span DSCTO.
+										a.call-right(href='#')
+											.content
+												.wrapper
+													.table
+														span.aon
+														span.marca
+															img(alt='', src='marcas/motog4-plus.jpg')
+														span.descripcion 16 MP XT1641
+															//- z.line mesa + 6 sillas
+														span.antes Precio Normal: S/ 1,399
+														span.cyber Precio Oferta
+														span.price
+															| S/ 
+															span 949
+											.imagen
+												img.centerv(alt='', src='productos/10.jpg')
+
+							// Slide CELULARES 2
+							.slide
+								img.logo-campaign.centerh(src='assets/logo-celulares.jpg')
+								.calls
+									.column.izq.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+										//- .discount
+											.percent 40
+											.simbol
+												| %
+												span DSCTO.
+										a.call-left(href='#')
+											.imagen
+												img.centerv(alt='', src='productos/11.jpg')
+											.content
+												.wrapper
+													.table
+														span.aon
+														span.marca
+															img(alt='', src='marcas/lenovo.jpg')
+														span.descripcion VIBE K5 4G
+															//- .line de cuero
+														span.antes Precio Normal: S/ 999
+														span.cyber PRECIO OFERTA
+														span.price
+															| S/ 
+															span 479
+														//- span.note.f-size9
+															| *Disponible en 1 y 3 cuerpos
+														//- span.colores
+															| Colores disponibles
+														//- span.iconos-colores
+															img(src='images/color-negro.png')
+															img(src='images/color-blanco.png')
+									.column.der.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+										//- .discount
+											.percent 70
+											.simbol
+												| %
+												span DSCTO.
+										a.call-right(href='#')
+											.content
+												.wrapper
+													.table
+														span.aon
+														span.marca
+															img(alt='', src='marcas/asus.jpg')
+														span.descripcion Zenfone GO
+															//- z.line mesa + 6 sillas
+														span.antes Precio Normal: S/ 499
+														span.cyber Precio Oferta
+														span.price
+															| S/ 
+															span 299
+											.imagen
+												img.centerv(alt='', src='productos/12.jpg')
+
+					// ELECTROHOGAR
+					.slider-banner#slider-electrohogar
+						span.slider-prev
+						span.slider-next
+						.banner
+							// Slide ELECTROHOGAR 1
+							.slide
+								img.logo-campaign.centerh(src='assets/logo-electro.jpg')
+								.calls
+									.column.izq.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+										//- .discount
+											.percent 40
+											.simbol
+												| %
+												span DSCTO.
+										a.call-left(href='#')
+											.imagen
+												img.centerv(alt='', src='productos/13.jpg')
+											.content
+												.wrapper
+													.table
+														span.aon
+														span.marca
+															img(alt='', src='marcas/samsung.jpg')
+														span.descripcion REFRIGERADORA
+															.line RT29K5030S8
+														span.antes Precio Normal: S/ 1,599
+														span.cyber Precio Oferta
+														span.price
+															| S/ 
+															span 1,149
+									.column.der.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+										//- .discount
+											.percent 70
+											.simbol
+												| %
+												span DSCTO.
+										a.call-right(href='#')
+											.content
+												.wrapper
+													.table
+														span.aon
+														span.marca
+															img(alt='', src='marcas/lg.jpg')
+														span.descripcion LAVADORA
+															.line T1266TPJ
+														span.antes Precio Normal: S/ 1,299
+														span.cyber Precio Oferta
+														span.price
+															| S/ 
+															span 799
+											.imagen
+												img.centerv(alt='', src='productos/14.jpg')
+
+							// Slide ELECTROHOGAR 2
+							.slide
+								img.logo-campaign.centerh(src='assets/logo-electro.jpg')
+								.calls
+									.column.izq.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+										//- .discount
+											.percent 40
+											.simbol
+												| %
+												span DSCTO.
+										a.call-left(href='#')
+											.imagen
+												img.centerv(alt='', src='productos/15.jpg')
+											.content
+												.wrapper
+													.table
+														span.aon
+														span.marca
+															img(alt='', src='marcas/indurama.jpg')
+														span.descripcion COCINA VIENA
+															.line 4 QUEMADORES
+														span.antes Precio Normal: S/ 1,149
+														span.cyber Precio Oferta
+														span.price
+															| S/ 
+															span 499
+														//- span.colores
+															| Colores disponibles
+														//- span.iconos-colores
+															img(src='images/gris-oscuro.jpg')
+															img(src='images/plata.jpg')
+									.column.der.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+										//- .discount
+											.percent 70
+											.simbol
+												| %
+												span DSCTO.
+										a.call-right(href='#')
+											.content
+												.wrapper
+													.table
+														span.aon
+														span.marca
+															img(alt='', src='marcas/samsung.jpg')
+														span.descripcion LAVADORA
+															.line WA13F5L2UDW1PE
+														span.antes Precio Normal: S/ 1,349
+														span.cyber Precio Oferta
+														span.price
+															| S/ 
+															span 849
+											.imagen
+												img.centerv(alt='', src='productos/16.jpg')
+
+					// MUEBLES
+					.slider-banner#slider-muebles
+						span.slider-prev
+						span.slider-next
+						.banner
+							// Slide MUEBLES 1
+							.slide
+								img.logo-campaign.centerh(src='assets/logo-muebles.jpg')
+								.calls
+									.column.izq.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+										//- .discount
+											.percent 40
+											.simbol
+												| %
+												span DSCTO.
+										a.call-left(href='#')
+											.imagen
+												img.centerv(alt='', src='productos/17.jpg')
+											.content
+												.wrapper
+													.table
+														span.aon
+														span.marca
+															img(alt='', src='marcas/home.jpg')
+														span.descripcion COMEDOR SORIA
+															.line MESA + 4 SILLAS
+														span.antes Precio Normal: S/ 2,775
+														span.cyber Precio Oferta
+														span.price
+															| S/ 
+															span 549
+														span.pay-note
+															| Todo medio de pago
+														//- span.colores
+															| Colores disponibles
+														//- span.iconos-colores
+															img(src='images/gris-oscuro.jpg')
+															img(src='images/plata.jpg')
+									.column.der.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+										//- .discount
+											.percent 70
+											.simbol
+												| %
+												span DSCTO.
+										a.call-right(href='#')
+											.content
+												.wrapper
+													.table
+														span.aon
+														//- span.hasta.align-left Hasta
+														span.marca
+															img.centerh(alt='', src='marcas/outlet-decohogar.jpg')
+														//- span.descripcion
+														//- span.antes
+														//- span.cyber
+														span.price.porcentual.box-center
+															span.number 80
+															span.percent %
+																.dscto DSCTO.
+														span.note.align-center
+															| en miles de productos
+														span.pay-note.align-center
+															| Todo medio de pago
+														//- span.colores.align-center
+															img(src='images/monark.jpg')
+											.imagen
+												img.centerv(alt='', src='productos/18.jpg')
+
+							// Slide MUEBLES 2
+							.slide
+								img.logo-campaign.centerh(src='assets/logo-muebles.jpg')
+								.calls
+									.column.izq.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+										//- .discount
+											.percent 40
+											.simbol
+												| %
+												span DSCTO.
+										a.call-left(href='#')
+											.imagen
+												img.centerv(alt='', src='productos/19.jpg')
+											.content
+												.wrapper
+													.table
+														span.aon
+														span.marca
+															img(alt='', src='marcas/home.png')
+														span.descripcion JUEGO DE SALA BIANCA
+															.line 3 + 2 CUERPOS
+														span.antes Precio Normal: S/ 4,249
+														span.cyber Precio Oferta
+														span.price
+															| S/ 
+															span 1,699
+														span.pay-note
+															| Todo medio de pago
+														//- span.colores
+															| Colores disponibles
+														//- span.iconos-colores
+															img(src='images/gris-oscuro.png')
+															img(src='images/plata.png')
+									.column.der.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+										//- .discount
+											.percent 70
+											.simbol
+												| %
+												span DSCTO.
+										a.call-right(href='#')
+											.content
+												.wrapper
+													.table
+														span.aon
+														span.hasta.align-left.box-center Hasta
+														//- span.marca
+															img(alt='', src='marcas/home.jpg')
+														//- span.descripcion
+														//- span.antes
+														//- span.cyber
+														span.price.porcentual.box-center
+															span.number 60
+															span.percent %
+																.dscto DSCTO.
+														span.note.align-center
+															| en Muebles de Dormitorio
+														//- span.colores.align-center
+															img(src='images/monark.png')
+											.imagen
+												img.centerv(alt='', src='productos/20.jpg')
+
+					// DORMITORIO
+					.slider-banner#slider-dormitorio
+						span.slider-prev
+						span.slider-next
+						.banner
+							// Slide DORMITORIO 1
+							.slide
+								img.logo-campaign.centerh(src='assets/logo-dormitorio.jpg')
+								.calls
+									.column.izq.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+										//- .discount
+											.percent 40
+											.simbol
+												| %
+												span DSCTO.
+										a.call-left(href='#')
+											.imagen
+												img.centerv(alt='', src='productos/21.jpg')
+											.content
+												.wrapper
+													.table
+														span.aon
+														span.marca
+															img(alt='', src='marcas/rosen.jpg')
+														span.descripcion CAMA BEAT 2 PLZ
+															.line + KIT ELBA
+														span.antes Precio Normal: S/ 1,996
+														span.cyber Precio Oferta
+														span.price
+															| S/ 
+															span 899
+														span.note.f-size8
+															| Incluye: Colchón + Box Tarima + Cabecera + 2 Veladores
+									.column.der.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+										//- .discount
+											.percent 70
+											.simbol
+												| %
+												span DSCTO.
+										a.call-right(href='#')
+											.content
+												.wrapper
+													.table
+														span.aon
+														span.marca
+															img(alt='', src='marcas/paraiso.jpg')
+														span.descripcion CAMA NAPPY 2 PLZ
+															.line + KIT LAURENCE
+														span.antes Precio Normal: S/ 1,998
+														span.cyber Precio Oferta
+														span.price
+															| S/ 
+															span 1,049
+														span.note.f-size8
+															| Incluye: Colchón + Box Tarima + Cabecera + 2 Veladores
+											.imagen
+												img.centerv(alt='', src='productos/22.jpg')
+
+							// Slide DORMITORIO 2
+							.slide
+								img.logo-campaign.centerh(src='assets/logo-dormitorio.jpg')
+								.calls
+									.column.izq.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+										//- .discount
+											.percent 40
+											.simbol
+												| %
+												span DSCTO.
+										a.call-left(href='#')
+											.imagen
+												img.centerv(alt='', src='productos/23.jpg')
+											.content
+												.wrapper
+													.table
+														span.aon
+														span.marca
+															img(alt='', src='marcas/rizzoli.jpg')
+														span.descripcion CAMA DIVÁN 
+															.line 1.5 PLZ + KIT CHARM
+														//- span.antes Precio Normal: S/ 1,996
+														span.cyber DESDE
+														span.price
+															| S/ 
+															span 1,099
+														span.note.f-size8
+															| Incluye: Cama principal 1.5 plz + Cama auxiliar 1plz + Velador + Cómoda
+									.column.der.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+										//- .discount
+											.percent 70
+											.simbol
+												| %
+												span DSCTO.
+										a.call-right(href='#')
+											.content
+												.wrapper
+													.table
+														span.aon
+														span.marca
+															img(alt='', src='marcas/cisne.jpg')
+														span.descripcion CAMA AMERICANA
+															.line BASIC CLÁSICO - 	2 PLZ
+														span.antes Precio Normal: S/ 839
+														span.cyber Precio Oferta
+														span.price
+															| S/ 
+															span 699
+														span.note.f-size8
+															| Incluye: Colchón + Box Tarima + Almohada
+											.imagen
+												img.centerv(alt='', src='productos/24.jpg')
+
+					// DECOHOGAR
+					.slider-banner#slider-decohogar
+						span.slider-prev
+						span.slider-next
+						.banner
+							// Slide DECOHOGAR 1
+							.slide
+								img.logo-campaign.centerh(src='assets/logo-decohogar.jpg')
+								.calls
+									.column.izq.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+										//- .discount
+											.percent 40
+											.simbol
+												| %
+												span DSCTO.
+										a.call-left(href='#')
+											.imagen
+												img.centerv(alt='', src='productos/25.jpg')
+											.content
+												.wrapper
+													.table
+														span.aon
+														span.hasta.align-left.box-center Hasta
+														//- span.marca
+														//- span.descripcion
+														//- span.antes
+														//- span.cyber.align-left.box-center &nbsp;
+														span.price.porcentual.box-center
+															span.number 60
+															span.percent %
+																.dscto DSCTO.
+														span.note.align-center
+															| en  
+															//- span.bigger
+															| Muebles decorativos
+														span.pay-note.align-center
+															| Todo medio de pago
+									.column.der.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+										//- .discount
+											.percent 70
+											.simbol
+												| %
+												span DSCTO.
+										a.call-right(href='#')
+											.content
+												.wrapper
+													.table
+														span.aon
+														span.hasta.align-left.box-center Hasta
+														//- span.marca
+														//- span.descripcion
+														//- span.antes
+														//- span.cyber.align-left Hasta
+														span.price.porcentual.box-center
+															span.number 40
+															span.percent %
+																.dscto DSCTO.
+														span.note.align-center
+															| en 
+															//- span.bigger 
+															| Ropa de cama
+														//- span.colores.align-center
+															img(src='images/guess.jpg')
+															img(src='images/casio.jpg')
+															img(src='images/citizen.jpg')
+															img(src='images/nautica.jpg')
+															img(src='images/aerostar.jpg')
+											.imagen
+												img.centerv(alt='', src='productos/26.jpg')
+
+							// Slide DECOHOGAR 2
+							.slide
+								img.logo-campaign.centerh(src='assets/logo-decohogar.jpg')
+								.calls
+									.column.izq.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+										//- .discount
+											.percent 40
+											.simbol
+												| %
+												span DSCTO.
+										a.call-left(href='#')
+											.imagen
+												img.centerv(alt='', src='productos/27.jpg')
+											.content
+												.wrapper
+													.table
+														span.aon
+														span.hasta.align-left.box-center Hasta
+														//- span.marca
+														//- span.descripcion
+														//- span.antes
+														//- span.cyber.align-left.box-center &nbsp;
+														span.price.porcentual.box-center
+															span.number 50
+															span.percent %
+																.dscto DSCTO.
+														span.note.align-center
+															| en  
+															img(src='images/record.jpg')
+														span.pay-note.align-center
+															| Todo medio de pago
+									.column.der.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+										//- .discount
+											.percent 70
+											.simbol
+												| %
+												span DSCTO.
+										a.call-right(href='#')
+											.content
+												.wrapper
+													.table
+														span.aon
+														span.hasta.align-left.box-center Hasta
+														//- span.marca
+														//- span.descripcion
+														//- span.antes
+														//- span.cyber.align-left Hasta
+														span.price.porcentual.box-center
+															span.number 40
+															span.percent %
+																.dscto DSCTO.
+														span.note.align-center
+															| en 
+															img(src='images/ferrand.jpg')
+														span.pay-note.align-center
+															| Todo medio de pago
+														//- span.colores.align-center
+															img(src='images/guess.jpg')
+															img(src='images/casio.jpg')
+															img(src='images/citizen.jpg')
+															img(src='images/nautica.jpg')
+															img(src='images/aerostar.jpg')
+											.imagen
+												img.centerv(alt='', src='productos/28.jpg')
+
+							// Slide DECOHOGAR 3
+							.slide
+								img.logo-campaign.centerh(src='assets/logo-decohogar.jpg')
+								.calls
+									.column.izq.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+										//- .discount
+											.percent 40
+											.simbol
+												| %
+												span DSCTO.
+										a.call-left(href='#')
+											.imagen
+												img.centerv(alt='', src='productos/29.jpg')
+											.content
+												.wrapper
+													.table
+														span.aon
+														span.hasta.align-left.box-center Hasta
+														//- span.marca
+														//- span.descripcion
+														//- span.antes
+														//- span.cyber.align-left.box-center &nbsp;
+														span.price.porcentual.box-center
+															span.number 40
+															span.percent %
+																.dscto DSCTO.
+														span.note.align-center
+															| en  
+															//- span.bigger
+															| Parrillas, Cilindros y Cajas chinas
+														span.pay-note.align-center
+															| Todo medio de pago
+									.column.der.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+										//- .discount
+											.percent 70
+											.simbol
+												| %
+												span DSCTO.
+										a.call-right(href='#')
+											.content
+												.wrapper
+													.table
+														span.aon
+														span.hasta.align-left.box-center Hasta
+														//- span.marca
+														//- span.descripcion
+														//- span.antes
+														//- span.cyber.align-left Hasta
+														span.price.porcentual.box-center
+															span.number 30
+															span.percent %
+																.dscto DSCTO.
+														span.note.align-center
+															| en 
+															img(src='images/tramontina.jpg')
+														span.pay-note.align-center
+															| Todo medio de pago
+														//- span.colores.align-center
+															img(src='images/guess.jpg')
+															img(src='images/casio.jpg')
+															img(src='images/citizen.jpg')
+															img(src='images/nautica.jpg')
+															img(src='images/aerostar.jpg')
+											.imagen
+												img.centerv(alt='', src='productos/30.jpg')
+
+					// MAQUINAS Y BICICLETAS
+					.slider-banner#slider-maquinas-y-bicicletas
+						span.slider-prev
+						span.slider-next
+						.banner
+							// Slide DEPORTE 1
+							.slide
+								img.logo-campaign.centerh(src='assets/logo-deporte.jpg')
+								.calls
+									.column.izq.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+										//- .discount
+											.percent 40
+											.simbol
+												| %
+												span DSCTO.
+										a.call-left(href='#')
+											.imagen
+												img.centerv(alt='', src='productos/31.jpg')
+											.content
+												.wrapper
+													.table
+														span.aon
+														span.marca
+															img(alt='', src='marcas/monark.jpg')
+														span.descripcion ELÍPTICA TRAINER
+														span.antes Precio Normal: S/ 799
+														span.cyber Precio Oferta
+														span.price
+															| S/ 
+															span 599
+														//- span.colores
+															| Colores disponibles
+														//- span.iconos-colores
+															img(src='images/gris-oscuro.png')
+															img(src='images/plata.png')
+									.column.der.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+										//- .discount
+											.percent 70
+											.simbol
+												| %
+												span DSCTO.
+										a.call-right(href='#')
+											.content
+												.wrapper
+													.table
+														span.aon
+														span.hasta.align-left.box-center Hasta
+														//- span.marca.align-left Hasta
+														//- span.descripcion
+														//- span.antes
+														//- span.cyber
+														span.price.porcentual.box-center
+															span.number 40
+															span.percent %
+																.dscto DSCTO.
+														span.adicional
+															img(src='images/adicional15.jpg')
+														span.note.align-center
+															| en Bicicletas
+														//- span.colores.align-center
+															img(src='images/monark.jpg')
+											.imagen
+												img.centerv(alt='', src='productos/32.jpg')
+																
+							// Slide MAQUINAS 2
+							.slide
+								img.logo-campaign.centerh(src='assets/logo-deporte.jpg')
+								.calls
+									.column.izq.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+										//- .discount
+											.percent 40
+											.simbol
+												| %
+												span DSCTO.
+										a.call-left(href='#')
+											.imagen
+												img.centerv(alt='', src='productos/33.jpg')
+											.content
+												.wrapper
+													.table
+														span.aon
+														span.marca
+															img(alt='', src='marcas/best.jpg')
+														span.descripcion ELÍPTICA FIT
+															.line MAGNETICA X5
+														span.antes Precio Normal: S/ 1,090
+														span.cyber Precio Oferta
+														span.price
+															| S/ 
+															span 679
+														//- span.colores
+															| Colores disponibles
+														//- span.iconos-colores
+															img(src='images/gris-oscuro.png')
+															img(src='images/plata.png')
+									.column.der.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+										//- .discount
+											.percent 70
+											.simbol
+												| %
+												span DSCTO.
+										a.call-right(href='#')
+											.content
+												.wrapper
+													.table
+														span.aon
+														span.hasta.align-left.box-center Hasta
+														//- span.marca
+														//- span.descripcion
+														//- span.antes
+														//- span.cyber
+														span.price.porcentual.box-center
+															span.number 40
+															span.percent %
+																.dscto DSCTO.
+														span.adicional
+															img(src='images/adicional15.jpg')
+														span.note.align-center
+															| en Bicicletas de paseo
+														//- span.colores.align-center
+															img(src='images/monark.jpg')
+											.imagen
+												img.centerv(alt='', src='productos/34.jpg')
+
+					// JUGUETES Y BEBES
+					.slider-banner#slider-juguetes-y-bebes
+						span.slider-prev
+						span.slider-next
+						.banner
+							// Slide JUGUETES 1
+							.slide
+								img.logo-campaign.centerh(src='assets/logo-juguetes.jpg')
+								.calls
+									.column.izq.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+										//- .discount
+											.percent 40
+											.simbol
+												| %
+												span DSCTO.
+										a.call-left(href='#')
+											.imagen
+												img.centerv(alt='', src='productos/35.jpg')
+											.content
+												.wrapper
+													.table
+														span.aon
+														span.hasta.align-left.box-center Hasta
+														//- span.marca
+														//- span.descripcion
+														//- span.antes
+														//- span.cyber.align-left.box-center &nbsp;
+														span.price.porcentual.box-center
+															span.number 70
+															span.percent %
+																.dscto DSCTO.
+														span.note.align-center
+															| en  
+															//- span.bigger
+															| Juguetes
+									.column.der.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+										//- .discount
+											.percent 70
+											.simbol
+												| %
+												span DSCTO.
+										a.call-right(href='#')
+											.content
+												.wrapper
+													.table
+														span.aon
+														span.hasta.align-left.box-center Hasta
+														//- span.marca
+														//- span.descripcion
+														//- span.antes
+														//- span.cyber.align-left.box-center Hasta
+														span.price.porcentual.box-center
+															span.number 50
+															span.percent %
+																.dscto DSCTO.
+														span.note.align-center
+															| en 
+															//- span.bigger 
+															| Coches
+														//- span.colores.align-center
+															img(src='images/guess.jpg')
+															img(src='images/casio.jpg')
+															img(src='images/citizen.jpg')
+															img(src='images/nautica.jpg')
+															img(src='images/aerostar.jpg')
+											.imagen
+												img.centerv(alt='', src='productos/36.jpg')
+
+							// Slide JUGUETES 2
+							.slide
+								img.logo-campaign.centerh(src='assets/logo-juguetes.jpg')
+								.calls
+									.column.izq.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+										//- .discount
+											.percent 40
+											.simbol
+												| %
+												span DSCTO.
+										a.call-left(href='#')
+											.imagen
+												img.centerv(alt='', src='productos/37.jpg')
+											.content
+												.wrapper
+													.table
+														span.aon
+														span.hasta.align-left.box-center Hasta
+														//- span.marca
+														//- span.descripcion
+														//- span.antes
+														//- span.cyber.align-left.box-center &nbsp;
+														span.price.porcentual.box-center
+															span.number 70
+															span.percent %
+																.dscto DSCTO.
+														span.note.align-center
+															| en  
+															//- span.bigger
+															| Juegos de Exterior
+									.column.der.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+										//- .discount
+											.percent 70
+											.simbol
+												| %
+												span DSCTO.
+										a.call-right(href='#')
+											.content
+												.wrapper
+													.table
+														span.aon
+														span.hasta.align-left.box-center Hasta
+														//- span.marca
+														//- span.descripcion
+														//- span.antes
+														//- span.cyber.align-left.box-center Hasta
+														span.price.porcentual.box-center
+															span.number 50
+															span.percent %
+																.dscto DSCTO.
+														span.note.align-center
+															| en 
+															//- span.bigger 
+															| Sillas de Auto
+														//- span.colores.align-center
+															img(src='images/guess.jpg')
+															img(src='images/casio.jpg')
+															img(src='images/citizen.jpg')
+															img(src='images/nautica.jpg')
+															img(src='images/aerostar.jpg')
+											.imagen
+												img.centerv(alt='', src='productos/38.jpg')
+
+					// CALZDO Y ZAPATILLAS
+					.slider-banner#slider-calzado-y-zapatillas
+						span.slider-prev
+						span.slider-next
+						.banner
+							// Slide CALZADO 1
+							.slide
+								img.logo-campaign.centerh(src='assets/logo-calzado.jpg')
+								.calls
+									.column.izq.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+										//- .discount
+											.percent 40
+											.simbol
+												| %
+												span DSCTO.
+										a.call-left(href='#')
+											.imagen
+												img.centerv(alt='', src='productos/39.jpg')
+											.content
+												.wrapper
+													.table
+														span.aon
+														span.hasta.align-left.box-center Hasta
+														//- span.marca
+														//- span.descripcion
+														//- span.antes
+														//- span.cyber.align-left.box-center &nbsp;
+														span.price.porcentual.box-center
+															span.number 40
+															span.percent %
+																.dscto DSCTO.
+														span.adicional
+															img(src='images/adicional15.jpg')
+														span.note.align-center
+															| en  
+															//- span.bigger
+															| Zapatillas Deportivas
+									.column.der.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+										//- .discount
+											.percent 70
+											.simbol
+												| %
+												span DSCTO.
+										a.call-right(href='#')
+											.content
+												.wrapper
+													.table
+														span.aon
+														span.hasta.align-left.box-center Hasta
+														//- span.marca
+														//- span.descripcion
+														//- span.antes
+														//- span.cyber.align-left.box-center Hasta
+														span.price.porcentual.box-center
+															span.number 30
+															span.percent %
+																.dscto DSCTO.
+														span.note.align-center(style='line-height:1.2;')
+															//- | en 
+															//- span.bigger 
+															| Calzado de temporada Mujer
+														//- span.colores.align-center
+															img(src='images/guess.jpg')
+															img(src='images/casio.jpg')
+															img(src='images/citizen.jpg')
+															img(src='images/nautica.jpg')
+															img(src='images/aerostar.jpg')
+											.imagen
+												img.centerv(alt='', src='productos/40.jpg')
+
+							// Slide CALZADO 2
+							.slide
+								img.logo-campaign.centerh(src='assets/logo-calzado.jpg')
+								.calls
+									.column.izq.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+										//- .discount
+											.percent 40
+											.simbol
+												| %
+												span DSCTO.
+										a.call-left(href='#')
+											.imagen
+												img.centerv(alt='', src='productos/41.jpg')
+											.content
+												.wrapper
+													.table
+														span.aon
+														//- span.hasta.align-left &nbsp;
+														//- span.marca
+														//- span.descripcion
+														//- span.antes
+														//- span.cyber.align-left.box-center &nbsp;
+														span.price.porcentual.box-center
+															span.number 20
+															span.percent %
+																.dscto DSCTO.
+														span.note.align-center
+															//- | en todo 
+															//- span.bigger
+															| Zapatillas Urbanas mujer
+									.column.der.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+										//- .discount
+											.percent 70
+											.simbol
+												| %
+												span DSCTO.
+										a.call-right(href='#')
+											.content
+												.wrapper
+													.table
+														span.aon
+														//- span.marca
+														//- span.descripcion
+														//- span.antes
+														//- span.cyber.align-left.box-center &nbsp;
+														span.price.porcentual.box-center
+															span.number 20
+															span.percent %
+																.dscto DSCTO.
+														span.note.align-center
+															//- | en 
+															//- span.bigger 
+															| Zapatillas Urbanas hombre
+														//- span.colores.align-center
+															img(src='images/guess.jpg')
+															img(src='images/casio.jpg')
+															img(src='images/citizen.jpg')
+															img(src='images/nautica.jpg')
+															img(src='images/aerostar.jpg')
+											.imagen
+												img.centerv(alt='', src='productos/42.jpg')
+								.slide-note
+									| * No incluye Adidas, Stan, Smith y Superstar
+
+					// RELOJES Y ACCESORIOS
+					.slider-banner#slider-relojes-y-accesorios
+						span.slider-prev
+						span.slider-next
+						.banner
+							// Slide RELOJES 1
+							.slide
+								img.logo-campaign.centerh(src='assets/logo-relojes.jpg')
+								.calls
+									.column.izq.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+										//- .discount
+											.percent 40
+											.simbol
+												| %
+												span DSCTO.
+										a.call-left(href='#')
+											.imagen
+												img.centerv(alt='', src='productos/43.jpg')
+											.content
+												.wrapper
+													.table
+														span.aon
+														span.marca
+															img(alt='', src='marcas/guess.jpg')
+														span.descripcion RELOJ W0627L9
+														span.antes Precio Normal: S/ 799
+														span.cyber Precio Oferta
+														span.price
+															| S/ 
+															span 259
+									.column.der.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+										//- .discount
+											.percent 70
+											.simbol
+												| %
+												span DSCTO.
+										a.call-right(href='#')
+											.content
+												.wrapper
+													.table
+														span.aon
+														span.marca
+															img(alt='', src='marcas/guess.jpg')
+														span.descripcion RELOJ W0660G1
+														span.antes Precio Normal: S/ 999
+														span.cyber Precio Oferta
+														span.price
+															| S/ 
+															span 449
+											.imagen
+												img.centerv(alt='', src='productos/44.jpg')
+
+							// Slide RELOJES 2
+							.slide
+								img.logo-campaign.centerh(src='assets/logo-relojes.jpg')
+								.calls
+									.column.izq.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+										//- .discount
+											.percent 40
+											.simbol
+												| %
+												span DSCTO.
+										a.call-left(href='#')
+											.imagen
+												img.centerv(alt='', src='productos/45.jpg')
+											.content
+												.wrapper
+													.table
+														span.aon
+														span.marca
+															img(alt='', src='marcas/guess.jpg')
+														span.descripcion RELOJ W0627L12
+															.line CQAR08 UNISEX
+														span.antes Precio Normal: S/ 599
+														span.cyber Precio Oferta
+														span.price
+															| S/ 
+															span 259
+									.column.der.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+										//- .discount
+											.percent 70
+											.simbol
+												| %
+												span DSCTO.
+										a.call-right(href='#')
+											.content
+												.wrapper
+													.table
+														span.aon
+														span.marca
+															img(alt='', src='marcas/guess.jpg')
+														span.descripcion RELOJ W0798G3
+															.line PARA DAMA
+														span.antes Precio Normal: S/ 899
+														span.cyber Precio Oferta
+														span.price
+															| S/ 
+															span 449
+											.imagen
+												img.centerv(alt='', src='productos/46.jpg')
+
+							// Slide RELOJES 2
+							.slide
+								img.logo-campaign.centerh(src='assets/logo-relojes.jpg')
+								.calls
+									.column.izq.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+										//- .discount
+											.percent 40
+											.simbol
+												| %
+												span DSCTO.
+										a.call-left(href='#')
+											.imagen
+												img.centerv(alt='', src='productos/47.jpg')
+											.content
+												.wrapper
+													.table
+														span.aon
+														span.marca
+															img(alt='', src='marcas/asics.jpg')
+														span.descripcion RELOJ DIGITAL
+															.line CQAR08 UNISEX
+														span.antes Precio Normal: S/ 499
+														span.cyber Precio Oferta
+														span.price
+															| S/ 
+															span 199
+									.column.der.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+										//- .discount
+											.percent 70
+											.simbol
+												| %
+												span DSCTO.
+										a.call-right(href='#')
+											.content
+												.wrapper
+													.table
+														span.aon
+														span.marca
+															img(alt='', src='marcas/aerostar.jpg')
+														span.descripcion RELOJ 66234
+															.line PARA DAMA
+														span.antes Precio Normal: S/ 350
+														span.cyber Precio Oferta
+														span.price
+															| S/ 
+															span 139
+											.imagen
+												img.centerv(alt='', src='productos/48.jpg')
+					
+
+					//- TV Y AUDIO
+					//- .slider-banner#slider-tv-y-audio
+						span.slider-prev
+						span.slider-next
+						.banner
+							// Slide 1
+							.slide
+								.calls
+									.column.izq.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+										//- .discount
+											.percent 40
+											.simbol
+												| %
+												span DSCTO.
+										a.call-left(href='#')
+											.imagen
+												img.centerv(alt='', src='productos/5.jpg')
+											.content
+												.wrapper
+													.table
+														span.aon
+														span.marca
+															img(alt='', src='marcas/samsung.jpg')
+														span.descripcion Smart TV UHD 55"
+														span.antes Precio Normal: S/ 4,599
+														span.cyber Precio Oferta
+														span.price
+															| S/ 
+															span 2,999
+									.column.der.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+										//- .discount
+											.percent 70
+											.simbol
+												| %
+												span DSCTO.
+										a.call-right(href='#')
+											.content
+												.wrapper
+													.table
+														span.aon
+														span.marca
+															img(alt='', src='marcas/lg.jpg')
+														span.descripcion Smart TV UHD 50"
+														span.antes Precio Normal: S/ 3,499
+														span.cyber Precio Oferta
+														span.price
+															| S/ 
+															span 2,299
+											.imagen
+												img.centerv(alt='', src='productos/6.jpg')
+							// Slide 2
+							.slide
+								.calls
+									.column.izq.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+										//- .discount
+											.percent 40
+											.simbol
+												| %
+												span DSCTO.
+										a.call-left(href='#')
+											.imagen
+												img.centerv(alt='', src='productos/7.jpg')
+											.content
+												.wrapper
+													.table
+														span.aon
+														span.marca
+															img(alt='', src='marcas/home.jpg')
+														span.descripcion Reclinable Mecta
+															.line de cuero
+														span.antes Precio Normal: S/ 1,499
+														span.cyber PRECIO OFERTA
+														span.price
+															| S/ 
+															span 599
+														span.note.f-size9
+															| *Disponible en 1 y 3 cuerpos
+														//- span.colores
+															| Colores disponibles
+														//- span.iconos-colores
+															img(src='images/color-negro.png')
+															img(src='images/color-blanco.png')
+									.column.der.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+										//- .discount
+											.percent 70
+											.simbol
+												| %
+												span DSCTO.
+										a.call-right(href='#')
+											.content
+												.wrapper
+													.table
+														span.aon
+														span.marca
+															img(alt='', src='marcas/home.jpg')
+														span.descripcion comedor dina 
+															.line mesa + 6 sillas
+														span.antes Precio Normal: S/ 1,499
+														span.cyber Precio Oferta
+														span.price
+															| S/ 
+															span 599
+											.imagen
+												img.centerv(alt='', src='productos/8.jpg')
+					
+					//- CELULARES Y VIDEOJUEGOS
+					//- .slider-banner#slider-celulares-y-videojuegos
+						span.slider-prev
+						span.slider-next
+						.banner
+							// Slide 1
+							.slide
+								.calls
+									.column.izq.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+										//- .discount
+											.percent 40
+											.simbol
+												| %
+												span DSCTO.
+										a.call-left(href='#')
+											.imagen
+												img.centerv(alt='', src='productos/1.png')
+											.content
+												.wrapper
+													.table
+														span.aon
+														span.marca
+															img(alt='', src='marcas/samsung.jpg')
+														span.descripcion Smart TV UHD 55"
+														span.antes Precio Normal: S/ 4,599
+														span.cyber Precio Oferta
+														span.price
+															| S/ 
+															span 2,999
+									.column.der.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+										//- .discount
+											.percent 70
+											.simbol
+												| %
+												span DSCTO.
+										a.call-right(href='#')
+											.content
+												.wrapper
+													.table
+														span.aon
+														span.marca
+															img(alt='', src='marcas/lg.jpg')
+														span.descripcion Smart TV UHD 50"
+														span.antes Precio Normal: S/ 3,499
+														span.cyber Precio Oferta
+														span.price
+															| S/ 
+															span 2,299
+											.imagen
+												img.centerv(alt='', src='productos/2.png')
+							// Slide 2
+							.slide
+								.calls
+									.column.izq.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+										//- .discount
+											.percent 40
+											.simbol
+												| %
+												span DSCTO.
+										a.call-left(href='#')
+											.imagen
+												img.centerv(alt='', src='productos/3.png')
+											.content
+												.wrapper
+													.table
+														span.aon
+														span.marca
+															img(alt='', src='marcas/home.png')
+														span.descripcion Reclinable Mecta
+															.line de cuero
+														span.antes Precio Normal: S/ 1,499
+														span.cyber PRECIO OFERTA
+														span.price
+															| S/ 
+															span 599
+														span.note.f-size9
+															| *Disponible en 1 y 3 cuerpos
+														//- span.colores
+															| Colores disponibles
+														//- span.iconos-colores
+															img(src='images/color-negro.png')
+															img(src='images/color-blanco.png')
+									.column.der.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+										//- .discount
+											.percent 70
+											.simbol
+												| %
+												span DSCTO.
+										a.call-right(href='#')
+											.content
+												.wrapper
+													.table
+														span.aon
+														span.marca
+															img(alt='', src='marcas/home.jpg')
+														span.descripcion comedor dina 
+															.line mesa + 6 sillas
+														span.antes Precio Normal: S/ 1,499
+														span.cyber Precio Oferta
+														span.price
+															| S/ 
+															span 599
+											.imagen
+												img.centerv(alt='', src='productos/4.png')
+					
+					//- ELECTROHOGAR
+					//- .slider-banner#slider-electrohogar
+						span.slider-prev
+						span.slider-next
+						.banner
+							// Slide 1
+							.slide
+								.calls
+									.column.izq.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+										//- .discount
+											.percent 40
+											.simbol
+												| %
+												span DSCTO.
+										a.call-left(href='#')
+											.imagen
+												img.centerv(alt='', src='productos/1.png')
+											.content
+												.wrapper
+													.table
+														span.aon
+														span.marca
+															img(alt='', src='marcas/samsung.jpg')
+														span.descripcion Smart TV UHD 55"
+														span.antes Precio Normal: S/ 4,599
+														span.cyber Precio Oferta
+														span.price
+															| S/ 
+															span 2,999
+									.column.der.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+										//- .discount
+											.percent 70
+											.simbol
+												| %
+												span DSCTO.
+										a.call-right(href='#')
+											.content
+												.wrapper
+													.table
+														span.aon
+														span.marca
+															img(alt='', src='marcas/lg.jpg')
+														span.descripcion Smart TV UHD 50"
+														span.antes Precio Normal: S/ 3,499
+														span.cyber Precio Oferta
+														span.price
+															| S/ 
+															span 2,299
+											.imagen
+												img.centerv(alt='', src='productos/2.png')
+							// Slide 2
+							.slide
+								.calls
+									.column.izq.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+										//- .discount
+											.percent 40
+											.simbol
+												| %
+												span DSCTO.
+										a.call-left(href='#')
+											.imagen
+												img.centerv(alt='', src='productos/3.png')
+											.content
+												.wrapper
+													.table
+														span.aon
+														span.marca
+															img(alt='', src='marcas/home.jpg')
+														span.descripcion Reclinable Mecta
+															.line de cuero
+														span.antes Precio Normal: S/ 1,499
+														span.cyber PRECIO OFERTA
+														span.price
+															| S/ 
+															span 599
+														span.note.f-size9
+															| *Disponible en 1 y 3 cuerpos
+														//- span.colores
+															| Colores disponibles
+														//- span.iconos-colores
+															img(src='images/color-negro.png')
+															img(src='images/color-blanco.png')
+									.column.der.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+										//- .discount
+											.percent 70
+											.simbol
+												| %
+												span DSCTO.
+										a.call-right(href='#')
+											.content
+												.wrapper
+													.table
+														span.aon
+														span.marca
+															img(alt='', src='marcas/home.jpg')
+														span.descripcion comedor dina 
+															.line mesa + 6 sillas
+														span.antes Precio Normal: S/ 1,499
+														span.cyber Precio Oferta
+														span.price
+															| S/ 
+															span 599
+											.imagen
+												img.centerv(alt='', src='productos/4.png')
+					
+					//- MUEBLES
+					//- .slider-banner#slider-muebles
+						span.slider-prev
+						span.slider-next
+						.banner
+							// Slide 1
+							.slide
+								.calls
+									.column.izq.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+										//- .discount
+											.percent 40
+											.simbol
+												| %
+												span DSCTO.
+										a.call-left(href='#')
+											.imagen
+												img.centerv(alt='', src='productos/1.png')
+											.content
+												.wrapper
+													.table
+														span.aon
+														span.marca
+															img(alt='', src='marcas/samsung.png')
+														span.descripcion Smart TV UHD 55"
+														span.antes Precio Normal: S/ 4,599
+														span.cyber Precio Oferta
+														span.price
+															| S/ 
+															span 2,999
+									.column.der.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+										//- .discount
+											.percent 70
+											.simbol
+												| %
+												span DSCTO.
+										a.call-right(href='#')
+											.content
+												.wrapper
+													.table
+														span.aon
+														span.marca
+															img(alt='', src='marcas/lg.png')
+														span.descripcion Smart TV UHD 50"
+														span.antes Precio Normal: S/ 3,499
+														span.cyber Precio Oferta
+														span.price
+															| S/ 
+															span 2,299
+											.imagen
+												img.centerv(alt='', src='productos/2.png')
+							// Slide 2
+							.slide
+								.calls
+									.column.izq.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+										//- .discount
+											.percent 40
+											.simbol
+												| %
+												span DSCTO.
+										a.call-left(href='#')
+											.imagen
+												img.centerv(alt='', src='productos/3.png')
+											.content
+												.wrapper
+													.table
+														span.aon
+														span.marca
+															img(alt='', src='marcas/home.png')
+														span.descripcion Reclinable Mecta
+															.line de cuero
+														span.antes Precio Normal: S/ 1,499
+														span.cyber PRECIO OFERTA
+														span.price
+															| S/ 
+															span 599
+														span.note.f-size9
+															| *Disponible en 1 y 3 cuerpos
+														//- span.colores
+															| Colores disponibles
+														//- span.iconos-colores
+															img(src='images/color-negro.png')
+															img(src='images/color-blanco.png')
+									.column.der.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+										//- .discount
+											.percent 70
+											.simbol
+												| %
+												span DSCTO.
+										a.call-right(href='#')
+											.content
+												.wrapper
+													.table
+														span.aon
+														span.marca
+															img(alt='', src='marcas/home.png')
+														span.descripcion comedor dina 
+															.line mesa + 6 sillas
+														span.antes Precio Normal: S/ 1,499
+														span.cyber Precio Oferta
+														span.price
+															| S/ 
+															span 599
+											.imagen
+												img.centerv(alt='', src='productos/4.png')
+					
+					//- DORMITORIO
+					//- .slider-banner#slider-dormitorio
+						span.slider-prev
+						span.slider-next
+						.banner
+							// Slide 1
+							.slide
+								.calls
+									.column.izq.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+										//- .discount
+											.percent 40
+											.simbol
+												| %
+												span DSCTO.
+										a.call-left(href='#')
+											.imagen
+												img.centerv(alt='', src='productos/1.png')
+											.content
+												.wrapper
+													.table
+														span.aon
+														span.marca
+															img(alt='', src='marcas/samsung.png')
+														span.descripcion Smart TV UHD 55"
+														span.antes Precio Normal: S/ 4,599
+														span.cyber Precio Oferta
+														span.price
+															| S/ 
+															span 2,999
+									.column.der.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+										//- .discount
+											.percent 70
+											.simbol
+												| %
+												span DSCTO.
+										a.call-right(href='#')
+											.content
+												.wrapper
+													.table
+														span.aon
+														span.marca
+															img(alt='', src='marcas/lg.png')
+														span.descripcion Smart TV UHD 50"
+														span.antes Precio Normal: S/ 3,499
+														span.cyber Precio Oferta
+														span.price
+															| S/ 
+															span 2,299
+											.imagen
+												img.centerv(alt='', src='productos/2.png')
+							// Slide 2
+							.slide
+								.calls
+									.column.izq.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+										//- .discount
+											.percent 40
+											.simbol
+												| %
+												span DSCTO.
+										a.call-left(href='#')
+											.imagen
+												img.centerv(alt='', src='productos/3.png')
+											.content
+												.wrapper
+													.table
+														span.aon
+														span.marca
+															img(alt='', src='marcas/home.png')
+														span.descripcion Reclinable Mecta
+															.line de cuero
+														span.antes Precio Normal: S/ 1,499
+														span.cyber PRECIO OFERTA
+														span.price
+															| S/ 
+															span 599
+														span.note.f-size9
+															| *Disponible en 1 y 3 cuerpos
+														//- span.colores
+															| Colores disponibles
+														//- span.iconos-colores
+															img(src='images/color-negro.png')
+															img(src='images/color-blanco.png')
+									.column.der.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+										//- .discount
+											.percent 70
+											.simbol
+												| %
+												span DSCTO.
+										a.call-right(href='#')
+											.content
+												.wrapper
+													.table
+														span.aon
+														span.marca
+															img(alt='', src='marcas/home.png')
+														span.descripcion comedor dina 
+															.line mesa + 6 sillas
+														span.antes Precio Normal: S/ 1,499
+														span.cyber Precio Oferta
+														span.price
+															| S/ 
+															span 599
+											.imagen
+												img.centerv(alt='', src='productos/4.png')
+					//- DORMITORIO
+					//- .slider-banner#slider-dormitorio
+						span.slider-prev
+						span.slider-next
+						.banner
+							// Slide 1
+							.slide
+								.calls
+									.column.izq.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+										//- .discount
+											.percent 40
+											.simbol
+												| %
+												span DSCTO.
+										a.call-left(href='#')
+											.imagen
+												img.centerv(alt='', src='productos/1.png')
+											.content
+												.wrapper
+													.table
+														span.aon
+														span.marca
+															img(alt='', src='marcas/samsung.png')
+														span.descripcion Smart TV UHD 55"
+														span.antes Precio Normal: S/ 4,599
+														span.cyber Precio Oferta
+														span.price
+															| S/ 
+															span 2,999
+									.column.der.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+										//- .discount
+											.percent 70
+											.simbol
+												| %
+												span DSCTO.
+										a.call-right(href='#')
+											.content
+												.wrapper
+													.table
+														span.aon
+														span.marca
+															img(alt='', src='marcas/lg.png')
+														span.descripcion Smart TV UHD 50"
+														span.antes Precio Normal: S/ 3,499
+														span.cyber Precio Oferta
+														span.price
+															| S/ 
+															span 2,299
+											.imagen
+												img.centerv(alt='', src='productos/2.png')
+							// Slide 2
+							.slide
+								.calls
+									.column.izq.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+										//- .discount
+											.percent 40
+											.simbol
+												| %
+												span DSCTO.
+										a.call-left(href='#')
+											.imagen
+												img.centerv(alt='', src='productos/3.png')
+											.content
+												.wrapper
+													.table
+														span.aon
+														span.marca
+															img(alt='', src='marcas/home.png')
+														span.descripcion Reclinable Mecta
+															.line de cuero
+														span.antes Precio Normal: S/ 1,499
+														span.cyber PRECIO OFERTA
+														span.price
+															| S/ 
+															span 599
+														span.note.f-size9
+															| *Disponible en 1 y 3 cuerpos
+														//- span.colores
+															| Colores disponibles
+														//- span.iconos-colores
+															img(src='images/color-negro.png')
+															img(src='images/color-blanco.png')
+									.column.der.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+										//- .discount
+											.percent 70
+											.simbol
+												| %
+												span DSCTO.
+										a.call-right(href='#')
+											.content
+												.wrapper
+													.table
+														span.aon
+														span.marca
+															img(alt='', src='marcas/home.png')
+														span.descripcion comedor dina 
+															.line mesa + 6 sillas
+														span.antes Precio Normal: S/ 1,499
+														span.cyber Precio Oferta
+														span.price
+															| S/ 
+															span 599
+											.imagen
+												img.centerv(alt='', src='productos/4.png')
+
+					//- DECOHOGAR
+					//- .slider-banner#slider-decohogar
+						span.slider-prev
+						span.slider-next
+						.banner
+							// Slide 1
+							.slide
+								.calls
+									.column.izq.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+										//- .discount
+											.percent 40
+											.simbol
+												| %
+												span DSCTO.
+										a.call-left(href='#')
+											.imagen
+												img.centerv(alt='', src='productos/1.png')
+											.content
+												.wrapper
+													.table
+														span.aon
+														span.marca
+															img(alt='', src='marcas/samsung.png')
+														span.descripcion Smart TV UHD 55"
+														span.antes Precio Normal: S/ 4,599
+														span.cyber Precio Oferta
+														span.price
+															| S/ 
+															span 2,999
+									.column.der.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+										//- .discount
+											.percent 70
+											.simbol
+												| %
+												span DSCTO.
+										a.call-right(href='#')
+											.content
+												.wrapper
+													.table
+														span.aon
+														span.marca
+															img(alt='', src='marcas/lg.png')
+														span.descripcion Smart TV UHD 50"
+														span.antes Precio Normal: S/ 3,499
+														span.cyber Precio Oferta
+														span.price
+															| S/ 
+															span 2,299
+											.imagen
+												img.centerv(alt='', src='productos/2.png')
+							// Slide 2
+							.slide
+								.calls
+									.column.izq.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+										//- .discount
+											.percent 40
+											.simbol
+												| %
+												span DSCTO.
+										a.call-left(href='#')
+											.imagen
+												img.centerv(alt='', src='productos/3.png')
+											.content
+												.wrapper
+													.table
+														span.aon
+														span.marca
+															img(alt='', src='marcas/home.png')
+														span.descripcion Reclinable Mecta
+															.line de cuero
+														span.antes Precio Normal: S/ 1,499
+														span.cyber PRECIO OFERTA
+														span.price
+															| S/ 
+															span 599
+														span.note.f-size9
+															| *Disponible en 1 y 3 cuerpos
+														//- span.colores
+															| Colores disponibles
+														//- span.iconos-colores
+															img(src='images/color-negro.png')
+															img(src='images/color-blanco.png')
+									.column.der.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+										//- .discount
+											.percent 70
+											.simbol
+												| %
+												span DSCTO.
+										a.call-right(href='#')
+											.content
+												.wrapper
+													.table
+														span.aon
+														span.marca
+															img(alt='', src='marcas/home.png')
+														span.descripcion comedor dina 
+															.line mesa + 6 sillas
+														span.antes Precio Normal: S/ 1,499
+														span.cyber Precio Oferta
+														span.price
+															| S/ 
+															span 599
+											.imagen
+												img.centerv(alt='', src='productos/4.png')
+
+					//- MÁQUINAS Y BICICLETAS
+					//- .slider-banner#slider-maquinas-y-bicicletas
+						span.slider-prev
+						span.slider-next
+						.banner
+							// Slide 1
+							.slide
+								.calls
+									.column.izq.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+										//- .discount
+											.percent 40
+											.simbol
+												| %
+												span DSCTO.
+										a.call-left(href='#')
+											.imagen
+												img.centerv(alt='', src='productos/1.png')
+											.content
+												.wrapper
+													.table
+														span.aon
+														span.marca
+															img(alt='', src='marcas/samsung.png')
+														span.descripcion Smart TV UHD 55"
+														span.antes Precio Normal: S/ 4,599
+														span.cyber Precio Oferta
+														span.price
+															| S/ 
+															span 2,999
+									.column.der.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+										//- .discount
+											.percent 70
+											.simbol
+												| %
+												span DSCTO.
+										a.call-right(href='#')
+											.content
+												.wrapper
+													.table
+														span.aon
+														span.marca
+															img(alt='', src='marcas/lg.png')
+														span.descripcion Smart TV UHD 50"
+														span.antes Precio Normal: S/ 3,499
+														span.cyber Precio Oferta
+														span.price
+															| S/ 
+															span 2,299
+											.imagen
+												img.centerv(alt='', src='productos/2.png')
+							// Slide 2
+							.slide
+								.calls
+									.column.izq.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+										//- .discount
+											.percent 40
+											.simbol
+												| %
+												span DSCTO.
+										a.call-left(href='#')
+											.imagen
+												img.centerv(alt='', src='productos/3.png')
+											.content
+												.wrapper
+													.table
+														span.aon
+														span.marca
+															img(alt='', src='marcas/home.png')
+														span.descripcion Reclinable Mecta
+															.line de cuero
+														span.antes Precio Normal: S/ 1,499
+														span.cyber PRECIO OFERTA
+														span.price
+															| S/ 
+															span 599
+														span.note.f-size9
+															| *Disponible en 1 y 3 cuerpos
+														//- span.colores
+															| Colores disponibles
+														//- span.iconos-colores
+															img(src='images/color-negro.png')
+															img(src='images/color-blanco.png')
+									.column.der.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+										//- .discount
+											.percent 70
+											.simbol
+												| %
+												span DSCTO.
+										a.call-right(href='#')
+											.content
+												.wrapper
+													.table
+														span.aon
+														span.marca
+															img(alt='', src='marcas/home.png')
+														span.descripcion comedor dina 
+															.line mesa + 6 sillas
+														span.antes Precio Normal: S/ 1,499
+														span.cyber Precio Oferta
+														span.price
+															| S/ 
+															span 599
+											.imagen
+												img.centerv(alt='', src='productos/4.png')
+
+					//- JUGUETES Y BEBES
+					//- .slider-banner#slider-juguetes-y-bebes
+						span.slider-prev
+						span.slider-next
+						.banner
+							// Slide 1
+							.slide
+								.calls
+									.column.izq.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+										//- .discount
+											.percent 40
+											.simbol
+												| %
+												span DSCTO.
+										a.call-left(href='#')
+											.imagen
+												img.centerv(alt='', src='productos/1.png')
+											.content
+												.wrapper
+													.table
+														span.aon
+														span.marca
+															img(alt='', src='marcas/samsung.png')
+														span.descripcion Smart TV UHD 55"
+														span.antes Precio Normal: S/ 4,599
+														span.cyber Precio Oferta
+														span.price
+															| S/ 
+															span 2,999
+									.column.der.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+										//- .discount
+											.percent 70
+											.simbol
+												| %
+												span DSCTO.
+										a.call-right(href='#')
+											.content
+												.wrapper
+													.table
+														span.aon
+														span.marca
+															img(alt='', src='marcas/lg.png')
+														span.descripcion Smart TV UHD 50"
+														span.antes Precio Normal: S/ 3,499
+														span.cyber Precio Oferta
+														span.price
+															| S/ 
+															span 2,299
+											.imagen
+												img.centerv(alt='', src='productos/2.png')
+							// Slide 2
+							.slide
+								.calls
+									.column.izq.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+										//- .discount
+											.percent 40
+											.simbol
+												| %
+												span DSCTO.
+										a.call-left(href='#')
+											.imagen
+												img.centerv(alt='', src='productos/3.png')
+											.content
+												.wrapper
+													.table
+														span.aon
+														span.marca
+															img(alt='', src='marcas/home.png')
+														span.descripcion Reclinable Mecta
+															.line de cuero
+														span.antes Precio Normal: S/ 1,499
+														span.cyber PRECIO OFERTA
+														span.price
+															| S/ 
+															span 599
+														span.note.f-size9
+															| *Disponible en 1 y 3 cuerpos
+														//- span.colores
+															| Colores disponibles
+														//- span.iconos-colores
+															img(src='images/color-negro.png')
+															img(src='images/color-blanco.png')
+									.column.der.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+										//- .discount
+											.percent 70
+											.simbol
+												| %
+												span DSCTO.
+										a.call-right(href='#')
+											.content
+												.wrapper
+													.table
+														span.aon
+														span.marca
+															img(alt='', src='marcas/home.png')
+														span.descripcion comedor dina 
+															.line mesa + 6 sillas
+														span.antes Precio Normal: S/ 1,499
+														span.cyber Precio Oferta
+														span.price
+															| S/ 
+															span 599
+											.imagen
+												img.centerv(alt='', src='productos/4.png')
+
+					//- CALZADO Y ZAPATILLAS
+					//- .slider-banner#slider-calzado-y-zapatillas
+						span.slider-prev
+						span.slider-next
+						.banner
+							// Slide 1
+							.slide
+								.calls
+									.column.izq.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+										//- .discount
+											.percent 40
+											.simbol
+												| %
+												span DSCTO.
+										a.call-left(href='#')
+											.imagen
+												img.centerv(alt='', src='productos/1.png')
+											.content
+												.wrapper
+													.table
+														span.aon
+														span.marca
+															img(alt='', src='marcas/samsung.png')
+														span.descripcion Smart TV UHD 55"
+														span.antes Precio Normal: S/ 4,599
+														span.cyber Precio Oferta
+														span.price
+															| S/ 
+															span 2,999
+									.column.der.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+										//- .discount
+											.percent 70
+											.simbol
+												| %
+												span DSCTO.
+										a.call-right(href='#')
+											.content
+												.wrapper
+													.table
+														span.aon
+														span.marca
+															img(alt='', src='marcas/lg.png')
+														span.descripcion Smart TV UHD 50"
+														span.antes Precio Normal: S/ 3,499
+														span.cyber Precio Oferta
+														span.price
+															| S/ 
+															span 2,299
+											.imagen
+												img.centerv(alt='', src='productos/2.png')
+							// Slide 2
+							.slide
+								.calls
+									.column.izq.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+										//- .discount
+											.percent 40
+											.simbol
+												| %
+												span DSCTO.
+										a.call-left(href='#')
+											.imagen
+												img.centerv(alt='', src='productos/3.png')
+											.content
+												.wrapper
+													.table
+														span.aon
+														span.marca
+															img(alt='', src='marcas/home.png')
+														span.descripcion Reclinable Mecta
+															.line de cuero
+														span.antes Precio Normal: S/ 1,499
+														span.cyber PRECIO OFERTA
+														span.price
+															| S/ 
+															span 599
+														span.note.f-size9
+															| *Disponible en 1 y 3 cuerpos
+														//- span.colores
+															| Colores disponibles
+														//- span.iconos-colores
+															img(src='images/color-negro.png')
+															img(src='images/color-blanco.png')
+									.column.der.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+										//- .discount
+											.percent 70
+											.simbol
+												| %
+												span DSCTO.
+										a.call-right(href='#')
+											.content
+												.wrapper
+													.table
+														span.aon
+														span.marca
+															img(alt='', src='marcas/home.png')
+														span.descripcion comedor dina 
+															.line mesa + 6 sillas
+														span.antes Precio Normal: S/ 1,499
+														span.cyber Precio Oferta
+														span.price
+															| S/ 
+															span 599
+											.imagen
+												img.centerv(alt='', src='productos/4.png')
+
+					//- RELOJES Y ACCESORIOS
+					//- .slider-banner#slider-relojes-y-accesorios
+						span.slider-prev
+						span.slider-next
+						.banner
+							// Slide 1
+							.slide
+								.calls
+									.column.izq.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+										//- .discount
+											.percent 40
+											.simbol
+												| %
+												span DSCTO.
+										a.call-left(href='#')
+											.imagen
+												img.centerv(alt='', src='productos/1.png')
+											.content
+												.wrapper
+													.table
+														span.aon
+														span.marca
+															img(alt='', src='marcas/samsung.png')
+														span.descripcion Smart TV UHD 55"
+														span.antes Precio Normal: S/ 4,599
+														span.cyber Precio Oferta
+														span.price
+															| S/ 
+															span 2,999
+									.column.der.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+										//- .discount
+											.percent 70
+											.simbol
+												| %
+												span DSCTO.
+										a.call-right(href='#')
+											.content
+												.wrapper
+													.table
+														span.aon
+														span.marca
+															img(alt='', src='marcas/lg.png')
+														span.descripcion Smart TV UHD 50"
+														span.antes Precio Normal: S/ 3,499
+														span.cyber Precio Oferta
+														span.price
+															| S/ 
+															span 2,299
+											.imagen
+												img.centerv(alt='', src='productos/2.png')
+							// Slide 2
+							.slide
+								.calls
+									.column.izq.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+										//- .discount
+											.percent 40
+											.simbol
+												| %
+												span DSCTO.
+										a.call-left(href='#')
+											.imagen
+												img.centerv(alt='', src='productos/3.png')
+											.content
+												.wrapper
+													.table
+														span.aon
+														span.marca
+															img(alt='', src='marcas/home.png')
+														span.descripcion Reclinable Mecta
+															.line de cuero
+														span.antes Precio Normal: S/ 1,499
+														span.cyber PRECIO OFERTA
+														span.price
+															| S/ 
+															span 599
+														span.note.f-size9
+															| *Disponible en 1 y 3 cuerpos
+														//- span.colores
+															| Colores disponibles
+														//- span.iconos-colores
+															img(src='images/color-negro.png')
+															img(src='images/color-blanco.png')
+									.column.der.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+										//- .discount
+											.percent 70
+											.simbol
+												| %
+												span DSCTO.
+										a.call-right(href='#')
+											.content
+												.wrapper
+													.table
+														span.aon
+														span.marca
+															img(alt='', src='marcas/home.png')
+														span.descripcion comedor dina 
+															.line mesa + 6 sillas
+														span.antes Precio Normal: S/ 1,499
+														span.cyber Precio Oferta
+														span.price
+															| S/ 
+															span 599
+											.imagen
+												img.centerv(alt='', src='productos/4.png')
+
+
+		.row
+			.sector_filtros.control-bar.stickIt
+				.groupB
+					//- a#btn_ofertas.btn.filter.online.bloque(href!= base_url +'online', data-seccion='ver todo', target='_top')
+						span.iconress.gift
+						span.text.two
+							| Mejores 
+							span descuentos
+
+					a#btn_tv_video.btn.filter.tv-video.bloque(href!= base_url +'tv-video', data-seccion='TV y Videojuegos', target='_top')
+						span.iconress.video
+						span.text TV y Videojuegos
+					a#btn_laptops.btn.filter.computo.bloque(href!= base_url +'computo', data-seccion='Cómputo', target='_top')
+						span.iconress.tecnologia
+						span.text.two
+							| Cómputo
+							//- span y Tablets
+					a#btn_celulares.btn.filter.celulares-y-entretenimiento.bloque(href!= base_url +'celulares-y-entretenimiento', data-seccion='Celulares y Tecnología', target='_top')
+						span.iconress.celulares
+						span.text.two
+							| Celulares y Tecnología
+							//- span Videojuegos
+					a#btn_electrohogar.btn.filter.electrohogar.bloque(href!= base_url +'electrohogar', data-seccion='Línea Blanca', target='_top')
+						span.iconress.electrohogar
+						span.text Línea Blanca
+
+					a#btn_muebleria.btn.filter.muebleria.bloque(href!= base_url +'muebleria', data-seccion='Muebles', target='_top')
+						span.iconress.muebleria
+						span.text Muebles
+
+					a#btn_dormitorio.btn.filter.dormitorio.bloque(href!= base_url +'dormitorio', data-seccion='Dormitorio', target='_top')
+						span.iconress.dormitorio
+						span.text Dormitorio
+					a#btn_decohogar.btn.filter.deco.bloque(href!= base_url +'deco', data-seccion='Hogar', target='_top')
+						span.iconress.decohogar
+						span.text Hogar
+					a#btn_deporte.btn.filter.deporte.bloque(href!= base_url +'deporte', data-seccion='Deporte', target='_top')
+						span.iconress.deporte
+						span.text.two
+							| Deporte
+							//- span Bicicletas
+					a#btn_relojes.btn.filter.belleza-y-accesorios.bloque(href!= base_url +'belleza-y-accesorios', data-seccion='Accesorios y Belleza', target='_top')
+						span.iconress.relojes
+						span.text.two
+							| Accesorios
+							span y Belleza
+					a#btn_belleza.btn.filter.calzado.bloque(href!= base_url +'calzado', data-seccion='Calzado', target='_top')
+						span.iconress.belleza
+						span.text.two
+							| Calzado
+							//- span y Zapatillas
+					a#btn_bebe.btn.filter.infatil.bloque(href!= base_url +'infatil', data-seccion='Juguetes y Bebés', target='_top')
+						span.iconress.bebe
+						span.text.two
+							| Juguetes y Bebés
+							//- span Bebés
+					a#btn_bebe.btn.filter.moda.bloque(href!= base_url +'moda', data-seccion='Moda', target='_top')
+						span.iconress.moda
+						span.text.two
+							| Moda
+
+		.container.container-calls
+			.filter-cp
+				.filter-text
+					| Encuentra los mejores descuentos por categoría
+				select#filter-control
+					option(value="todos") Todos
+					//- option(value="descuentos") Mejores descuentos
+					option(value="tv") TV y Videojuegos
+					// option(value="computo") Cómputo
+					option(value="celulares") Celulares y Tecnología
+					option(value="electrohogar") Línea Blanca
+					option(value="muebles") Muebles
+					option(value="dormitorio") Dormitorio
+					option(value="hogar") Hogar
+					option(value="deporte") Deporte
+					option(value="relojes") Accesorios y Belleza
+					option(value="calzado") Calzado
+					option(value="infantil") Juguetes y Bebés
+					option(value="moda") Moda
+			section#calls
+				.coupon.col-xs-6.col-sm-6.col-md-4.col-lg-4.col-xl-4.calzado.todos
+					a(href='#')
+						img(src='llamados/CALZ1.png')
+				.coupon.col-xs-6.col-sm-6.col-md-4.col-lg-4.col-xl-4.calzado.todos
+					a(href='#')
+						img(src='llamados/CALZ2.png')
+				.coupon.col-xs-6.col-sm-6.col-md-4.col-lg-4.col-xl-4.celulares.todos
+					a(href='#')
+						img(src='llamados/CEL1.png')
+				.coupon.col-xs-6.col-sm-6.col-md-4.col-lg-4.col-xl-4.celulares.todos
+					a(href='#')
+						img(src='llamados/CEL2.png')
+				.coupon.col-xs-6.col-sm-6.col-md-4.col-lg-4.col-xl-4.celulares
+					a(href='#')
+						img(src='llamados/CEL3.png')
+				.coupon.col-xs-6.col-sm-6.col-md-4.col-lg-4.col-xl-4.celulares
+					a(href='#')
+						img(src='llamados/CEL4.png')
+				// .coupon.col-xs-6.col-sm-6.col-md-4.col-lg-4.col-xl-4.computo.todos
+					a(href='#')
+						img(src='llamados/COMPUTO_01.png')
+				// .coupon.col-xs-6.col-sm-6.col-md-4.col-lg-4.col-xl-4.computo.todos
+					a(href='#')
+						img(src='llamados/COMPUTO_02.png')
+				// .coupon.col-xs-6.col-sm-6.col-md-4.col-lg-4.col-xl-4.computo
+					a(href='#')
+						img(src='llamados/COMPUTO_03.png')
+				// .coupon.col-xs-6.col-sm-6.col-md-4.col-lg-4.col-xl-4.computo
+					a(href='#')
+						img(src='llamados/COMPUTO_04.png')
+				.coupon.col-xs-6.col-sm-6.col-md-4.col-lg-4.col-xl-4.hogar.todos
+					a(href='#')
+						img(src='llamados/RH1.png')
+				.coupon.col-xs-6.col-sm-6.col-md-4.col-lg-4.col-xl-4.hogar.todos
+					a(href='#')
+						img(src='llamados/RH2.png')
+				.coupon.col-xs-6.col-sm-6.col-md-4.col-lg-4.col-xl-4.hogar
+					a(href='#')
+						img(src='llamados/RH3.png')
+				.coupon.col-xs-6.col-sm-6.col-md-4.col-lg-4.col-xl-4.hogar
+					a(href='#')
+						img(src='llamados/RH4.png')
+				.coupon.col-xs-6.col-sm-6.col-md-4.col-lg-4.col-xl-4.deporte.todos
+					a(href='#')
+						img(src='llamados/DEPOR1.png')
+				.coupon.col-xs-6.col-sm-6.col-md-4.col-lg-4.col-xl-4.deporte.todos
+					a(href='#')
+						img(src='llamados/DEPOR2.png')
+				.coupon.col-xs-6.col-sm-6.col-md-4.col-lg-4.col-xl-4.deporte
+					a(href='#')
+						img(src='llamados/DEPOR3.png')
+				.coupon.col-xs-6.col-sm-6.col-md-4.col-lg-4.col-xl-4.dormitorio.todos
+					a(href='#')
+						img(src='llamados/DORM1.png')
+				.coupon.col-xs-6.col-sm-6.col-md-4.col-lg-4.col-xl-4.dormitorio.todos
+					a(href='#')
+						img(src='llamados/DORM2.png')
+				.coupon.col-xs-6.col-sm-6.col-md-4.col-lg-4.col-xl-4.dormitorio
+					a(href='#')
+						img(src='llamados/DORM3.png')
+				.coupon.col-xs-6.col-sm-6.col-md-4.col-lg-4.col-xl-4.dormitorio
+					a(href='#')
+						img(src='llamados/DORM4.png')
+				.coupon.col-xs-6.col-sm-6.col-md-4.col-lg-4.col-xl-4.infantil.todos
+					a(href='#')
+						img(src='llamados/INF1.png')
+				.coupon.col-xs-6.col-sm-6.col-md-4.col-lg-4.col-xl-4.infantil.todos
+					a(href='#')
+						img(src='llamados/INF2.png')
+				.coupon.col-xs-6.col-sm-6.col-md-4.col-lg-4.col-xl-4.infantil
+					a(href='#')
+						img(src='llamados/INF3.png')
+				.coupon.col-xs-6.col-sm-6.col-md-4.col-lg-4.col-xl-4.electrohogar.todos
+					a(href='#')
+						img(src='llamados/LB1.png')
+				.coupon.col-xs-6.col-sm-6.col-md-4.col-lg-4.col-xl-4.electrohogar.todos
+					a(href='#')
+						img(src='llamados/LB2.png')
+				.coupon.col-xs-6.col-sm-6.col-md-4.col-lg-4.col-xl-4.electrohogar
+					a(href='#')
+						img(src='llamados/LB3.png')
+				.coupon.col-xs-6.col-sm-6.col-md-4.col-lg-4.col-xl-4.electrohogar
+					a(href='#')
+						img(src='llamados/LB4.png')
+				.coupon.col-xs-6.col-sm-6.col-md-4.col-lg-4.col-xl-4.muebles.todos
+					a(href='#')
+						img(src='llamados/MUEBLES1.png')
+				.coupon.col-xs-6.col-sm-6.col-md-4.col-lg-4.col-xl-4.muebles.todos
+					a(href='#')
+						img(src='llamados/MUEBLES2.png')
+				.coupon.col-xs-6.col-sm-6.col-md-4.col-lg-4.col-xl-4.muebles
+					a(href='#')
+						img(src='llamados/MUEBLES3.png')
+				.coupon.col-xs-6.col-sm-6.col-md-4.col-lg-4.col-xl-4.muebles
+					a(href='#')
+						img(src='llamados/MUEBLES4.png')
+				.coupon.col-xs-6.col-sm-6.col-md-4.col-lg-4.col-xl-4.relojes.todos
+					a(href='#')
+						img(src='llamados/ACCES1.png')
+				.coupon.col-xs-6.col-sm-6.col-md-4.col-lg-4.col-xl-4.relojes.todos
+					a(href='#')
+						img(src='llamados/ACCES2.png')
+				.coupon.col-xs-6.col-sm-6.col-md-4.col-lg-4.col-xl-4.relojes
+					a(href='#')
+						img(src='llamados/ACCES3.png')
+				.coupon.col-xs-6.col-sm-6.col-md-4.col-lg-4.col-xl-4.relojes
+					a(href='#')
+						img(src='llamados/ACCES4.png')
+				.coupon.col-xs-6.col-sm-6.col-md-4.col-lg-4.col-xl-4.tv.todos
+					a(href='#')
+						img(src='llamados/TV_1.png')
+				.coupon.col-xs-6.col-sm-6.col-md-4.col-lg-4.col-xl-4.tv.todos
+					a(href='#')
+						img(src='llamados/TV_2.png')
+				.coupon.col-xs-6.col-sm-6.col-md-4.col-lg-4.col-xl-4.tv
+					a(href='#')
+						img(src='llamados/TV_3.png')
+				.coupon.col-xs-6.col-sm-6.col-md-4.col-lg-4.col-xl-4.tv
+					a(href='#')
+						img(src='llamados/TV_4.png')
+				.coupon.col-xs-6.col-sm-6.col-md-4.col-lg-4.col-xl-4.moda.todos
+					a(href='#')
+						img(src='llamados/MODA1.png')
+				.coupon.col-xs-6.col-sm-6.col-md-4.col-lg-4.col-xl-4.moda.todos
+					a(href='#')
+						img(src='llamados/MODA2.png')
+				.coupon.col-xs-6.col-sm-6.col-md-4.col-lg-4.col-xl-4.moda
+					a(href='#')
+						img(src='llamados/MODA3.png')
+				.coupon.col-xs-6.col-sm-6.col-md-4.col-lg-4.col-xl-4.moda
+					a(href='#')
+						img(src='llamados/MODA4.png')

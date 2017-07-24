@@ -1,0 +1,212 @@
+extends ../layout/layout2.pug
+
+block content
+	- var base_url = 'http://www.ripley.com.pe/minisitios/campana/cyber-mama/'
+	if test=="dev"
+		- var base_url = '../'
+
+	#cyber(style='margin:0')
+		// DECOHOGAR
+		.slider-banner#slider-decohogar
+			span.slider-prev
+			span.slider-next
+			.banner
+
+				// Slide DECOHOGAR 2
+				.slide
+					img.logo-campaign.centerh(src!= base_url + 'assets/logo-decohogar.jpg')
+					.calls
+						.column.izq.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+							//- .discount
+								.percent 40
+								.simbol
+									| %
+									span DSCTO.
+							a.call-left(href='#')
+								.imagen
+									img.centerv(alt='', src!= base_url + 'productos/35.jpg')
+								.content
+									.wrapper.until
+										.table
+											span.aon
+											span.hasta.align-left.box-center Hasta
+											//- span.marca
+											//- span.descripcion
+											//- span.antes
+											//- span.cyber.align-left.box-center &nbsp;
+											span.price.porcentual.box-center
+												span.number 50
+												span.percent %
+													.dscto DSCTO.
+											span.note.align-center
+												| en&nbsp;
+												img(src!= base_url + 'marcas/record.jpg')
+											//- span.pay-note.align-center
+												| Todo medio de pago
+						.column.der.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+							//- .discount
+								.percent 70
+								.simbol
+									| %
+									span DSCTO.
+							a.call-right(href='#')
+								.content
+									.wrapper.until
+										.table
+											span.aon
+											span.hasta.align-left.box-center Hasta
+											//- span.marca
+											//- span.descripcion
+											//- span.antes
+											//- span.cyber.align-left Hasta
+											span.price.porcentual.box-center
+												span.number 20
+												span.percent %
+													.dscto DSCTO.
+											span.note.align-center
+												| en&nbsp;
+												img(src!= base_url + 'marcas/tramontina.jpg')
+											//- span.pay-note.align-center
+												| Todo medio de pago
+											//- span.colores.align-center
+												img(src!= base_url + 'marcas/guess.jpg')
+												img(src!= base_url + 'marcas/casio.jpg')
+												img(src!= base_url + 'marcas/citizen.jpg')
+												img(src!= base_url + 'marcas/nautica.jpg')
+												img(src!= base_url + 'marcas/aerostar.jpg')
+								.imagen
+									img.centerv(alt='', src!= base_url + 'productos/36.jpg')
+
+				// Slide DECOHOGAR 1
+				.slide
+					img.logo-campaign.centerh(src!= base_url + 'assets/logo-decohogar.jpg')
+					.calls
+						.column.izq.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+							//- .discount
+								.percent 40
+								.simbol
+									| %
+									span DSCTO.
+							a.call-left(href='#')
+								.imagen
+									img.centerv(alt='', src!= base_url + 'productos/37.jpg')
+								.content
+									.wrapper.until
+										.table
+											span.aon
+											span.hasta.align-left.box-center Hasta
+											//- span.marca
+											//- span.descripcion
+											//- span.antes
+											//- span.cyber.align-left.box-center &nbsp;
+											span.price.porcentual.box-center
+												span.number 40
+												span.percent %
+													.dscto DSCTO.
+											span.note.align-center
+												| en&nbsp;
+												img(src!= base_url + 'marcas/ferrand.jpg')
+											//- span.note.align-center
+												| en  
+												//- span.bigger
+												| Muebles decorativos
+											//- span.pay-note.align-center
+												| Todo medio de pago
+						.column.der.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+							//- .discount
+								.percent 70
+								.simbol
+									| %
+									span DSCTO.
+							a.call-right(href='#')
+								.content
+									.wrapper.until
+										.table
+											span.aon
+											span.hasta.align-left.box-center Hasta
+											//- span.marca
+											//- span.descripcion
+											//- span.antes
+											//- span.cyber.align-left Hasta
+											span.price.porcentual.box-center
+												span.number 40
+												span.percent %
+													.dscto DSCTO.
+											span.note.align-center
+												| en 
+												//- span.bigger 
+												| Parrillas, Cilindros y Cajas chinas
+											//- span.colores.align-center
+												img(src!= base_url + 'marcas/guess.jpg')
+												img(src!= base_url + 'marcas/casio.jpg')
+												img(src!= base_url + 'marcas/citizen.jpg')
+												img(src!= base_url + 'marcas/nautica.jpg')
+												img(src!= base_url + 'marcas/aerostar.jpg')
+								.imagen
+									img.centerv(alt='', src!= base_url + 'productos/38.jpg')
+
+				// Slide DECOHOGAR 3
+				.slide
+					img.logo-campaign.centerh(src!= base_url + 'assets/logo-decohogar.jpg')
+					.calls
+						.column.izq.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+							//- .discount
+								.percent 40
+								.simbol
+									| %
+									span DSCTO.
+							a.call-left(href='#')
+								.imagen
+									img.centerv(alt='', src!= base_url + 'productos/59.jpg')
+								.content
+									.wrapper.until
+										.table
+											span.aon
+											span.hasta.align-left.box-center Hasta
+											//- span.marca
+											//- span.descripcion
+											//- span.antes
+											//- span.cyber.align-left.box-center &nbsp;
+											span.price.porcentual.box-center
+												span.number 50
+												span.percent %
+													.dscto DSCTO.
+											span.note.align-center
+												| en 
+												//- span.bigger
+												| sets de vasos y copas
+											//- span.pay-note.align-center
+												| Todo medio de pago
+						.column.der.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+							//- .discount
+								.percent 70
+								.simbol
+									| %
+									span DSCTO.
+							a.call-right(href='#')
+								.content
+									.wrapper.until
+										.table
+											span.aon
+											span.hasta.align-left.box-center Hasta
+											//- span.marca
+											//- span.descripcion
+											//- span.antes
+											//- span.cyber.align-left Hasta
+											span.price.porcentual.box-center
+												span.number 60
+												span.percent %
+													.dscto DSCTO.
+											span.note.align-center
+												| en Muebles decorativos
+											//- span.pay-note.align-center
+												| Todo medio de pago
+											//- span.colores.align-center
+												img(src!= base_url + 'marcas/guess.jpg')
+												img(src!= base_url + 'marcas/casio.jpg')
+												img(src!= base_url + 'marcas/citizen.jpg')
+												img(src!= base_url + 'marcas/nautica.jpg')
+												img(src!= base_url + 'marcas/aerostar.jpg')
+								.imagen
+									img.centerv(alt='', src!= base_url + 'productos/60.jpg')
+

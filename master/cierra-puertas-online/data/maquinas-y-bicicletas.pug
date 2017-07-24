@@ -1,0 +1,123 @@
+extends ../layout/layout2.pug
+
+block content
+	- var base_url = 'http://www.ripley.com.pe/minisitios/campana/cyber-mama/'
+	if test=="dev"
+		- var base_url = '../'
+
+	#cyber(style='margin:0')
+		// MAQUINAS Y BICICLETAS
+		.slider-banner#slider-maquinas-y-bicicletas
+			span.slider-prev
+			span.slider-next
+			.banner
+				// Slide DEPORTE 1
+				.slide
+					img.logo-campaign.centerh(src!= base_url + 'assets/logo-deporte.jpg')
+					.calls
+						.column.izq.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+							//- .discount
+								.percent 40
+								.simbol
+									| %
+									span DSCTO.
+							a.call-left(href='#')
+								.imagen
+									img.centerv(alt='', src!= base_url + 'productos/51.jpg')
+								.content
+									.wrapper.product
+										.table
+											span.aon
+											span.marca
+												img(alt='', src!= base_url + 'marcas/upland.jpg')
+											span.descripcion BICICLETA VANGUARD
+												.line 300 ARO 26
+											span.antes Precio Normal: S/ 1,899
+											span.cyber Precio Oferta
+											span.price
+												| S/ 
+												span 1,330
+											//- span.colores
+												| Colores disponibles
+											//- span.iconos-colores
+												img(src!= base_url + 'marcas/gris-oscuro.png')
+												img(src!= base_url + 'marcas/plata.png')
+						.column.der.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+							//- .discount
+								.percent 70
+								.simbol
+									| %
+									span DSCTO.
+							a.call-right(href='#')
+								.content
+									.wrapper.product
+										.table
+											span.aon
+											span.marca
+												img(alt='', src!= base_url + 'marcas/oxford.jpg')
+											span.descripcion SPINNING
+												.line BE2905
+											span.antes Precio Normal: S/ 1,799
+											span.cyber Precio Oferta
+											span.price
+												| S/ 
+												span 1,239
+								.imagen
+									img.centerv(alt='', src!= base_url + 'productos/52.jpg')
+													
+				// Slide MAQUINAS 2
+				.slide
+					img.logo-campaign.centerh(src!= base_url + 'assets/logo-deporte.jpg')
+					.calls
+						.column.izq.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+							//- .discount
+								.percent 40
+								.simbol
+									| %
+									span DSCTO.
+							a.call-left(href='#')
+								.imagen
+									img.centerv(alt='', src!= base_url + 'productos/53.jpg')
+								.content
+									.wrapper.product
+										.table
+											span.aon
+											span.marca
+												img(alt='', src!= base_url + 'marcas/oxford.jpg')
+											span.descripcion ELÍPTICA MAGNÉTICA
+												.line PRO BE5940
+											span.antes Precio Normal: S/ 1,129
+											span.cyber Precio Oferta
+											span.price
+												| S/ 
+												span 879
+											//- span.colores
+												| Colores disponibles
+											//- span.iconos-colores
+												img(src!= base_url + 'marcas/gris-oscuro.png')
+												img(src!= base_url + 'marcas/plata.png')
+						.column.der.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+							//- .discount
+								.percent 70
+								.simbol
+									| %
+									span DSCTO.
+							a.call-right(href='#')
+								.content
+									.wrapper.product
+										.table
+											span.aon
+											span.marca
+												img(alt='', src!= base_url + 'marcas/sole.jpg')
+											span.descripcion ELÍPTICA
+												.line E25
+											span.antes Precio Normal: S/ 5,999
+											span.cyber Precio Oferta
+											span.price
+												| S/ 
+												span 4,599
+											//- span.colores.align-center
+												img(src!= base_url + 'marcas/monark.jpg')
+								.imagen
+									img.centerv(alt='', src!= base_url + 'productos/54.jpg')
+

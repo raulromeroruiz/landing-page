@@ -177,21 +177,20 @@ gulp.task('imagemin', function() {
 });
 
 gulp.task('mycss', function () {
-  gulp.start('copycss');
+  gulp.start('copyassets');
 });
 
-gulp.task('copycss', function() {
+gulp.task('copyassets', function() {
     var dir = null,
     dirOutput = process.argv[4];
     _date = getWeekNumber(new Date());
     week = (_date[1]<9) ? "0"+_date[1]:_date[1];
     dir = "../" + _date[0] + "/" + week + "/"
+    // console.log(process.argv);
+    console.log('Coping assets into '+ dir + dirOutput);
 
-console.log('Coping assets into '+ dir + dirOutput);
-    gulp.src('./templates/ripley/css/app_peru.css')
-    .pipe(gulp.dest(dir + dirOutput + "/css/"));
-    gulp.src('./templates/ripley/js/jquery-2.1.4.min.js')
-    .pipe(gulp.dest(dir + dirOutput + "/js/"));
+    gulp.src('./assets/**/*')
+    .pipe(gulp.dest(dir + dirOutput + "/"));
 });
 
 function getWeekNumber(d) {
@@ -210,5 +209,10 @@ function getWeekNumber(d) {
 }
 
 function capitalize(_params) {
-    return _params.str.charAt(0).toUpperCase() + _params.str.slice(1).replace(/\-/g," ");
+    words = _params.str.split("-");
+    for(x in words) {
+        words[x] = words[x].charAt(0).toUpperCase() + words[x].slice(1);
+    }
+    //return _params.str.charAt(0).toUpperCase() + _params.str.slice(1).replace(/\-/g," ");
+    return words.join(' ');
 }

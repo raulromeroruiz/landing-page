@@ -1,0 +1,125 @@
+extends ../layout/layout2.pug
+
+block content
+	- var base_url = 'http://www.ripley.com.pe/minisitios/campana/cyber-mama/'
+	if test=="dev"
+		- var base_url = '../'
+
+	#cyber(style='margin:0')
+		// CELULARES Y VIDEOJUEGOS
+		.slider-banner#slider-celulares-y-videojuegos
+			span.slider-prev
+			span.slider-next
+			.banner
+				// Slide CELULARES 1
+				.slide
+					img.logo-campaign.centerh(src!= base_url + 'assets/logo-celulares.jpg')
+					.calls
+						.column.izq.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+							//- .discount
+								.percent 40
+								.simbol
+									| %
+									span DSCTO.
+							a.call-left(href='#')
+								.imagen
+									img.centerv(alt='', src!= base_url + 'productos/19.jpg')
+								.content
+									.wrapper.product
+										.table
+											span.aon
+											span.marca
+												img(alt='', src!= base_url + 'marcas/motog4-play.jpg')
+											span.descripcion DOBLE CHIP
+												//- z.line mesa + 6 sillas
+											span.antes Precio Normal: S/ 999
+											span.cyber Precio Oferta
+											span.price
+												| S/ 
+												span 449
+											//- span.note.f-size9
+												| *Disponible en 1 y 3 cuerpos
+											//- span.colores
+												| Colores disponibles
+											//- span.iconos-colores
+												img(src!= base_url + 'marcas/color-negro.png')
+												img(src!= base_url + 'marcas/color-blanco.png')
+						.column.der.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+							//- .discount
+								.percent 70
+								.simbol
+									| %
+									span DSCTO.
+							a.call-right(href='#')
+								.content
+									.wrapper.product
+										.table
+											span.aon
+											span.marca
+												img(alt='', src!= base_url + 'marcas/huawei.jpg')
+											span.descripcion SMARTPHONE
+												.line P9 LITE
+											span.antes Precio Normal: S/ 1,699
+											span.cyber PRECIO OFERTA
+											span.price
+												| S/ 
+												span 949
+								.imagen
+									img.centerv(alt='', src!= base_url + 'productos/20.jpg')
+
+				// Slide CELULARES 2
+				.slide
+					img.logo-campaign.centerh(src!= base_url + 'assets/logo-celulares.jpg')
+					.calls
+						.column.izq.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+							//- .discount
+								.percent 40
+								.simbol
+									| %
+									span DSCTO.
+							a.call-left(href='#')
+								.imagen
+									img.centerv(alt='', src!= base_url + 'productos/21.jpg')
+								.content
+									.wrapper.product
+										.table
+											span.aon
+											span.marca
+												img(alt='', src!= base_url + 'marcas/playstation.jpg')
+											span.descripcion CONSOLA PS4 SLIM +
+												.line 5 JUEGOS + 2 MANDOS
+											span.antes Precio Normal: S/ 2,875
+											span.cyber PRECIO OFERTA
+											span.price
+												| S/ 
+												span 1,699
+											//- span.note.f-size9
+												| *Disponible en 1 y 3 cuerpos
+											//- span.colores
+												| Colores disponibles
+											//- span.iconos-colores
+												img(src!= base_url + 'marcas/color-negro.png')
+												img(src!= base_url + 'marcas/color-blanco.png')
+						.column.der.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+							//- .discount
+								.percent 70
+								.simbol
+									| %
+									span DSCTO.
+							a.call-right(href='#')
+								.content
+									.wrapper.product
+										.table
+											span.aon
+											span.marca
+												img(alt='', src!= base_url + 'marcas/playstation.jpg')
+											span.descripcion UNCHARTED 4
+												.line + CONTROL
+												.line DUALSHOCK 4
+											span.antes Precio Normal: S/ 488
+											span.cyber Precio Oferta
+											span.price
+												| S/ 
+												span 199
+								.imagen
+									img.centerv(alt='', src!= base_url + 'productos/22.jpg')

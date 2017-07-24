@@ -1,0 +1,541 @@
+/* CSS BC */
+#cyber
+	a
+		outline none
+	.row 
+		width 100%
+		margin 0
+	#sponsor-bc
+		width 1110px
+		height 310px
+		margin 0 auto
+		overflow hidden
+		// background transparent url(../images/sponsor.jpg) center top no-repeat
+		position relative
+	#slider-bc 
+		height 292px
+		width 510px
+		float right
+		clear both
+		margin-bottom 0 !important
+	.banner-slider 
+		width 510px
+		height 310px
+		float right
+		display flex
+		align-items center
+		justify-content center
+	.nav 
+		clear both
+		width 1110px
+		margin 0 auto
+		transition all 0.25s ease 0s
+	.menu 
+		width 100%
+		margin 1px auto 0
+		list-style-type none
+		font-size 0
+		padding 0
+		li 
+			display inline-block
+			position relative
+			line-height 40px
+			width 20%
+	.item 
+		height 100%
+		width 510px
+		height 292px
+		float left
+		position relative
+		outline none
+		img 
+			display block
+			margin 0 auto
+	.call 
+		width 510px
+		float right
+		height auto
+		min-height 292px
+		position relative
+	.call-image 
+		margin 67px 93px 0
+	.product 
+		width 703px
+		float left
+	.image 
+		width 510px
+		height 292px
+		float left
+		position relative
+		img 
+			margin 0 auto
+	.icon 
+		background-image url(../images/master.png)
+		background-repeat no-repeat
+		height 26px
+		width 30px
+		margin-right 4px
+		float left
+		background-position-y bottom
+	.category 
+		background-color #f3f3f3
+		padding 0 5px
+		font-size 12px
+		height 40px
+		display block
+		line-height 40px
+		text-decoration none
+		display flex
+		align-items center
+		justify-content center
+		span 
+			color #454545
+			line-height 1
+			float left
+		.text 
+			height auto
+			text-align center
+			position relative
+			font-size 15px
+		&::after 
+			content ''
+			background #c2c2c2
+			width 1px
+			height 18px
+			position absolute
+			top 8px
+			right 0
+			transform translate(-50%,0)
+			&:last-child 
+				display none
+		&:hover 
+			.text 
+				&:after 
+					border-color white
+		.one 
+			margin-top 18px
+		.icon 
+			/* display none */
+
+	#btn-videojuegos .category::after, .active::after 
+		display none
+	.active 
+		.text 
+			&:after 
+				border-color white
+	.category:hover, .active 
+		background-color #cd5e5d
+		color white
+	.category:hover span, .active span 
+		color white
+	#btn-tv-video 
+		.category 
+			.icon 
+				background-position 7px bottom
+	#btn-audio 
+		.category 
+			.icon 
+				background-position -34px bottom
+	#btn-computo 
+		.category 
+			.icon 
+				background-position -81px bottom
+				width 36px
+	#btn-tablets 
+		.category 
+			.icon 
+				background-position -134px bottom
+	#btn-accesorios-tech 
+		.category 
+			.icon 
+				background-position -178px bottom
+				width 36px
+	#btn-linea-blanca 
+		.category 
+			.icon 
+				background-position -268px bottom
+	#btn-electrodomesticos 
+		.category 
+			.icon 
+				background-position -319px bottom
+	#btn-celulares 
+		.category 
+			.icon 
+				background-position -370px bottom
+	#btn-videojuegos 
+		.category 
+			.icon 
+				background-position -418px bottom
+	#btn-tv-video .category:hover .icon, #btn-tv-video .active .icon 
+		background-position 7px top
+	#btn-audio .category:hover .icon, #btn-audio .active .icon 
+		background-position -34px top
+	#btn-computo .category:hover .icon, #btn-computo .active .icon 
+		background-position -81px top
+	#btn-tablets .category:hover .icon, #btn-tablets .active .icon 
+		background-position -134px top
+	#btn-accesorios-tech .category:hover .icon, #btn-accesorios-tech .active .icon 
+		background-position -178px top
+	#btn-linea-blanca .category:hover .icon, #btn-linea-blanca .active .icon 
+		background-position -268px top
+	#btn-electrodomesticos .category:hover .icon, #btn-electrodomesticos .active .icon 
+		background-position -319px top
+	#btn-celulares .category:hover .icon, #btn-celulares .active .icon 
+		background-position -370px top
+	#btn-videojuegos .category:hover .icon, #btn-videojuegos .active .icon 
+		background-position -418px top
+	#btn-mobilee
+		display none
+		padding 10px
+		width 40px
+		height 40px
+		top 20px
+		position absolute
+		right 10px
+		z-index 999
+		background #fff
+		border-radius 50%
+		border none
+		outline none
+		&::before 
+			content "Ver categorías >"
+			display block
+			font-family "Open Sans", sans-serif
+			font-size 12px
+			left -100px
+			position absolute
+			top 12px
+			width 100px
+			color black
+			-webkit-animation abefore 3s linear infinite
+			animation abefore 3s linear infinite
+			text-shadow 0 1px 1px #fff
+		span 
+			display block
+			clear both
+			width 20px
+			margin 0 auto 5px
+			background #363636
+			border-radius 5px
+			display block
+			height 3px
+			position relative
+			transition all 0.25s ease 0s
+
+	.collapse-movil 
+		// height 380px !important
+		#main-menu 
+			margin-top 0px !important
+			// padding-top 50px
+		.btn-mobile 
+			span 
+				&:nth-child(1) 
+					transform rotate(45deg) translateY(6px) translateX(4px)
+				&:nth-child(3) 
+					transform rotate(-45deg) translateY(-6px) translateX(4px)
+				&:nth-child(2) 
+					opacity 0
+			&::before 
+				display none
+
+	.area 
+		position absolute
+		display block
+		img 
+			width auto !important
+			height auto !important
+	#area1 
+		bottom 19%
+		right -1px
+	#area2 
+		bottom 2%
+		right -1px
+	.view-catalog 
+		top 240px
+		left -8px
+	
+@media only screen and (max-width: 1024px)
+	#cyber
+		#sponsor-bc
+			width 100%
+			background-position 25% top
+		.logo-campaign
+			left 22.5%
+		.container 
+			width 100%
+			overflow hidden
+		.row 
+			width 100%
+		#slider-bc 
+			width 510px
+		.product 
+			width 617px
+		.call 
+			margin-right 0
+		.call-image 
+			margin 67px auto 0
+		.nav 
+			width 100%
+
+@media only screen and (max-width: 992px)
+	#cyber
+		#sponsor-bc
+			width 100%
+		.banner-slider
+			width 50%
+			// width 52.5%
+			display flex
+			align-items center
+			justify-content center
+		#slider-bc 
+			width 100%
+			display flex
+			align-items center
+			// height auto
+		.item 
+			width 100%
+			height auto
+			img
+				width 85%
+		.nav 
+			width 100%
+			float left
+			width 100%
+			background-color transparent
+			height 50px
+			position absolute
+			top 0
+			right 0
+			margin-top 0
+			z-index 2
+			&:afterr 
+				content 'menu'
+				border 1px solid #ccc
+				width 20px
+				height 40px
+				top 10px
+				position absolute
+				right 10px
+				z-index 100
+		.menu 
+			width 100%
+			padding 0
+			background white
+			border-radius 0
+			padding-bottom 2px
+			li 
+				width 100%
+				text-align center
+				border-bottom 1px solid #000
+				&:nth-child(11)
+					// border-bottom none
+				&:last-child 
+					// border-bottom none
+					// width 100% !important
+				&:after 
+					border none
+				.text 
+					color black
+					font-size 14px
+					width 100%
+				.icon 
+					display none
+		.category 
+			margin 0
+			padding 0 10px
+			font-size 12px
+			height 34px
+			line-height 34px
+			text-decoration none
+			background transparent
+			&::after 
+				height 25px
+				top 11px
+			.text 
+				opacity 1
+				font-size 11px
+		.icon 
+			width 42px
+			margin-right 0
+		.call 
+			width 100%
+			float right
+			min-height auto
+			position absolute
+			top 50%
+			right 0
+			transform translate(0, -50%)
+		.call-image 
+			margin 25px auto 40px
+		#btn-mobile 
+			display block
+		.active 
+			background white
+			color black
+		.product 
+			width 100%
+			padding-bottom 10px
+		.image 
+			width 75%
+
+
+@media only screen and (max-width: 767px)
+	#cyber
+		#sponsor-bc
+			padding-top 0
+			width 100%
+			height auto
+			position relative
+			background none
+		.banner-slider
+			height 250px
+		#slider-bc 
+			padding-top 0px
+			height 100%
+			display flex
+			align-items center
+			// overflow hidden
+		.item 
+			// height 500px
+			height 100%
+			img 
+				// width auto
+				// height 100%
+				display block
+				margin 0 auto
+				width 85%
+		.call 
+			height 45%
+			width 100%
+			top 55%
+			right auto
+			left 50%
+			transform translate(-50%,0)
+			margin-top -1px
+		.category 
+			background-color white
+			span 
+				color black
+			.text 
+				&:after 
+					border none
+			&::after 
+				display none
+		.active 
+			:before 
+				background none
+		.description 
+			width 23%
+			margin-left 2%
+		.slick-prev 
+			left 0
+			z-index 10
+		.slick-next 
+			right 0
+			z-index 10
+		.slick-prev, .slick-next 
+			top 50%
+			height 100%
+			width 28px
+			&:before
+				color #fff
+				width 28px
+				background-position center
+
+		.view-catalog 
+			z-index 3
+			left 0
+			top 15px
+			width 33%
+		#btn-mobile 
+			top 9px
+		.menu
+			li
+				width 50%
+
+@media only screen and (max-width: 700px)
+	#cyber
+		#area1 
+			right auto
+		#area2 
+			right auto
+
+@media only screen and (max-width: 640px)
+	#cyber
+		.call-image 
+			margin 20px auto 30px
+		.image 
+			width 72.5%
+			img 
+				width 100%
+				height auto
+		.description 
+			width 25%
+			margin-left 2.5%
+			margin-top 25px
+		#slider-bc 
+			height 80%
+
+@media only screen and (max-width: 600px)
+	#cyber
+		#slider-bc 
+			height 72.5%
+		
+@media only screen and (max-width: 480px) 
+	#cyber
+		#sponsor-bc
+			height 100%
+		.banner-slider
+			width 100%
+			height 100%
+			align-items flex-end
+		#slider-bc 
+			width 100%
+			height 50%
+			overflow initial
+		.call-image 
+			margin 20px auto 20px
+		.call 
+			top 60%
+			height 35%
+		.item 
+			// height 480px
+			// padding-bottom 10px
+			img 
+				width 80% 
+				// height auto
+				// display block
+				// margin 0 auto
+		.image 
+			width 62.5%
+			height auto
+			img 
+				width 100%
+				height auto
+		.description 
+			width 35%
+			margin-top 10px
+			font-size 1.75vh
+			.brand 
+				img 
+					width 90%
+					height auto
+			.price-offer 
+				font-size 7vw
+				span 
+					font-size 5vw
+		#area1 
+			bottom 16%
+		#area2 
+			bottom 2%
+
+@media only screen and (max-width: 320px)
+	#cyber
+		.call 
+			top 65%
+			height 33%
+		.item 
+			// height 450px
+			// padding-bottom 10px
+		.slick-previ, .slick-nexti
+			top 80%
