@@ -26,15 +26,9 @@
 		#cintillo-superior 
 			width 100%
 			background-size contain
-			-webkit-background-size contain
 		.control-bar
 			.groupB
-				display -ms-flexbox
-				display -webkit-flex
 				display flex
-				-ms-flex-align center
-				-webkit-align-items center
-				-webkit-box-align center
 				align-items center
 				justify-content space-around
 				flex-direction row
@@ -48,33 +42,24 @@
 						padding-left 0
 						text-align center !important
 				.btn
-					/*
-					display -ms-flexbox
-					display -webkit-flex
-					display flex
-					-ms-flex-align center
-					-webkit-align-items center
-					-webkit-box-align center
-					align-items center
-					justify-content center
-					flex-direction row
-						*/
+					// display flex
+					// align-items center
+					// justify-content center
+					// flex-direction row
 					padding 0 3px
 					height 100%
 					.iconress
 						margin-right 3px
 						margin-top 0
 					.text
-						/* font-size 10px */
+						// font-size 10px
 						top auto
 						&.two
 							top auto
-							
 
 		#cintillo-bottom 
 			width 96%
 			background-size contain
-			-webkit-background-size contai
 		.calls
 			width 100%
 		.column 
@@ -113,10 +98,14 @@
 			max-width 910px
 		.nav-bar
 			&.fixed
-				/* top 56px */
+				// top 56px
 		#sponsor
 			margin 0
-			height 306px
+			height 310px
+			background-image url(../images/sponsor-tablet2.jpg)
+			background-position center bottom
+			background-size contain
+
 		.banner 
 			height 294px
 		.slide 
@@ -153,7 +142,6 @@
 					position relative
 					left auto
 					transform translate(0,-50%)
-					-webkit-transform translate(0,-50%)
 		.bx-wrapper 
 			.bx-viewport 
 				height 294px !important
@@ -200,13 +188,12 @@
 			font-size 12px
 			padding-bottom 2px
 		.logo-campaign 
-			display none
-			/* top 75px */
-			width auto
+			// display none
+			// top 75px 
+			width 23%
 		.calls 
 			width 100%
 			background-size cover
-			-webkit-background-size cover
 			height 294px
 			/* background none 
 			border 7.5px solid #d5dde6
@@ -216,15 +203,7 @@
 			&::after 
 				height 280px !important
 				right -10px
-		#sponsor
-			background-image url(../images/sponsor-tablet2.jpg)
-			background-position center
-			-webkit-background-size cover
-			background-size cover
-			.slider-next 
-				top 50%
-			.slider-prev 
-				top 50%
+
 		.slider-next 
 			top 50%
 		.slider-prev 
@@ -233,9 +212,33 @@
 			display none
 		
 		.collapse-movil
+			#main-menu
+				height ($menu * 31px) + 1
+				// height auto
+				opacity 1
+				vendor('transition', all 0.2s ease-in 0s)
 			.menu
-				//top 285px
+				top 60px
 
+		.nav-bar
+			width 100%
+			z-index 11
+			&.fixedd
+				top 48px
+		.nav
+			width 100%
+		
+		#main-menu
+			// height auto
+			display block
+			padding-left 0
+			padding-right 0
+			li
+				margin-bottom 0
+				a
+					width 100%
+		.slick-dots
+			bottom -10px
 
 @media screen and (max-width: 768px)
 	#cyber
@@ -243,7 +246,7 @@
 		#header-banner
 			height auto
 		#home
-			/* background-image url(../images/bg-home-mobile.png) */
+			// background-image url(../images/bg-home-mobile.png)
 			height 100vh
 			background-position center
 		.call
@@ -279,7 +282,6 @@
 				.bg-image
 					width 190px
 					height 190px
-		
 
 		.nav-bar
 			width 100%
@@ -295,15 +297,13 @@
 		#btn-mobile
 			display block
 		#main-menu
-			height auto
+			height 0
 			display block
 			padding-left 0
 			padding-right 0
-			border 1px solid #fff
+			// border 1px solid #fff
 			li
 				margin-bottom 0
-				.active
-					color white
 				a
 					width 100%
 		.menu
@@ -316,27 +316,27 @@
 			box-shadow none
 			overflow hidden
 			border-radius 0
-			height auto
+			height 0
 			bottom auto
 			// padding-top 40px
 			li
 				float left
 				clear none
-				border-bottom 1px solid #fff
+				// border-bottom 1px solid #fff
+				// border 1px solid #000
 				width 50%
 				&:nth-child(1)
-					// border-top 1px solid #fff
-				&:nth-child(11), &:nth-child(12)
-					border-bottom none
+					//- border-top 1px solid #000
+				&:nth-child(even)
+					// border-right 1px solid #000
 				a
 					display block
 					color black
 					height 30px
 					.icon
 						display none
-				.active
-					background-color black
-					color white
+				&:after
+					display none
 
 @media screen and (max-width: 767px)
 	#cyber
@@ -354,15 +354,12 @@
 			background-image url(../images/sponsor_mobile.jpg)
 			background-repeat no-repeat
 			width 100%
-			height 430px
+			height 420px
 			position relative
 			overflow hidden
-			/* margin-bottom 0 */
-			background-size contain
-			-webkit-background-size contain
-			background-position center top
-			background-size auto 230px
-			background-color white
+			background-position center
+			background-size cover
+			// background-color white
 		.banner 
 			padding-top 0px
 			overflow hidden
@@ -390,15 +387,6 @@
 			display block
 			width auto
 
-		#sponsor 
-			.slider-prev 
-				left 10px
-			.slider-next 
-				right -22px
-		.slider-prev 
-			left 10px
-		.slider-next 
-			right -22px
 		.column 
 			&.izq 
 				.content 
@@ -435,22 +423,10 @@
 						padding-bottom 24%
 						
 		.logo-campaign
-			display block
+			display none
 			width 196px
 			top 115px
 			// left 25%
-		.cintillo-cyber 
-			display none
-		.cintillo-top-desktop 
-			display none
-		.cintillo-top-mobile 
-			display block
-			width auto
-		.cintillo-bottom-desktop 
-			display none
-		.cintillo-bottom-mobile 
-			display block
-			width auto
 		.calls 
 			/* background #d3dee4
 			border 7.5px solid #d3dee4 */
@@ -466,44 +442,92 @@
 		.collapse-movil
 			.menu
 				top 60px
+		#btn-mobile
+			display block
+		.category
+			.text
+				width 100%
+			&.active
+				&::before
+					display none
 		#main-menu
-			height calc(100vh - 60px)
+			// height calc(100vh - 60px)
 			display block
 			padding-left 0
 			padding-right 0
-			display -ms-flexbox
-			display -webkit-flex
 			display flex
-			// -ms-flex-align center
-			// -webkit-align-items center
-			// -webkit-box-align center
+			flex-direction column
 			// align-items center
 			// justify-content center
-			// flex-direction row
-			-webkit-flex-wrap wrap
-			-ms-flex-wrap wrap
-			flex-wrap wrap
-			flex-basis 100%
+			// flex-wrap wrap
+			// flex-basis 100%
 			li
-				display -ms-flexbox
-				display -webkit-flex
 				display flex
-				-ms-flex-align center
-				-webkit-align-items center
-				-webkit-box-align center
 				align-items center
 				justify-content center
-				width 50%
+				width 100%
 				float left
 				clear none
+				// border-bottom 1px solid #000
+				// clear both
 				&:nth-child(1), &:nth-child(2)
 					// border-top 1px solid #fff
 				&:nth-child(even)
-					// border-left 1px solid #fff
+					// border-left 1px solid #000
 				&:last-child
 					margin 0 auto
 					float none
-					/* border none */
+					// border none
+				a
+					display flex
+					align-items center
+					// vertical-align middle
+					height 30px
+					line-height 30px
+					font-size 3.5vw
+					text-align center
+					// padding 0 20px
+				&:nth-child(20)
+					border-top none
+					border-left none
+				&:nth-child(21)
+					border-left none
+		.menu
+			margin-right 0
+			margin-left 0
+			width 100%
+			clear both
+			overflow hidden
+			background-color white
+			box-shadow none
+			overflow hidden
+			border-radius 0
+			height auto
+			bottom auto
+			// padding-top 40px
+			border-top 1px solid #000
+			border-left 1px solid #000
+			border-right 1px solid #000
+			top -400px
+			position absolute
+			li
+				float left
+				clear none
+				border-bottom 1px solid #000
+				// border 1px solid #000
+				width 50%
+				&:nth-child(1)
+					// border-top 1px solid #fff
+				&:nth-child(even)
+					// border-left 1px solid #000
+				a
+					display block
+					color black
+					height auto
+					.icon
+						display none
+				&:after
+					display none
 		#calls
 			.coupon
 				img
@@ -514,13 +538,8 @@
 			bottom 5px
 	
 		.item
-			height 200px
-			display -ms-flexbox
-			display -webkit-flex
+			height 50vh
 			display flex
-			-ms-flex-align center
-			-webkit-align-items center
-			-webkit-box-align center
 			align-items center
 			flex-direction column
 			justify-content center
@@ -604,14 +623,6 @@
 		.collapse-movil
 			.menu
 				//top 140px
-		#main-menu
-			li
-				a
-					height 30px
-					line-height 30px
-					font-size 12px
-		.item
-			height 200px
 
 @media screen and (max-width: 540px)
 	#cyber
@@ -627,29 +638,17 @@
 			overflow auto
 		#sponsor
 			// background-image url(../images/bg-mobile.png)
-			background-position center top
+			// background-position center top
 			// background-size auto
 			// -webkit-background-size auto
-			height 430px
-			/* overflow auto */
-			.slider-prev
-				left 15px
-				top 45%
-			.slider-next
-				right -17px
-				top 45%
+			// overflow auto
 		.banner-slider
 			// background-image url(../images/sponsor_mobile.jpg)
 			// background-position center top
 			// background-size cover
 			// -webkit-background-size cover
 			// background-repeat no-repeat
-		.slider-prev
-			left 15px
-			top 45%
-		.slider-next
-			right -17px
-			top 45%
+
 		.nav-bar
 			clear both
 			margin-bottom 20px
@@ -668,10 +667,9 @@
 		.banner 
 			width 100%
 			height 450px
-			/* background-image url(../images/bg-banner.jpg) */
+			// background-image url(../images/bg-banner.jpg)
 			overflow initial
 			background-size cover
-			-webkit-background-size cover
 			background-position center
 		.slide 
 			padding-bottom 10px
@@ -686,11 +684,11 @@
 				width 100%
 				height auto
 		.calls 
-			/* background-image url(../images/logo-cybermonday-mobile.png) */
+			// background-image url(../images/logo-cybermonday-mobile.png)
 			background-repeat no-repeat
 			background-position center 55%
 			background-size auto
-			/* border 7.5px solid #d3dee4 */
+			// border 7.5px solid #d3dee4
 			height 440px
 		.column .imagen, 
 			.column .content .wrapper 
@@ -729,7 +727,6 @@
 						&::before
 							left 33% !important
 							transform auto !important
-							-webkit-transform auto !important
 							bottom 0
 							width 33%
 						.number
@@ -787,7 +784,6 @@
 			left 50%
 			// top 30%
 			transform translate(-50%, 0)
-			-webkit-transform translate(-50%, 0)
 			display block
 		.current-category
 			font-size 3.5vw
@@ -810,34 +806,9 @@
 		.collapse-movil
 			.menu
 				//top 160px
-		#main-menu
-			li
-				float left
-				display -ms-flexbox
-				display -webkit-flex
-				display flex
-				-ms-flex-align center
-				-webkit-align-items center
-				-webkit-box-align center
-				align-items center
-				justify-content center
-				/* width 100%
-				float left
-				clear both*/
-				a
-					display table-cell
-					vertical-align middle
-					height auto
-					line-height normal
-					font-size 3.5vw
-					// padding 0 20px
-				&:nth-child(20)
-					border-top none
-					border-left none
-				&:nth-child(21)
-					border-left none
+
 		.slick-dots
-			bottom 8%
+			// bottom 8%
 
 @media screen and (max-width: 414px)
 	#cyber
@@ -854,10 +825,17 @@
 			// width 77.5%
 			// top 32.5%
 
-@media screen and (max-width: 375px)
+@media screen and (max-width: 384px)
 	#cyber
 		#container
-			max-width 290px
+			max-width 384px
+		.current-category
+			padding 0 2.5%
+
+@media screen and (max-width: 345px)
+	#cyber
+		#container
+			max-width 345px
 		.breadcrumb
 			.circles
 				margin-top 10px
@@ -867,7 +845,7 @@
 		.logo-campaign
 			// width 90%
 
-@media screen and (max-width: 360px)
+@media screen and (max-width: 330px)
 	#cyber
 		#container
 			max-width 330px
@@ -878,7 +856,7 @@
 		.current-category
 			padding 0 2.5%
 
-@media screen and (max-width: 320px)
+@media screen and (max-width: 290px)
 	#cyber
 		#container
 			max-width 290px

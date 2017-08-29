@@ -1,11 +1,8 @@
-/* Colors */
-$rojo = #cd1337
-$caki = #d3cbbf
-$ocre = #69544a
-$gree_o = #838148
-$yellow = #fcce01
-$color_active = #ed1d24
-$bg_sticky = #000
+/* Variables */
+$menu_active = #efa628
+$bg_menu = #f2f2f2
+// Número de menus(secciones)
+$menu = 5
 
 vendor(prop, args)
 	-webkit-{prop} args
@@ -36,46 +33,13 @@ bgimg(uri)
 		max-width 1110px
 		width 100%
 		height auto
-		/* float left*/
+		// float left
 		overflow hidden
 		opacity 0
 		position relative
-		/* background-image url(../images/bg-page.jpg) */
+		// background-image url(../images/bg-page.jpg) 
 		background-position center top
 		background-repeat no-repeat
-
-	#main-menu
-		height 46px
-		font-size 0
-		left 0
-		background-color black
-		display none
-		border-top 1px solid #fff
-		vendor('transition', all 0.2s ease-in 0s)
-		li
-			position relative
-			display inline-block
-			&:nth-child(even)
-				border-left 1px solid #fff
-			&:last-child
-				// border-left none
-			a
-				position relative
-				display block
-				line-height 36px
-				text-align center
-				margin 0
-				padding 0px 20px
-				height 36px
-				font-size 14px
-				color #fff
-				text-transform uppercase
-				text-decoration none
-				.icon
-					margin-top 2px
-					margin-right 8px
-					display inline-block
-					float left
 
 	.nav
 		width 100%
@@ -94,10 +58,8 @@ bgimg(uri)
 		background transparent
 		display none
 		transform translateZ(0)
-		-webkit-transform translateZ(0)
 		transform translate3d(0,0,0)
-		-webkit-transform translate3d(0,0,0)
-		vendor('transition', none !important)
+		transition none !important
 	.current-category
 		width 100%
 		text-align center
@@ -106,63 +68,143 @@ bgimg(uri)
 		padding 0 5%
 		display none
 		bgcolor(transparent)
-	.menu
-		top -265px
-		font-size 0
+
+	.nav 
+		width 1110px
+		margin 0 auto
+		transition all 0.25s ease 0s
+	.menu 
+		width 100%
+		margin 0 auto
 		list-style-type none
-		text-align center
-		position absolute
-		z-index 100
-		vendor('transition', all 0.2s ease-in 0s)
-		//vendor('transform', translate(0, -50%))
-		li
+		font-size 0
+		padding 0
+		height 0
+		clear both
+		float left
+		li 
+			display inline-block
 			position relative
-			margin-bottom 12px;
-			a
-				position relative
-				display block
-				line-height 1
-				text-align center
-				height 42px
-				color white
-				text-decoration none
-				font-size 11.5px
-				display -ms-flexbox
-				display -webkit-flex
-				display flex
-				-ms-flex-align center
-				-webkit-align-items center
-				-webkit-box-align center
-				align-items center
-				.icon
-					margin-bottom 2px
-					display block
-					margin 0 auto
-					float left
-					height 42px
-					position absolute
-				.icon-modelos
-					&:hover
-						background-position: -433px 0
-				.icon-tintas
-					&:hover
-						background-position: -553px 0
-				.icon-video
-					&:hover
-						background-position: -673px 0
-				.text
-					font-size 11px
-					color #fff
-					text-align center
-					float left
-					margin-left 48px
-					position relative
-				&:hover, .active
-					vendor('transition', all 0.2s ease-in 0s)
-				&:nth-child(1)
-					width 78px
-			.active
-				color white
+			// line-height 46px
+			width (100% / $menu)
+			float left
+			
+			&:last-child 
+				a
+					&::after 
+						display none
+			&:first-child
+				.category
+					.icon
+						// display none
+						background-position 0px top
+						width 31px
+			&:nth-child(2)
+				.category
+					.icon
+						background-position -31px top
+			&:nth-child(3)
+				.category
+					.icon
+						background-position -55px top
+			&:nth-child(4)
+				.category
+					.icon
+						background-position -80px top
+						width 26px
+			&:nth-child(5)
+				.category
+					.icon
+						background-position -106px top
+
+	.category 
+		padding 0 10px
+		font-size 12px
+		height 34px
+		display block
+		line-height 48px
+		text-decoration none
+		background-color $bg_menu
+		color #424242
+		display flex
+		align-items center
+		justify-content center
+		span 
+			color #595959
+		.text 
+			float left
+			line-height 1
+			height auto
+			// margin-top 12.5px
+			text-align center
+			width auto
+			position relative
+			font-size 9px
+			margin-bottom 0
+			padding 0
+			// text-transform uppercase
+			font-family 'Open Sans', sans-serif
+			&:after 
+				// content ''
+				border 1px solid #ffc800
+				width 74px
+				position absolute
+				bottom 0px
+				left 50%
+				transform translate(-50%,0)
+		&::after 
+			content ''
+			background #d6d6d6
+			width 1px
+			height 30px
+			position absolute
+			top 50%
+			right 0
+			transform translate(0, -50%)
+		.icon 
+			// display none
+		&:hover 
+			li
+				&:after
+					display none
+			.text 
+				&:after 
+					// content ''
+					border-color white
+
+	.category:hover, .active 
+		background-color $menu_active
+		color white
+		position relative
+		&::before 
+			// content ''
+			background-image url(../images/arrow-active.png)
+			position absolute
+			width 20px
+			height 10px
+			bottom 100%
+			left 50%
+			transform translate(-50%,0)
+		&::after
+			display none
+		.icon
+			background-position-y bottom !important
+		.text 
+			&:after 
+				// content ''
+				border-color white
+
+	.icon 
+		background-image url(../images/master.png)
+		height 20px
+		width 24px
+		margin-right 7px
+		float left
+		// margin-top 12.5px
+		background-position-y top
+
+	.category:hover span, .active span 
+		color white
 
 	#header-banner 
 		padding 0
@@ -177,15 +219,6 @@ bgimg(uri)
 	#header-banner .row .col-xs-12, #header-banner .row .col-sm-12, #header-banner .row .col-md-12, #header-banner .row .col-lg-12, #header-banner .row .col-xl-12 
 		padding 0
 
-	#cintillo-superior 
-		width 100%
-		height 60px
-		/* background-image url(../images/cintillo.gif) */
-		background-position center
-		background-repeat no-repeat
-		margin 0 auto
-		position relative
-
 	#sponsor 
 		padding 0
 		margin 0 auto
@@ -195,35 +228,18 @@ bgimg(uri)
 		background-color transparent
 		background-position center top
 		background-repeat no-repeat
-		/*
-		background-size 48px 48px
+		// background-size 48px 48px
 		bgcolor(white)
-		padding-top 60px
-		overflow hidden
-		*/
+		// padding-top 60px
+		// overflow hidden
 		.col-xs-12, .col-sm-12, .col-md-12, .col-lg-12, .col-xl-12
 			padding 0
-		iframe
-			/*
-			position relative
-			overflow hidden
-			height 270px*/
-			position absolute
-			top 8px
-			left 0
-			right 0
-			bottom 0
-			width 100%
-			height 100%
-			border 0
-			#cyber
-				margin 0
+
 		.slider-prev 
 			position absolute
 			left -40px
 			top 50%
 			transform translate(-50%, 0)
-			-webkit-transform translate(-50%, 0)
 			z-index 10
 			background url(../images/left.png) no-repeat center
 			height 32px
@@ -238,7 +254,6 @@ bgimg(uri)
 			right -70px
 			top 50%
 			transform translate(-50%, 0)
-			-webkit-transform translate(-50%, 0)
 			z-index 10
 			background url(../images/right.png) no-repeat center
 			height 36px
@@ -253,7 +268,6 @@ bgimg(uri)
 		left -40px
 		top 50%
 		transform translate(-50%, 0)
-		-webkit-transform translate(-50%, 0)
 		z-index 10
 		background url(../images/left.png) no-repeat center
 		height 32px
@@ -268,7 +282,6 @@ bgimg(uri)
 		right -70px
 		top 50%
 		transform translate(-50%, 0)
-		-webkit-transform translate(-50%, 0)
 		z-index 10
 		background url(../images/right.png) no-repeat center
 		height 36px
@@ -279,24 +292,27 @@ bgimg(uri)
 			height 32px
 			display block
 	.logo-campaign 
-		top 84px
-		left 50%
-		transform translate(-50%, 0)
-		-webkit-transform translate(-50%, 0)
-		z-index 1
-		position absolute
-		display none
-		/* width 130px */
+		width 253px
+		height 252px
+		float left
+		position relative
+		// top 84px
+		// left 50%
+		// transform translate(-50%, 0)
+		// z-index 1
+		// position absolute
+		// display none
+		// width 130px
 	.slider-banner
 		width 1074px
 		margin 0 auto
 		position relative
 		display none
-		/* border 8px solid $color_active */
+		// border 8px solid $menu_active
 		bgcolor(white)
 		&::before
 			content ''
-			bgimg('../images/round-left-top.png')
+			// bgimg('../images/round-left-top.png')
 			left 0
 			top 0
 			position absolute
@@ -305,7 +321,7 @@ bgimg(uri)
 			z-index 9
 		&::after
 			content ''
-			bgimg('../images/round-right-bottom.png')
+			// bgimg('../images/round-right-bottom.png')
 			right 0
 			bottom 0
 			position absolute
@@ -337,8 +353,98 @@ bgimg(uri)
 		margin 0 auto
 		overflow hidden
 		padding 0
-		
-		/* background-image url(../images/bg-banner.jpg) */
+		// background-image url(../images/bg-banner.jpg) 
+	
+	.features
+		width 100%
+		display table-cell
+		vertical-align middle
+		// display none
+		// bottom -210px
+		z-index 50
+		background-color rgba(255,255,255,.88)
+		text-align center
+		padding-bottom 20px
+		transition all 0.5s ease-in 0s
+		font-family 'Open Sans', sans-serif
+
+	.descripcion
+		font-size 25px
+		color #000
+		margin-bottom 0
+		line-height 1
+		height 60px
+		span
+			font-weight 600
+	.name
+		font-size 16px
+		font-weight 600
+		margin-bottom 5px
+		line-height 1.15
+	.hasta
+		font-size 13px
+	.porcentaje
+		width 50px
+		margin 0 auto
+		font-size 72px
+		color #101010
+		line-height 0.75
+		display table
+		// margin-bottom 10px
+		& +.btn-buy
+			margin-top 10px
+	.number
+		font-size 96px
+		// display table-cell
+		// vertical-align middle
+		font-weight 300
+		letter-spacing -6px
+		margin-right 4px
+	.percent
+		line-height 29px
+		font-size 72px
+		display table-cell
+		vertical-align bottom
+	.dscto
+		font-size 18px
+		margin-top 0
+		vertical-align top
+		margin-bottom -10px
+		font-weight 600
+	.antes
+		font-size 10px
+		margin-bottom 5px
+		line-height 1
+	.cyber
+		color #df213b
+		font-size 14px
+		padding-bottom 2px
+		text-transform uppercase
+		font-weight bold
+		line-height 1
+		text-decoration none
+		/* border-bottom 1px solid #e02139 */
+		display inline-block
+	.price
+		color #df213b
+		font-size 29px
+		line-height 1
+		padding-bottom 0
+		margin-bottom 10px
+		font-weight 600
+		position relative
+		span
+			display inline-block
+			font-size 41px
+			line-height 0.875
+			padding-bottom 0
+	.note
+		font-size 22px
+		font-weight 700
+		padding 0
+		margin-bottom 20px
+		line-height 1
+
 	.column 
 		padding 0
 		&.izq 
@@ -395,12 +501,7 @@ bgimg(uri)
 				width 100%
 				height 290px
 				padding-top 72.5%
-				display -ms-flexbox
-				display -webkit-flex
 				display flex
-				-ms-flex-align center
-				-webkit-align-items center
-				-webkit-box-align center
 				align-items center
 				flex-direction column
 				justify-content center
@@ -439,16 +540,11 @@ bgimg(uri)
 					margin 0
 					display inline-block
 				&.hasta
-					color $color_active
+					color $menu_active
 					font-weight bold
 					height 15px
 					position relative
-					display -ms-flexbox
-					display -webkit-flex
 					display flex
-					-ms-flex-align end
-					-webkit-align-items flex-end
-					-webkit-box-align end
 					align-items flex-end
 				&.marca
 					height 15px
@@ -470,11 +566,10 @@ bgimg(uri)
 					margin-bottom 3px
 					text-decoration line-through
 				&.cyber 
-					color $color_active
+					color $menu_active
 					font-size 12px
 					padding-bottom 2px
 					font-weight bold
-					/**/
 					text-transform uppercase 
 					line-height 1
 					z-index 1
@@ -483,12 +578,7 @@ bgimg(uri)
 					font-size 114%
 					clear both
 					line-height 1
-					display -ms-flexbox
-					display -webkit-flex
 					display flex
-					-ms-flex-align center
-					-webkit-align-items center
-					-webkit-box-align center
 					align-items center
 					justify-content center
 					.bigger
@@ -518,17 +608,17 @@ bgimg(uri)
 					font-size 8px
 					height 18px
 			.price 
-				color $color_active
+				color $menu_active
 				font-size 25px
 				font-size 21px
 				line-height 1
 				padding 4px 8px
 				padding 0
-				/* width 80% */
+				// width 80%
 				display inline-block
-				/* text-align center */
+				// text-align center
 				margin-bottom 3px
-				/* bgcolor(white) */
+				// bgcolor(white)
 				span 
 					display inline-block
 					font-size 36px
@@ -577,7 +667,7 @@ bgimg(uri)
 				width 270px
 				height 270px
 				border-radius 50%
-				bgcolor (#fdd400)
+				bgcolor(#fdd400)
 			img 
 				width 100%
 				height auto
@@ -586,12 +676,7 @@ bgimg(uri)
 			width 510px
 			height 294px
 			margin 0 auto
-			display -ms-flexbox
-			display -webkit-flex
 			display flex
-			-ms-flex-align center
-			-webkit-align-items center
-			-webkit-box-align center
 			align-items center
 			justify-content center
 			flex-direction column
@@ -642,28 +727,6 @@ bgimg(uri)
 			z-index 10
 		.bx-viewport
 			bgcolor(white)
-	.bx-control 
-		display inline-block
-	.bx-pause 
-		display block !important
-		text-indent -9999px !important
-		width 11px !important
-		height 13px !important
-		outline 0 !important
-		background url(images/controls.png) -85px -44px no-repeat !important
-		margin 0 4px !important
-		border-radius 0 !important
-		cursor pointer
-	.bx-play 
-		display block !important
-		text-indent -9999px !important
-		width 11px !important
-		height 13px !important
-		outline 0 !important
-		background url(images/controls.png) -85px -11px no-repeat !important
-		margin 0 4px !important
-		border-radius 0 !important
-		cursor pointer
 	
 	#cintillo-bottom 
 		width 1056px
@@ -722,10 +785,10 @@ bgimg(uri)
 			border-radius 1px
 			display block
 			height 2px
-			vendor('transition', all 0.2s ease-in 0s)
+			transition all 0.2s ease-in 0s
 		&::before 
 			color black
-			content "Ver categorÃ­as >"
+			content "Ver categorías >"
 			display block
 			font-family "Open Sans", sans-serif
 			font-size 11px
@@ -735,7 +798,6 @@ bgimg(uri)
 			width 110px
 			display block
 			text-align right
-			-webkit-animation abefore 3s linear infinite 
 			animation abefore 3s linear infinite
 
 	.collapse-movil
@@ -747,11 +809,9 @@ bgimg(uri)
 			span
 				bgcolor(black)
 				&:nth-child(1)
-					-webkit-transform rotate(45deg) translateY(6px) translateX(5px)
 					transform rotate(45deg) translateY(5px) translateX(4px)
 					width 22px
 				&:nth-child(3)
-					-webkit-transform rotate(-45deg) translateY(-6px) translateX(5px)
 					transform rotate(-45deg) translateY(-6px) translateX(5px)
 					width 22px
 				&:nth-child(2)
@@ -762,156 +822,17 @@ bgimg(uri)
 	/* MENU */
 	.sector_filtros
 		overflow hidden
-		background $bg_sticky
+		background $bg_menu
 		transform translateZ(0)
-		-webkit-transform translateZ(0)
 		transform translate3d(0,0,0)
-		-webkit-transform translate3d(0,0,0)
 		transform-origin 50% 50% 
-		transform-origin 50% 50% 
-		-ms-transform-origin 50% 50% 
-		-webkit-transform-origin 50% 50% 
-		// vendor('transition', all 0.5s ease 0.25s)
+		// transition all 0.5s ease 0.25s
 		.groupB 
 			display table
 			margin 0 auto 0px
 			text-align center
 			width 1110px
 
-	.control-bar 
-		.groupB
-			.bloque
-				width 8.33%
-				.iconress
-					margin 10px auto 2px !important
-					float none !important
-					display block !important
-				.text
-					text-align center !important
-					top auto !important
-					line-height 1.2 !important
-					display -ms-flexbox
-					display -webkit-flex
-					display flex
-					-ms-flex-align center
-					-webkit-align-items center
-					-webkit-box-align center
-					align-items center
-					justify-content center
-					flex-direction column
-					width 100%
-					height 28px
-					&.two
-						top auto !important
-			.btn 
-				background $bg_sticky
-				color #fff
-				display inline-block
-				margin 0
-				border-radius 0
-				vertical-align middle
-				padding 0 5px
-				float left
-				letter-spacing inherit
-				min-width inherit
-				line-height 51px
-				height 70px
-				font-size 9.25px
-				&.active 
-					background $color_active
-					border-bottom 0 none
-					color #fff
-					font-weight bold
-					.iconress 
-						background-position-y bottom !important
-				.iconress 
-					background url(../images/master.png) 0 0 no-repeat
-					width 34px
-					height 23px
-					display block
-					float left
-					margin-right 7px
-					margin-top 19px
-					&.todos 
-						background-position 0 100%
-						width 23px
-					&.video 
-						background-position -383px 100%
-						width 46px
-					&.tecnologia 
-						background-position -132px 100%
-						width 25px
-					&.celulares 
-						background-position -1289px 100%
-						width 27px
-					&.electrohogar 
-						background-position -255px 100%
-						width 18px
-					&.muebleria 
-						background-position -775px 100%
-						width 29px
-					&.dormitorio 
-						background-position -641px 100%
-					&.decohogar 
-						background-position -520px 100%
-						width 19px
-					&.deporte 
-						background-position -909px 100%
-						width 32px
-					&.bebe 
-						background-position -1042px 100%
-						width 26px
-					&.belleza 
-						background-position -1161px 100%
-						width 38px
-					&.relojes 
-						background-position -1375px 100%
-						width 26px
-					&.gift 
-						background-position -1468px 100%
-						width 26px
-					&.moda 
-						background-position -1562px 100%
-						width 26px
-				&:hover 
-					background-color $color_active
-					color #fff
-					.iconress 
-						background-position-y bottom !important
-				.text 
-					position relative
-					top 24px
-					float left
-					line-height 1.25
-					text-align left
-					&.two 
-						top 20px
-						span 
-							display block
-			.menos200
-				display -ms-flexbox
-				display -webkit-flex
-				display flex
-				-ms-flex-align center
-				-webkit-align-items center
-				-webkit-box-align center
-				align-items center
-				justify-content center
-				flex-direction column
-				span
-					width 100%
-					line-height 1
-				.m200
-					height auto
-					font-size 10px
-					margin-bottom 2px
-					line-height 1.2
-				.m200text
-					height auto
-					font-size 16px
-					em
-						font-style normal
-						font-size 10px
 	.container-calls
 		padding 25px 0 0
 		z-index 9
@@ -926,21 +847,13 @@ bgimg(uri)
 			img
 				opacity 0
 				transform translateZ(0)
-				-webkit-transform translateZ(0)
 				transform scale(0.25)
-				-ms-transform scale(0.25)
-				-webkit-transform scale(0.25)
 				transform-origin 50% 50% 
-				transform-origin 50% 50% 
-				-ms-transform-origin 50% 50% 
-				-webkit-transform-origin 50% 50% 
 			&.scale
 				img
 					opacity 1
 					transform scale(1)
-					-ms-transform scale(1)
-					-webkit-transform scale(1)
-					vendor('transition', all 2s ease 0.5s)
+					transition all 2s ease 0.5s
 	/* Class AUX */
 	.navigate
 		position fixed
@@ -959,20 +872,17 @@ bgimg(uri)
 		position absolute
 		top 50% !important
 		transform translate(0, -50%) !important
-		-webkit-transform translate(0, -50%) !important
 
 	.centerh
 		position absolute
 		left 50% !important
 		transform translate(-50%, 0) !important
-		-webkit-transform translate(-50%, 0) !important
 
 	.centervh
 		position absolute
 		left 50% !important
 		top 50% !important
 		transform translate(-50%, -50%) !important
-		-webkit-transform translate(-50%, -50%) !important
 
 	.bottom
 		position absolute
@@ -1045,11 +955,9 @@ bgimg(uri)
 		width 100%
 		z-index 100
 		transform translateZ(0)
-		-webkit-transform translateZ(0)
 		transform translate3d(0,0,0)
-		-webkit-transform translate3d(0,0,0)
-		vendor('transition', all 1s ease 0.5s)
-		/* width auto */
+		transition all 1s ease 0.5s
+		// width auto
 
 	.absolute
 		position absolute
@@ -1072,9 +980,6 @@ bgimg(uri)
 		z-index 99
 		cursor pointer
 		animation scrolling 2s infinite
-		-webkit-animation-name scrolling
-		-webkit-animation-duration 2s
-		-webkit-animation-iteration-count infinite
 
 	.link-section
 		width 100%
@@ -1117,25 +1022,25 @@ bgimg(uri)
 			width 100%
 			height auto
 	#col1
-		/* background-color rgba(100,250,20, .5) */
+		// background-color rgba(100,250,20, .5)
 		height auto
 		float left
 	#col2
-		/* background-color rgba(120,150,80, .5) */
+		// background-color rgba(120,150,80, .5)
 		height auto
 		float left
 	#col3
-		/* background-color rgba(10,20,2, .5) */
+		// background-color rgba(10,20,2, .5)
 		height auto
 		float left
 	#col4
-		/* background-color rgba(50,50,200, .5) */
+		// background-color rgba(50,50,200, .5)
 		height auto
 		float left
 	.upper
 		text-transform uppercase		
 
 .sector_filtros
-	// vendor('transition', all 0.25s ease 0.0s)
+	// transition all 0.25s ease 0.0s
 	&.fixeds
 		top 56px !important
