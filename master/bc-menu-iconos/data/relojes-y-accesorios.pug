@@ -1,0 +1,158 @@
+extends ../layout/layout2.pug
+
+block content
+	- var base_url = 'http://www.ripley.com.pe/minisitios/campana/cyber-mama/'
+	if test=="dev"
+		- var base_url = '../'
+
+	#cyber(style='margin:0')
+		// RELOJES Y ZAPATILLAS
+		.slider-banner#slider-relojes-y-accesorios
+			span.slider-prev
+			span.slider-next
+			.banner
+				// Slide RELOJES 1
+				.slide
+					img.logo-campaign.centerh(src!= base_url + 'assets/logo-relojes.jpg')
+					.calls
+						.column.izq.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+							//- .discount
+								.percent 40
+								.simbol
+									| %
+									span DSCTO.
+							a.call-left(href='#')
+								.imagen
+									img.centerv(alt='', src!= base_url + 'productos/43.jpg')
+								.content
+									.wrapper.product
+										.table
+											span.aon
+											span.marca
+												img(alt='', src!= base_url + 'marcas/guess.jpg')
+											span.descripcion RELOJ W0660G1
+												.line MULTIFUNCIÓN 43 MM
+											span.antes Precio Normal: S/ 999
+											span.cyber Precio Oferta
+											span.price
+												| S/ 
+												span 449
+						.column.der.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+							//- .discount
+								.percent 70
+								.simbol
+									| %
+									span DSCTO.
+							a.call-right(href='#')
+								.content
+									.wrapper.product
+										.table
+											span.aon
+											span.marca
+												img(alt='', src!= base_url + 'marcas/fossil.jpg')
+											span.descripcion RELOJ ANÁLOGO
+												.line METAL
+											span.antes Precio Normal: S/ 669
+											span.cyber Precio Oferta
+											span.price
+												| S/ 
+												span 449
+								.imagen
+									img.centerv(alt='', src!= base_url + 'productos/44.jpg')
+
+				// Slide RELOJES 2
+				.slide
+					img.logo-campaign.centerh(src!= base_url + 'assets/logo-relojes.jpg')
+					.calls
+						.column.izq.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+							//- .discount
+								.percent 40
+								.simbol
+									| %
+									span DSCTO.
+							a.call-left(href='#')
+								.imagen
+									img.centerv(alt='', src!= base_url + 'productos/45.jpg')
+								.content
+									.wrapper.product
+										.table
+											span.aon
+											span.marca
+												img(alt='', src!= base_url + 'marcas/fossil.jpg')
+											span.descripcion RELOJ ES4185
+											span.antes Precio Normal: S/ 569
+											span.cyber Precio Oferta
+											span.price
+												| S/ 
+												span 399
+						.column.der.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+							//- .discount
+								.percent 70
+								.simbol
+									| %
+									span DSCTO.
+							a.call-right(href='#')
+								.content
+									.wrapper.product
+										.table
+											span.aon
+											span.marca
+												img(alt='', src!= base_url + 'marcas/guess.jpg')
+											span.descripcion RELOJ W0798G3
+												.line 10 ATM
+											span.antes Precio Normal: S/ 899
+											span.cyber Precio Oferta
+											span.price
+												| S/ 
+												span 449
+								.imagen
+									img.centerv(alt='', src!= base_url + 'productos/46.jpg')
+
+				//- Slide RELOJES 3
+				//- .slide
+					img.logo-campaign.centerh(src!= base_url + 'assets/logo-relojes.jpg')
+					.calls
+						.column.izq.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+							//- .discount
+								.percent 40
+								.simbol
+									| %
+									span DSCTO.
+							a.call-left(href='#')
+								.imagen
+									img.centerv(alt='', src!= base_url + 'productos/47.jpg')
+								.content
+									.wrapper
+										.table
+											span.aon
+											span.marca
+												img(alt='', src!= base_url + 'marcas/asics.jpg')
+											span.descripcion RELOJ DIGITAL
+												.line CQAR08 UNISEX
+											span.antes Precio Normal: S/ 499
+											span.cyber Precio Oferta
+											span.price
+												| S/ 
+												span 199
+						.column.der.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+							//- .discount
+								.percent 70
+								.simbol
+									| %
+									span DSCTO.
+							a.call-right(href='#')
+								.content
+									.wrapper
+										.table
+											span.aon
+											span.marca
+												img(alt='', src!= base_url + 'marcas/aerostar.jpg')
+											span.descripcion RELOJ 66234
+												.line PARA DAMA
+											span.antes Precio Normal: S/ 350
+											span.cyber Precio Oferta
+											span.price
+												| S/ 
+												span 139
+								.imagen
+									img.centerv(alt='', src!= base_url + 'productos/48.jpg')

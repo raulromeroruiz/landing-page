@@ -1,0 +1,123 @@
+extends ../layout/layout2.pug
+
+block content
+	- var base_url = 'http://www.ripley.com.pe/minisitios/campana/cyber-mama/'
+	if test=="dev"
+		- var base_url = '../'
+
+	#cyber(style='margin:0')
+		// ELECTROHOGAR
+		.slider-banner#slider-electrohogar
+			span.slider-prev
+			span.slider-next
+			.banner
+				// Slide ELECTROHOGAR 1
+				.slide
+					img.logo-campaign.centerh(src!= base_url + 'assets/logo-electro.jpg')
+					.calls
+						.column.izq.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+							//- .discount
+								.percent 40
+								.simbol
+									| %
+									span DSCTO.
+							a.call-left(href='#')
+								.imagen
+									img.centerv(alt='', src!= base_url + 'productos/23.jpg')
+								.content
+									.wrapper.product
+										.table
+											span.aon
+											span.marca
+												img(alt='', src!= base_url + 'marcas/lg.jpg')
+											span.descripcion REFRIGERADORA
+												.line GT40WGPP
+											span.antes Precio Normal: S/ 2,499
+											span.cyber Precio Oferta
+											span.price
+												| S/ 
+												span 1,699
+											//- span.pay-note
+												| Todo medio de pago
+						.column.der.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+							//- .discount
+								.percent 70
+								.simbol
+									| %
+									span DSCTO.
+							a.call-right(href='#')
+								.content
+									.wrapper.product
+										.table
+											span.aon
+											span.marca
+												img(alt='', src!= base_url + 'marcas/samsung.jpg')
+											span.descripcion LAVADORA CARGA
+												.line SUPERIOR RT32K5730S8
+											span.antes Precio Normal: S/ 1,349
+											span.cyber Precio Oferta
+											span.price
+												| S/ 
+												span 999
+											//- span.pay-note
+												| Todo medio de pago
+								.imagen
+									img.centerv(alt='', src!= base_url + 'productos/24.jpg')
+
+				// Slide ELECTROHOGAR 2
+				.slide
+					img.logo-campaign.centerh(src!= base_url + 'assets/logo-electro.jpg')
+					.calls
+						.column.izq.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+							//- .discount
+								.percent 40
+								.simbol
+									| %
+									span DSCTO.
+							a.call-left(href='#')
+								.imagen
+									img.centerv(alt='', src!= base_url + 'productos/25.jpg')
+								.content
+									.wrapper.product
+										.table
+											span.aon
+											span.marca
+												img(alt='', src!= base_url + 'marcas/daewoo.jpg')
+											span.descripcion LAVADORA
+												.line DWF-145GMW
+											span.antes Precio Normal: S/ 1,099
+											span.cyber Precio Oferta
+											span.price
+												| S/ 
+												span 799
+											//- span.pay-note
+												| Todo medio de pago
+											//- span.colores
+												| Colores disponibles
+											//- span.iconos-colores
+												img(src!= base_url + 'marcas/gris-oscuro.jpg')
+												img(src!= base_url + 'marcas/plata.jpg')
+						.column.der.col-xs-12.col-sm-6.col-md-6.col-lg-6.col-xl-6
+							//- .discount
+								.percent 70
+								.simbol
+									| %
+									span DSCTO.
+							a.call-right(href='#')
+								.content
+									.wrapper.product
+										.table
+											span.aon
+											span.marca
+												img(alt='', src!= base_url + 'marcas/mabe.jpg')
+											span.descripcion COCINA TX5110P0
+												.line 4 QUEMADORES
+											span.antes Precio Normal: S/ 569
+											span.cyber Precio Oferta
+											span.price
+												| S/ 
+												span 399
+											//- span.pay-note
+												| Todo medio de pago
+								.imagen
+									img.centerv(alt='', src!= base_url + 'productos/26.jpg')

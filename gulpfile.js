@@ -24,8 +24,6 @@ gulp.task('pug', function(){
     dir = "../" + _date[0] + "/" + week + "/";
     var dirOutput = "default";
     dirOutput = process.argv[4];
-    console.log("Week --> ",dir);
-    console.log("Saving into --> ",dirOutput);
 
     params = {
         str: process.argv[4]
@@ -78,6 +76,7 @@ gulp.task('compress', function (cb) {
     var dirOutput = "default";
     dirOutput = process.argv[4];
     console.log("Saving into --> ",dirOutput);
+    /**/
     return gulp.src(['./templates/'+dirOutput+'/libs/*.js','./templates/'+dirOutput+'/scripts/*.js'])
         .pipe(
             concat('scripts.js').on('error', function(e){
@@ -97,6 +96,29 @@ gulp.task('compress', function (cb) {
             console.log(e.plugin);
         }))
         .pipe(gulp.dest(dir+dirOutput+'/js'));
+    /**/
+/*
+    // Generate js for page/site
+    return gulp.src(['./templates/'+dirOutput+'/scripts/*.js'])
+        .pipe(
+            concat('scripts.js').on('error', function(e){
+                console.log(e.message);
+                console.log(e.plugin);
+            }))
+        .pipe(gulp.dest('./templates/'+dirOutput+'/temp'))
+        .pipe(rename('main.js'))
+        .pipe(uglify({
+            mangle: false,
+            compress: false,
+            output:{
+                beautify:true,
+            },
+        }).on('error', function(e){
+            console.log(e.message);
+            console.log(e.plugin);
+        }))
+        .pipe(gulp.dest(dir+dirOutput+'/js'));
+        */
 });
 
 gulp.task('default', function () {
@@ -105,7 +127,10 @@ gulp.task('default', function () {
     week = (process.argv[6]!=null) ? process.argv[6]:week;
     dir = "../" + _date[0] + "/" + week + "/";
     dirOutput = process.argv[4];
-    console.log("Saving into --> ",dir, dirOutput);
+    console.log("Week --> ",dir);
+    console.log("Saving into --> ",dirOutput);
+
+    // gulp.start('libsjs');
     // Serve files from the root of this project
     browserSync.init({
         server: {
@@ -177,7 +202,7 @@ gulp.task('imagemin', function() {
 });
 
 gulp.task('mycss', function () {
-  gulp.start('copyassets');
+    gulp.start('copyassets');
 });
 
 gulp.task('copyassets', function() {
@@ -191,6 +216,20 @@ gulp.task('copyassets', function() {
 
     gulp.src('./assets/**/*')
     .pipe(gulp.dest(dir + dirOutput + "/"));
+});
+
+gulp.task('libsjs', function() {
+    console.log('Generating js libs');
+    // Generate js for plugins
+    return gulp.src(['./templates/'+dirOutput+'/libs/*.js'])
+        .pipe(
+            concat('libs.js').on('error', function(e){
+                console.log(e.message);
+                console.log(e.plugin);
+            }))
+        .pipe(gulp.dest('./templates/'+dirOutput+'/temp'))
+        // .pipe(rename('lib.js'))
+        .pipe(gulp.dest(dir+dirOutput+'/js'));
 });
 
 function getWeekNumber(d) {

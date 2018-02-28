@@ -1,0 +1,39 @@
+mixin banner(params)
+	- attr = params
+	.banner&attributes(attr)
+
+mixin bannerv(params, src)
+	- attrb = params
+	- attri = src
+	.bannerv&attributes(attrb)
+		img&attributes(attri)
+
+mixin bannervideo(params, src)
+	- attrb = params
+	- attri = src
+	.bannerv&attributes(attrb)
+		video(autoplay='autoplay', loop='loop', preload, muted)&attributes(attri)
+		.overlay.centervh
+
+mixin video(params, src)
+	- attr = params
+	- attri = src
+	.video&attributes(attr)
+		video(autoplay='autoplay', loop='loop', preload, muted)&attributes(attri)
+	.overlay.centervh
+
+mixin youtube(params)
+	- attr = params
+	.youtube.centervh
+		iframe(frameborder='0', height='100%', width='100%', volume='0')&attributes(attr)
+		.overlay.centervh
+
+//- mixin submenu(params)
+	- obj = params
+	- console.log("Submenu ->  ", params)
+	.submenu
+		ul#submenu
+			each item in obj
+				li
+					a(href=item.hash)= item.name
+

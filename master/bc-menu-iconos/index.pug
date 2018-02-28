@@ -1,0 +1,51 @@
+extends ./layout/layout.pug
+
+block title
+	title CYBER - Ripley
+
+block content
+	- var base_url = 'http://simple.ripley.com.pe/minisitios/especial/cierra-puertas-'
+
+	include includes/mixins.pug
+
+	.container-fluid#header-banner
+		.row
+			.col-xs-12.col-sm-12.col-md-12.col-lg-12.col-xl-12
+				#sponsor
+					include ./includes/banner-catalogo.pug
+
+					nav.nav.menu-black
+						.current-category
+							| Nombre campaña
+						button#btn-mobile
+							span
+							span
+							span
+						ul#main-menu.menu.menu5.menu-vertical
+							li
+								a.category.active(href='#', data-seccion='Centros de entretenimiento', target='_top')
+									span.icon
+									span.text Ver Todo
+							li
+								a.category(href='#', data-seccion='Estantes', target='_top')
+									span.icon
+									span.text Televisores
+							li
+								a.category(href='#', data-seccion='Muebles bar', target='_top')
+									span.icon
+									span.text
+										| Línea Blanca
+							li
+								a.category(href='#', data-seccion='Zapateras, veladores y cómodas', target='_top')
+									span.icon
+									span.text
+										| Tablets
+							li
+								a.category(href='#', data-seccion='Zapateras, veladores y cómodas', target='_top')
+									span.icon
+									span.text
+										| Celulares
+
+
+	script(type='text/javascript', src!='js/jquery-2.1.4.min.js')
+	script(type='text/javascript', src!='js/main.js')

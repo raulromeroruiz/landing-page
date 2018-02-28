@@ -1,0 +1,414 @@
+/* CSS BC */
+
+$dot_active = #4981c1
+$dot_color = #a7a7a7
+#cyber
+	a
+		outline none
+	.row 
+		width 100%
+		margin 0
+	#sponsor-bc
+		width 100%
+		height 308px
+		margin 0 auto
+		overflow hidden
+		/* background transparent url(../images/sponsor.jpg) center top no-repeat */
+		position relative
+	#slider-bc 
+		height 308px
+		width 590px
+		float right
+		clear both
+		margin-bottom 0 !important
+	.banner-slider 
+		width 590px
+		height 308px
+		float right
+		display flex
+		align-items center
+		justify-content center
+		margin-right 34px
+		.slick-prev
+			width 30px
+			height 30px
+			&::before
+				width 30px
+				height 30px
+				background-size contain
+		.slick-next
+			width 30px
+			height 30px
+			&::before
+				width 30px
+				height 30px
+				background-size contain
+		.slick-dots li.slick-active button, .slick-dots li button:hover, .slick-dots li button:focus 
+			background $dot_active
+		.slick-dots 
+			li 
+				button 
+					background $dot_color
+	.nav 
+		clear both
+		width 1110px
+		margin 0 auto
+		transition all 0.25s ease 0s
+
+	.item 
+		height 100%
+		width 590px
+		height 308px
+		float left
+		position relative
+		outline none
+		img 
+			display block
+	.call 
+		width 510px
+		float right
+		height auto
+		min-height 292px
+		position relative
+	.call-image 
+		margin 67px 93px 0
+	.product 
+		width 703px
+		float left
+	.image 
+		width 510px
+		height 292px
+		float left
+		position relative
+		img 
+			margin 0 auto
+
+
+	.collapse-movil 
+		// height 380px !important
+		#main-menu 
+			margin-top 0px !important
+		#btn-mobile 
+			span 
+				&:nth-child(1) 
+					transform rotate(45deg) translateY(6px) translateX(4px)
+				&:nth-child(3) 
+					transform rotate(-45deg) translateY(-6px) translateX(4px)
+				&:nth-child(2) 
+					opacity 0
+			&::before 
+				display none
+
+	.area 
+		position absolute
+		display block
+		img 
+			width auto !important
+			height auto !important
+	#area1 
+		bottom 19%
+		right -1px
+	#area2 
+		bottom 2%
+		right -1px
+	.view-catalog 
+		top 240px
+		left -8px
+	
+@media only screen and (max-width: 1024px)
+	#cyber
+		#sponsor-bc
+			width 100%
+			background-position 25% top
+		.logo-campaign
+			// left 22.5%
+		.container 
+			width 100%
+			overflow hidden
+		.row 
+			width 100%
+		#slider-bc 
+			width 510px
+		.product 
+			width 617px
+		.call 
+			margin-right 0
+		.call-image 
+			margin 67px auto 0
+		.nav 
+			width 100%
+
+@media only screen and (max-width: 992px)
+	#cyber
+		#sponsor-bc
+			width 100%
+			height 308px
+		.banner-slider
+			width 55%
+			// width 52.5%
+			height 100%
+			// display flex
+			// align-items center
+			// justify-content center
+			margin-right 17px
+		#slider-bc 
+			width 100%
+			height auto
+		.item 
+			width 100%
+			height auto
+		
+		.category 
+			.text 
+				opacity 1
+				// font-size 12px
+		.icon 
+			// width 42px
+			// margin-right 0
+		.call 
+			width 100%
+			float right
+			min-height auto
+			position absolute
+			top 50%
+			right 0
+			transform translate(0, -50%)
+		.call-image 
+			margin 25px auto 40px
+		#btn-mobile 
+			display block
+		.active 
+			background white
+			color black
+		.product 
+			width 100%
+			padding-bottom 10px
+		.image 
+			width 75%
+		.control-bar
+			.groupB
+				.btn
+					font-size 8px
+
+@media only screen and (max-width: 767px)
+	#cyber
+		#sponsor-bc
+			padding-top 0
+			width 100%
+			height 100%
+			position relative
+			background none
+			// display none
+		.banner-slider
+			background-image none
+			background-repeat no-repeat
+			background-size auto
+			background-position center top
+			height 100%
+			width 100%
+			align-items flex-end
+			margin-right 0
+			.slick-prev 
+				left 0
+				z-index 10
+			.slick-right 
+				right 0
+				z-index 10
+			.slick-prev, .slick-next 
+				top 0
+				transform none 
+				height 100%
+			.slick-prev:before, .slick-next:before 
+				color #fff
+				background-repeat no-repeat
+				background-position center
+		#slider-bc 
+			padding-top 0px
+			height 50%
+			width 60%
+			display flex
+			align-items center
+			// overflow hidden
+		.item 
+			// height 500px 
+			display flex
+			align-items center
+			flex-direction column
+			justify-content center
+			img 
+				// width auto
+				// height 100%
+				display block
+				margin 0 auto
+		.call 
+			height 45%
+			width 100%
+			top 55%
+			right auto
+			left 50%
+			transform translate(-50%,0)
+			margin-top -1px
+		#btn-mobile 
+			display block
+		.nav 
+			width 100%
+			float left
+			width 100%
+			background-color transparent
+			height 60px
+			position absolute
+			top 0
+			right 0
+			margin-top 0
+			z-index 11
+			&:afterr 
+				content 'menu'
+				border 1px solid #ccc
+				width 20px
+				height 40px
+				top 10px
+				position absolute
+				right 10px
+				z-index 100
+			&.collapse-movil
+				background-color white
+		.menu 
+			width 100%
+			padding 0
+			//margin-top -430px
+			//background black
+			border-radius 0
+			padding-bottom 2px
+			li 
+				width 100%
+				text-align center
+				// border-bottom 1px solid #000
+				&:last-child 
+					// border-bottom 1px solid #000
+					// width 100% !important
+				&:after 
+					border none
+				.icon 
+					display none
+		.category 
+			background-color white
+			span 
+				color black
+			.text 
+				padding 0
+				margin 0
+				font-size 3.5vh
+				&:after 
+					border none
+			&::after 
+				display none
+		.active 
+			:before 
+				background none
+		.description 
+			width 23%
+			margin-left 2%
+		
+		.view-catalog 
+			z-index 3
+			left 0
+			top 15px
+			width 33%
+		#btn-mobile 
+			top 8px
+		.menu
+			li
+				width 50%
+
+@media only screen and (max-width: 700px)
+	#cyber
+		#area1 
+			right auto
+		#area2 
+			right auto
+
+@media only screen and (max-width: 600px)
+	#cyber
+		.banner-slider
+			/* height 250px*/
+			width 100%
+		#slider-bc 
+			padding-top 0px
+			// height auto
+			width 76%
+		.call-image 
+			margin 20px auto 30px
+		.image 
+			width 72.5%
+			img 
+				width 100%
+				height auto
+		.description 
+			width 25%
+			margin-left 2.5%
+			margin-top 25px
+		
+@media only screen and (max-width: 480px) 
+	#cyber
+		#sponsor-bc
+			height 100%
+		.banner-slider
+			width 100%
+			height 100%
+		#slider-bc 
+			width 100%
+			// height auto
+			overflow initial
+		.call-image 
+			margin 20px auto 20px
+		.call 
+			top 60%
+			height 35%
+		.item 
+			// height 480px
+			// padding-bottom 10px
+			img 
+				height auto !important
+				/* width 80% 
+				display block
+				margin 0 auto*/
+		.image 
+			width 62.5%
+			height auto
+			img 
+				width 100%
+				height auto
+		.description 
+			width 35%
+			margin-top 10px
+			font-size 1.75vh
+			.brand 
+				img 
+					width 90%
+					height auto
+			.price-offer 
+				font-size 7vw
+				span 
+					font-size 5vw
+		.category 
+			.text 
+				font-size 3vh
+
+@media only screen and (max-width: 320px)
+	#cyber
+		.call
+			top 65%
+			height 33%
+		.item
+			/* height 450px */
+			padding-bottom 10px
+		.slick-previ, .slick-nexti
+			top 80%
+		.banner-slider
+			.slick-prev
+				left 0%
+			.slick-next
+				right 0%
+		#slider-bc
+			width 96%
+			margin 0 auto

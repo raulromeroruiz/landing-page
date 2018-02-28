@@ -1,0 +1,765 @@
+/* Colors */
+$rojo = #cd1337
+$caki = #d3cbbf
+$ocre = #69544a
+$gree_o = #838148
+$yellow = #fcce01
+$color_active = #ed1d24
+$bg_sticky = #000
+
+$dot_active = #4981c1
+$dot_color = #a7a7a7
+
+vendor(prop, args)
+	-webkit-{prop} args
+	-moz-{prop} args
+	{prop} args
+
+bgcolor(color)
+	background-color color
+	
+bgimg(uri)
+	background-image url(uri)
+
+#cyber
+	/* overflow hidden */
+	margin 0
+	width 100%
+	clear both
+	.container-fluid
+		padding 0
+
+	.loader
+		background transparent url(../images/ring.svg) center no-repeat
+		background-size cover
+		width 75px
+		height 75px
+	#container
+		max-width 1110px
+		// max-width 1080px
+		width 100%
+		height auto
+		// float left
+		overflow hidden
+		opacity 0
+		position relative
+		// background-image url(../images/bg-page.jpg) 
+		background-position center top
+		background-repeat no-repeat
+
+	#header-banner 
+		padding 0
+		position relative
+		overflow hidden
+
+	#header-banner 
+		.row 
+			width 100%
+			margin 0
+
+	#header-banner .row .col-xs-12, #header-banner .row .col-sm-12, #header-banner .row .col-md-12, #header-banner .row .col-lg-12, #header-banner .row .col-xl-12 
+		padding 0
+
+	.nav
+		width 100%
+		float left
+		position relative
+		z-index 101
+		.nav-bar
+			margin 0 auto
+
+	.nav-bar
+		width 1024px
+		height 60px
+		z-index 6
+		position absolute
+		z-index 100
+		background transparent
+		display none
+		transform translateZ(0)
+		transform translate3d(0,0,0)
+		transition none !important
+	.current-category
+		width 100%
+		text-align left
+		color white
+		z-index 100
+		padding 0 15px
+		display none
+		bgcolor(transparent)
+
+	.menu 
+		width 100%
+		margin 0 auto
+		list-style-type none
+		font-size 0
+		padding 0
+		height 60px
+		bgcolor(white)
+		li 
+			display inline-block
+			position relative
+			// line-height 46px
+			// width 16.66%
+			float left
+			height auto
+			&::after 
+				content ''
+				background #c2c2c2
+				width 1px
+				height 26px
+				position absolute
+				top 50%
+				right 0
+				transform translate(0, -50%)
+			&:last-child 
+				&::after 
+					display none
+	.menu4
+		li
+			width 25%
+	.menu5
+		li
+			width 20%
+	.menu6
+		li
+			width 16.66%
+	.menu7
+		li
+			width 14%
+			.text
+				font-size 13px
+	.menu8
+		li
+			width 12.5%
+			.text
+				font-size 11.5px
+	.menu9
+		li
+			width 11.11%
+			.text
+				font-size 11px
+	.menu10
+		li
+			width 10%
+			.text
+				font-size 11px
+	.menu11
+		li
+			width 9.09%
+			.text
+				font-size 10.5px
+	.menu12
+		li
+			width 8.33%
+			.text
+				font-size 10px
+	.menu13
+		li
+			width 7.69%
+			.text
+				font-size 9px
+
+	.category 
+		padding 0 10px
+		font-size 12px
+		height 60px
+		display block
+		line-height 56px
+		text-decoration none
+		display flex
+		align-items flex-end
+		justify-content center
+		.text 
+			color #6a6a6a
+			line-height 1
+			float left
+			height auto
+			// margin-top 12.5px
+			text-align center
+			width 100%
+			position relative
+			font-size 14px
+			margin-bottom 11px
+			padding 0 0 9px
+			&:after 
+				content ''
+				border 1px solid #ffc800
+				width 74px
+				position absolute
+				bottom 0px
+				left 50%
+				transform translate(-50%,0)
+		.one 
+			margin-top 18px
+		.icon 
+			// display none
+		&:hover 
+			li
+				&:after
+					display none
+			.text 
+				color white
+				&:after 
+					border-color white
+		&.active
+			.text
+				color white
+
+	.category:hover, .active 
+		background-color #ffc800
+		color white
+		li 
+			&::after 
+				display none
+
+	.category:hover span, .active span 
+		color white
+
+	.icon 
+		background-image url(../images/master.png)
+		height 21px
+		width 24px
+		margin-right 10px
+		float left
+		// margin-top 12.5px
+		background-position-y top
+
+	.category:hover span, .active span 
+		color white
+
+	.active 
+		.text 
+			&:after 
+				border-color white
+
+	#sponsor 
+		padding 0
+		margin 0 auto
+		position relative
+		height 320px
+		background-image url(../images/sponsor.jpg)
+		background-color transparent
+		background-position center top
+		background-repeat no-repeat
+		// background-size 48px 48px
+		bgcolor(white)
+		// padding-top 60px
+		// overflow hidden
+		.col-xs-12, .col-sm-12, .col-md-12, .col-lg-12, .col-xl-12
+			padding 0
+
+		.slider-prev 
+			position absolute
+			left -40px
+			top 50%
+			transform translate(-50%, 0)
+			z-index 10
+			background url(../images/left.png) no-repeat center
+			height 32px
+			width 32px
+			a 
+				text-indent -20000px
+				width 32px
+				height 32px
+				display block
+		.slider-next 
+			position absolute
+			right -70px
+			top 50%
+			transform translate(-50%, 0)
+			z-index 10
+			background url(../images/right.png) no-repeat center
+			height 36px
+			width 32px
+			a 
+				text-indent -20000px
+				width 32px
+				height 32px
+				display block
+	
+	#sponsor-bc
+		width 100%
+		height 260px
+		margin 0 auto
+		overflow hidden
+		/* background transparent url(../images/sponsor.jpg) center top no-repeat */
+		position relative
+	#slider-bc 
+		height 100%
+		width 590px
+		float right
+		clear both
+		margin-bottom 0 !important
+	.banner-slider 
+		width 590px
+		height 100%
+		float right
+		display flex
+		align-items center
+		justify-content center
+		margin-right 34px
+		.slick-prev
+			width 30px
+			height 30px
+			&::before
+				width 30px
+				height 30px
+				background-size contain
+		.slick-next
+			width 30px
+			height 30px
+			&::before
+				width 30px
+				height 30px
+				background-size contain
+		.slick-dots li.slick-active button, .slick-dots li button:hover, .slick-dots li button:focus 
+			background $dot_active
+		.slick-dots 
+			li 
+				button 
+					background $dot_color
+
+	.item 
+		height 100%
+		width 590px
+		height 100%
+		float left
+		position relative
+		outline none
+		text-align center
+		img 
+			height 100%
+			display inline-block
+			// display block
+
+	.logo-campaign 
+		// width 253px
+		height 100%
+		float left
+		position relative
+		text-align center
+		// top 84px
+		// left 50%
+		// transform translate(-50%, 0)
+		// z-index 1
+		// position absolute
+		// display none
+		// width 130px
+		img
+			margin 0 auto
+			// display inline-block
+	.logo-mobile
+		display none
+	.logo-desktop
+		display block
+
+	.banner 
+		height 294px
+		width 1074px
+		margin 0 auto
+		float none
+		overflow hidden
+		
+	.slide 
+		background-color transparent
+		height 294px
+		width 100%
+		float left
+		font-family "Open Sans"
+	.slide-note
+		position absolute
+		bottom 10%
+		text-align center
+		width 100%
+		font-size 10px
+	.calls 
+		width 100%
+		height 100%
+		margin 0 auto
+		overflow hidden
+		padding 0
+		// background-image url(../images/bg-banner.jpg) 
+	
+	.features
+		width 100%
+		display table-cell
+		vertical-align middle
+		// display none
+		// bottom -210px
+		z-index 50
+		background-color rgba(255,255,255,.88)
+		text-align center
+		padding-bottom 20px
+		transition all 0.5s ease-in 0s
+		font-family 'Open Sans', sans-serif
+
+	.descripcion
+		font-size 25px
+		color #000
+		margin-bottom 0
+		line-height 1
+		height 60px
+		span
+			font-weight 600
+	.name
+		font-size 16px
+		font-weight 600
+		margin-bottom 5px
+		line-height 1.15
+	.hasta
+		font-size 13px
+	.porcentaje
+		width 50px
+		margin 0 auto
+		font-size 72px
+		color #101010
+		line-height 0.75
+		display table
+		// margin-bottom 10px
+		& +.btn-buy
+			margin-top 10px
+	.number
+		font-size 96px
+		// display table-cell
+		// vertical-align middle
+		font-weight 300
+		letter-spacing -6px
+		margin-right 4px
+	.percent
+		line-height 29px
+		font-size 72px
+		display table-cell
+		vertical-align bottom
+	.dscto
+		font-size 18px
+		margin-top 0
+		vertical-align top
+		margin-bottom -10px
+		font-weight 600
+	.antes
+		font-size 10px
+		margin-bottom 5px
+		line-height 1
+	.cyber
+		color #df213b
+		font-size 14px
+		padding-bottom 2px
+		text-transform uppercase
+		font-weight bold
+		line-height 1
+		text-decoration none
+		/* border-bottom 1px solid #e02139 */
+		display inline-block
+	.price
+		color #df213b
+		font-size 29px
+		line-height 1
+		padding-bottom 0
+		margin-bottom 10px
+		font-weight 600
+		position relative
+		span
+			display inline-block
+			font-size 41px
+			line-height 0.875
+			padding-bottom 0
+	.note
+		font-size 22px
+		font-weight 700
+		padding 0
+		margin-bottom 20px
+		line-height 1
+
+	.discount 
+		width 86px
+		height 86px
+		position absolute
+		display table
+		font-family "Open Sans"
+		color #fff
+	.percent 
+		font-size 28px
+		line-height 1
+		display table-cell
+		vertical-align bottom
+		width 40px
+		letter-spacing -0.75px
+	.simbol 
+		display table-cell
+		vertical-align bottom
+		font-size 20px
+		line-height 1
+		padding-bottom 8px
+		text-align left
+		span 
+			font-size 6px
+			display block
+
+	.notas
+		max-width 1056px
+		margin 0 auto 10px
+		/* padding 25px 0 !important */
+		text-align center
+		float none
+	.notes
+		position relative
+		margin-bottom 10px
+		height 22px
+		display inline-block
+		padding 0 12px !important
+		&::after
+			content ''
+			height 20px
+			position absolute
+			background-color #b2b2b2
+			right 0
+			top 1px
+			width 1px
+		&:last-child
+			&::after
+				display none
+
+	#btn-mobile
+		display none
+		padding 12px 10px
+		width 40px
+		height 40px
+		top 5px
+		position absolute
+		right 10px
+		z-index 1001
+		border-radius 50%
+		outline none
+		bgcolor(black)
+		span
+			display block
+			clear both
+			width 20px
+			margin 0 auto 5px
+			bgcolor(white)
+			border-radius 1px
+			display block
+			height 2px
+			transition all 0.2s ease-in 0s
+		&::before 
+			color black
+			content "Ver categorías >"
+			display block
+			font-family "Open Sans", sans-serif
+			font-size 11px
+			right 45px
+			position absolute
+			top 12px
+			width 110px
+			display block
+			text-align right
+			animation abefore 3s linear infinite
+
+	.collapse-movil
+		bgcolor(black)
+		.current-category
+			display block
+		#main-menu 
+			margin-top 0px !important
+		#btn-mobile 
+			span 
+				&:nth-child(1) 
+					transform rotate(45deg) translateY(6px) translateX(4px)
+				&:nth-child(3) 
+					transform rotate(-45deg) translateY(-6px) translateX(4px)
+				&:nth-child(2) 
+					opacity 0
+			&::before 
+				display none
+
+	/* Class AUX */
+	.navigate
+		position fixed
+		top 0
+		padding 0
+	.back
+		font-family 'Gotham-Light'
+		float right
+		margin-right 17px
+		padding-top 7px
+		font-size 12px
+		color #666
+		display block
+
+	.centerv
+		position absolute
+		top 50% !important
+		transform translate(0, -50%) !important
+
+	.centerh
+		position absolute
+		left 50% !important
+		transform translate(-50%, 0) !important
+
+	.centervh
+		position absolute
+		left 50% !important
+		top 50% !important
+		transform translate(-50%, -50%) !important
+
+	.bottom
+		position absolute
+		bottom 0
+
+	.size-40
+		width 40%
+	.size-60
+		width 60%
+	.size-75
+		width 75%
+	.size-80
+		width 80%
+	.padding-left-30
+		padding-left 25px
+	.block
+		width 100%
+		height 100vh
+
+	.align-left
+		text-align left
+	.align-center
+		text-align center
+	.align-right
+		text-align right
+	.f-size8
+		font-size 8px !important
+	.f-size9
+		font-size 9px !important
+	.f-size10
+		font-size 10px !important
+	.f-size11
+		font-size 11px !important
+	.f-size12
+		font-size 12px !important
+	.f-size13
+		font-size 13px !important
+	.f-size14
+		font-size 14px !important
+	.f-size15
+		font-size 15px !important
+	.f-size16
+		font-size 16px !important
+	.f-size17
+		font-size 17px !important
+	.f-size18
+		font-size 18px !important
+	.f-size19
+		font-size 19px !important
+	.f-size20
+		font-size 20px !important
+
+	.box-center
+		display block !important
+		margin 0 auto
+		float none !important
+		padding 0 10% !important
+	.left
+		float left
+	.right
+		float right
+
+	.pleft
+		left 5%
+	.pright
+		right 5%
+
+	.fixed
+		position fixed !important
+		width 100%
+		z-index 100
+		transform translateZ(0)
+		transform translate3d(0,0,0)
+		transition all 1s ease 0.5s
+		// width auto
+
+	.absolute
+		position absolute
+		width 196px
+		img
+			width 100%
+		.text-avance
+			display none
+
+	.g-scrolling-top
+		display none
+		width 50px
+		height 50px
+		background url(../images/scrolling-top.png) 0 0 no-repeat
+		text-indent -9999em
+		text-decoration none
+		position fixed
+		bottom 25px
+		right 25px
+		z-index 99
+		cursor pointer
+		animation scrolling 2s infinite
+
+	.link-section
+		width 100%
+		position relative
+		bottom 10%
+		text-align center
+		height 10vh
+		float left
+		display table
+	.link
+		display table-cell
+		vertical-align middle
+		a
+			color #c8135c
+		.arrow-link
+			display inline-block
+			margin-bottom -4px
+
+	.noall
+		height 110px
+		margin-bottom 9px
+
+	.more-detail
+		font-size 10px
+		text-align right
+		margin-bottom 9px
+		padding 0 10px
+		word-wrap break-word
+		line-height 1.4
+		color #fecc0d
+		cursor pointer
+
+	.img-vertical
+		img
+			width auto
+			height 100%
+
+	.img-horizontal
+		img
+			width 100%
+			height auto
+	#col1
+		// background-color rgba(100,250,20, .5)
+		height auto
+		float left
+	#col2
+		// background-color rgba(120,150,80, .5)
+		height auto
+		float left
+	#col3
+		// background-color rgba(10,20,2, .5)
+		height auto
+		float left
+	#col4
+		// background-color rgba(50,50,200, .5)
+		height auto
+		float left
+	.upper
+		text-transform uppercase		
+
+.sector_filtros
+	// transition all 0.25s ease 0.0s
+	&.fixeds
+		top 56px !important

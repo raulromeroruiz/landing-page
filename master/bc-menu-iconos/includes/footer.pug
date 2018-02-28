@@ -1,0 +1,117 @@
+- var title_category = "footer"
+- var sala_active = "active"
+- var sections = [{name:"Los Clasicos de cuero", hash:"#clasicos-cuero"}, {name:"Los Clasicos tapizados", hash:"#clasicos-tapizados"}, {name:"Seccionales", hash:"#seccionales"}, {name:"Mesas de centro", hash:"#mesas-centro"}, {name:"Jazzmin", hash:"#jazzmin"}, {name:"Tony", hash:"#tony"}, {name:"Barry", hash:"#barry"}]
+footer.ripley-footer
+  section.main-footer
+    .container
+      .phone-numbers-container.hidden-sm-down
+        .row
+          section.col-sm-12.col-lg-10.col-lg-offset-1.footer-phone-numbers
+            ul.phone-numbers.peru-phone-numbers.clearfix
+              li
+                svg(role='img', title='ventas_telefonicas')
+                  use(xmlns:xlink='http://www.w3.org/1999/xlink', xlink:href='#ventas_telefonicas')
+                span
+                  h5 Fono compras
+                  a(href='tel:+5116115959') 611-5959
+              li.hidden-xs
+                a(href='http://www.ripley.com.pe/evento/ecommerce-award/', target='_blank')
+                  img(src='//minisitios.ripley.com.pe/home/public/images/sello_awwardx2.png')
+                  span
+                    h5 Ganador
+                    h5 eCommerce
+                    h5 Award 2016
+              li.hidden-xs
+                a(href='http://simple.ripley.com.pe/minisitios/especial/servicio-cliente#libro-reclamaciones', target='_blank')
+                  img.reclaim-img(src='//minisitios.ripley.com.pe/home/public/images/libro_reclamacionesx2.png')
+                  span
+                    h5 Libro de
+                    h5 Reclamaciones
+      .row.footer-links.peru-links
+        section.col-lg-3.col-md-4.col-xs-12
+          .ripley-services
+            h4 Compra con confianza
+            ul
+              li
+                a(href='http://simple.ripley.com.pe/minisitios/especial/servicio-cliente#como-comprar', target='_blank') ¿Cómo comprar en Ripley.com?
+              li
+                a(href='http://www.ripley.com.pe/minisitios/guias-de-compra/', target='_blank') Guías de compra
+              li
+                a(href='http://simple.ripley.com.pe/minisitios/especial/servicio-cliente#terminos-condiciones', target='_blank') Términos y condiciones
+              li
+                a(href='http://simple.ripley.com.pe/minisitios/especial/servicio-cliente#cambio-devolucion', target='_blank') Cambios y devoluciones
+              li
+                a(href='http://simple.ripley.com.pe/minisitios/especial/servicio-cliente#bases-legales', target='_blank') Bases legales
+              li
+                a(href='http://simple.ripley.com.pe/minisitios/especial/servicio-cliente#compra-segura', target='_blank') Seguridad y privacidad
+              li
+                a(href='http://simple.ripley.com.pe/minisitios/especial/seguimiento/', target='_blank') Seguimiento de despacho
+              li
+                a(href='http://simple.ripley.com.pe/minisitios/especial/servicio-cliente#atencion-cliente', target='_blank') Contáctenos
+        section.col-lg-3.col-md-4.col-xs-12
+          .client-services
+            h4 Sobre Ripley
+            ul
+              li
+                a(href='https://personasripley.pe/personas/', target='_blank') Portal de Personas
+              li
+                a(href='http://simple.ripley.com.pe/minisitios/especial/quienes-somos/', target='_blank') ¿Quiénes Somos?
+              li
+                a(href='http://simple.ripley.com.pe/minisitios/especial/servicio-cliente/ubicaciones', target='_blank') Nuestras Tiendas
+              li
+                a(href='https://trabajaenripley.pe/', target='_blank') Trabaja con nosotros
+              li
+                a(href='http://asp402r.paperless.com.pe/BoletaRIPLEY/', target='_blank') Comprobante Electrónico
+        section.col-lg-2.col-md-4.col-xs-12
+          .ripley-corp
+            h4 Más de Ripley
+            ul
+              li
+                a(href='http://www.ripley.com.pe/minisitios/novios-ripley/', target='_blank') Novios Ripley
+              li
+                a(href='http://www.ripley.com.pe/minisitios/bebe-ripley/', target='_blank') Bebé Ripley
+              li
+                a(href='http://www.ripley.com.pe/minisitios/ventas-corporativas/', target='_blank') Ventas Corporativas
+              li
+                a(href='http://www.bancoripley.com.pe/bancoripley/home/', target='_blank') Banco Ripley
+              li
+                a(href='http://www.bancoripley.com.pe/bancoripley/home/', target='_blank') Seguros Ripley
+              li
+                a(href='http://simple.ripley.com.pe/minisitios/especial/servicio-cliente#extra-garantia', target='_blank') Extra Garantía
+        section.hidden-md-up.col-xs-12
+          .ripley-complaints-book
+            a(href='http://simple.ripley.com.pe/minisitios/especial/servicio-cliente#libro-reclamaciones')
+              h4
+                img(src='//minisitios.ripley.com.pe/home/public/images/libro_reclamacionesx2.png')
+                | Libro de reclamaciones
+        .col-lg-4.col-xs-12
+          .footer-payment-methods
+            h4 Métodos de pago
+            .footer-payment-methods-images.payment-peru
+              img(alt='Metodos de Pago', src='//minisitios.ripley.com.pe/home/public/images/metodos_pago_perux2.gif')
+            span Seguridad y Privacidad Garantizada. Comprar aqui es 100% seguro.
+            .footer-follow-us
+              .follow-us
+                h4 Síguenos
+                ul.follow-us
+                  li
+                    a.facebook(href='https://www.facebook.com/RipleyPeru')
+                      i.fa.fa-facebook
+                  li
+                    a.twitter(href='https://twitter.com/ripleyenperu')
+                      i.fa.fa-twitter
+                  li
+                    a.youtube(href='https://www.youtube.com/user/tiendasripleyperu')
+                      i.fa.fa-youtube
+                  li
+                    a.pinterest(href='https://www.pinterest.com/ripleyperu/')
+                      i.fa.fa-pinterest-p
+                  li
+                    a.google-plus(href='https://plus.google.com/+ripleyperu')
+                      i.fa.fa-google-plus
+      .row
+        .col-sm-12
+          small.footer-copy
+            p
+              | Precios solo disponibles en www.ripley.com.pe y Fonocompras. Precios Internet publicados incluyen descuento adicional. Precios sujetos a variaciones sin previo aviso. Productos sujetos a disponibilidad de stock. Solo consumo familiar. Stock mínimo 1 unidad por producto. Ofertas se rigen de acuerdo a los términos y condiciones. Despacho de producto se realizará una vez confirmada la compra.
+
