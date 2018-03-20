@@ -1,0 +1,67 @@
+extends ./layout/layout.pug
+
+block title
+	title CYBER - Ripley
+
+block content
+	- var base_url = 'http://simple.ripley.com.pe/minisitios/especial/cierra-puertas-'
+
+	include includes/mixins.pug
+
+	.container-fluid#header-banner
+		.row
+			.col-xs-12.col-sm-12.col-md-12.col-lg-12.col-xl-12
+				#sponsor
+					include ./includes/banner-catalogo.pug
+
+					nav.nav.menu-black
+						//- .current-category
+							| Nombre campaña
+						//- button#btn-mobile
+							span
+							span
+							span
+						ul#main-menu.menu.menu8
+							li
+								a.category.active(href='#', data-seccion='Centros de entretenimiento', target='_top')
+									span.text.one Centros de entretenimiento
+							li
+								a.category(href='#', data-seccion='Estantes', target='_top')
+									span.text.one Estantes
+							li
+								a.category(href='#', data-seccion='Muebles bar', target='_top')
+									span.text
+										| Muebles
+										br
+										|  bar
+							li
+								a.category(href='#', data-seccion='Zapateras, veladores y cómodas', target='_top')
+									span.text
+										| Zapateras, veladores
+										br
+										|  y cómodas
+							li
+								a.category(href='#', data-seccion='Muebles de cocina y baño', target='_top')
+									span.text.one
+										| Muebles de
+										br
+										|  cocina y baño
+							li
+								a.category(href='#', data-seccion='Ofertas destacadas', target='_top')
+									span.text.one
+										| Ofertas
+										br
+										|  destacadas
+							li
+								a.category(href='#', data-seccion='Ofertas destacadas', target='_top')
+									span.text.one
+										| Ofertas
+										br
+										|  destacadas 2
+							li
+								a.category(href='#', data-seccion='Ofertas destacadas', target='_top')
+									span.text.one
+										| Ofertas
+										br
+										|  destacadas 3
+
