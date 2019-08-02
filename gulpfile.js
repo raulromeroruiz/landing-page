@@ -6,10 +6,11 @@ var gulp = require('gulp'),
     //source = require('./json/source.json');
     uglify = require('gulp-uglify'),
     concat = require('gulp-concat'),
-    imagemin = require('gulp-imagemin'),
+    // imagemin = require('gulp-imagemin'),
     browserSync = require('browser-sync').create(),
     autoprefixer = require('autoprefixer-stylus'),
-    stylus = require('gulp-stylus');
+    stylus = require('gulp-stylus'),
+    args = require('yargs').argv;
 
 var paths = {
     templates: './master/*.pug',
@@ -18,19 +19,30 @@ var paths = {
 
 gulp.task('pug', function(){
     //console.log(process.argv);
+    /*
     _date = getWeekNumber(new Date());
     week = (_date[1]<10) ? "0"+_date[1]:_date[1];
     week = (process.argv[6]!=null) ? process.argv[6]:week;
     dir = "../" + _date[0] + "/" + week + "/";
-    var dirOutput = "default";
-    dirOutput = process.argv[4];
+    */
+    var PAGE = "default";
+    PAGE = args.page;
+    console.log(PAGE);
+    var config = getData(args);
+    console.log(['config', config]);
+    console.log("Path --> ",config.path);
+    console.log("Saving into --> ",config.page);
+    PATH = config.path;
+    PAGE  = config.page;
 
     params = {
-        str: process.argv[4]
+        // str: process.argv[4]
+        str: PAGE
     }
+    // console.log(params);
     page_title = capitalize(params);
-    
-    return gulp.src('./templates/'+dirOutput+'/**/*.pug')
+
+    return gulp.src('./templates/' + PAGE + '/**/*.pug')
     .pipe(pug({
         pretty:true,
         data: {
@@ -46,18 +58,27 @@ gulp.task('pug', function(){
         console.log('Ending');
         // console.log(e);
     }))
-    .pipe(gulp.dest(dir+dirOutput));
+    .pipe(gulp.dest(PATH + PAGE));
 });
 
 gulp.task('stylus', function () {
+    /*
     _date = getWeekNumber(new Date());
     week = (_date[1]<10) ? "0"+_date[1]:_date[1];
     week = (process.argv[6]!=null) ? process.argv[6]:week;
     dir = "../" + _date[0] + "/" + week + "/";
     var dirOutput = "default";
-    
     dirOutput = process.argv[4];
-    return gulp.src('./templates/'+dirOutput+'/styles/styles.styl')
+    */
+
+    var config = getData(args);
+    // console.log(['config', config]);
+    // console.log("Path --> ",config.path);
+    // console.log("Saving into --> ",config.page);
+    PATH = config.path;
+    PAGE  = config.page;
+
+    return gulp.src('./templates/' + PAGE + '/styles/styles.styl')
     .pipe(stylus(
         {use: [autoprefixer('last 2 versions')]}
         ))
@@ -65,10 +86,12 @@ gulp.task('stylus', function () {
         console.log(["Message -> ", err.message]);
         console.log(["Plugin ->", err.plugin]);
     })
-    .pipe(gulp.dest(dir+dirOutput+'/css'));
+    .pipe(gulp.dest(PATH + PAGE + '/css'));
 });
 
 gulp.task('compress', function (cb) {
+    /*
+    *
     _date = getWeekNumber(new Date());
     week = (_date[1]<10) ? "0"+_date[1]:_date[1];
     week = (process.argv[6]!=null) ? process.argv[6]:week;
@@ -76,14 +99,19 @@ gulp.task('compress', function (cb) {
     var dirOutput = "default";
     dirOutput = process.argv[4];
     console.log("Saving into --> ",dirOutput);
-    /**/
-    return gulp.src(['./templates/'+dirOutput+'/libs/*.js','./templates/'+dirOutput+'/scripts/*.js'])
+    *
+    */
+    var config = getData(args);
+    PATH = config.path;
+    PAGE  = config.page;
+
+    return gulp.src(['./templates/' + PAGE + '/libs/*.js','./templates/' + PAGE + '/scripts/*.js'])
         .pipe(
             concat('scripts.js').on('error', function(e){
                 console.log(e.message);
                 console.log(e.plugin);
             }))
-        .pipe(gulp.dest('./templates/'+dirOutput+'/temp'))
+        .pipe(gulp.dest('./templates/' + PAGE + '/temp'))
         .pipe(rename('main.js'))
         .pipe(uglify({
             mangle: false,
@@ -95,46 +123,41 @@ gulp.task('compress', function (cb) {
             console.log(e.message);
             console.log(e.plugin);
         }))
-        .pipe(gulp.dest(dir+dirOutput+'/js'));
+        .pipe(gulp.dest(PATH + PAGE + '/js'));
     /**/
-/*
-    // Generate js for page/site
-    return gulp.src(['./templates/'+dirOutput+'/scripts/*.js'])
-        .pipe(
-            concat('scripts.js').on('error', function(e){
-                console.log(e.message);
-                console.log(e.plugin);
-            }))
-        .pipe(gulp.dest('./templates/'+dirOutput+'/temp'))
-        .pipe(rename('main.js'))
-        .pipe(uglify({
-            mangle: false,
-            compress: false,
-            output:{
-                beautify:true,
-            },
-        }).on('error', function(e){
-            console.log(e.message);
-            console.log(e.plugin);
-        }))
-        .pipe(gulp.dest(dir+dirOutput+'/js'));
-        */
 });
 
 gulp.task('default', function () {
+    // console.log(args);
+    // console.log(process.argv);
+    // return false;
+    var config = getData(args);
+    console.log(['config', config]);
+    console.log("Path --> ",config.path);
+    console.log("Saving into --> ",config.page);
+    PATH = config.path;
+    PAGE  = config.page;
+    /*
+    *
+    return false;
     _date = getWeekNumber(new Date());
     week = (_date[1]<10) ? "0"+_date[1]:_date[1];
-    week = (process.argv[6]!=null) ? process.argv[6]:week;
+    // week = (process.argv[6]!=null) ? process.argv[6]:week;
+    week = (args.week!=null) ? args.week:week;
     dir = "../" + _date[0] + "/" + week + "/";
-    dirOutput = process.argv[4];
+    // dirOutput = process.argv[4];
+    dirOutput = args.page;
     console.log("Week --> ",dir);
     console.log("Saving into --> ",dirOutput);
+    *
+    */
 
     // gulp.start('libsjs');
     // Serve files from the root of this project
     browserSync.init({
         server: {
-            baseDir: dir + dirOutput
+            //baseDir: dir + dirOutput
+            baseDir: PATH + PAGE
         }
     });
 
@@ -151,50 +174,7 @@ gulp.task('watch', function() {
 
 gulp.task('imagemin', function() {
     console.log(process.argv[4]);
-    switch(process.argv[4]) {
-        case "home":
-            dirOutput = "ripley-home";
-            break;
-        case "versus":
-            dirOutput = "versus";
-            break;
-        case "intel":
-            dir  = '../2016/42/';
-            dirOutput = "2x1-intel";
-            break;
-        case "deconavidad":
-            dir  = '../2016/43/';
-            dirOutput = "deconavidad";
-            break;
-        case "hp":
-            dir  = '../2016/48/';
-            dirOutput = "hp-multifuncional";
-            break;
-        case "dias-lg":
-            dir  = '../2016/49/';
-            dirOutput = "dias-lg";
-            break;
-        case "verano":
-            dir  = '../2016/50/';
-            dirOutput = "especial-verano";
-            break;
-        case "hogar":
-            dir  = '../2017/02/';
-            dirOutput = "especial-hogar";
-            break;
-        case "school":
-            dir  = '../2017/04/';
-            dirOutput = "back-2-school";
-            break;
-        case "adidas":
-            dir  = '../2017/05/';
-            dirOutput = "catalogo-adidas";
-            break;
-        case "valentin":
-            dir  = '../2017/05/';
-            dirOutput = "san-valentin";
-            break;
-    }
+    
     console.log("Compress images --> ",dirOutput + "/images");
     return gulp.src('./templates/'+dirOutput+'/images')
         .pipe(imagemin())
@@ -254,4 +234,19 @@ function capitalize(_params) {
     }
     //return _params.str.charAt(0).toUpperCase() + _params.str.slice(1).replace(/\-/g," ");
     return words.join(' ');
+}
+
+function getData(params) {
+    // console.log(params);
+    _date = getWeekNumber(new Date());
+    _week = (_date[1]<10) ? "0"+_date[1]:_date[1];
+    _week = (args.path!=null) ? args.path:_week;
+    path = "../" + _date[0] + "/" + _week + "/";
+
+    page = args.page;
+
+    return {
+        path: path,
+        page: page 
+    }
 }
