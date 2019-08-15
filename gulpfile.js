@@ -19,24 +19,14 @@ var paths = {
 
 gulp.task('pug', function(){
     //console.log(process.argv);
-    /*
-    _date = getWeekNumber(new Date());
-    week = (_date[1]<10) ? "0"+_date[1]:_date[1];
-    week = (process.argv[6]!=null) ? process.argv[6]:week;
-    dir = "../" + _date[0] + "/" + week + "/";
-    */
     var PAGE = "default";
-    PAGE = args.page;
-    console.log(PAGE);
-    var config = getData(args);
-    console.log(['config', config]);
-    console.log("Path --> ",config.path);
-    console.log("Saving into --> ",config.page);
-    PATH = config.path;
-    PAGE  = config.page;
+    // PAGE = args.page;
+    // console.log(PAGE);
+    var config = getData(args),
+        PATH = config.path,
+        PAGE  = config.page;
 
     params = {
-        // str: process.argv[4]
         str: PAGE
     }
     // console.log(params);
@@ -47,8 +37,8 @@ gulp.task('pug', function(){
         pretty:true,
         data: {
             title: page_title, 
-            dev: (process.argv[3]=="--dev") ? "dev":"prod",
-            test: (process.argv[5]=="--dev") ? "dev":"prod",
+            // dev: (process.argv[3]=="--dev") ? "dev":"prod",
+            // test: (process.argv[5]=="--dev") ? "dev":"prod",
         }
     }).on('error', function(e){
         // console.log(e);
@@ -62,27 +52,20 @@ gulp.task('pug', function(){
 });
 
 gulp.task('stylus', function () {
-    /*
-    _date = getWeekNumber(new Date());
-    week = (_date[1]<10) ? "0"+_date[1]:_date[1];
-    week = (process.argv[6]!=null) ? process.argv[6]:week;
-    dir = "../" + _date[0] + "/" + week + "/";
-    var dirOutput = "default";
-    dirOutput = process.argv[4];
-    */
-
-    var config = getData(args);
-    // console.log(['config', config]);
-    // console.log("Path --> ",config.path);
-    // console.log("Saving into --> ",config.page);
-    PATH = config.path;
-    PAGE  = config.page;
+    var config = getData(args),
+        PATH = config.path,
+        PAGE  = config.page,
+        PROD = config.prod;
 
     return gulp.src('./templates/' + PAGE + '/styles/styles.styl')
     .pipe(stylus(
-        {use: [autoprefixer('last 2 versions')]}
-        ))
+        {
+            use: [autoprefixer('last 2 versions')],
+            compress: (PROD) ? true:false
+        }
+    ))
     .on('error', function(err){
+        console.log(err);
         console.log(["Message -> ", err.message]);
         console.log(["Plugin ->", err.plugin]);
     })
@@ -90,20 +73,10 @@ gulp.task('stylus', function () {
 });
 
 gulp.task('compress', function (cb) {
-    /*
-    *
-    _date = getWeekNumber(new Date());
-    week = (_date[1]<10) ? "0"+_date[1]:_date[1];
-    week = (process.argv[6]!=null) ? process.argv[6]:week;
-    dir = "../" + _date[0] + "/" + week + "/";
-    var dirOutput = "default";
-    dirOutput = process.argv[4];
-    console.log("Saving into --> ",dirOutput);
-    *
-    */
-    var config = getData(args);
-    PATH = config.path;
-    PAGE  = config.page;
+    var config = getData(args),
+        PATH = config.path,
+        PAGE  = config.page,
+        PROD = config.prod;
 
     return gulp.src(['./templates/' + PAGE + '/libs/*.js','./templates/' + PAGE + '/scripts/*.js'])
         .pipe(
@@ -115,9 +88,9 @@ gulp.task('compress', function (cb) {
         .pipe(rename('main.js'))
         .pipe(uglify({
             mangle: false,
-            compress: false,
+            compress: (PROD) ? true:false,
             output:{
-                beautify:true,
+                beautify: (PROD) ? false:true,
             },
         }).on('error', function(e){
             console.log(e.message);
@@ -132,31 +105,16 @@ gulp.task('default', function () {
     // console.log(process.argv);
     // return false;
     var config = getData(args);
-    console.log(['config', config]);
+    // console.log(['config', config]);
     console.log("Path --> ",config.path);
-    console.log("Saving into --> ",config.page);
+    console.log("Page --> ",config.page);
+    console.log("Prod --> ",config.prod);
     PATH = config.path;
-    PAGE  = config.page;
-    /*
-    *
-    return false;
-    _date = getWeekNumber(new Date());
-    week = (_date[1]<10) ? "0"+_date[1]:_date[1];
-    // week = (process.argv[6]!=null) ? process.argv[6]:week;
-    week = (args.week!=null) ? args.week:week;
-    dir = "../" + _date[0] + "/" + week + "/";
-    // dirOutput = process.argv[4];
-    dirOutput = args.page;
-    console.log("Week --> ",dir);
-    console.log("Saving into --> ",dirOutput);
-    *
-    */
-
+    PAGE = config.page;
     // gulp.start('libsjs');
     // Serve files from the root of this project
     browserSync.init({
         server: {
-            //baseDir: dir + dirOutput
             baseDir: PATH + PAGE
         }
     });
@@ -238,15 +196,21 @@ function capitalize(_params) {
 
 function getData(params) {
     // console.log(params);
+    // Define Number Week
     _date = getWeekNumber(new Date());
     _week = (_date[1]<10) ? "0"+_date[1]:_date[1];
     _week = (args.path!=null) ? args.path:_week;
     path = "../" + _date[0] + "/" + _week + "/";
 
+    // Define name Landing Page
     page = args.page;
+
+    // Define ENV
+    prod = (args.prod) ? true:false;
 
     return {
         path: path,
-        page: page 
+        page: page,
+        prod: prod
     }
 }
