@@ -1,6 +1,6 @@
 var gulp = require('gulp'),
     rename = require('gulp-rename'),
-    //replace = require('gulp-replace'),
+    replace = require('gulp-replace'),
     pug = require('gulp-pug'),
     //watch = require('gulp-watch'),
     //source = require('./json/source.json');
@@ -78,6 +78,11 @@ gulp.task('compress', function (cb) {
         PAGE  = config.page,
         PROD = config.prod;
 
+    params = {
+        str: PAGE
+    }
+    page_title = capitalize(params);
+
     return gulp.src(['./templates/' + PAGE + '/libs/*.js','./templates/' + PAGE + '/scripts/*.js'])
         .pipe(
             concat('scripts.js').on('error', function(e){
@@ -85,6 +90,7 @@ gulp.task('compress', function (cb) {
                 console.log(e.plugin);
             }))
         .pipe(gulp.dest('./templates/' + PAGE + '/temp'))
+        .pipe(replace('%LANDING%', page_title))
         .pipe(rename('main.js'))
         .pipe(uglify({
             mangle: false,
