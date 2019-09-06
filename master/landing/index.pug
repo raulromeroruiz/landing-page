@@ -2,28 +2,11 @@ extends ./layout/layout.pug
 
 block title
 	title 
-		| #{title} - Ripley
+		| #{title}
 
 block content
-	- var title_category = "sala"
-	- var env =' #{dev}'
-	- var sala_active = "active"
-	- var sections = [{name:"Los Clasicos de cuero", hash:"#clasicos-cuero"}, {name:"Los Clasicos tapizados", hash:"#clasicos-tapizados"}, {name:"Seccionales", hash:"#seccionales"}, {name:"Mesas de centro", hash:"#mesas-centro"}, {name:"Jazzmin", hash:"#jazzmin"}, {name:"Tony", hash:"#tony"}, {name:"Barry", hash:"#barry"}]
-
-	- var menu = [{name:'Tv', hash:'#tv'},{name:'Línea Blanca', hash:'#linea-blanca'},{name:'Tecnología', hash:'#tecnologiaa'}]
 
 	include includes/mixins.pug
-
-	//- #fb-root
-		script.
-			(function(d, s, id) {
-			var js, fjs = d.getElementsByTagName(s)[0];
-			if (d.getElementById(id)) return;
-			js = d.createElement(s); js.id = id;
-			js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.6";
-			fjs.parentNode.insertBefore(js, fjs);
-			}(document, 'script', 'facebook-jssdk'));
-
 	#container
 		.container-fluid
 			.row

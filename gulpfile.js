@@ -26,7 +26,7 @@ gulp.task('pug', function(){
         PATH = config.path,
         PAGE  = config.page,
         PROD = config.prod;
-
+    console.log(PROD);
     params = {
         str: PAGE
     }
@@ -38,7 +38,8 @@ gulp.task('pug', function(){
         pretty:true,
         data: {
             title: page_title, 
-            mode: (PROD) ? "prod":"dev"
+            mode: (PROD) ? "prod":"dev",
+            dev: ":: DEVELOPER ::"
             // dev: (process.argv[3]=="--dev") ? "dev":"prod",
             // test: (process.argv[5]=="--dev") ? "dev":"prod",
         }

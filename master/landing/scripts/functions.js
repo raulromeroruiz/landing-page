@@ -8,7 +8,7 @@ var app = {
 	inputFile: $('#foto').clone(),
 	init: function(){
 		console.log(isMobile);
-		console.log('Samsung');
+		console.log('%LANDING%');
 
 		$('.arrow-scroll').click(function(event) {
 			//event.preventDefault();
