@@ -12,10 +12,9 @@ var gulp = require('gulp'),
     stylus = require('gulp-stylus'),
     args = require('yargs').argv;
 
-var paths = {
-    templates: './master/*.pug',
+var dir = {
+    templates: './templates/',
 };
-
 
 gulp.task('pug', function(){
     //console.log(process.argv);
@@ -26,29 +25,27 @@ gulp.task('pug', function(){
         PATH = config.path,
         PAGE  = config.page,
         PROD = config.prod;
-    console.log(PROD);
+    // console.log(PROD);
     params = {
         str: PAGE
     }
     // console.log(params);
     page_title = capitalize(params);
 
-    return gulp.src('./templates/' + PAGE + '/**/*.pug')
+    return gulp.src(dir.templates + PAGE + '/**/*.pug')
     .pipe(pug({
         pretty:true,
         data: {
             title: page_title, 
             mode: (PROD) ? "prod":"dev",
             dev: ":: DEVELOPER ::"
-            // dev: (process.argv[3]=="--dev") ? "dev":"prod",
-            // test: (process.argv[5]=="--dev") ? "dev":"prod",
         }
     }).on('error', function(e){
         // console.log(e);
         console.log(["Message -> ", e.message]);
         console.log(["Plugin ->", e.plugin]);
     }).on('end', function(e){
-        console.log('Ending');
+        // console.log('Ending');
         // console.log(e);
     }))
     .pipe(gulp.dest(PATH + PAGE));
@@ -60,7 +57,7 @@ gulp.task('stylus', function () {
         PAGE  = config.page,
         PROD = config.prod;
 
-    return gulp.src('./templates/' + PAGE + '/styles/styles.styl')
+    return gulp.src(dir.templates + PAGE + '/styles/styles.styl')
     .pipe(stylus(
         {
             use: [autoprefixer('last 2 versions')],
@@ -86,13 +83,13 @@ gulp.task('compress', function (cb) {
     }
     page_title = capitalize(params);
 
-    return gulp.src(['./templates/' + PAGE + '/libs/*.js','./templates/' + PAGE + '/scripts/*.js'])
+    return gulp.src([dir.templates + PAGE + '/libs/*.js',dir.templates + PAGE + '/scripts/*.js'])
         .pipe(
             concat('scripts.js').on('error', function(e){
                 console.log(e.message);
                 console.log(e.plugin);
             }))
-        .pipe(gulp.dest('./templates/' + PAGE + '/temp'))
+        .pipe(gulp.dest(dir.templates + PAGE + '/temp'))
         .pipe(replace('%LANDING%', page_title))
         .pipe(rename('main.js'))
         .pipe(uglify({
@@ -111,13 +108,12 @@ gulp.task('compress', function (cb) {
 
 gulp.task('default', function () {
     // console.log(args);
-    // console.log(process.argv);
     // return false;
     var config = getData(args);
     // console.log(['config', config]);
-    console.log("Path --> ",config.path);
-    console.log("Page --> ",config.page);
-    console.log("Prod --> ",config.prod);
+    console.log("Path --> ", config.path);
+    console.log("Page --> ", config.page);
+    console.log("Prod --> ", config.prod);
     PATH = config.path;
     PAGE = config.page;
     // gulp.start('libsjs');
@@ -128,22 +124,22 @@ gulp.task('default', function () {
         }
     });
 
-    gulp.watch("./templates/**/*.pug", ['pug']).on("change", browserSync.reload);
-    gulp.watch("./templates/**/*.styl", ['stylus']).on("change", browserSync.reload);
-    gulp.watch("./templates/**/*.js", ['compress']).on("change", browserSync.reload);
+    gulp.watch(dir.templates + "**/*.pug", ['pug']).on("change", browserSync.reload);
+    gulp.watch(dir.templates + "**/*.styl", ['stylus']).on("change", browserSync.reload);
+    gulp.watch(dir.templates + "**/*.js", ['compress']).on("change", browserSync.reload);
 });
 
 gulp.task('watch', function() {
-    gulp.watch("./templates/**/*.pug", ['pug']);
-    gulp.watch("./templates/**/*.styl", ['stylus']);
-    gulp.watch("./templates/**/*.js", ['compress']);
+    gulp.watch(dir.templates + "**/*.pug", ['pug']);
+    gulp.watch(dir.templates + "**/*.styl", ['stylus']);
+    gulp.watch(dir.templates + "**/*.js", ['compress']);
 });
 
 gulp.task('imagemin', function() {
     console.log(process.argv[4]);
     
     console.log("Compress images --> ",dirOutput + "/images");
-    return gulp.src('./templates/'+dirOutput+'/images')
+    return gulp.src(dir.templates+dirOutput+'/images')
         .pipe(imagemin())
         .pipe(gulp.dest(dir+dirOutput+'/images'))
 });
@@ -168,13 +164,13 @@ gulp.task('copyassets', function() {
 gulp.task('libsjs', function() {
     console.log('Generating js libs');
     // Generate js for plugins
-    return gulp.src(['./templates/'+dirOutput+'/libs/*.js'])
+    return gulp.src([dir.templates+dirOutput+'/libs/*.js'])
         .pipe(
             concat('libs.js').on('error', function(e){
                 console.log(e.message);
                 console.log(e.plugin);
             }))
-        .pipe(gulp.dest('./templates/'+dirOutput+'/temp'))
+        .pipe(gulp.dest(dir.templates+dirOutput+'/temp'))
         // .pipe(rename('lib.js'))
         .pipe(gulp.dest(dir+dirOutput+'/js'));
 });
@@ -212,7 +208,7 @@ function getData(params) {
     path = "../" + _date[0] + "/" + _week + "/";
 
     // Define name Landing Page
-    page = args.page;
+    page = args.land;
 
     // Define ENV
     prod = (args.prod) ? true:false;
