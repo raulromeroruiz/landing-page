@@ -10,11 +10,16 @@ var gulp = require('gulp'),
     browserSync = require('browser-sync').create(),
     autoprefixer = require('autoprefixer-stylus'),
     stylus = require('gulp-stylus'),
+    fs = require('fs'),
     args = require('yargs').argv;
 
 var dir = {
     templates: './templates/',
 };
+
+var landing = '',
+    now = new Date(),
+    max_pastYears = 3;
 
 gulp.task('pug', function(){
     //console.log(process.argv);
@@ -107,7 +112,7 @@ gulp.task('compress', function (cb) {
 });
 
 gulp.task('default', function () {
-    // console.log(args);
+    console.log(args);
     // return false;
     var config = getData(args);
     // console.log(['config', config]);
@@ -136,16 +141,12 @@ gulp.task('watch', function() {
 });
 
 gulp.task('imagemin', function() {
-    console.log(process.argv[4]);
-    
-    console.log("Compress images --> ",dirOutput + "/images");
-    return gulp.src(dir.templates+dirOutput+'/images')
+    var config = getData(args);
+    console.log(config);
+    // console.log("Compress images --> ",dirOutput + "/images");
+    return gulp.src(dir.templates+config.page+'/images/*')
         .pipe(imagemin())
-        .pipe(gulp.dest(dir+dirOutput+'/images'))
-});
-
-gulp.task('mycss', function () {
-    gulp.start('copyassets');
+        .pipe(gulp.dest(config.path+config.page+'/images'))
 });
 
 gulp.task('copyassets', function() {
@@ -161,18 +162,23 @@ gulp.task('copyassets', function() {
     .pipe(gulp.dest(dir + dirOutput + "/"));
 });
 
-gulp.task('libsjs', function() {
-    console.log('Generating js libs');
-    // Generate js for plugins
-    return gulp.src([dir.templates+dirOutput+'/libs/*.js'])
-        .pipe(
-            concat('libs.js').on('error', function(e){
-                console.log(e.message);
-                console.log(e.plugin);
-            }))
-        .pipe(gulp.dest(dir.templates+dirOutput+'/temp'))
-        // .pipe(rename('lib.js'))
-        .pipe(gulp.dest(dir+dirOutput+'/js'));
+var MYTASK = null;
+gulp.task('task', function() {
+    console.log(args);
+    console.log(process.argv[3].replace("--",""));
+    MYTASK = process.argv[3].replace("--","");
+    date = getWeekNumber(new Date());
+    landing = process.argv[4];
+    findYear(date);
+});
+
+gulp.task('search', function(){
+    //console.log('process.env -> ', process.env);
+    console.log('args -> ', args);
+    date = getWeekNumber(new Date());
+    // landing = (args.land) ? args.land:process.env.land;
+    landing = args.land;
+    findYear(date);
 });
 
 function getWeekNumber(d) {
@@ -200,7 +206,14 @@ function capitalize(_params) {
 }
 
 function getData(params) {
-    // console.log(params);
+    if (MYPATH) {
+        // console.log('MYPATH -> ', MYPATH);
+        return {
+            path: MYPATH,
+            page: MYPAGE,
+            prod: (args.prod) ? true:false
+        };
+    }
     // Define Number Week
     _date = getWeekNumber(new Date());
     _week = (_date[1]<10) ? "0"+_date[1]:_date[1];
@@ -218,4 +231,75 @@ function getData(params) {
         page: page,
         prod: prod
     }
+}
+
+var MYPATH = null,
+    MYPAGE = null;
+var findYear = function(params){
+    _year = params[0];
+    _yearPath = "../" + _year;
+    if (!fs.existsSync(_yearPath)){
+        console.log(_year, ' Año No existe!');
+        _year--;
+        _params = [_year, params[1]];
+
+        console.log('_year -> ', _year);
+        console.log('Limit -> ', now.getFullYear() - max_pastYears);
+        if (_year < (now.getFullYear() - max_pastYears)) {
+            console.log('Creating new landing...');
+            gulp.start('default');
+            return false;
+        }
+        findYear(_params);
+        return false;
+    }
+
+    _week = params[1];
+    cfg  = [_year, _week];
+    findPath(cfg);
+    return false;
+}
+
+var findPath = function(cfg) {
+    _year = cfg[0];
+    _week = cfg[1];
+    path = "../" + _year + "/" + _week + "/";
+    abspath = path + landing;
+    if (!fs.existsSync(abspath)){
+        console.log(path, ' -> ESTE PATH No existe!');
+        _week--;
+        if (_week>0) {
+            cfg  = [_year, _week];
+            findPath(cfg);
+            //return false;
+        }
+        else {
+            _year--;
+            // _year = _year - 1;
+            cfg = [_year, 52];
+            findYear(cfg);
+            return false;
+        }
+    }
+    else {
+        console.log(landing, ', existe en -> ', abspath);
+        MYPATH = path;
+        MYPAGE = landing;
+        config = {
+            page: landing,
+            path: path
+        }
+        runLanding(config);
+        return;
+    }
+    // console.log('path encontrado ' + path);
+}
+
+var runLanding = function(params) {
+    console.log('params', params);
+    console.log('MYPATH', MYPATH);
+    console.log('MYTASK', MYTASK);
+    _task = (args.task) ? args.task:"default";
+    _task = (MYTASK) ? MYTASK:_task;
+    gulp.start(_task);
 }
