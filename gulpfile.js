@@ -15,6 +15,7 @@ var gulp = require('gulp'),
 
 var dir = {
     templates: './templates/',
+    landings: '../landings/'
 };
 
 var landing = '',
@@ -30,7 +31,7 @@ gulp.task('pug', function(){
         PATH = config.path,
         PAGE  = config.page,
         PROD = config.prod;
-    // console.log(PROD);
+    console.log(config);
     params = {
         str: PAGE
     }
@@ -42,8 +43,8 @@ gulp.task('pug', function(){
         pretty:true,
         data: {
             title: page_title, 
-            mode: (PROD) ? "prod":"dev",
-            dev: ":: DEVELOPER ::"
+            prod: PROD,
+            // dev: (PROD) ? 'on':null
         }
     }).on('error', function(e){
         // console.log(e);
@@ -164,21 +165,32 @@ gulp.task('copyassets', function() {
 
 var MYTASK = null;
 gulp.task('task', function() {
-    console.log(args);
-    console.log(process.argv[3].replace("--",""));
+    // console.log(args);
+    console.log(process.argv);
+    // console.log(process.argv[3].replace("--",""));
     MYTASK = process.argv[3].replace("--","");
     date = getWeekNumber(new Date());
     landing = process.argv[4];
-    findYear(date);
+    // findYear(date);
+
+    config = {
+        landing: process.argv[4]
+    }
+    findLanding(config);
 });
 
-gulp.task('search', function(){
+gulp.task('start', function(){
     //console.log('process.env -> ', process.env);
     console.log('args -> ', args);
     date = getWeekNumber(new Date());
     // landing = (args.land) ? args.land:process.env.land;
     landing = args.land;
-    findYear(date);
+    // findYear(date);
+
+    config = {
+        landing: args.land
+    }
+    findLanding(config);
 });
 
 function getWeekNumber(d) {
@@ -302,4 +314,24 @@ var runLanding = function(params) {
     _task = (args.task) ? args.task:"default";
     _task = (MYTASK) ? MYTASK:_task;
     gulp.start(_task);
+}
+
+
+var findLanding = function(params){
+    console.log(params);
+    _landing = params.landing;
+    abspath = '../landings/' + _landing;
+    if (!fs.existsSync(abspath)){
+        console.log(_landing, ", not exist!");
+    }
+    else {
+        // console.log("Run Landing", _landing);
+        MYPATH = dir.landings;
+        MYPAGE = _landing;
+        config = {
+            page: _landing,
+            path: MYPATH
+        }
+        runLanding(config);
+    }
 }
