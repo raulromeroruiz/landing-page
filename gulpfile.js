@@ -182,7 +182,7 @@ gulp.task('task', function() {
 gulp.task('start', function(){
     //console.log('process.env -> ', process.env);
     console.log('args -> ', args);
-    date = getWeekNumber(new Date());
+    // date = getWeekNumber(new Date());
     // landing = (args.land) ? args.land:process.env.land;
     landing = args.land;
     // findYear(date);
@@ -259,7 +259,8 @@ var findYear = function(params){
         console.log('Limit -> ', now.getFullYear() - max_pastYears);
         if (_year < (now.getFullYear() - max_pastYears)) {
             console.log('Creating new landing...');
-            gulp.start('default');
+            // gulp.start('default');
+            server();
             return false;
         }
         findYear(_params);
@@ -334,4 +335,24 @@ var findLanding = function(params){
         }
         runLanding(config);
     }
+}
+
+var server = function(){
+    var config = getData(args);
+    // console.log(['config', config]);
+    console.log("Path --> ", config.path);
+    console.log("Page --> ", config.page);
+    console.log("Prod --> ", config.prod);
+    PATH = config.path;
+    PAGE = config.page;
+    
+    browserSync.init({
+        server: {
+            baseDir: PATH + PAGE
+        }
+    });
+
+    gulp.watch(dir.templates + "**/*.pug", ['pug']).on("change", browserSync.reload);
+    gulp.watch(dir.templates + "**/*.styl", ['stylus']).on("change", browserSync.reload);
+    gulp.watch(dir.templates + "**/*.js", ['compress']).on("change", browserSync.reload);
 }
