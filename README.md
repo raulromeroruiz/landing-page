@@ -7,12 +7,12 @@ This layout use Bootstrap v4 how grid base.
 - Gulp Cli 3.9.1
 - Browser Sync
 
-## Clone repository
-> git clone git@bitbucket.org:cardumen2016/workflow.git
 
-## Install dependecies
-Into folder workflow, run command
+## Install Repo
+Clone repository  
+> git clone git@github.com:raulromeroruiz/landing-page.git  
 
+Into folder workflow, run command  
 > npm install
 
 
