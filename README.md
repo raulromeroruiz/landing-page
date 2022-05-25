@@ -1,6 +1,6 @@
 # Work Flow Landing Page
-This flow create a landing page using nodejs and gulp more simple and fast. This process automatize tasks to create files html (from pug), css files (from stylus) and optimize js files.  
-This layout use Bootstrap v4 how grid base.
+This flow create a landing page more simple and fast, using nodejs and gulp. This process automatize tasks to generate html files (from pug), css files (from stylus) and optimize js files (from uglify).  
+The layout use Bootstrap v4 how grid base.
 
 ## Requirements
 - Node.js
@@ -12,21 +12,22 @@ This layout use Bootstrap v4 how grid base.
 Clone repository  
 > git clone git@github.com:raulromeroruiz/landing-page.git  
 
-Into folder workflow, run command  
+Into folder landing-page (or folder where cloned), run command
 > npm install
 
 
-## Template Directory
+## Templates Directory
 
-From master folder, copy landing dir into folder templates, after rename to TEMPLATE_DIR.  
-Detail **landing directory**
+First: In the proyect root, create folder named **templates**.  
+Second: From master folder, copy "landing" dir into folder templates and rename to my-first-page (can rename to another).  
+**Tree folders** detail
 
 ```
-workflow
+landing-pages
 	├── master
 	|	└── landing
 	└── templates
-		└── TEMPLATE_DIR
+		└── my-first-page
 			├── styles
 			|   └── *.styl
 			├── scripts
@@ -91,10 +92,11 @@ Combine, optimize and compress js source (folders libs & scripts) into javascrip
 
 
 ## Run workflow
+We have **my-first-page** folder into templates, so run:
 
-> gulp start --land ``<TEMPLATE_DIR>``
+> gulp start --land ``my-first-page``
 
-- Param ``--land`` is name folder template-dir where save files and assets landing
+- For param ``--land`` set name folder (remember this example is my-first-page) where save files and assets
 
 
 ### Root Path Files
@@ -105,22 +107,22 @@ When run gulp start..., show three options: Path, Page and Prod.
 ...
 ...
 Path -->  ../landings
-Page -->  TEMPLATE_DIR
+Page -->  my-first-page
 Prod -->  false
 [11:43:36] Finished 'default' after 8.51 s
 [11:43:36] Finished 'start' after 8.51 s
 ```
 
-This workflow generate folder *template-dir*  
-Up two levels. Check path: **landings\TEMPLATE_DIR**  
+This workflow generate folder *template-dir* (this case my-first-page)  
+Up two levels. Check path: **landings\my-first-page**  
 
 ```
-	├──landings
-	|	└── TEMPLATE_DIR
+	├── landings
+	|	└── my-first-page
 	|		└── index.html
 	└── workflow
 		└── templates
-			├── <b>TEMPLATE_DIR</b>
+			├── my-first-page
 			|	└── index.pug
 			├── .gitignore
 			├── gulpfile.js
@@ -128,7 +130,7 @@ Up two levels. Check path: **landings\TEMPLATE_DIR**
 			└── README.md
 ```
 
-Launch the browser with URL: http://localhost:3000/TEMPLATE_DIR  
+Launch the browser with URL: http://localhost:3000/my-first-page  
 If not show files, change and save some pug files.  
 Do the same for others files.
 
@@ -136,13 +138,13 @@ Do the same for others files.
 ## Execute tasks independently
 
 _**Pug**_
-> gulp task --pug ``<TEMPLATE_DIR>``
+> gulp task --pug ``my-first-page``
 
 _**Stylus**_
-> gulp task --stylus ``<TEMPLATE_DIR>``
+> gulp task --stylus ``my-first-page``
 
 _**Compress**_
-> gulp task --compress ``<TEMPLATE_DIR>``
+> gulp task --compress ``my-first-page``
 
 
 
@@ -151,7 +153,7 @@ _**Compress**_
 Compress and minimize files.  
 Add param **--prod** when execute task
 
-> gulp task --stylus TEMPLATE_DIR **--prod**  
-> gulp task --compress TEMPLATE_DIR **--prod**
+> gulp task --stylus my-first-page **--prod**  
+> gulp task --compress my-first-page **--prod**
 
 `This param only its available for tasks`**`stylus`**` and `**`compress`**
