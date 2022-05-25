@@ -23,20 +23,15 @@ var landing = '',
     max_pastYears = 3;
 
 gulp.task('pug', function(){
-    //console.log(process.argv);
     var PAGE = "default";
-    // PAGE = args.page;
-    // console.log(PAGE);
     var config = getData(args),
         PATH = config.path,
         PAGE  = config.page,
         PROD = config.prod;
-    console.log(config);
     params = {
         str: PAGE
     }
-    // console.log(params);
-    page_title = capitalize(params);
+    page_title = _wf.capitalize(params);
 
     return gulp.src(dir.templates + PAGE + '/**/*.pug')
     .pipe(pug({
@@ -47,12 +42,10 @@ gulp.task('pug', function(){
             // dev: (PROD) ? 'on':null
         }
     }).on('error', function(e){
-        // console.log(e);
         console.log(["Message -> ", e.message]);
         console.log(["Plugin ->", e.plugin]);
     }).on('end', function(e){
-        // console.log('Ending');
-        // console.log(e);
+
     }))
     .pipe(gulp.dest(PATH + PAGE));
 });
@@ -87,7 +80,7 @@ gulp.task('compress', function (cb) {
     params = {
         str: PAGE
     }
-    page_title = capitalize(params);
+    page_title = _wf.capitalize(params);
 
     return gulp.src([dir.templates + PAGE + '/libs/*.js',dir.templates + PAGE + '/scripts/*.js'])
         .pipe(
@@ -109,24 +102,20 @@ gulp.task('compress', function (cb) {
             console.log(e.plugin);
         }))
         .pipe(gulp.dest(PATH + PAGE + '/js'));
-    /**/
 });
 
 gulp.task('default', function () {
-    console.log(args);
-    // return false;
-    var config = getData(args);
-    // console.log(['config', config]);
-    console.log("Path --> ", config.path);
-    console.log("Page --> ", config.page);
-    console.log("Prod --> ", config.prod);
-    PATH = config.path;
-    PAGE = config.page;
-    // gulp.start('libsjs');
+    // console.log(args);
+    // var config = getData(args);
+    console.log("Path --> ", MYPATH);
+    console.log("Page --> ", MYPAGE);
+    console.log("Prod --> ", args.prod);
+    // PATH = MYPATH;
+    // PAGE = MYPAGE;
     // Serve files from the root of this project
     browserSync.init({
         server: {
-            baseDir: PATH + PAGE
+            baseDir: MYPATH + MYPAGE
         }
     });
 
@@ -144,7 +133,6 @@ gulp.task('watch', function() {
 gulp.task('imagemin', function() {
     var config = getData(args);
     console.log(config);
-    // console.log("Compress images --> ",dirOutput + "/images");
     return gulp.src(dir.templates+config.page+'/images/*')
         .pipe(imagemin())
         .pipe(gulp.dest(config.path+config.page+'/images'))
@@ -156,7 +144,6 @@ gulp.task('copyassets', function() {
     _date = getWeekNumber(new Date());
     week = (_date[1]<9) ? "0"+_date[1]:_date[1];
     dir = "../" + _date[0] + "/" + week + "/"
-    // console.log(process.argv);
     console.log('Coping assets into '+ dir + dirOutput);
 
     gulp.src('./assets/**/*')
@@ -165,33 +152,40 @@ gulp.task('copyassets', function() {
 
 var MYTASK = null;
 gulp.task('task', function() {
-    // console.log(args);
+    console.log(args);
+    console.log('--------------------------------');
     console.log(process.argv);
-    // console.log(process.argv[3].replace("--",""));
     MYTASK = process.argv[3].replace("--","");
-    date = getWeekNumber(new Date());
-    landing = process.argv[4];
-    // findYear(date);
-
-    config = {
-        landing: process.argv[4]
-    }
-    findLanding(config);
-});
-
-gulp.task('start', function(){
-    //console.log('process.env -> ', process.env);
-    console.log('args -> ', args);
     // date = getWeekNumber(new Date());
-    // landing = (args.land) ? args.land:process.env.land;
-    landing = args.land;
-    // findYear(date);
+    landing = process.argv[4];
+
+    MYTASK = args.task;
+    landing = args.land
 
     config = {
         landing: args.land
     }
     findLanding(config);
 });
+
+gulp.task('start', function(){
+    landing = args.land;
+
+    config = {
+        landing: args.land
+    }
+    findLanding(config);
+});
+
+let _wf = {
+    capitalize: function(_params) {
+        words = _params.str.split("-");
+        for(x in words) {
+            words[x] = words[x].charAt(0).toUpperCase() + words[x].slice(1);
+        }
+        return words.join(' ');
+    }
+};
 
 function getWeekNumber(d) {
     // Copy date so don't modify original
@@ -208,18 +202,8 @@ function getWeekNumber(d) {
     return [d.getFullYear(), weekNo];
 }
 
-function capitalize(_params) {
-    words = _params.str.split("-");
-    for(x in words) {
-        words[x] = words[x].charAt(0).toUpperCase() + words[x].slice(1);
-    }
-    //return _params.str.charAt(0).toUpperCase() + _params.str.slice(1).replace(/\-/g," ");
-    return words.join(' ');
-}
-
 function getData(params) {
     if (MYPATH) {
-        // console.log('MYPATH -> ', MYPATH);
         return {
             path: MYPATH,
             page: MYPAGE,
@@ -259,7 +243,6 @@ var findYear = function(params){
         console.log('Limit -> ', now.getFullYear() - max_pastYears);
         if (_year < (now.getFullYear() - max_pastYears)) {
             console.log('Creating new landing...');
-            // gulp.start('default');
             server();
             return false;
         }
@@ -284,11 +267,9 @@ var findPath = function(cfg) {
         if (_week>0) {
             cfg  = [_year, _week];
             findPath(cfg);
-            //return false;
         }
         else {
             _year--;
-            // _year = _year - 1;
             cfg = [_year, 52];
             findYear(cfg);
             return false;
@@ -305,29 +286,18 @@ var findPath = function(cfg) {
         runLanding(config);
         return;
     }
-    // console.log('path encontrado ' + path);
 }
-
-var runLanding = function(params) {
-    console.log('params', params);
-    console.log('MYPATH', MYPATH);
-    console.log('MYTASK', MYTASK);
-    _task = (args.task) ? args.task:"default";
-    _task = (MYTASK) ? MYTASK:_task;
-    gulp.start(_task);
-}
-
 
 var findLanding = function(params){
     console.log(params);
     _landing = params.landing;
-    abspath = '../landings/' + _landing;
+    _path = dir.landings;
+    abspath = _path + _landing;
     if (!fs.existsSync(abspath)){
         console.log(_landing, ", not exist!");
     }
     else {
-        // console.log("Run Landing", _landing);
-        MYPATH = dir.landings;
+        MYPATH = _path;
         MYPAGE = _landing;
         config = {
             page: _landing,
@@ -337,9 +307,16 @@ var findLanding = function(params){
     }
 }
 
+var runLanding = function(params) {
+    console.log('params', params);
+    console.log('Task', MYTASK);
+    _task = (args.task) ? args.task:"default";
+    _task = (MYTASK) ? MYTASK:_task;
+    gulp.start(_task);
+}
+
 var server = function(){
     var config = getData(args);
-    // console.log(['config', config]);
     console.log("Path --> ", config.path);
     console.log("Page --> ", config.page);
     console.log("Prod --> ", config.prod);
