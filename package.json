@@ -16,19 +16,17 @@
     "stylus-font-face": "^1.1.1"
   },
   "devDependencies": {
-    "autoprefixer-stylus": "^0.14.0",
-    "browser-sync": "^2.27.4",
+    "autoprefixer-stylus": "^1.0.0",
+    "browser-sync": "^2.27.10",
     "fs": "0.0.1-security",
-    "gulp": "^3.9.1",
+    "gulp": "^4.0.2",
     "gulp-concat": "^2.6.0",
-    "gulp-livereload": "^3.8.1",
-    "gulp-pug": "^3.0.3",
+    "gulp-pug": "^5.0.0",
     "gulp-rename": "^1.2.2",
     "gulp-replace": "^0.5.4",
-    "gulp-server-livereload": "^1.8.2",
     "gulp-stylus": "^2.5.0",
     "gulp-uglify": "^2.0.0",
-    "gulp-watch": "^4.3.9",
-    "yargs": "^5.0.0"
+    "gulp-watch": "^5.0.1",
+    "yargs": "^17.5.1"
   }
 }
