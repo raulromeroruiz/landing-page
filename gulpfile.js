@@ -13,9 +13,16 @@ var gulp = require('gulp'),
     fs = require('fs'),
     args = require('yargs').argv;
 
-var dir = {
+let workflow = {
     templates: './templates/',
-    landings: '../landings/'
+    landings: '../landings/',
+    capitalize: function(_params) {
+        words = _params.str.split("-");
+        for(x in words) {
+            words[x] = words[x].charAt(0).toUpperCase() + words[x].slice(1);
+        }
+        return words.join(' ');
+    }
 };
 
 var landing = '',
@@ -31,9 +38,9 @@ gulp.task('pug', function(){
     params = {
         str: PAGE
     }
-    page_title = _wf.capitalize(params);
+    page_title = workflow.capitalize(params);
 
-    return gulp.src(dir.templates + PAGE + '/**/*.pug')
+    return gulp.src(workflow.templates + PAGE + '/**/*.pug')
     .pipe(pug({
         pretty:true,
         data: {
@@ -56,7 +63,7 @@ gulp.task('stylus', function () {
         PAGE  = config.page,
         PROD = config.prod;
 
-    return gulp.src(dir.templates + PAGE + '/styles/styles.styl')
+    return gulp.src(workflow.templates + PAGE + '/styles/styles.styl')
     .pipe(stylus(
         {
             use: [autoprefixer('last 2 versions')],
@@ -80,15 +87,15 @@ gulp.task('compress', function (cb) {
     params = {
         str: PAGE
     }
-    page_title = _wf.capitalize(params);
+    page_title = workflow.capitalize(params);
 
-    return gulp.src([dir.templates + PAGE + '/libs/*.js',dir.templates + PAGE + '/scripts/*.js'])
+    return gulp.src([workflow.templates + PAGE + '/libs/*.js',workflow.templates + PAGE + '/scripts/*.js'])
         .pipe(
             concat('scripts.js').on('error', function(e){
                 console.log(e.message);
                 console.log(e.plugin);
             }))
-        .pipe(gulp.dest(dir.templates + PAGE + '/temp'))
+        .pipe(gulp.dest(workflow.templates + PAGE + '/temp'))
         .pipe(replace('%LANDING%', page_title))
         .pipe(rename('main.js'))
         .pipe(uglify({
@@ -107,7 +114,7 @@ gulp.task('compress', function (cb) {
 gulp.task('default', function () {
     // console.log(args);
     // var config = getData(args);
-    MYPATH = dir.landings;
+    MYPATH = workflow.landings;
     MYPAGE = args.land;
     console.log("Path --> ", MYPATH);
     console.log("Page --> ", MYPAGE);
@@ -121,21 +128,21 @@ gulp.task('default', function () {
         }
     });
 
-    gulp.watch(dir.templates + "**/*.pug", gulp.series(['pug'])).on("change", browserSync.reload);
-    gulp.watch(dir.templates + "**/*.styl", gulp.series(['stylus'])).on("change", browserSync.reload);
-    gulp.watch(dir.templates + "**/*.js", gulp.series(['compress'])).on("change", browserSync.reload);
+    gulp.watch(workflow.templates + "**/*.pug", gulp.series(['pug'])).on("change", browserSync.reload);
+    gulp.watch(workflow.templates + "**/*.styl", gulp.series(['stylus'])).on("change", browserSync.reload);
+    gulp.watch(workflow.templates + "**/*.js", gulp.series(['compress'])).on("change", browserSync.reload);
 });
 
 gulp.task('watch', function() {
-    gulp.watch(dir.templates + "**/*.pug", ['pug']);
-    gulp.watch(dir.templates + "**/*.styl", ['stylus']);
-    gulp.watch(dir.templates + "**/*.js", ['compress']);
+    gulp.watch(workflow.templates + "**/*.pug", ['pug']);
+    gulp.watch(workflow.templates + "**/*.styl", ['stylus']);
+    gulp.watch(workflow.templates + "**/*.js", ['compress']);
 });
 
 gulp.task('imagemin', function() {
     var config = getData(args);
     console.log(config);
-    return gulp.src(dir.templates+config.page+'/images/*')
+    return gulp.src(workflow.templates+config.page+'/images/*')
         .pipe(imagemin())
         .pipe(gulp.dest(config.path+config.page+'/images'))
 });
@@ -178,16 +185,6 @@ gulp.task('start', function(){
     }
     findLanding(config);
 });
-
-let _wf = {
-    capitalize: function(_params) {
-        words = _params.str.split("-");
-        for(x in words) {
-            words[x] = words[x].charAt(0).toUpperCase() + words[x].slice(1);
-        }
-        return words.join(' ');
-    }
-};
 
 function getWeekNumber(d) {
     // Copy date so don't modify original
@@ -293,7 +290,7 @@ var findPath = function(cfg) {
 var findLanding = function(params){
     console.log(params);
     _landing = params.landing;
-    _path = dir.landings;
+    _path = workflow.landings;
     abspath = _path + _landing;
     if (!fs.existsSync(abspath)){
         console.log(_landing, ", not exist!");
@@ -331,7 +328,7 @@ var server = function(){
         }
     });
 
-    gulp.watch(dir.templates + "**/*.pug", ['pug']).on("change", browserSync.reload);
-    gulp.watch(dir.templates + "**/*.styl", ['stylus']).on("change", browserSync.reload);
-    gulp.watch(dir.templates + "**/*.js", ['compress']).on("change", browserSync.reload);
+    gulp.watch(workflow.templates + "**/*.pug", ['pug']).on("change", browserSync.reload);
+    gulp.watch(workflow.templates + "**/*.styl", ['stylus']).on("change", browserSync.reload);
+    gulp.watch(workflow.templates + "**/*.js", ['compress']).on("change", browserSync.reload);
 }
