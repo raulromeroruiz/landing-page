@@ -130,7 +130,7 @@ gulp.task('default', function () {
 
     gulp.watch(workflow.templates + "**/*.pug", gulp.series(['pug'])).on("change", browserSync.reload);
     gulp.watch(workflow.templates + "**/*.styl", gulp.series(['stylus'])).on("change", browserSync.reload);
-    gulp.watch(workflow.templates + "**/*.js", gulp.series(['compress'])).on("change", browserSync.reload);
+    gulp.watch(workflow.templates + "**/scripts/*.js", gulp.series(['compress'])).on("change", browserSync.reload);
 });
 
 gulp.task('watch', function() {
