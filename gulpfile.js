@@ -30,11 +30,9 @@ var landing = '',
     max_pastYears = 3;
 
 gulp.task('pug', function(){
-    var PAGE = "default";
-    var config = getData(args),
-        PATH = config.path,
-        PAGE  = config.page,
-        PROD = config.prod;
+    var PATH = workflow.landings,
+        PAGE = args.land,
+        PROD = args.prod;
     params = {
         str: PAGE
     }
@@ -58,10 +56,9 @@ gulp.task('pug', function(){
 });
 
 gulp.task('stylus', function () {
-    var config = getData(args),
-        PATH = config.path,
-        PAGE  = config.page,
-        PROD = config.prod;
+    var PATH = workflow.landings,
+        PAGE = args.land,
+        PROD = args.prod;
 
     return gulp.src(workflow.templates + PAGE + '/styles/styles.styl')
     .pipe(stylus(
@@ -79,10 +76,9 @@ gulp.task('stylus', function () {
 });
 
 gulp.task('compress', function (cb) {
-    var config = getData(args),
-        PATH = config.path,
-        PAGE  = config.page,
-        PROD = config.prod;
+    var PATH = workflow.landings,
+        PAGE = args.land,
+        PROD = args.prod;
 
     params = {
         str: PAGE
@@ -112,15 +108,12 @@ gulp.task('compress', function (cb) {
 });
 
 gulp.task('default', function () {
-    // console.log(args);
-    // var config = getData(args);
     MYPATH = workflow.landings;
     MYPAGE = args.land;
     console.log("Path --> ", MYPATH);
     console.log("Page --> ", MYPAGE);
     console.log("Prod --> ", args.prod);
-    // PATH = MYPATH;
-    // PAGE = MYPAGE;
+
     // Serve files from the root of this project
     browserSync.init({
         server: {
