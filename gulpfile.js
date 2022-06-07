@@ -107,6 +107,8 @@ gulp.task('compress', function (cb) {
 gulp.task('default', function () {
     // console.log(args);
     // var config = getData(args);
+    MYPATH = dir.landings;
+    MYPAGE = args.land;
     console.log("Path --> ", MYPATH);
     console.log("Page --> ", MYPAGE);
     console.log("Prod --> ", args.prod);
@@ -119,9 +121,9 @@ gulp.task('default', function () {
         }
     });
 
-    gulp.watch(dir.templates + "**/*.pug", ['pug']).on("change", browserSync.reload);
-    gulp.watch(dir.templates + "**/*.styl", ['stylus']).on("change", browserSync.reload);
-    gulp.watch(dir.templates + "**/*.js", ['compress']).on("change", browserSync.reload);
+    gulp.watch(dir.templates + "**/*.pug", gulp.series(['pug'])).on("change", browserSync.reload);
+    gulp.watch(dir.templates + "**/*.styl", gulp.series(['stylus'])).on("change", browserSync.reload);
+    gulp.watch(dir.templates + "**/*.js", gulp.series(['compress'])).on("change", browserSync.reload);
 });
 
 gulp.task('watch', function() {
