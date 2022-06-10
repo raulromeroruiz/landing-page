@@ -1,4 +1,4 @@
-var gulp = require('gulp'),
+const gulp = require('gulp'),
     rename = require('gulp-rename'),
     replace = require('gulp-replace'),
     pug = require('gulp-pug'),
@@ -10,32 +10,18 @@ var gulp = require('gulp'),
     fs = require('fs'),
     args = require('yargs').argv;
 
-let workflow = {
-    templates: './templates/',
-    landings: '../landings/',
-    capitalize: function(_params) {
-        words = _params.str.split("-");
-        for(x in words) {
-            words[x] = words[x].charAt(0).toUpperCase() + words[x].slice(1);
-        }
-        return words.join(' ');
-    }
-};
-
-var landing = '',
-    now = new Date(),
-    max_pastYears = 3;
+const settings = require("./settings.js");
 
 gulp.task('pug', function(){
-    var PATH = workflow.landings,
+    var PATH = settings.landings,
         PAGE = args.land,
         PROD = args.prod;
     params = {
         str: PAGE
     }
-    page_title = workflow.capitalize(params);
+    page_title = settings.capitalize(params);
 
-    return gulp.src(workflow.templates + PAGE + '/**/*.pug')
+    return gulp.src(settings.templates + PAGE + '/**/*.pug')
     .pipe(pug({
         pretty:true,
         data: {
@@ -53,11 +39,11 @@ gulp.task('pug', function(){
 });
 
 gulp.task('stylus', function () {
-    var PATH = workflow.landings,
+    var PATH = settings.landings,
         PAGE = args.land,
         PROD = args.prod;
 
-    return gulp.src(workflow.templates + PAGE + '/styles/styles.styl')
+    return gulp.src(settings.templates + PAGE + '/styles/styles.styl')
     .pipe(stylus(
         {
             use: [autoprefixer('last 2 versions')],
@@ -73,22 +59,22 @@ gulp.task('stylus', function () {
 });
 
 gulp.task('compress', function (cb) {
-    var PATH = workflow.landings,
+    var PATH = settings.landings,
         PAGE = args.land,
         PROD = args.prod;
 
     params = {
         str: PAGE
     }
-    page_title = workflow.capitalize(params);
+    page_title = settings.capitalize(params);
 
-    return gulp.src([workflow.templates + PAGE + '/libs/*.js',workflow.templates + PAGE + '/scripts/*.js'])
+    return gulp.src([settings.templates + PAGE + '/libs/*.js', settings.templates + PAGE + '/scripts/*.js'])
         .pipe(
             concat('scripts.js').on('error', function(e){
                 console.log(e.message);
                 console.log(e.plugin);
             }))
-        .pipe(gulp.dest(workflow.templates + PAGE + '/temp'))
+        .pipe(gulp.dest(settings.templates + PAGE + '/temp'))
         .pipe(replace('%LANDING%', page_title))
         .pipe(rename('main.js'))
         .pipe(uglify({
@@ -105,7 +91,7 @@ gulp.task('compress', function (cb) {
 });
 
 gulp.task('default', function () {
-    MYPATH = workflow.landings;
+    MYPATH = settings.landings;
     MYPAGE = args.land;
     console.log("Path --> ", MYPATH);
     console.log("Page --> ", MYPAGE);
@@ -118,15 +104,15 @@ gulp.task('default', function () {
         }
     });
 
-    gulp.watch(workflow.templates + "**/*.pug", gulp.series(['pug'])).on("change", browserSync.reload);
-    gulp.watch(workflow.templates + "**/*.styl", gulp.series(['stylus'])).on("change", browserSync.reload);
-    gulp.watch(workflow.templates + "**/scripts/*.js", gulp.series(['compress'])).on("change", browserSync.reload);
+    gulp.watch(settings.templates + "**/*.pug", gulp.series(['pug'])).on("change", browserSync.reload);
+    gulp.watch(settings.templates + "**/*.styl", gulp.series(['stylus'])).on("change", browserSync.reload);
+    gulp.watch(settings.templates + "**/scripts/*.js", gulp.series(['compress'])).on("change", browserSync.reload);
 });
 
 gulp.task('imagemin', function() {
     var config = getData(args);
     console.log(config);
-    return gulp.src(workflow.templates+config.page+'/images/*')
+    return gulp.src(settings.templates+config.page+'/images/*')
         .pipe(imagemin())
         .pipe(gulp.dest(config.path+config.page+'/images'))
 });
