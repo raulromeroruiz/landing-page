@@ -1,11 +1,13 @@
 # Work Flow Landing Page
-This flow create a landing page more simple and fast, using nodejs and gulp. This process automatize tasks to generate html files (from pug), css files (from stylus) and optimize js files (from uglify).  
-The layout use Bootstrap v4 how grid base.
+This flow use Node.js and gulpjs to create landing pages, quickly and easily. This process automatize tasks to generate html files (with pugjs), css files (with stylus) and optimize js files (with uglify).  
+This layout use Bootstrap v4 how grid base and [Slick](https://kenwheeler.github.io/slick/) for slider function.
 
 ## Requirements
-- Node.js
-- Gulp Cli 3.9.1
+- Node.js 12.0.0 (If you have another version top, can use [nvm](https://github.com/nvm-sh/nvm))
+- Gulp Cli 4.0.5
 - Browser Sync
+- Yargs
+- Autoprefixer
 
 
 ## Install Repo
@@ -47,33 +49,33 @@ landing-pages
 ### Directory descriptions
 
 _**layout**_
-Main template Pug file from landing page.
+: Main template Pug file for landing page.
 
 _**includes**_
-Pug files, for header and footer sections. Mixins, functions and vars for pug files.
+: Pug files, for header and footer sections. Mixins, functions and vars for pug files.
 
 _**styles**_
-Files for stylus pre-proccesor (_*.styl_)
+: Files for stylus pre-proccesor (_*.styl_)
 
 _**scripts**_
-Javascript files. Functions & events for page.
+: Javascript files. For javascript code.
 
 _**libs**_
-Javascript files librarys (jQuery, plugins, etc)
+: Javascript files librarys (jQuery, plugins, etc)
 
 _**sprites**_
-Image sprite files. (Not available)
+: Image sprite files. (Not available)
 
 ## Tasks
 ### default
-Process all task and run local server.  
-Also run watch task for listen change files (pug, js, styl), and execute the corresponding task.
+Process all tasks and run the local server.  
+It also executes the watch task to listen to change files (pug, js, styl) and run the corresponding task.
 
 ### pug
 Process all files *.pug* to *.html*
 
 ### stylus
-All files are imported to styles.styl:
+All files are imported to file styles.styl:
 ``` 
 @import "fonts.styl"
 @import "main.styl"
@@ -84,33 +86,31 @@ All files are imported to styles.styl:
 @import "keyframes.styl"
 @import "other-files.styl"
 ```
-Finally process file styles.styl to styles.css
+Finally file styles.styl is converted to styles.css
 
 ### compress
 Process all **js** files.  
-Combine, optimize and compress js source (folders libs & scripts) into javascript unique file
+Combine, optimize and minify js source (libs & scripts folders) into javascript unique file
 
 
 ## Run workflow
-We have **my-first-page** folder into templates, so run:
+We have the **my-first-page** folder into templates, so run:
 
-> gulp start --land ``my-first-page``
+> gulp default --land ``my-first-page``
 
-- For param ``--land`` set name folder (remember this example is my-first-page) where save files and assets
+- For parameter ``--land`` set folder name (remember this example is my-first-page) where saved files and assets
 
 
 ### Root Path Files
-When run gulp start..., show three options: Path, Page and Prod.
+When run gulp default..., show three options: Path, Page and Prod.
 ```javascript
-[11:43:27] Starting 'start'...
 [11:43:27] Starting 'default'...
 ...
 ...
-Path -->  ../landings
+Path -->  ../landings/
 Page -->  my-first-page
 Prod -->  false
-[11:43:36] Finished 'default' after 8.51 s
-[11:43:36] Finished 'start' after 8.51 s
+...
 ```
 
 This workflow generate folder *template-dir* (this case my-first-page)  
@@ -131,20 +131,20 @@ Up two levels. Check path: **landings\my-first-page**
 ```
 
 Launch the browser with URL: http://localhost:3000/my-first-page  
-If not show files, change and save some pug files.  
-Do the same for others files.
+If not show some content, change and save some pug file.  
+Also do the same for others files (styl or js).
 
 
 ## Execute tasks independently
 
 _**Pug**_
-> gulp task --pug ``my-first-page``
+> gulp pug --land ``my-first-page``
 
 _**Stylus**_
-> gulp task --stylus ``my-first-page``
+> gulp stylus --land ``my-first-page``
 
 _**Compress**_
-> gulp task --compress ``my-first-page``
+> gulp compress --land ``my-first-page``
 
 
 
@@ -153,7 +153,7 @@ _**Compress**_
 Compress and minimize files.  
 Add param **--prod** when execute task
 
-> gulp task --stylus my-first-page **--prod**  
-> gulp task --compress my-first-page **--prod**
+> gulp stylus --land my-first-page **--prod**  
+> gulp compress --land my-first-page **--prod**
 
-`This param only its available for tasks`**`stylus`**` and `**`compress`**
+`This param its only available for the tasks`**`stylus`**` and `**`compress`**
