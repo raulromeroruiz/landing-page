@@ -5,8 +5,11 @@ const gulp = require('gulp'),
     uglify = require('gulp-uglify'),
     concat = require('gulp-concat'),
     browserSync = require('browser-sync').create(),
-    autoprefixer = require('autoprefixer-stylus'),
+    //autoprefixer = require('autoprefixer-stylus'),
     stylus = require('gulp-stylus'),
+    poststylus = require('poststylus'),
+    postcss = require('gulp-postcss'),
+    autoprefixer = require('autoprefixer'),
     fs = require('fs'),
     args = require('yargs').argv;
 
@@ -43,13 +46,18 @@ gulp.task('stylus', function () {
         PAGE = args.land,
         PROD = args.prod;
 
+    var plugins = [
+        autoprefixer
+    ];
+
     return gulp.src(settings.templates + PAGE + '/styles/styles.styl')
     .pipe(stylus(
         {
-            use: [autoprefixer('last 2 versions')],
+            // use: [poststylus(processors)],
             compress: (PROD) ? true:false
         }
     ))
+    .pipe(postcss(plugins))
     .on('error', function(err){
         console.log(err);
         console.log(["Message -> ", err.message]);
