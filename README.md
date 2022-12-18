@@ -3,10 +3,13 @@ This flow use Node.js and gulpjs to create landing pages, quickly and easily. Th
 This layout use Bootstrap v4 how grid base and [Slick](https://kenwheeler.github.io/slick/) for slider function.
 
 ## Requirements
-- Node.js 12.0.0 (If you have another version top, can use [nvm](https://github.com/nvm-sh/nvm))
-- Gulp Cli 4.0.5
+- Node.js 14.15.0 (If you have another version top, can use [nvm](https://github.com/nvm-sh/nvm))
+- Gulp Cli 2.2.0 (Until last update this doc)
+- Gulp 4.0.5 (Until last update this doc)
 - Browser Sync
 - Yargs
+- PugJS
+- Stylus
 - Autoprefixer
 
 
@@ -22,6 +25,7 @@ Into folder landing-page (or folder where cloned), run command
 
 First: In the proyect root, create folder named **templates**.  
 Second: From master folder, copy "landing" dir into folder templates and rename to my-first-page (can rename to another).  
+
 **Tree folders** detail
 
 ```
