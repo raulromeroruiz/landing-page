@@ -5,12 +5,9 @@ const gulp = require('gulp'),
     uglify = require('gulp-uglify'),
     concat = require('gulp-concat'),
     browserSync = require('browser-sync').create(),
-    //autoprefixer = require('autoprefixer-stylus'),
     stylus = require('gulp-stylus'),
-    poststylus = require('poststylus'),
     postcss = require('gulp-postcss'),
     autoprefixer = require('autoprefixer'),
-    fs = require('fs'),
     args = require('yargs').argv;
 
 const settings = require("./settings.js");
@@ -30,7 +27,6 @@ gulp.task('pug', function(){
         data: {
             title: page_title, 
             prod: PROD,
-            // dev: (PROD) ? 'on':null
         }
     }).on('error', function(e){
         console.log(["Message -> ", e.message]);
@@ -53,7 +49,6 @@ gulp.task('stylus', function () {
     return gulp.src(settings.templates + PAGE + '/styles/styles.styl')
     .pipe(stylus(
         {
-            // use: [poststylus(processors)],
             compress: (PROD) ? true:false
         }
     ))

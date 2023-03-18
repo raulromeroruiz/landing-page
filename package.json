@@ -21,7 +21,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.4.13",
-    "browser-sync": "^2.27.11",
+    "browser-sync": "^2.29.0",
     "browserslist": "^4.21.4",
     "bufferutil": "^4.0.7",
     "fs": "0.0.1-security",
@@ -37,7 +37,6 @@
     "minimist": "^1.2.7",
     "postcss": "^8.4.20",
     "postcss-cli": "^10.1.0",
-    "poststylus": "^1.0.1",
     "utf-8-validate": "^5.0.10",
     "yargs": "^17.6.2"
   },
