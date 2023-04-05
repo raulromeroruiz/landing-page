@@ -19,10 +19,14 @@ gulp.task('pug', function(){
     params = {
         str: PAGE
     }
-    page_title = settings.capitalize(params);
+    var page_title = settings.capitalize(params);
 
-    return gulp.src(settings.templates + PAGE + '/**/*.pug')
-    .pipe(pug({
+    var path_tpl_page = settings.templates + PAGE;
+    return gulp.src([
+        path_tpl_page + '/*.pug', 
+        '!' + path_tpl_page + '/includes/**',
+        '!' + path_tpl_page + '/layout/**'
+    ]).pipe(pug({
         pretty:true,
         data: {
             title: page_title, 
