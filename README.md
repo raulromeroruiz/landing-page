@@ -1,12 +1,12 @@
-# Work Flow Landing Page
-This flow use Node.js and gulpjs to create landing pages, quickly and easily. This process automatize tasks to generate html files (with pugjs), css files (with stylus) and optimize js files (with uglify).  
-This layout use Bootstrap v4 how grid base and [Slick](https://kenwheeler.github.io/slick/) for slider function.
+# Workflow for Landing Pages
+This flow use Node.js and Gulp to create landing pages, quickly and easily. This process automatize tasks to generate html files (with pugjs), css files (with stylus) and optimize js files (with uglify).  
+The layout use Bootstrap v4 how grid base and [Slick](https://kenwheeler.github.io/slick/) for slider function.
 
 ## Requirements
 - Node.js 14.15.0 (If you have another version top, can use [nvm](https://github.com/nvm-sh/nvm))
 - Gulp Cli 2.2.0 (Until last update this doc)
-- Gulp 4.0.5 (Until last update this doc)
-- Browser Sync
+- Gulp 4.0.2 (Until last update this doc)
+- Browsersync
 - Yargs
 - PugJS
 - Stylus
@@ -24,9 +24,9 @@ Into folder landing-page (or folder where cloned), run command
 ## Templates Directory
 
 First: In the proyect root, create folder named **templates**.  
-Second: From master folder, copy "landing" dir into folder templates and rename to my-first-page (can rename to another).  
+Second: From master folder, copy "*landing*" dir into folder templates and rename to **my-first-page** (can rename to another).  
 
-**Tree folders** detail
+**Folders tree detail**
 
 ```
 landing-pages
@@ -71,14 +71,17 @@ _**sprites**_
 : Image sprite files. (Not available)
 
 ## Tasks
-### default
-Process all tasks and run the local server.  
-It also executes the watch task to listen to change files (pug, js, styl) and run the corresponding task.
+View all tasks
+> gulp --tasks
 
-### pug
+#### default
+Process all tasks and run the local server.  
+It also executes the watch task to listen to files changes (pug, js, styl) and run the corresponding task.
+
+#### pug
 Process all files *.pug* to *.html*
 
-### stylus
+#### stylus
 All files are imported to file styles.styl:
 ``` 
 @import "fonts.styl"
@@ -92,10 +95,42 @@ All files are imported to file styles.styl:
 ```
 Finally file styles.styl is converted to styles.css
 
-### compress
+#### compress
 Process all **js** files.  
-Combine, optimize and minify js source (libs & scripts folders) into javascript unique file
+This Combine, optimize and minify js files (from libs & scripts folders) into a single javascript file
 
+#### webp
+Convert the image files to webp format.  
+```javascript
+image1.jpg -> image1.webp  
+image2.png -> image2.webp
+```
+
+Steps  
+
+- First create "images" folder into "landings/my-first-page" and put image files (jpg or png).  
+- In pug template use the mixin "**picture('filename.ext')**" instead of html tag img. Can use both at once.
+```
++picture('image1.jpg')
++picture('image2.png')
+...
++picture('imageX.png')
+```
+- This mixin is located in the file templates/my-first-page/includes/mixins.pug  
+When task run **pug**, this is generated:
+```
+<picture>
+	<source srccet="images/image1.webp" type="images/webp">
+	<source srccet="images/image1.jpg" type="images/jpg">
+	<img src="images/image1.jpg">
+</picture>
+```
+- If mixin no exist, pull lasts changes and copy file mixins.pug from _**master/landing/includes**_ to _**templates/folder-landing/includes**_ (In this example the folder-landing is my-first-page)
+- Another alternative is use rewrite rules, PHP and Apache Server
+	- [Wamp Server](https://sourceforge.net/projects/wampserver/)
+	- Put folder landing to folder public from local server and rename index.html to index.php
+	- Create .htaccess file into landing folder root and use this code: [Apache htaccess Webp](https://www.askapache.com/htaccess/serving-webp-images-for-png-jpg/#Apache_Htaccess_WebP)
+- After run task webp, verify the performance with [lighthouse](https://developer.chrome.com/docs/lighthouse/overview/#devtools)
 
 ## Run workflow
 We have the **my-first-page** folder into templates, so run:
@@ -117,7 +152,7 @@ Prod -->  false
 ...
 ```
 
-This workflow generate folder *template-dir* (this case my-first-page)  
+This command generate the folder *template-dir* (this case my-first-page)  
 Up two levels. Check path: **landings\my-first-page**  
 
 ```
@@ -134,22 +169,25 @@ Up two levels. Check path: **landings\my-first-page**
 			└── README.md
 ```
 
-Launch the browser with URL: http://localhost:3000/my-first-page  
-If not show some content, change and save some pug file.  
-Also do the same for others files (styl or js).
-
+#### Check
+1. The browser should launched with URL: http://localhost:3000/my-first-page  
+2. If not show some content, change and save some pug file.  
+3. Also do the same for others files (styl or js).  
+4. For every change, Browsersync reload to browser
 
 ## Execute tasks independently
 
-_**Pug**_
+_**pug**_
 > gulp pug --land ``my-first-page``
 
-_**Stylus**_
+_**stylus**_
 > gulp stylus --land ``my-first-page``
 
-_**Compress**_
+_**compress**_
 > gulp compress --land ``my-first-page``
 
+_**webp**_
+> gulp webp --land ``my-first-page``
 
 
 ## Production Mode

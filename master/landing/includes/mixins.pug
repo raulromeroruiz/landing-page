@@ -1,5 +1,14 @@
 - var menu = [{name:'Tv', hash:'#tv'},{name:'Línea Blanca', hash:'#linea-blanca'},{name:'Tecnología', hash:'#tecnologiaa'},{name:'Sonido', hash:'#sonido'}]
 
+mixin picture(img)
+	- img = img
+	- file = img.match(/(jpg|png)/);
+	- type = (file[0] == "jpg") ? "images/jpg":"images/png";
+	picture
+		source(srccet!='images/' + img.replace(/(jpg|png)/, 'webp') type!='images/webp')
+		source(srccet!='images/' + img type!=type)
+		img(src!='images/' + img)
+
 mixin banner(params)
 	- attr = params
 	.banner&attributes(attr)

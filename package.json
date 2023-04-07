@@ -34,6 +34,7 @@
     "gulp-stylus": "^2.7.1",
     "gulp-uglify": "^2.0.0",
     "gulp-watch": "^5.0.1",
+    "gulp-webp": "^4.0.1",
     "minimist": "^1.2.7",
     "postcss": "^8.4.20",
     "postcss-cli": "^10.1.0",

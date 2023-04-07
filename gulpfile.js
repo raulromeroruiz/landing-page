@@ -8,6 +8,7 @@ const gulp = require('gulp'),
     stylus = require('gulp-stylus'),
     postcss = require('gulp-postcss'),
     autoprefixer = require('autoprefixer'),
+    webp = require('gulp-webp'),
     args = require('yargs').argv;
 
 const settings = require("./settings.js");
@@ -116,22 +117,24 @@ gulp.task('default', function () {
     gulp.watch(settings.templates + "**/scripts/*.js", gulp.series(['compress'])).on("change", browserSync.reload);
 });
 
-gulp.task('imagemin', function() {
+gulp.task('webp', function() {
+    var PATH = settings.landings,
+        PAGE = args.land,
+        PROD = args.prod;
+
+    return gulp.src(PATH + PAGE + "/images/*")
+        .pipe(webp()
+            .on("error", function(e){
+            console.log('Error', e);
+        }))
+        .pipe(gulp.dest(PATH + PAGE + "/images/"));
+});
+
+gulp.task('imagemin', function(cb) {
     var config = getData(args);
     console.log(config);
     return gulp.src(settings.templates+config.page+'/images/*')
         .pipe(imagemin())
-        .pipe(gulp.dest(config.path+config.page+'/images'))
-});
-
-gulp.task('copyassets', function() {
-    var dir = null,
-    dirOutput = process.argv[4];
-    _date = getWeekNumber(new Date());
-    week = (_date[1]<9) ? "0"+_date[1]:_date[1];
-    dir = "../" + _date[0] + "/" + week + "/"
-    console.log('Coping assets into '+ dir + dirOutput);
-
-    gulp.src('./assets/**/*')
-    .pipe(gulp.dest(dir + dirOutput + "/"));
+        .pipe(gulp.dest(config.path+config.page+'/images'));
+    cb();
 });
