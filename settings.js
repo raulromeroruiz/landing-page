@@ -1,4 +1,5 @@
 let workflow = {
+    master: './master/',
     templates: './templates/',
     landings: '../landings/',
     capitalize: function(_params) {
