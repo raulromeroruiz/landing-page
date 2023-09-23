@@ -23,11 +23,32 @@ Into folder landing-page (or folder where cloned), run command
 
 ## Templates Directory
 
-First: In the proyect root, create folder named **templates**.  
-Second: From master folder, copy "*landing*" dir into folder templates and rename to **my-first-page** (can rename to another).  
+**Manual Steps**
+1. In the proyect root, create folder named **templates**.  
+2. From master folder, copy "*landing*" folder to templates folder and rename to **my-first-page** (can rename to another).
 
-**Folders tree detail**
+_Note: Use only chars alphanumeric and dash for template name._
 
+**Using Task**  
+For generate the landing template run task **create**  
+```
+gulp create --land my-first-landing
+```
+
+Result
+```javascript
+[12:25:45] Starting 'create'...
+[12:25:45] Finished 'create' after 3.25ms
+Creating landing my-first-landing
+```
+
+If "my-first-landing" exist, new folder is created adding a number to name.  
+> my-first-landing-1  
+> my-first-landing-2  
+> ...
+
+**Folders tree detail**  
+Using either method, the following structure is created
 ```
 landing-pages
 	├── master
@@ -97,7 +118,7 @@ Finally file styles.styl is converted to styles.css
 
 #### compress
 Process all **js** files.  
-This Combine, optimize and minify js files (from libs & scripts folders) into a single javascript file
+This combine, optimize and minify js files (from libs & scripts folders) into single javascript file
 
 #### webp
 Convert the image files to webp format.  

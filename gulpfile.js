@@ -9,7 +9,8 @@ const gulp = require('gulp'),
     postcss = require('gulp-postcss'),
     autoprefixer = require('autoprefixer'),
     webp = require('gulp-webp'),
-    args = require('yargs').argv;
+    args = require('yargs').argv,
+    fs = require('fs');
 
 const settings = require("./settings.js");
 
@@ -130,11 +131,53 @@ gulp.task('webp', function() {
         .pipe(gulp.dest(PATH + PAGE + "/images/"));
 });
 
+gulp.task('create', function(cb) {
+    var TMPL = settings.templates,
+        PAGE = args.land;
+    
+    // Create folder template if not exist
+    if (!fs.existsSync(TMPL)){
+        fs.mkdirSync(TMPL);
+    }
+
+    var suffix_pattern = /-\d{1,2}$/;
+    fs.readdir(TMPL, function(err, folders){
+        if (err) {
+            console.log('Not found -> ', TMPL);
+            return false;
+        }
+        var my_path = [PAGE],
+            re = new RegExp('^' + PAGE + '(-[1-9]{1,2})?$', "g");
+        var filtro = folders.filter((landing) => landing.match(re));
+        filtro.sort();
+
+        if (filtro.length > 0) {
+            console.log(PAGE, 'exist!');
+            var last_item = filtro[filtro.length-1];
+            var have_suffix = last_item.match(suffix_pattern);
+            var suffix = (!have_suffix) ? 1 : parseInt(have_suffix[0].replace("-","")) + 1;
+            my_path.push(suffix);
+        }
+        createNewTemplate(my_path);
+    });
+
+    var createNewTemplate = function(my_template) {
+        var getName = my_template.join("-");
+        console.log('Creating landing ' + getName);
+        return gulp.src(settings.master + 'landing/**/*')
+            .pipe(gulp.dest(settings.templates + getName))
+            .on("error", function(err){
+                console.log('error', err);
+            })
+    }
+    cb();
+});
+
 gulp.task('imagemin', function(cb) {
     var config = getData(args);
     console.log(config);
     return gulp.src(settings.templates+config.page+'/images/*')
         .pipe(imagemin())
-        .pipe(gulp.dest(config.path+config.page+'/images'));
+        .pipe(gulp.dest(config.my_path+config.page+'/images'));
     cb();
 });
