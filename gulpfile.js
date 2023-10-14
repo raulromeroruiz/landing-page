@@ -10,6 +10,7 @@ const gulp = require('gulp'),
     autoprefixer = require('autoprefixer'),
     webp = require('gulp-webp'),
     args = require('yargs').argv,
+    spritesmith = require('gulp.spritesmith'),
     fs = require('fs');
 
 const settings = require("./settings.js");
@@ -131,6 +132,22 @@ gulp.task('webp', function() {
         .pipe(gulp.dest(PATH + PAGE + "/images/"));
 });
 
+gulp.task('csssprite', function(cb) {
+    var PATH = settings.landings,
+        PAGE = args.land,
+        PROD = args.prod;
+    var spriteData = gulp.src(settings.templates + PAGE+ '/sprites/*.png')
+    .pipe(spritesmith({
+        imgName: 'sprite.png',
+        cssName: 'sprite.css'
+        })
+        .on('end', function(e){
+            console.log('end', e)
+        })
+    );
+    return spriteData.pipe(gulp.dest(PATH + PAGE + '/css'))
+    .pipe(rename('sprite.styl'))
+    .pipe(gulp.dest(settings.templates + PAGE + '/styles'));
 gulp.task('create', function(cb) {
     var TMPL = settings.templates,
         PAGE = args.land;
@@ -173,11 +190,21 @@ gulp.task('create', function(cb) {
     cb();
 });
 
-gulp.task('imagemin', function(cb) {
-    var config = getData(args);
-    console.log(config);
-    return gulp.src(settings.templates+config.page+'/images/*')
-        .pipe(imagemin())
-        .pipe(gulp.dest(config.my_path+config.page+'/images'));
+gulp.task('csssprite', function(cb) {
+    var PATH = settings.landings,
+        PAGE = args.land,
+        PROD = args.prod;
+    var spriteData = gulp.src(settings.templates + PAGE+ '/sprites/*.png')
+    .pipe(spritesmith({
+        imgName: 'sprite.png',
+        cssName: 'sprite.css'
+        })
+        .on('end', function(e){
+            console.log('end', e)
+        })
+    );
+    return spriteData.pipe(gulp.dest(PATH + PAGE + '/css'))
+    .pipe(rename('sprite.styl'))
+    .pipe(gulp.dest(settings.templates + PAGE + '/styles'));
     cb();
 });

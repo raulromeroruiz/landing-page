@@ -89,7 +89,7 @@ _**libs**_
 : Javascript files librarys (jQuery, plugins, etc)
 
 _**sprites**_
-: Image sprite files. (Not available)
+: Image files in format PNG transparent or JPG.
 
 ## Tasks
 View all tasks
@@ -153,6 +153,17 @@ When task run **pug**, this is generated:
 	- Create .htaccess file into landing folder root and use this code: [Apache htaccess Webp](https://www.askapache.com/htaccess/serving-webp-images-for-png-jpg/#Apache_Htaccess_WebP)
 - After run task webp, verify the performance with [lighthouse](https://developer.chrome.com/docs/lighthouse/overview/#devtools)
 
+#### csssprite
+Merge images PNG transparent from folder sprites to unique image in PNG format.  
+First put all images into folder **sprite**:   
+```javascript
+icon-1.png
+icon-2.png
+another-imagen.png
+...
+icon-x.png
+```
+The task create two files (sprite.css & sprite.png), both files are copied to css in your landing folder, then be rename sprite.css to sprite.styl and copied to styles in your template folder, finally this file with .styl extension, is used by stylus task for create the final css file.
 ## Run workflow
 We have the **my-first-page** folder into templates, so run:
 
@@ -210,6 +221,8 @@ _**compress**_
 _**webp**_
 > gulp webp --land ``my-first-page``
 
+_**csssprite**_
+> gulp csssprite --land ``my-first-page``
 
 ## Production Mode
 
