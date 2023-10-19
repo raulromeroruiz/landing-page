@@ -132,22 +132,6 @@ gulp.task('webp', function() {
         .pipe(gulp.dest(PATH + PAGE + "/images/"));
 });
 
-gulp.task('csssprite', function(cb) {
-    var PATH = settings.landings,
-        PAGE = args.land,
-        PROD = args.prod;
-    var spriteData = gulp.src(settings.templates + PAGE+ '/sprites/*.png')
-    .pipe(spritesmith({
-        imgName: 'sprite.png',
-        cssName: 'sprite.css'
-        })
-        .on('end', function(e){
-            console.log('end', e)
-        })
-    );
-    return spriteData.pipe(gulp.dest(PATH + PAGE + '/css'))
-    .pipe(rename('sprite.styl'))
-    .pipe(gulp.dest(settings.templates + PAGE + '/styles'));
 gulp.task('create', function(cb) {
     var TMPL = settings.templates,
         PAGE = args.land;
