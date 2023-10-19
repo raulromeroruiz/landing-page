@@ -1,7 +1,7 @@
 {
-  "name": "counter",
-  "version": "1.0.0",
-  "description": "Test counter",
+  "name": "landing-page",
+  "version": "1.1.0",
+  "description": "Workflow for landings generation",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
