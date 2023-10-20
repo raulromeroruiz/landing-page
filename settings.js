@@ -2,12 +2,12 @@ let workflow = {
     master: './master/',
     templates: './templates/',
     landings: '../landings/',
-    capitalize: function(_params) {
-        words = _params.str.split("-");
-        for(x in words) {
-            words[x] = words[x].charAt(0).toUpperCase() + words[x].slice(1);
-        }
-        return words.join(' ');
+    pageTitle: function(landing) {
+        words = landing.split("-");
+        let newWords = words.map(function(word){
+            return word.charAt(0).toUpperCase() + word.slice(1)
+        })
+        return newWords.join(' ');
     }
 };
 

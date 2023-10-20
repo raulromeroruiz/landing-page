@@ -22,11 +22,6 @@ var PAGE = args.land,
     pathLanding = settings.landings + PAGE;
 
 gulp.task('pug', function () {
-    let params = {
-        str: PAGE
-    }
-    let page_title = settings.capitalize(params);
-
     return gulp.src([
             pathTemplate + '/*.pug',
             '!' + pathTemplate + '/includes/**',
@@ -34,7 +29,7 @@ gulp.task('pug', function () {
         ]).pipe(pug({
             pretty: true,
             data: {
-                title: page_title,
+                title: settings.pageTitle(PAGE),
                 prod: PROD,
             }
             }).on('error', function (e) {
@@ -66,11 +61,6 @@ gulp.task('stylus', function () {
 });
 
 gulp.task('compress', function (cb) {
-    let params = {
-        str: PAGE
-    }
-    let page_title = settings.capitalize(params);
-
     return gulp.src([pathTemplate + '/libs/*.js', pathTemplate + '/scripts/*.js'])
         .pipe(
             concat('scripts.js').on('error', function (e) {
@@ -78,7 +68,7 @@ gulp.task('compress', function (cb) {
                 console.log(e.plugin);
             }))
         .pipe(gulp.dest(pathTemplate + '/temp'))
-        .pipe(replace('%LANDING%', page_title))
+        .pipe(replace('%LANDING%', settings.pageTitle(PAGE)))
         .pipe(rename('main.js'))
         .pipe(uglify({
             mangle: false,
