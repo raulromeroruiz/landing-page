@@ -21,7 +21,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.4.13",
-    "browser-sync": "^2.29.0",
+    "browser-sync": "^3.0.2",
     "browserslist": "^4.21.4",
     "bufferutil": "^4.0.7",
     "fs": "0.0.1-security",
@@ -34,7 +34,7 @@
     "gulp-stylus": "^2.7.1",
     "gulp-uglify": "^2.0.0",
     "gulp-watch": "^5.0.1",
-    "gulp-webp": "^4.0.1",
+    "gulp-webp": "^5.0.0",
     "gulp.spritesmith": "^6.13.0",
     "minimist": "^1.2.7",
     "postcss": "^8.4.31",
