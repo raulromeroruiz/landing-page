@@ -9,35 +9,31 @@ const gulp = require('gulp'),
     postcss = require('gulp-postcss'),
     autoprefixer = require('autoprefixer'),
     webp = import('gulp-webp'),
-    args = require('yargs').argv,
     spritesmith = require('gulp.spritesmith'),
     fs = require('fs');
 
 const settings = require("./settings.js");
-
-// Global vars
-var PAGE = args.land,
-    PROD = args.prod,
-    pathTemplate = settings.templates + PAGE,
-    pathLanding = settings.landings + PAGE;
+let PAGE = settings.PAGE,
+    PROD = settings.isProd,
+    pathTemplates = settings.paths.templates,
+    pathLandings = settings.paths.landings;
 
 gulp.task('pug', function () {
     return gulp.src([
-            pathTemplate + '/*.pug',
-            '!' + pathTemplate + '/includes/**',
-            '!' + pathTemplate + '/layout/**'
+            pathTemplates + '/*.pug',
+            '!' + pathTemplates + '/includes/**',
+            '!' + pathTemplates + '/layout/**'
         ]).pipe(pug({
             pretty: true,
             data: {
-                title: settings.pageTitle(PAGE),
-                prod: PROD,
+                title: settings.landingTitle,
             }
             }).on('error', function (e) {
                 console.log(["Message -> ", e.message]);
                 console.log(["Plugin ->", e.plugin]);
             }).on('end', function (e) {
         }))
-        .pipe(gulp.dest(pathLanding));
+        .pipe(gulp.dest(pathLandings));
 });
 
 gulp.task('stylus', function () {
@@ -45,10 +41,10 @@ gulp.task('stylus', function () {
         autoprefixer
     ];
 
-    return gulp.src(pathTemplate + '/styles/styles.styl')
+    return gulp.src(pathTemplates + '/styles/styles.styl')
         .pipe(stylus(
             {
-                compress: (PROD) ? true : false
+                compress: settings.compressCSS
             }
         ))
         .pipe(postcss(plugins))
@@ -57,62 +53,62 @@ gulp.task('stylus', function () {
             console.log(["Message -> ", err.message]);
             console.log(["Plugin ->", err.plugin]);
         })
-        .pipe(gulp.dest(pathLanding + '/css'));
+        .pipe(gulp.dest(pathLandings + '/css'));
 });
 
 gulp.task('compress', function (cb) {
-    return gulp.src([pathTemplate + '/libs/*.js', pathTemplate + '/scripts/*.js'])
+    return gulp.src([pathTemplates + '/libs/*.js', pathTemplates + '/scripts/*.js'])
         .pipe(
             concat('scripts.js').on('error', function (e) {
                 console.log(e.message);
                 console.log(e.plugin);
             }))
-        .pipe(gulp.dest(pathTemplate + '/temp'))
-        .pipe(replace('%LANDING%', settings.pageTitle(PAGE)))
+        .pipe(gulp.dest(pathTemplates + '/temp'))
+        .pipe(replace('%LANDING%', settings.landingTitle))
         .pipe(rename('main.js'))
         .pipe(uglify({
             mangle: false,
-            compress: (PROD) ? true : false,
+            compress: settings.compressJS,
             output: {
-                beautify: (PROD) ? false : true,
+                beautify: settings.beautifyJS,
             },
         }).on('error', function (e) {
             console.log(e.message);
             console.log(e.plugin);
         }))
-        .pipe(gulp.dest(pathLanding + '/js'));
+        .pipe(gulp.dest(pathLandings + '/js'));
 });
 
 gulp.task('default', function () {
-    console.log("Path --> ", pathLanding);
+    console.log("Path --> ", pathLandings);
     console.log("Page --> ", PAGE);
     console.log("Prod --> ", PROD);
 
     // Serve files from the root of this project
     browserSync.init({
         server: {
-            baseDir: pathLanding
+            baseDir: pathLandings
         }
     });
 
-    gulp.watch(pathTemplate + "/**/*.pug", gulp.series(['pug'])).on("change", browserSync.reload);
-    gulp.watch(pathTemplate + "/**/*.styl", gulp.series(['stylus'])).on("change", browserSync.reload);
-    gulp.watch(pathTemplate + "/**/scripts/*.js", gulp.series(['compress'])).on("change", browserSync.reload);
+    gulp.watch(pathTemplates + "/**/*.pug", gulp.series(['pug'])).on("change", browserSync.reload);
+    gulp.watch(pathTemplates + "/**/*.styl", gulp.series(['stylus'])).on("change", browserSync.reload);
+    gulp.watch(pathTemplates + "/**/scripts/*.js", gulp.series(['compress'])).on("change", browserSync.reload);
 });
 
 gulp.task('webp', function () {
-    return gulp.src(pathLanding + "/images/*")
+    return gulp.src(pathLandings + "/images/*")
         .pipe(webp()
             .on("error", function (e) {
                 console.log('Error', e);
             }))
-        .pipe(gulp.dest(pathLanding + "/images/"));
+        .pipe(gulp.dest(pathLandings + "/images/"));
 });
 
 gulp.task('create', function (cb) {
-    console.log(PAGE);
-    console.log(pathLanding);
-    console.log(pathTemplate);
+    console.log("Path --> ", pathLandings);
+    console.log("Page --> ", PAGE);
+    console.log("Prod --> ", PROD);
     let TMPL = settings.templates;
 
     // Create folder templates if not exist
@@ -154,7 +150,7 @@ gulp.task('create', function (cb) {
 });
 
 gulp.task('csssprite', function (cb) {
-    let spriteData = gulp.src(pathTemplate + '/sprites/*.png')
+    let spriteData = gulp.src(pathTemplates + '/sprites/*.png')
         .pipe(spritesmith({
             imgName: 'sprite.png',
             cssName: 'sprite.css'
@@ -163,8 +159,8 @@ gulp.task('csssprite', function (cb) {
             console.log('end', e)
         })
     );
-    return spriteData.pipe(gulp.dest(pathLanding + '/css'))
+    return spriteData.pipe(gulp.dest(pathLandings + '/css'))
         .pipe(rename('sprite.styl'))
-        .pipe(gulp.dest(pathTemplate + '/styles'));
+        .pipe(gulp.dest(pathTemplates + '/styles'));
     cb();
 });
