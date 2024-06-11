@@ -17,6 +17,8 @@ let workflow = {
         return paths;
     },
     pageTitle() {
+        if (!this.PAGE)
+            return "";
         let words = this.PAGE.split("-");
         let newWords = words.map(function(word){
             return word.charAt(0).toUpperCase() + word.slice(1)
