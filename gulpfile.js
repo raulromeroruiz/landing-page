@@ -8,7 +8,7 @@ const gulp = require('gulp'),
     stylus = require('gulp-stylus'),
     postcss = require('gulp-postcss'),
     autoprefixer = require('autoprefixer'),
-    webp = import('gulp-webp'),
+    webp = require('gulp-webp'),
     spritesmith = require('gulp.spritesmith'),
     fs = require('fs');
 
