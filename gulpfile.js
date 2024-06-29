@@ -1,5 +1,5 @@
-const gulp = require('gulp'),
-    rename = require('gulp-rename'),
+const { src, dest, watch, series } = require('gulp');
+const rename = require('gulp-rename'),
     replace = require('gulp-replace'),
     pug = require('gulp-pug'),
     uglify = require('gulp-uglify'),
@@ -18,8 +18,8 @@ let PAGE = settings.PAGE,
     pathTemplates = settings.paths.templates,
     pathLandings = settings.paths.landings;
 
-gulp.task('pug', function () {
-    return gulp.src([
+const createHTML = () => {
+    return src([
             pathTemplates + '/*.pug',
             '!' + pathTemplates + '/includes/**',
             '!' + pathTemplates + '/layout/**'
@@ -33,15 +33,16 @@ gulp.task('pug', function () {
                 console.log(["Plugin ->", e.plugin]);
             }).on('end', function (e) {
         }))
-        .pipe(gulp.dest(pathLandings));
-});
+        .pipe(dest(pathLandings));
+}
+exports.pug = createHTML;
 
-gulp.task('stylus', function () {
+const createCSS = () => {
     let plugins = [
         autoprefixer
     ];
 
-    return gulp.src(pathTemplates + '/styles/styles.styl')
+    return src(pathTemplates + '/styles/styles.styl')
         .pipe(stylus(
             {
                 compress: settings.compressCSS
@@ -53,17 +54,18 @@ gulp.task('stylus', function () {
             console.log(["Message -> ", err.message]);
             console.log(["Plugin ->", err.plugin]);
         })
-        .pipe(gulp.dest(pathLandings + '/css'));
-});
+        .pipe(dest(pathLandings + '/css'));
+}
+exports.stylus = createCSS;
 
-gulp.task('compress', function (cb) {
-    return gulp.src([pathTemplates + '/libs/*.js', pathTemplates + '/scripts/*.js'])
+const createJS = () => {
+    return src([pathTemplates + '/libs/*.js', pathTemplates + '/scripts/*.js'])
         .pipe(
             concat('scripts.js').on('error', function (e) {
                 console.log(e.message);
                 console.log(e.plugin);
             }))
-        .pipe(gulp.dest(pathTemplates + '/temp'))
+        .pipe(dest(pathTemplates + '/temp'))
         .pipe(replace('%LANDING%', settings.landingTitle))
         .pipe(rename('main.js'))
         .pipe(uglify({
@@ -76,10 +78,11 @@ gulp.task('compress', function (cb) {
             console.log(e.message);
             console.log(e.plugin);
         }))
-        .pipe(gulp.dest(pathLandings + '/js'));
-});
+        .pipe(dest(pathLandings + '/js'));
+}
+exports.uglify = createJS;
 
-gulp.task('default', function () {
+const watchLanding = () => {
     console.log("Path --> ", pathLandings);
     console.log("Page --> ", PAGE);
     console.log("Prod --> ", PROD);
@@ -91,21 +94,23 @@ gulp.task('default', function () {
         }
     });
 
-    gulp.watch(pathTemplates + "/**/*.pug", gulp.series(['pug'])).on("change", browserSync.reload);
-    gulp.watch(pathTemplates + "/**/*.styl", gulp.series(['stylus'])).on("change", browserSync.reload);
-    gulp.watch(pathTemplates + "/**/scripts/*.js", gulp.series(['compress'])).on("change", browserSync.reload);
-});
+    watch(pathTemplates + "/**/*.pug", series(['pug'])).on("change", browserSync.reload);
+    watch(pathTemplates + "/**/*.styl", series(['stylus'])).on("change", browserSync.reload);
+    watch(pathTemplates + "/**/scripts/*.js", series(['uglify'])).on("change", browserSync.reload);
+}
+exports.default = watchLanding
 
-gulp.task('webp', function () {
-    return gulp.src(pathLandings + "/images/*")
+const createWebp = () => {
+    return src(pathLandings + "/images/*")
         .pipe(webp()
             .on("error", function (e) {
                 console.log('Error', e);
             }))
-        .pipe(gulp.dest(pathLandings + "/images/"));
-});
+        .pipe(dest(pathLandings + "/images/"));
+}
+exports.webp = createWebp;
 
-gulp.task('create', function (cb) {
+const createLanding = (cb) => {
     console.log("Path --> ", pathLandings);
     console.log("Page --> ", PAGE);
     console.log("Prod --> ", PROD);
@@ -140,17 +145,18 @@ gulp.task('create', function (cb) {
     const createNewTemplate = function (myTemplate) {
         let getName = myTemplate.join("-");
         console.log('Creating landing ' + getName);
-        return gulp.src(settings.master + 'landing/**/*')
-            .pipe(gulp.dest(settings.templates + getName))
+        return src(settings.master + 'landing/**/*')
+            .pipe(dest(settings.templates + getName))
             .on("error", function (err) {
                 console.log('error', err);
             })
     }
     cb();
-});
+}
+exports.create = createLanding;
 
-gulp.task('csssprite', function (cb) {
-    let spriteData = gulp.src(pathTemplates + '/sprites/*.png')
+const createSprite = (cb) => {
+    let spriteData = src(pathTemplates + '/sprites/*.png')
         .pipe(spritesmith({
             imgName: 'sprite.png',
             cssName: 'sprite.css'
@@ -159,8 +165,8 @@ gulp.task('csssprite', function (cb) {
             console.log('end', e)
         })
     );
-    return spriteData.pipe(gulp.dest(pathLandings + '/css'))
+    return spriteData.pipe(dest(pathLandings + '/css'))
         .pipe(rename('sprite.styl'))
-        .pipe(gulp.dest(pathTemplates + '/styles'));
-    cb();
-});
+        .pipe(dest(pathTemplates + '/styles'));
+}
+exports.csssprite = createSprite;
