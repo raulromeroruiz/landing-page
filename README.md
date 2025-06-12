@@ -3,8 +3,8 @@ This flow use Node.js and Gulp to create landing pages, quickly and easily. This
 The layout use Bootstrap v4 how grid base and [Slick](https://kenwheeler.github.io/slick/) for slider function.
 
 ## Requirements
-- Node.js 14.15.0 (If you have another version top, can use [nvm](https://github.com/nvm-sh/nvm))
-- Gulp Cli 2.2.0 (Until last update this doc)
+- Node.js 16.20.2 (If you have another version top, can use [nvm](https://github.com/nvm-sh/nvm))
+- Gulp Cli 2.3.0 (Until last update this doc)
 - Gulp 4.0.2 (Until last update this doc)
 - Browsersync
 - Yargs
