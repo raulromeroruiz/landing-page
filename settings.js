@@ -4,26 +4,20 @@ let workflow = {
     master: './master/',
     templates: './templates/',
     landings: '../landings/',
-    PAGE: args.land,
-    isProd: args.prod,
-    compressCSS: (args.prod) ? true:false,
-    compressJS: (args.prod) ? true:false,
-    beautifyJS: (args.prod) ? false:true,
+    landingName: args.land,
+    isProd: args.prod ?? false,
     paths() {
-        let paths = {
-            templates : this.templates + this.PAGE,
-            landings  : this.landings + this.PAGE
+        return {
+            template : this.templates + this.landingName,
+            landing  : this.landings + this.landingName
         };
-        return paths;
     },
     pageTitle() {
-        if (!this.PAGE)
+        if (!this.landingName)
             return "";
-        let words = this.PAGE.split("-");
-        let newWords = words.map(function(word){
+        return this.landingName.split("-").map(function(word, index){
             return word.charAt(0).toUpperCase() + word.slice(1)
-        })
-        return newWords.join(' ');
+        }).join(" ");
     }
 };
 workflow.paths = workflow.paths();

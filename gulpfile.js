@@ -45,7 +45,7 @@ const createCSS = () => {
     return src(pathTemplates + '/styles/styles.styl')
         .pipe(stylus(
             {
-                compress: settings.compressCSS
+                compress: settings.isProd
             }
         ))
         .pipe(postcss(plugins))
@@ -70,9 +70,9 @@ const createJS = () => {
         .pipe(rename('main.js'))
         .pipe(uglify({
             mangle: false,
-            compress: settings.compressJS,
+            compress: settings.isProd,
             output: {
-                beautify: settings.beautifyJS,
+                beautify: !settings.isProd
             },
         }).on('error', function (e) {
             console.log(e.message);
