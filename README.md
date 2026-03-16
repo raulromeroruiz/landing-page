@@ -202,7 +202,7 @@ Up two levels. Check path: **landings\my-first-page**
 ```
 
 #### Check
-1. The browser should launched with URL: http://localhost:3000/my-first-page  
+1. The browser should launched with URL: http://localhost:3000  
 2. If not show some content, change and save some pug file.  
 3. Also do the same for others files (styl or js).  
 4. For every change, Browsersync reload to browser
