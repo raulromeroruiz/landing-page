@@ -87,7 +87,7 @@ const watchLanding = (cb) => {
     console.log("Prod --> ", settings.isProd);
 
     try {
-        fs.accessSync(pathLanding , fs.constants.F_OK);
+        fs.accessSync(pathTemplate, fs.constants.F_OK);
         console.log('Path exists');
         // Serve files from the root of this project
         browserSync.init({
