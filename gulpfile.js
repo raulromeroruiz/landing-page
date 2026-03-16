@@ -81,21 +81,28 @@ const createJS = () => {
 }
 exports.uglify = createJS;
 
-const watchLanding = () => {
+const watchLanding = (cb) => {
     console.log("Path --> ", pathLanding);
     console.log("Page --> ", landingName);
     console.log("Prod --> ", settings.isProd);
 
-    // Serve files from the root of this project
-    browserSync.init({
-        server: {
-            baseDir: pathLanding
-        }
-    });
+    try {
+        fs.accessSync(pathLanding , fs.constants.F_OK);
+        console.log('Path exists');
+        // Serve files from the root of this project
+        browserSync.init({
+            server: {
+                baseDir: pathLanding
+            }
+        });
 
-    watch(pathTemplate + "/**/*.pug", series(['pug'])).on("change", browserSync.reload);
-    watch(pathTemplate + "/**/*.styl", series(['stylus'])).on("change", browserSync.reload);
-    watch(pathTemplate + "/**/scripts/*.js", series(['uglify'])).on("change", browserSync.reload);
+        watch(pathTemplate + "/**/*.pug", series(['pug'])).on("change", browserSync.reload);
+        watch(pathTemplate + "/**/*.styl", series(['stylus'])).on("change", browserSync.reload);
+        watch(pathTemplate + "/**/scripts/*.js", series(['uglify'])).on("change", browserSync.reload);
+    } catch (err) {
+        console.log(err.path, 'Landing not exist!');
+    }
+    cb();
 }
 exports.default = watchLanding
 
