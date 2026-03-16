@@ -10,7 +10,7 @@ const rename = require('gulp-rename'),
     autoprefixer = require('autoprefixer'),
     webp = require('gulp-webp'),
     spritesmith = require('gulp.spritesmith'),
-    fs = require('fs');
+    fs = require('node:fs');
 
 const settings = require("./settings.js");
 let landingName = settings.landingName,
@@ -141,7 +141,7 @@ const createLanding = (cb) => {
             console.log(landingName, 'exist!');
             const lastItem = filter[filter.length - 1];
             const match = lastItem.match(suffixPattern);
-            const suffix = match ? parseInt(match[0].slice(1)) + 1 : 1;
+            const suffix = match ? Number(match[0].slice(1)) + 1 : 1;
             myNewPage.push(suffix);
         }
         createNewTemplate(myNewPage);
