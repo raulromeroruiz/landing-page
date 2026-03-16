@@ -13,16 +13,15 @@ const rename = require('gulp-rename'),
     fs = require('fs');
 
 const settings = require("./settings.js");
-let PAGE = settings.PAGE,
-    PROD = settings.isProd,
-    pathTemplates = settings.paths.templates,
-    pathLandings = settings.paths.landings;
+let landingName = settings.landingName,
+    pathTemplate = settings.paths.template,
+    pathLanding = settings.paths.landing;
 
 const createHTML = () => {
     return src([
-            pathTemplates + '/*.pug',
-            '!' + pathTemplates + '/includes/**',
-            '!' + pathTemplates + '/layout/**'
+            pathTemplate + '/*.pug',
+            '!' + pathTemplate + '/includes/**',
+            '!' + pathTemplate + '/layout/**'
         ]).pipe(pug({
             pretty: true,
             data: {
@@ -33,7 +32,7 @@ const createHTML = () => {
                 console.log(["Plugin ->", e.plugin]);
             }).on('end', function (e) {
         }))
-        .pipe(dest(pathLandings));
+        .pipe(dest(pathLanding));
 }
 exports.pug = createHTML;
 
@@ -42,7 +41,7 @@ const createCSS = () => {
         autoprefixer
     ];
 
-    return src(pathTemplates + '/styles/styles.styl')
+    return src(pathTemplate + '/styles/styles.styl')
         .pipe(stylus(
             {
                 compress: settings.isProd
@@ -54,18 +53,18 @@ const createCSS = () => {
             console.log(["Message -> ", err.message]);
             console.log(["Plugin ->", err.plugin]);
         })
-        .pipe(dest(pathLandings + '/css'));
+        .pipe(dest(pathLanding + '/css'));
 }
 exports.stylus = createCSS;
 
 const createJS = () => {
-    return src([pathTemplates + '/libs/*.js', pathTemplates + '/scripts/*.js'])
+    return src([pathTemplate + '/libs/*.js', pathTemplate + '/scripts/*.js'])
         .pipe(
             concat('scripts.js').on('error', function (e) {
                 console.log(e.message);
                 console.log(e.plugin);
             }))
-        .pipe(dest(pathTemplates + '/temp'))
+        .pipe(dest(pathTemplate + '/temp'))
         .pipe(replace('%LANDING%', settings.landingTitle))
         .pipe(rename('main.js'))
         .pipe(uglify({
@@ -78,85 +77,82 @@ const createJS = () => {
             console.log(e.message);
             console.log(e.plugin);
         }))
-        .pipe(dest(pathLandings + '/js'));
+        .pipe(dest(pathLanding + '/js'));
 }
 exports.uglify = createJS;
 
 const watchLanding = () => {
-    console.log("Path --> ", pathLandings);
-    console.log("Page --> ", PAGE);
-    console.log("Prod --> ", PROD);
+    console.log("Path --> ", pathLanding);
+    console.log("Page --> ", landingName);
+    console.log("Prod --> ", settings.isProd);
 
     // Serve files from the root of this project
     browserSync.init({
         server: {
-            baseDir: pathLandings
+            baseDir: pathLanding
         }
     });
 
-    watch(pathTemplates + "/**/*.pug", series(['pug'])).on("change", browserSync.reload);
-    watch(pathTemplates + "/**/*.styl", series(['stylus'])).on("change", browserSync.reload);
-    watch(pathTemplates + "/**/scripts/*.js", series(['uglify'])).on("change", browserSync.reload);
+    watch(pathTemplate + "/**/*.pug", series(['pug'])).on("change", browserSync.reload);
+    watch(pathTemplate + "/**/*.styl", series(['stylus'])).on("change", browserSync.reload);
+    watch(pathTemplate + "/**/scripts/*.js", series(['uglify'])).on("change", browserSync.reload);
 }
 exports.default = watchLanding
 
 const createWebp = () => {
-    return src(pathLandings + "/images/*")
+    return src(pathLanding + "/images/*")
         .pipe(webp()
             .on("error", function (e) {
                 console.log('Error', e);
             }))
-        .pipe(dest(pathLandings + "/images/"));
+        .pipe(dest(pathLanding + "/images/"));
 }
 exports.webp = createWebp;
 
 const createLanding = (cb) => {
-    console.log("Path --> ", pathLandings);
-    console.log("Page --> ", PAGE);
-    console.log("Prod --> ", PROD);
-    let TMPL = settings.templates;
+    console.log("Path --> ", pathLanding);
+    console.log("Page --> ", landingName);
+    console.log("Prod --> ", settings.isProd);
+    let baseTemplates = settings.templates;
 
     // Create folder templates if not exist
-    if (!fs.existsSync(TMPL)) {
-        fs.mkdirSync(TMPL);
+    if (!fs.existsSync(baseTemplates)) {
+        fs.mkdirSync(baseTemplates);
     }
 
-    let suffixPattern = /-\d{1,2}$/;
-    fs.readdir(TMPL, function (err, folders) {
+    const suffixPattern = /-\d{1,2}$/;
+    fs.readdir(baseTemplates, (err, folders) => {
         if (err) {
-            console.log('Not found -> ', TMPL);
-            return false;
+            console.log('Not found -> ', baseTemplates);
+            return cb(err);
         }
-        let myNewPage = [PAGE],
-            rePage = new RegExp('^' + PAGE + '(-[1-9]{1,2})?$', "g");
-        let filter = folders.filter((landing) => landing.match(rePage));
-        filter.sort();
+        const myNewPage = [landingName];
+        const rePage = new RegExp('^' + landingName + '(-[1-9]{1,2})?$', "g");
+        const filter = folders.filter((landing) => landing.match(rePage)).sort();
 
         if (filter.length > 0) {
-            console.log(PAGE, 'exist!');
-            let lastItem = filter[filter.length - 1];
-            let haveSuffix = lastItem.match(suffixPattern);
-            let suffix = (!haveSuffix) ? 1 : parseInt(haveSuffix[0].replace("-", "")) + 1;
+            console.log(landingName, 'exist!');
+            const lastItem = filter[filter.length - 1];
+            const match = lastItem.match(suffixPattern);
+            const suffix = match ? parseInt(match[0].slice(1)) + 1 : 1;
             myNewPage.push(suffix);
         }
         createNewTemplate(myNewPage);
     });
 
-    const createNewTemplate = function (myTemplate) {
-        let getName = myTemplate.join("-");
+    const createNewTemplate = (myTemplate) => {
+        const getName = myTemplate.join("-");
         console.log('Creating landing ' + getName);
         return src(settings.master + 'landing/**/*')
-            .pipe(dest(settings.templates + getName))
-            .on("error", function (err) {
-                console.log('error', err);
-            })
+            .pipe(dest(baseTemplates + getName))
+            .on("error", (err) => console.log('error', err));
     }
     cb();
 }
 exports.create = createLanding;
 
 const createSprite = (cb) => {
-    let spriteData = src(pathTemplates + '/sprites/*.png')
+    let spriteData = src(pathTemplate + '/sprites/*.png')
         .pipe(spritesmith({
             imgName: 'sprite.png',
             cssName: 'sprite.css'
@@ -165,8 +161,8 @@ const createSprite = (cb) => {
             console.log('end', e)
         })
     );
-    return spriteData.pipe(dest(pathLandings + '/css'))
+    return spriteData.pipe(dest(pathLanding + '/css'))
         .pipe(rename('sprite.styl'))
-        .pipe(dest(pathTemplates + '/styles'));
+        .pipe(dest(pathTemplate + '/styles'));
 }
 exports.csssprite = createSprite;
