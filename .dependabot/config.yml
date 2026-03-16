@@ -1,0 +1,26 @@
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "daily"
+    ignore:
+      - dependency-name: "gulp.spritesmith"
+      - dependency-name: "gulp-webp"
+      - dependency-name: "gulp-stylus"
+      - dependency-name: "gulp-watch"
+      - dependency-name: "gulp"
+      - dependency-name: "browser-sync"
+      - dependency-name: "gulp-pug"
+      - dependency-name: "gulp-uglify"
+      - dependency-name: "gulp-concat"
+      - dependency-name: "gulp-rename"
+      - dependency-name: "gulp-replace"
+      - dependency-name: "gulp-postcss"
+      - dependency-name: "postcss-cli"
+      - dependency-name: "autoprefixer"
+      - dependency-name: "browserslist"
+      - dependency-name: "minimist"
+      - dependency-name: "bufferutil"
+      - dependency-name: "utf-8-validate"
+      - dependency-name: "fs"
