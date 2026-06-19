@@ -33,7 +33,7 @@
     "gulp-webp": "^4.0.1",
     "gulp.spritesmith": "^6.13.0",
     "minimist": "^1.2.7",
-    "postcss": "^8.4.31",
+    "postcss": "^8.5.15",
     "postcss-cli": "^10.1.0",
     "utf-8-validate": "^5.0.10",
     "yargs": "^17.6.2"
