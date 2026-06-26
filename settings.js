@@ -13,11 +13,11 @@ let workflow = {
         };
     },
     pageTitle() {
-        if (!this.landingName)
-            return "";
-        return this.landingName.split("-").map(function(word, index){
-            return word.charAt(0).toUpperCase() + word.slice(1)
-        }).join(" ");
+        if (!this.landingName) return "";
+        return this.landingName
+            .split("-")
+            .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+            .join(" ");
     }
 };
 workflow.paths = workflow.paths();
