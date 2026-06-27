@@ -53,7 +53,8 @@ const createCSS = () => {
             console.log(["Message -> ", err.message]);
             console.log(["Plugin ->", err.plugin]);
         })
-        .pipe(dest(pathLanding + '/css'));
+        .pipe(dest(pathLanding + '/css'))
+        .pipe(browserSync.stream({ match: '**/*.css' }));
 }
 exports.stylus = createCSS;
 
@@ -96,9 +97,9 @@ const watchLanding = (cb) => {
             }
         });
 
-        watch(pathTemplate + "/**/*.pug", series(['pug'])).on("change", browserSync.reload);
-        watch(pathTemplate + "/**/*.styl", series(['stylus'])).on("change", browserSync.reload);
-        watch(pathTemplate + "/**/scripts/*.js", series(['uglify'])).on("change", browserSync.reload);
+        watch(pathTemplate + "/**/*.pug", series(createHTML, reload));
+        watch(pathTemplate + "/**/*.styl", series(createCSS));
+        watch(pathTemplate + "/**/scripts/*.js", series(createJS, reload));
     } catch (err) {
         console.log(err.path, 'Landing not exist!');
     }
@@ -173,3 +174,8 @@ const createSprite = (cb) => {
         .pipe(dest(pathTemplate + '/styles'));
 }
 exports.csssprite = createSprite;
+
+function reload(done) {
+    browserSync.reload();
+    done();
+}
