@@ -3,14 +3,15 @@ This flow use Node.js and Gulp to create landing pages, quickly and easily. This
 The layout use Bootstrap v4 how grid base and [Slick](https://kenwheeler.github.io/slick/) for slider function.
 
 ## Requirements
-- Node.js 16.20.2 (If you have another version top, can use [nvm](https://github.com/nvm-sh/nvm))
-- Gulp Cli 2.3.0 (Until last update this doc)
-- Gulp 4.0.2 (Until last update this doc)
-- Browsersync
-- Yargs
-- PugJS
-- Stylus
-- Autoprefixer
+- Node.js >= 20.19.0 (use [nvm](https://github.com/nvm-sh/nvm) if you need to switch versions)
+- npm >= 10
+- Gulp 5.0.1
+- Gulp CLI 3.1.x when using a global `gulp` command
+- PugJS via `gulp-pug`
+- Stylus 0.64.0
+- PostCSS 8.x
+- Autoprefixer 10.x
+- Sharp 0.35.x for WebP and CSS sprite generation
 
 
 ## Install Repo
@@ -19,6 +20,10 @@ Clone repository
 
 Into folder landing-page (or folder where cloned), run command
 > npm install
+
+Use the project-local Gulp CLI with `npx gulp ...` or `npm run gulp -- ...`.
+If your global `gulp` command prints `Unsupported gulp version`, update it with:
+> npm install -g gulp-cli@^3.1.0
 
 
 ## Templates Directory
@@ -95,9 +100,13 @@ _**sprites**_
 View all tasks
 > gulp --tasks
 
+Or using the local CLI:
+> npx gulp --tasks
+
 #### default
 Process all tasks and run the local server.  
 It also executes the watch task to listen to files changes (pug, js, styl) and run the corresponding task.
+The development server is built into the workflow and starts at http://localhost:3000, or the next available port if 3000 is busy.
 
 #### pug
 Process all files *.pug* to *.html*
@@ -202,10 +211,10 @@ Up two levels. Check path: **landings\my-first-page**
 ```
 
 #### Check
-1. The browser should launched with URL: http://localhost:3000  
+1. Open the URL printed by the task, usually http://localhost:3000  
 2. If not show some content, change and save some pug file.  
 3. Also do the same for others files (styl or js).  
-4. For every change, Browsersync reload to browser
+4. For every change, the local server reloads the browser
 
 ## Execute tasks independently
 
@@ -217,6 +226,9 @@ _**stylus**_
 
 _**compress**_
 > gulp compress --land ``my-first-page``
+
+_**uglify**_
+> gulp uglify --land ``my-first-page``
 
 _**webp**_
 > gulp webp --land ``my-first-page``

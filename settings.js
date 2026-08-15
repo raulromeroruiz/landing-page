@@ -1,4 +1,27 @@
-const args = require('yargs').argv;
+const parseArgs = (argv) => {
+    const args = {};
+
+    for (let i = 0; i < argv.length; i++) {
+        const arg = argv[i];
+        if (!arg.startsWith("--")) continue;
+
+        const [rawKey, rawValue] = arg.slice(2).split("=");
+        const nextValue = argv[i + 1];
+
+        if (rawValue !== undefined) {
+            args[rawKey] = rawValue;
+        } else if (nextValue && !nextValue.startsWith("--")) {
+            args[rawKey] = nextValue;
+            i++;
+        } else {
+            args[rawKey] = true;
+        }
+    }
+
+    return args;
+};
+
+const args = parseArgs(process.argv.slice(2));
 
 let workflow = {
     master: './master/',
